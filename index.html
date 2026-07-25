@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles/menu/menu.css">
+		<link rel="stylesheet" href="styles/menu/title.css">
+		<link rel="stylesheet" href="styles/menu/options.css">
+		<link rel="stylesheet" href="styles/game.css">
+		<link rel="stylesheet" href="styles/main.css">
+		<title>WordHunt</title>
+	</head>
+	<body>
+		<div id="menu-screen">
+			<div id="title-container">
+				<div class="title-cell" id="t1"><span>W</span></div>
+				<div class="title-cell" id="t2"><span>O</span></div>
+				<div class="title-cell" id="t3"><span>R</span></div>
+				<div class="title-cell" id="t4"><span>D</span></div>
+				<div class="title-cell" id="t5"><span>R</span></div>
+				<div class="title-cell" id="t6"><span>U</span></div>
+				<div class="title-cell" id="t7"><span>S</span></div>
+				<div class="title-cell" id="t8"><span>H</span></div>
+			</div>
+			<div id="option-container">
+				<div class="option-row">
+					<div class="option">Word Length: </div>
+					<div id="length-value">6</div>
+					<div class="slider-row">
+						<input id="length-slider" type="range" min="3" max="10" value="6">
+					</div>
+				</div>
+			</div>
+			<button id="play-button">Play</button>
+		</div>
+		<div id="game-screen" class="hidden">
+			<button id="back-button">Back</button>
+		</div>
+	</body>
+	<script type="module" src="scripts/main.js"></script>
+	<script type="module" src="scripts/game.js"></script>
+	<script type="module" src="scripts/menu.js"></script>
+</html>

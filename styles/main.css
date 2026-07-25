@@ -1,0 +1,19 @@
+:root {
+	--bg: #ececec;
+	--title-border: #222222;
+	--border: #b9b9b9;
+	--title: #4b4b4b;
+	--highlight: rgb(183, 60, 38);
+	--button: #dddddd;
+	--button-border: #7d7d7d;
+	--button-text: #5c5c5c;
+}
+
+body {
+	background: var(--bg);
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hidden {
+	display: none !important;
+}

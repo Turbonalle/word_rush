@@ -1,0 +1,17 @@
+#menu-screen {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	justify-content: center;
+	align-items: center;
+}
+
+#play-button {
+	width: 200px;
+	height: 60px;
+	font-size: 40px;
+	color: var(--button-text);
+	border: 2px solid var(--button-border);
+	border-radius: 10px;
+	background: var(--button);
+}
