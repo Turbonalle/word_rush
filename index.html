@@ -22,13 +22,20 @@
 				<div class="title-cell" id="t7"><span>S</span></div>
 				<div class="title-cell" id="t8"><span>H</span></div>
 			</div>
-			<div id="option-container">
+			<div id="options-container">
 				<div class="option-row">
-					<div class="option">Word Length: </div>
-					<div id="length-value">6</div>
+					<div class="option">Language: </div>
+					<div class="option-container">
+						<button id="option-en" class="option-box active">en</button>
+						<button id="option-sv" class="option-box">sv</button>
+					</div>
+				</div>
+				<div class="option-row">
+					<div class="option">Letters: </div>
 					<div class="slider-row">
 						<input id="length-slider" type="range" min="3" max="10" value="6">
 					</div>
+					<div id="length-value">6</div>
 				</div>
 			</div>
 			<button id="play-button">Play</button>

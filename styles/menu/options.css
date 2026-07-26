@@ -1,4 +1,9 @@
-#option-container {
+#options-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 20px;
 	width: 400px;
 	padding: 20px;
 	border: 2px solid var(--border);
@@ -14,9 +19,32 @@
 	font-size: 20px;
 }
 
+.option-container {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.option-box {
+	padding: 10px;
+	font-size: 18px;
+	border: 2px solid var(--border);
+	border-radius: 50%;
+	color: var(--border);
+	cursor: pointer;
+	background: var(--bg);
+}
+
+.option-box.active {
+	border: 2px solid var(--highlight);
+	color: var(--highlight);
+}
+
 #length-value {
 	width: 20px;
 	text-align: center;
+	color: var(--highlight);
+	font-weight: bold;
 }
 
 .slider-row {
