@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="styles/menu/menu.css">
 		<link rel="stylesheet" href="styles/menu/title.css">
 		<link rel="stylesheet" href="styles/menu/options.css">
-		<link rel="stylesheet" href="styles/game.css">
+		<link rel="stylesheet" href="styles/game/game.css">
 		<link rel="stylesheet" href="styles/main.css">
 		<title>WordHunt</title>
 	</head>
@@ -41,10 +41,14 @@
 			<button id="play-button">Play</button>
 		</div>
 		<div id="game-screen" class="hidden">
+			<div id="given-letters-container"></div>
+			<div id="progress-container"></div>
+			<div id="candidate-word-container"></div>
 			<button id="back-button">Back</button>
 		</div>
 	</body>
 	<script type="module" src="scripts/main.js"></script>
+	<script type="module" src="scripts/key_handler.js"></script>
 	<script type="module" src="scripts/game.js"></script>
 	<script type="module" src="scripts/menu.js"></script>
 </html>

@@ -1,0 +1,34 @@
+#game-screen {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+}
+
+#given-letters-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#candidate-word-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.typing-letter-box {
+	width: 60px;
+	height: 60px;
+	border: 2px solid var(--border);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
