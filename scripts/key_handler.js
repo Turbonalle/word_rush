@@ -1,24 +1,32 @@
-import { gameState } from "./main.js";
+import { game } from "./main.js";
+import { submitWord } from "./game.js";
+
+function updateLetterBoxes() {
+	const boxes = document.querySelectorAll(".typing-letter-box");
+	for (let i = 0; i < boxes.length; i++) {
+		boxes[i].textContent = game.currentInput[i] ?? "";
+	}
+}
 
 document.addEventListener("keydown", e => {
-	if (gameState.screen !== "game") {
-		console.log("Not in game screen");
+	if (game.state !== "game")
 		return;
-	}
 	if (e.key === "Backspace") {
-		console.log("Backspace pressed");
-		// remove letter
+		if (game.currentInput.length > 0) {
+			const newString = game.currentInput.slice(0, -1);
+			game.currentInput = newString;
+			updateLetterBoxes();
+		}
 		return;
 	}
 	if (e.key === "Enter") {
-		console.log("Enter pressed");
-		// submit word
+		submitWord();
 		return;
 	}
-	if (!/^[a-zåäö]$/i.test(e.key)) {
-		console.log("Not a letter");
+	if (!/^[a-zåäö]$/i.test(e.key))
 		return;
-	}
-	// add letter
-	console.log(e.key);
+	if (game.currentInput.length >= game.wordLength)
+		return;
+	game.currentInput += e.key.toUpperCase();
+	updateLetterBoxes();
 });

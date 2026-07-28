@@ -1,12 +1,12 @@
-import { gameState, levels } from "./main.js";
+import { game, levels } from "./main.js";
 
 const givenLettersContainer = document.getElementById("given-letters-container");
 const candidateWordContainer = document.getElementById("candidate-word-container");
 
-function resetGameState() {
-	gameState.word = [];
-	gameState.availableWords = [];
-	gameState.wordsFound = [];
+function resetgame() {
+	game.word = [];
+	game.possibleAnswers = [];
+	game.wordsFound = [];
 }
 
 function resetContainers() {
@@ -19,21 +19,33 @@ function resetContainers() {
 	}
 }
 
+function calculateLetterFrequency(word) {
+	const frequency = {};
+	for (const letter of word) {
+		if (frequency[letter]) {
+			frequency[letter]++;
+		} else {
+			frequency[letter] = 1;
+		}
+	}
+	return frequency;
+}
+
 function getLevel() {
-	const possibleLevels = levels[gameState.language].filter(
-		level => level.letters.length === gameState.wordLength
+	const possibleLevels = levels[game.language].filter(
+		level => level.letters.length === game.wordLength
 	);
 	if (possibleLevels.length === 0) {
 		return null;
 	};
-	const index = Math.floor(Math.random() * possibleLevels.length);
-	gameState.word = possibleLevels[index].letters;
-	gameState.availableWords = possibleLevels[index].answers;
-	givenLettersContainer.textContent = gameState.word;
+	const randomIndex = Math.floor(Math.random() * possibleLevels.length);
+	game.word = possibleLevels[randomIndex].letters;
+	game.letterFrequency = calculateLetterFrequency(game.word);
+	game.possibleAnswers = possibleLevels[index].answers;
 }
 
 function setWord() {
-	switch(gameState.mode) {
+	switch(game.mode) {
 		case "basic":
 			getLevel();
 		default:
@@ -42,7 +54,7 @@ function setWord() {
 }
 
 function createLetterBoxes() {
-	for (let i = 0; i < gameState.wordLength; i++) {
+	for (let i = 0; i < game.wordLength; i++) {
 		const typingLetterBox = document.createElement("div");
 		typingLetterBox.classList.add("typing-letter-box");
 		candidateWordContainer.append(typingLetterBox);
@@ -50,11 +62,16 @@ function createLetterBoxes() {
 }
 
 export function startGame() {
-	resetGameState();
+	resetgame();
 	resetContainers();
 	setWord();
 	createLetterBoxes();
+	givenLettersContainer.textContent = game.word;
 
-	console.log("Word is: " + gameState.word);
-	console.log("Answers: " + gameState.availableWords);
+	console.log("Word is: " + game.word);
+	console.log("Answers: " + game.possibleAnswers);
+}
+
+export function submitWord() {
+	
 }

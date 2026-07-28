@@ -9,13 +9,21 @@ const lengthValue = document.getElementById("length-value");
 const englishButton = document.getElementById("option-en");
 const swedishButton = document.getElementById("option-sv");
 
-export const gameState = {
-	screen: "menu",
+export const game = {
+	// State
+	state: "menu",
+	
+	// Settings
 	mode: "basic",
 	language: "en",
 	wordLength: 6,
+	
+	// Current level
 	word: "",
-	availableWords: [],
+	letterFrequency: {},
+	possibleAnswers: [],
+	
+	// Player state
 	currentInput: "",
 	wordsFound: []
 };
@@ -51,27 +59,27 @@ function showMenu() {
 englishButton.addEventListener("click", () => {
 	swedishButton.classList.remove("active");
 	englishButton.classList.add("active");
-	gameState.language = "en";
+	game.language = "en";
 });
 
 swedishButton.addEventListener("click", () => {
 	englishButton.classList.remove("active");
 	swedishButton.classList.add("active");
-	gameState.language = "sv";
+	game.language = "sv";
 });
 
 playButton.addEventListener("click", () => {
-	gameState.screen = "game";
+	game.state = "game";
 	startGame();
 	showGame();
 });
 
 backButton.addEventListener("click", () => {
-	gameState.screen = "menu";
+	game.state = "menu";
 	showMenu();
 });
 
 lengthSlider.addEventListener("input", () => {
 	lengthValue.textContent = lengthSlider.value;
-	gameState.wordLength = lengthSlider.value;
+	game.wordLength = lengthSlider.value;
 });
