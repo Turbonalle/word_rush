@@ -1,25 +1,7 @@
 import { game } from "./main.js";
-import { submitWord, calculateLetterFrequency } from "./game.js";
+import { submitWord, calculateLetterFrequency, updateLetterBoxes } from "./game.js";
 
-function updateLetterBoxes() {
-	const boxes = document.querySelectorAll(".typing-letter-box");
-	for (let i = 0; i < boxes.length; i++) {
-		boxes[i].textContent = game.currentInput[i]?.toUpperCase() ?? "";
-	}
-	const seen = {};
-	for (let i = 0; i < game.currentInput.length; i++) {
-		const letter = game.currentInput[i];
-		seen[letter] = (seen[letter] || 0) + 1;
-		if (seen[letter] > (game.letterFrequency[letter] || 0)) {
-			boxes[i].classList.add("invalid-character");
-		} else {
-			boxes[i].classList.remove("invalid-character");
-		}
-	}
-	if (game.currentInput.length < boxes.length) {
-		boxes[game.currentInput.length].classList.remove("invalid-character");
-	}
-}
+
 
 document.addEventListener("keydown", e => {
 	if (game.state !== "game")
@@ -34,6 +16,7 @@ document.addEventListener("keydown", e => {
 		return;
 	}
 	if (e.key === "Enter") {
+		console.log("Enter");
 		submitWord();
 		return;
 	}
