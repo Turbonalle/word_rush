@@ -25,6 +25,7 @@ export const game = {
 	
 	// Player state
 	currentInput: "",
+	inputFrequency: {},
 	wordsFound: []
 };
 

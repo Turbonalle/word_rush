@@ -26,9 +26,15 @@
 .typing-letter-box {
 	width: 60px;
 	height: 60px;
+	color: var(--title);
 	border: 2px solid var(--border);
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.invalid-character {
+	color: var(--invalid);
+	border: 2px solid var(--invalid);
 }

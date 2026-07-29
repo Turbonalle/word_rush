@@ -5,7 +5,10 @@ const candidateWordContainer = document.getElementById("candidate-word-container
 
 function resetgame() {
 	game.word = [];
+	game.letterFrequency = {};
 	game.possibleAnswers = [];
+	game.currentInput = "";
+	game.inputFrequency = {};
 	game.wordsFound = [];
 }
 
@@ -19,7 +22,7 @@ function resetContainers() {
 	}
 }
 
-function calculateLetterFrequency(word) {
+export function calculateLetterFrequency(word) {
 	const frequency = {};
 	for (const letter of word) {
 		if (frequency[letter]) {
@@ -41,15 +44,19 @@ function getLevel() {
 	const randomIndex = Math.floor(Math.random() * possibleLevels.length);
 	game.word = possibleLevels[randomIndex].letters;
 	game.letterFrequency = calculateLetterFrequency(game.word);
-	game.possibleAnswers = possibleLevels[index].answers;
+	console.log("[getLevel] word: " + game.word);
+	console.log("[getLevel] letterFrequency: " + game.letterFrequency);
+	game.possibleAnswers = possibleLevels[randomIndex].answers;
 }
 
 function setWord() {
 	switch(game.mode) {
 		case "basic":
 			getLevel();
+			break;
 		default:
 			getLevel();
+			break;
 	}
 }
 
@@ -68,8 +75,8 @@ export function startGame() {
 	createLetterBoxes();
 	givenLettersContainer.textContent = game.word;
 
-	console.log("Word is: " + game.word);
-	console.log("Answers: " + game.possibleAnswers);
+	console.log("[startGame] Word is: " + game.word);
+	console.log("[startGame] Answers: " + game.possibleAnswers);
 }
 
 export function submitWord() {
