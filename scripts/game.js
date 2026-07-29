@@ -89,6 +89,13 @@ function setWord() {
 	}
 }
 
+function resetProgress() {
+	const progressText = document.getElementById("progress-text");
+	const progressBar = document.getElementById("progress-bar");
+	progressText.textContent = "0 / " + game.possibleAnswers.length;
+	progressBar.style.width = "0%";
+}
+
 function createLetterBoxes() {
 	for (let i = 0; i < game.wordLength; i++) {
 		const typingLetterBox = document.createElement("div");
@@ -101,11 +108,30 @@ export function startGame() {
 	resetgame();
 	resetContainers();
 	setWord();
+	resetProgress();
 	createLetterBoxes();
 	givenLettersContainer.textContent = game.word;
 
 	console.log("[startGame] Word is: " + game.word);
 	console.log("[startGame] Answers: " + game.possibleAnswers);
+}
+
+function updateProgress() {
+	game.wordsFound.push(game.currentInput);
+	console.log(game.wordsFound);
+	const progressBarContainer = document.getElementById("progress-bar-container");
+	const progressBar = document.getElementById("progress-bar");
+	const containerWidth = progressBarContainer.clientWidth;
+	let progress = 0.0;
+	if (game.wordsFound.length > 0) {
+		progress = game.wordsFound.length / game.possibleAnswers.length;
+		console.log("Progress: ", progress);
+	}
+	progressBar.style.width = `${progress * 100}%`;
+	console.log("containerWidth:", containerWidth);
+	console.log("progressWidth:", containerWidth * progress);
+	const progressText = document.getElementById("progress-text");
+	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 }
 
 export function submitWord() {
@@ -117,7 +143,7 @@ export function submitWord() {
 	}
 	if (game.possibleAnswers.includes(word)) {
 		console.log("Correct!", word, "exists!");
-		game.wordsFound.push(word);
+		updateProgress();
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 	}
