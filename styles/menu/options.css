@@ -1,13 +1,13 @@
-#options-container {
+.settings-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
 	gap: 20px;
-	width: 400px;
+	/* width: 400px;
 	padding: 20px;
 	border: 2px solid var(--border);
-	border-radius: 10px;
+	border-radius: 10px; */
 }
 
 .option-row {
@@ -76,4 +76,12 @@
 	border-radius: 50%;
 	background: var(--highlight);
 	cursor: pointer;
+}
+
+.buttons-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
 }

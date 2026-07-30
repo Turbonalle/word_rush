@@ -14,7 +14,7 @@ export const game = {
 	state: "menu",
 	
 	// Settings
-	mode: "basic",
+	mode: "",
 	language: "en",
 	wordLength: 6,
 	
@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	await loadLevels();
 })
 
-function showGame() {
+export function showGame() {
 	menuScreen.classList.add("hidden");
 	gameScreen.classList.remove("hidden");
 }

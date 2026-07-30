@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="styles/menu/menu.css">
 		<link rel="stylesheet" href="styles/menu/title.css">
+		<link rel="stylesheet" href="styles/menu/modes.css">
 		<link rel="stylesheet" href="styles/menu/options.css">
 		<link rel="stylesheet" href="styles/game/game.css">
 		<link rel="stylesheet" href="styles/main.css">
@@ -22,7 +23,37 @@
 				<div class="title-cell" id="t7"><span>S</span></div>
 				<div class="title-cell" id="t8"><span>H</span></div>
 			</div>
-			<div id="options-container">
+			<div id="modes-container">
+				<div id="mode-button-container">
+					<div id="story-mode-button" class="button mode-button">
+						<p>Story mode</p>
+					</div>
+					<div id="basic-mode-button" class="button mode-button">
+						<p>Basic mode</p>
+					</div>
+					<div id="panic-mode-button" class="button mode-button">
+						<p>Panic mode</p>
+					</div>
+					<div id="test-mode-button" class="button mode-button">
+						<p>Test mode</p>
+					</div>
+				</div>
+				<div id="mode-info-container"></div>
+			</div>
+			<div id="story-settings-container" class="settings-container hidden">
+				<div class="option-row">
+					<div class="option">Language: </div>
+					<div class="option-container">
+						<button id="option-en" class="option-box active">en</button>
+						<button id="option-sv" class="option-box">sv</button>
+					</div>
+				</div>
+				<div class="buttons-container">
+					<button id="back-button" class="button">Back</button>
+					<button id="play-button" class="button">Play</button>
+				</div>
+			</div>
+			<div id="basic-settings-container" class="settings-container hidden">
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
@@ -37,8 +68,37 @@
 					</div>
 					<div id="length-value">6</div>
 				</div>
+				<div class="buttons-container">
+					<button id="back-button" class="button">Back</button>
+					<button id="play-button" class="button">Play</button>
+				</div>
 			</div>
-			<button id="play-button">Play</button>
+			<div id="panic-settings-container" class="settings-container hidden">
+				<div class="option-row">
+					<div class="option">Language: </div>
+					<div class="option-container">
+						<button id="option-en" class="option-box active">en</button>
+						<button id="option-sv" class="option-box">sv</button>
+					</div>
+				</div>
+				<div class="option-row">
+					<div class="option">Letters: </div>
+					<div class="slider-row">
+						<input id="length-slider" type="range" min="3" max="10" value="6">
+					</div>
+					<div id="length-value">6</div>
+				</div>
+				<div class="buttons-container">
+					<button id="back-button" class="button">Back</button>
+					<button id="play-button" class="button">Play</button>
+				</div>
+			</div>
+			<div id="test-settings-container" class="settings-container hidden">
+				<div class="buttons-container">
+					<button id="back-button" class="button">Back</button>
+					<button id="play-button" class="button">Play</button>
+				</div>
+			</div>
 		</div>
 		<div id="game-screen" class="hidden">
 			<div id="given-letters-container"></div>

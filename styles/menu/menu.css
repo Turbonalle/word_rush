@@ -6,12 +6,25 @@
 	align-items: center;
 }
 
-#play-button {
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 200px;
 	height: 60px;
-	font-size: 40px;
-	color: var(--button-text);
-	border: 2px solid var(--button-border);
+	font-size: 20px;
+	color: var(--border);
+	border: 2px solid var(--border);
 	border-radius: 10px;
-	background: var(--button);
+	cursor: pointer;
+}
+
+.button:hover {
+	border: 2px solid var(--highlight);
+}
+
+.active-button {
+	color: var(--border);
+	background: var(--highlight);
+	border: 2px solid var(--border);
 }

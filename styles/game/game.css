@@ -102,13 +102,3 @@
 	border-radius: 10px;
 	background: var(--button);
 }
-
-#back-button {
-	width: 200px;
-	height: 60px;
-	font-size: 24px;
-	color: var(--button-text);
-	border: 2px solid var(--button-border);
-	border-radius: 10px;
-	background: var(--button);
-}
