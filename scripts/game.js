@@ -117,21 +117,28 @@ export function startGame() {
 }
 
 function updateProgress() {
+	// Add word to list
 	game.wordsFound.push(game.currentInput);
-	console.log(game.wordsFound);
+
+	// Calculate and set progress bar width
 	const progressBarContainer = document.getElementById("progress-bar-container");
 	const progressBar = document.getElementById("progress-bar");
 	const containerWidth = progressBarContainer.clientWidth;
 	let progress = 0.0;
-	if (game.wordsFound.length > 0) {
+	if (game.wordsFound.length > 0)
 		progress = game.wordsFound.length / game.possibleAnswers.length;
-		console.log("Progress: ", progress);
-	}
 	progressBar.style.width = `${progress * 100}%`;
-	console.log("containerWidth:", containerWidth);
-	console.log("progressWidth:", containerWidth * progress);
+
+	// Set progress text
 	const progressText = document.getElementById("progress-text");
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
+
+	// Add word to displaying container
+	const foundWordsContainer = document.getElementById("found-words-container");
+	const wordTag = document.createElement("div");
+	wordTag.classList.add("word-tag");
+	wordTag.textContent = game.currentInput;
+	foundWordsContainer.appendChild(wordTag);
 }
 
 export function submitWord() {
