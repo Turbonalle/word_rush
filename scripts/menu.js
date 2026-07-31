@@ -28,9 +28,7 @@ function showModesMenu() {
 
 function resetActiveButtons() {
 	const modeButtons = document.querySelectorAll(".mode-button");
-	console.log("We have " + modeButtons.length + " mode buttons");
 	for (let i = 0; i < modeButtons.length; i++) {
-		console.log("Removing 'active' from modeButtons[" + i + "]");
 		modeButtons[i].classList.remove("active-button");
 	}
 }
@@ -77,7 +75,7 @@ testModeButton.addEventListener("click", () => {
 function addBackButtonListeners() {
 	for (let i = 0; i < backButtons.length; i++) {
 		backButtons[i].addEventListener("click", () => {
-			game.mode = "";
+			game.mode = "menu";
 			resetActiveButtons();
 			hideSettingsContainers();
 			showModesMenu();
@@ -88,7 +86,7 @@ function addBackButtonListeners() {
 function addPlayButtonListeners() {
 	for (let i = 0; i < playButtons.length; i++) {
 		playButtons[i].addEventListener("click", () => {
-			game.state = "";
+			game.state = "game";
 			startGame();
 			showGame();
 		});

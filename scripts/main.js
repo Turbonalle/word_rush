@@ -77,7 +77,7 @@ function addSwedishButtonListeners() {
 
 lengthSlider.addEventListener("input", () => {
 	lengthValue.textContent = lengthSlider.value;
-	game.wordLength = lengthSlider.value;
+	game.wordLength = parseInt(lengthSlider.value);
 });
 
 addEnglishButtonListeners();

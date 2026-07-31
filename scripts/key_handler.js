@@ -1,8 +1,6 @@
 import { game } from "./main.js";
 import { submitWord, calculateLetterFrequency, updateLetterBoxes } from "./game.js";
 
-
-
 document.addEventListener("keydown", e => {
 	if (game.state !== "game")
 		return;

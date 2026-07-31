@@ -46,9 +46,7 @@ function resetgame() {
 function resetContainers() {
 	givenLettersContainer.textContent = "";
 	var children = candidateWordContainer.children;
-	console.log("We have " + children.length + " children");
 	for (var i = children.length - 1; i >= 0; i--) {
-		console.log("Removing child " + i);
 		children[i].remove();
 	}
 }
@@ -78,17 +76,6 @@ function getLevel() {
 	game.possibleAnswers = possibleLevels[randomIndex].answers;
 }
 
-function setWord() {
-	switch(game.mode) {
-		case "basic":
-			getLevel();
-			break;
-		default:
-			getLevel();
-			break;
-	}
-}
-
 function resetProgress() {
 	const progressText = document.getElementById("progress-text");
 	const progressBar = document.getElementById("progress-bar");
@@ -105,9 +92,17 @@ function createLetterBoxes() {
 }
 
 export function startGame() {
+	console.log(game);
 	resetgame();
 	resetContainers();
-	setWord();
+	switch(game.mode) {
+		case "basic":
+			getLevel();
+			break;
+		default:
+			getLevel();
+			break;
+	}
 	resetProgress();
 	createLetterBoxes();
 	givenLettersContainer.textContent = game.word;
@@ -133,9 +128,7 @@ function updateProgress() {
 	const progressText = document.getElementById("progress-text");
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 
-	// Add word to displaying container
-
-	
+	// Add word to displaying container	
 	const foundWordsContainer = document.getElementById("found-words-container");
 	const wordTag = document.createElement("div");
 	wordTag.classList.add("word-tag");
