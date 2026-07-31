@@ -2,12 +2,10 @@ import { startGame } from "./game.js";
 
 const menuScreen = document.getElementById("menu-screen");
 const gameScreen = document.getElementById("game-screen");
-const playButton = document.getElementById("play-button");
-const backButton = document.getElementById("back-button");
 const lengthSlider = document.getElementById("length-slider");
 const lengthValue = document.getElementById("length-value");
-const englishButton = document.getElementById("option-en");
-const swedishButton = document.getElementById("option-sv");
+const englishButtons = document.querySelectorAll("#option-en");
+const swedishButtons = document.querySelectorAll("#option-sv");
 
 export const game = {
 	// State
@@ -45,42 +43,42 @@ async function loadLevels() {
 
 window.addEventListener("DOMContentLoaded", async () => {
 	await loadLevels();
-})
+});
 
 export function showGame() {
 	menuScreen.classList.add("hidden");
 	gameScreen.classList.remove("hidden");
 }
 
-function showMenu() {
+export function showMenu() {
 	menuScreen.classList.remove("hidden");
 	gameScreen.classList.add("hidden");
 }
 
-englishButton.addEventListener("click", () => {
-	swedishButton.classList.remove("active");
-	englishButton.classList.add("active");
-	game.language = "en";
-});
+function addEnglishButtonListeners() {
+	for (let i = 0; i < englishButtons.length; i++) {
+		englishButtons[i].addEventListener("click", () => {
+			swedishButtons[i].classList.remove("active");
+			englishButtons[i].classList.add("active");
+			game.language = "sv";
+		});
+	}
+}
 
-swedishButton.addEventListener("click", () => {
-	englishButton.classList.remove("active");
-	swedishButton.classList.add("active");
-	game.language = "sv";
-});
-
-playButton.addEventListener("click", () => {
-	game.state = "game";
-	startGame();
-	showGame();
-});
-
-backButton.addEventListener("click", () => {
-	game.state = "menu";
-	showMenu();
-});
+function addSwedishButtonListeners() {
+	for (let i = 0; i < swedishButtons.length; i++) {
+		swedishButtons[i].addEventListener("click", () => {
+			englishButtons[i].classList.remove("active");
+			swedishButtons[i].classList.add("active");
+			game.language = "sv";
+		});
+	}
+}
 
 lengthSlider.addEventListener("input", () => {
 	lengthValue.textContent = lengthSlider.value;
 	game.wordLength = lengthSlider.value;
 });
+
+addEnglishButtonListeners();
+addSwedishButtonListeners();

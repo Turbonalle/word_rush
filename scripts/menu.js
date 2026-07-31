@@ -73,7 +73,7 @@ function addBackButtonListeners() {
 			resetActiveButtons();
 			hideSettingsContainers();
 			showModesMenu();
-		})
+		});
 	}
 }
 
@@ -83,7 +83,7 @@ function addPlayButtonListeners() {
 			game.state = "";
 			startGame();
 			showGame();
-		})
+		});
 	}
 }
 
