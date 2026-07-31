@@ -134,6 +134,8 @@ function updateProgress() {
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 
 	// Add word to displaying container
+
+	
 	const foundWordsContainer = document.getElementById("found-words-container");
 	const wordTag = document.createElement("div");
 	wordTag.classList.add("word-tag");
