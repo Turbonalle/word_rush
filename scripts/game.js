@@ -1,6 +1,5 @@
 import { game, levels, getElement } from "./main.js";
 import { gameToMode } from "./screen_switch.js";
-
 import { resetGame } from "./reset_game.js";
 
 export function updateLetterBoxes() {
@@ -160,5 +159,11 @@ document.querySelectorAll(".backtomenu-button").forEach(button => {
 	button.addEventListener("click", () => {
 		resetGame();
 		gameToMode();
+	});
+});
+
+document.querySelectorAll(".submit-button").forEach(button => {
+	button.addEventListener("click", () => {
+		submitWord();
 	});
 });
