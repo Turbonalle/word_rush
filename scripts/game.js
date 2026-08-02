@@ -1,8 +1,5 @@
-import { game, levels } from "./main.js";
-
-const givenLettersContainer = document.getElementById("given-letters-container");
-const candidateWordContainer = document.getElementById("candidate-word-container");
-const submitButton = document.getElementById("submit-button");
+import { game, levels, getElement, gameToMode } from "./main.js";
+import { resetGame } from "./reset_game.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -27,28 +24,17 @@ export function updateLetterBoxes() {
 function resetLetterBoxes() {
 	game.currentInput = "";
 	game.inputFrequency = {};
-	const boxes = document.querySelectorAll(".typing-letter-box");
-	for (let i = 0; i < boxes.length; i++) {
-		boxes[i].textContent = "";
-		boxes[i].classList.remove("invalid-character");
-	}
+	document.querySelectorAll(".typing-letter-box").forEach(box => {
+		box.textContent = "";
+		box.classList.remove("invalid-character");
+	});
 }
 
-function resetgame() {
-	game.word = [];
-	game.letterFrequency = {};
-	game.possibleAnswers = [];
-	game.currentInput = "";
-	game.inputFrequency = {};
-	game.wordsFound = [];
-}
-
-function resetContainers() {
-	givenLettersContainer.textContent = "";
-	var children = candidateWordContainer.children;
-	for (var i = children.length - 1; i >= 0; i--) {
-		children[i].remove();
-	}
+function resetProgressBar() {
+	const progressText = getElement("-progress-text");
+	const progressBar = getElement("-progress-bar");
+	progressText.textContent = "0 / " + game.possibleAnswers.length;
+	progressBar.style.width = "0%";
 }
 
 export function calculateLetterFrequency(word) {
@@ -63,7 +49,7 @@ export function calculateLetterFrequency(word) {
 	return frequency;
 }
 
-function getLevel() {
+function getRandomLevel() {
 	const possibleLevels = levels[game.language].filter(
 		level => level.letters.length === game.wordLength
 	);
@@ -76,36 +62,54 @@ function getLevel() {
 	game.possibleAnswers = possibleLevels[randomIndex].answers;
 }
 
-function resetProgress() {
-	const progressText = document.getElementById("progress-text");
-	const progressBar = document.getElementById("progress-bar");
-	progressText.textContent = "0 / " + game.possibleAnswers.length;
-	progressBar.style.width = "0%";
-}
-
-function createLetterBoxes() {
-	for (let i = 0; i < game.wordLength; i++) {
+function createLetterBoxes(amount) {
+	const container = getElement("-candidate-word-container");
+	for (let i = 0; i < amount; i++) {
 		const typingLetterBox = document.createElement("div");
 		typingLetterBox.classList.add("typing-letter-box");
-		candidateWordContainer.append(typingLetterBox);
+		container.append(typingLetterBox);
 	}
+}
+
+function showGame() {
+	const gameScreens = document.querySelectorAll(".game-screen");
+	for (let i = 0; i < gameScreens.length; i++) {
+		gameScreens[i].classList.add("hidden");
+	}
+	const gameScreen = getElement("-game-screen");
+	gameScreen.classList.remove("hidden");
 }
 
 export function startGame() {
 	console.log(game);
-	resetgame();
-	resetContainers();
+	resetGame();
 	switch(game.mode) {
+		case "story":
+			break;
 		case "basic":
-			getLevel();
+			// resetContainers();
+			getRandomLevel();
+			const givenLettersContainer = getElement("-given-letters-container");
+			givenLettersContainer.textContent = game.word;
+			resetProgressBar();
+			createLetterBoxes(game.wordLength);
+			showGame();
+			break;
+		case "panic":
+			break;
+		case "test":
+			createLetterBoxes(12);
+			showGame();
 			break;
 		default:
-			getLevel();
+			// resetContainers();
+			getRandomLevel();
+			resetProgressBar();
+			createLetterBoxes(game.wordLength);
+			showGame();
 			break;
 	}
-	resetProgress();
-	createLetterBoxes();
-	givenLettersContainer.textContent = game.word;
+	// givenLettersContainer.textContent = game.word;
 
 	console.log("[startGame] Word is: " + game.word);
 	console.log("[startGame] Answers: " + game.possibleAnswers);
@@ -116,20 +120,18 @@ function updateProgress() {
 	game.wordsFound.push(game.currentInput);
 
 	// Calculate and set progress bar width
-	const progressBarContainer = document.getElementById("progress-bar-container");
-	const progressBar = document.getElementById("progress-bar");
-	const containerWidth = progressBarContainer.clientWidth;
+	const progressBar = getElement("-progress-bar");
 	let progress = 0.0;
 	if (game.wordsFound.length > 0)
 		progress = game.wordsFound.length / game.possibleAnswers.length;
 	progressBar.style.width = `${progress * 100}%`;
 
 	// Set progress text
-	const progressText = document.getElementById("progress-text");
+	const progressText = getElement("-progress-text");
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 
 	// Add word to displaying container	
-	const foundWordsContainer = document.getElementById("found-words-container");
+	const foundWordsContainer = getElement("-found-words-container");
 	const wordTag = document.createElement("div");
 	wordTag.classList.add("word-tag");
 	wordTag.textContent = game.currentInput;
@@ -152,6 +154,9 @@ export function submitWord() {
 	resetLetterBoxes();
 }
 
-submitButton.addEventListener("click", () => {
-	submitWord();
+document.querySelectorAll(".backtomenu-button").forEach(button => {
+	button.addEventListener("click", () => {
+		resetGame();
+		gameToMode();
+	});
 });

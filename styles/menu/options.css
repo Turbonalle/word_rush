@@ -4,10 +4,6 @@
 	justify-content: center;
 	align-items: start;
 	gap: 20px;
-	/* width: 400px;
-	padding: 20px;
-	border: 2px solid var(--border);
-	border-radius: 10px; */
 }
 
 .option-row {

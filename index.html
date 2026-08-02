@@ -40,6 +40,8 @@
 				</div>
 				<div id="mode-info-container"></div>
 			</div>
+
+			<!-- Settings Containers -->
 			<div id="story-settings-container" class="settings-container hidden">
 				<div class="option-row">
 					<div class="option">Language: </div>
@@ -49,10 +51,11 @@
 					</div>
 				</div>
 				<div class="buttons-container">
-					<button id="back-button" class="button">Back</button>
-					<button id="play-button" class="button">Play</button>
+					<button class="back-button button">Back</button>
+					<button class="play-button button">Play</button>
 				</div>
 			</div>
+
 			<div id="basic-settings-container" class="settings-container hidden">
 				<div class="option-row">
 					<div class="option">Language: </div>
@@ -69,10 +72,11 @@
 					<div id="length-value">6</div>
 				</div>
 				<div class="buttons-container">
-					<button id="back-button" class="button">Back</button>
-					<button id="play-button" class="button">Play</button>
+					<button class="back-button button">Back</button>
+					<button class="play-button button">Play</button>
 				</div>
 			</div>
+
 			<div id="panic-settings-container" class="settings-container hidden">
 				<div class="option-row">
 					<div class="option">Language: </div>
@@ -89,32 +93,72 @@
 					<div id="length-value">6</div>
 				</div>
 				<div class="buttons-container">
-					<button id="back-button" class="button">Back</button>
-					<button id="play-button" class="button">Play</button>
+					<button class="back-button button">Back</button>
+					<button class="play-button button">Play</button>
 				</div>
 			</div>
+
 			<div id="test-settings-container" class="settings-container hidden">
 				<div class="buttons-container">
-					<button id="back-button" class="button">Back</button>
-					<button id="play-button" class="button">Play</button>
+					<button class="back-button button">Back</button>
+					<button class="play-button button">Play</button>
 				</div>
 			</div>
 		</div>
-		<div id="game-screen" class="hidden">
-			<div id="given-letters-container"></div>
+
+		<!-- Game Screens -->
+		<div id="story-game-screen" class="game-screen hidden">
+			<div id="story-given-letters-container" class="given-letters-container"></div>
 			<div id="progress-container">
-				<span id="progress-text">0 / 0</span>
+				<span id="story-progress-text" class="progress-text">0 / 0</span>
 				<div id="progress-bar-container">
-					<div id="progress-bar"></div>
+					<div id="story-progress-bar" class="progress-bar"></div>
 				</div>
 			</div>
-			<div id="candidate-word-container"></div>
-			<button id="submit-button">Submit word</button>
-			<div id="found-words-container"></div>
-			<button id="back-button">Back</button>
+			<div id="story-candidate-word-container" class="candidate-word-container"></div>
+			<button class="submit-button">Submit word</button>
+			<div id="story-found-words-container" class="found-words-container"></div>
+			<button class="backtomenu-button">Back</button>
+		</div>
+
+		<div id="basic-game-screen" class="game-screen hidden">
+			<div id="basic-given-letters-container" class="given-letters-container"></div>
+			<div id="progress-container">
+				<span id="basic-progress-text" class="progress-text">0 / 0</span>
+				<div id="progress-bar-container">
+					<div id="basic-progress-bar" class="progress-bar"></div>
+				</div>
+			</div>
+			<div id="basic-candidate-word-container" class="candidate-word-container"></div>
+			<button class="submit-button">Submit word</button>
+			<div id="basic-found-words-container" class="found-words-container"></div>
+			<button class="backtomenu-button">Back</button>
+		</div>
+
+		<div id="panic-game-screen" class="game-screen hidden">
+			<div id="panic-given-letters-container" class="given-letters-container"></div>
+			<div id="progress-container">
+				<span id="panic-progress-text" class="progress-text">0 / 0</span>
+				<div id="progress-bar-container">
+					<div id="panic-progress-bar" class="progress-bar"></div>
+				</div>
+			</div>
+			<div id="panic-candidate-word-container" class="candidate-word-container"></div>
+			<button class="submit-button">Submit word</button>
+			<div id="panic-found-words-container" class="found-words-container"></div>
+			<button class="backtomenu-button">Back</button>
+		</div>
+
+		<div id="test-game-screen" class="game-screen hidden">
+			<div id="test-candidate-word-container" class="candidate-word-container"></div>
+			<button id="get-answers-button">Find words</button>
+			<div id="test-found-words-container" class="found-words-container"></div>
+			<button class="backtomenu-button">Back</button>
 		</div>
 	</body>
 	<script type="module" src="scripts/main.js"></script>
+	<script type="module" src="scripts/mode_info.js"></script>
+	<script type="module" src="scripts/reset_game.js"></script>
 	<script type="module" src="scripts/key_handler.js"></script>
 	<script type="module" src="scripts/game.js"></script>
 	<script type="module" src="scripts/menu.js"></script>

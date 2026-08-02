@@ -1,4 +1,4 @@
-import { game, showGame } from "./main.js";
+import { game, settingsToGame } from "./main.js";
 import { startGame } from "./game.js";
 
 const modesContainer = document.getElementById("modes-container");
@@ -6,17 +6,8 @@ const storyModeButton = document.getElementById("story-mode-button");
 const basicModeButton = document.getElementById("basic-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
-const settingsContainers = document.querySelectorAll(".settings-container");
-const playButtons = document.querySelectorAll("#play-button");
-const backButtons = document.querySelectorAll("#back-button");
-const modeInfoContainer = document.getElementById("mode-info-container");
-
-const modeDescriptions = {
-	story: "Play through increasingly difficult handcrafted levels.",
-	basic: "Get a random word and find as many words as possible.",
-	panic: "Beat the clock before time runs out.",
-	test: "Write a word and see which words can be created from it."
-};
+const playButtons = document.querySelectorAll(".play-button");
+const backButtons = document.querySelectorAll(".back-button");
 
 function hideModesMenu() {
 	modesContainer.classList.add("hidden");
@@ -27,16 +18,15 @@ function showModesMenu() {
 }
 
 function resetActiveButtons() {
-	const modeButtons = document.querySelectorAll(".mode-button");
-	for (let i = 0; i < modeButtons.length; i++) {
-		modeButtons[i].classList.remove("active-button");
-	}
+	document.querySelectorAll(".mode-button").forEach(button => {
+		button.classList.remove("active-button");
+	});
 }
 
 function hideSettingsContainers() {
-	for (let i = 0; i < settingsContainers.length; i++) {
-		settingsContainers[i].classList.add("hidden");
-	}
+	document.querySelectorAll(".settings-container").forEach(container => {
+		container.classList.add("hidden");
+	});
 }
 
 storyModeButton.addEventListener("click", () => {
@@ -86,34 +76,11 @@ function addBackButtonListeners() {
 function addPlayButtonListeners() {
 	for (let i = 0; i < playButtons.length; i++) {
 		playButtons[i].addEventListener("click", () => {
-			game.state = "game";
+			settingsToGame(game.mode);
 			startGame();
-			showGame();
 		});
 	}
 }
 
 addBackButtonListeners();
 addPlayButtonListeners();
-
-document.getElementById("story-mode-button").addEventListener("mouseenter", () => {
-	modeInfoContainer.textContent = modeDescriptions.story;
-});
-
-document.getElementById("basic-mode-button").addEventListener("mouseenter", () => {
-	modeInfoContainer.textContent = modeDescriptions.basic;
-});
-
-document.getElementById("panic-mode-button").addEventListener("mouseenter", () => {
-	modeInfoContainer.textContent = modeDescriptions.panic;
-});
-
-document.getElementById("test-mode-button").addEventListener("mouseenter", () => {
-	modeInfoContainer.textContent = modeDescriptions.test;
-});
-
-document.querySelectorAll(".mode-button").forEach(button => {
-	button.addEventListener("mouseleave", () => {
-		modeInfoContainer.textContent = "";
-	})
-})
