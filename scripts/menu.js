@@ -1,4 +1,5 @@
-import { game, settingsToGame } from "./main.js";
+import { game } from "./main.js";
+import { settingsToGame } from "./screen_switch.js";
 import { startGame } from "./game.js";
 
 const modesContainer = document.getElementById("modes-container");
