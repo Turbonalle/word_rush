@@ -1,6 +1,7 @@
-import { game, levels, getElement } from "./main.js";
+import { game, getElement } from "./main.js";
 import { gameToMode } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
+import { LevelManager } from "./level_manager.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -50,19 +51,6 @@ export function calculateLetterFrequency(word) {
 	return frequency;
 }
 
-function getRandomLevel() {
-	const possibleLevels = levels[game.language].filter(
-		level => level.letters.length === game.wordLength
-	);
-	if (possibleLevels.length === 0) {
-		return null;
-	};
-	const randomIndex = Math.floor(Math.random() * possibleLevels.length);
-	game.word = possibleLevels[randomIndex].letters;
-	game.letterFrequency = calculateLetterFrequency(game.word);
-	game.possibleAnswers = possibleLevels[randomIndex].answers;
-}
-
 function createLetterBoxes(amount) {
 	const container = getElement("-candidate-word-container");
 	for (let i = 0; i < amount; i++) {
@@ -84,12 +72,19 @@ function showGame() {
 export function startGame() {
 	console.log(game);
 	resetGame();
+	let level;
 	switch(game.mode) {
 		case "story":
+			level = LevelManager.getStoryLevel(game.language, game.storyLevelId);
+			game.word = level.letters;
+			game.possibleAnswers = level.answers;
+			game.letterFrequency = calculateLetterFrequency(level.letters);
 			break;
 		case "basic":
-			// resetContainers();
-			getRandomLevel();
+			level = LevelManager.getRandomLevel(game.language, game.wordLength);
+			game.word = level.letters;
+			game.possibleAnswers = level.answers;
+			game.letterFrequency = calculateLetterFrequency(level.letters);
 			const givenLettersContainer = getElement("-given-letters-container");
 			givenLettersContainer.textContent = game.word;
 			resetProgressBar();

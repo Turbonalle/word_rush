@@ -1,3 +1,4 @@
+import { LevelManager } from "./level_manager.js";
 import { Save } from "./save.js";
 import { audio } from "./audio.js";
 
@@ -16,6 +17,7 @@ export const game = {
 	wordLength: 6,
 	
 	// Current level
+	storyLevelId: 0,
 	word: "",
 	letterFrequency: {},
 	possibleAnswers: [],
@@ -29,45 +31,9 @@ export const game = {
 	save: {}
 };
 
-export const levels = {
-	en: [],
-	sv: []
-};
-
-function setupLevels() {
-	levels.en.forEach((level, index) => {
-		const button = document.getElementById(`en-level-${index + 1}`);
-		button.addEventListener("click", () => {
-			game.word = level.word;
-			game.letterFrequency = level.letterFrequency;
-			game.possibleAnswers = level.possibleAnswers;
-		});
-	});
-	levels.sv.forEach((level, index) => {
-		const button = document.getElementById(`sv-level-${index + 1}`);
-		button.addEventListener("click", () => {
-			game.word = level.word;
-			game.letterFrequency = level.letterFrequency;
-			game.possibleAnswers = level.possibleAnswers;
-		});
-	});
-}
-
-async function loadLevels() {
-	const [responseEn, responseSv] = await Promise.all([
-		fetch("data/levels_en.json"),
-		fetch("data/levels_sv.json")
-	]);
-	levels.en = await responseEn.json();
-	levels.sv = await responseSv.json();
-	console.log(`Loaded ${levels.en.length} levels.`);
-	console.log(`Loaded ${levels.sv.length} levels.`);
-}
-
 async function initializeGame() {
 	game.save = Save.loadSave();
-	await loadLevels();
-	// setupLevels();
+	await LevelManager.load();
 }
 
 export function getElement(id) {

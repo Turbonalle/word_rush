@@ -1,4 +1,5 @@
 import { game } from "./main.js";
+import { LevelManager } from "./level_manager.js";
 import { settingsToGame } from "./screen_switch.js";
 import { startGame } from "./game.js";
 
@@ -37,6 +38,10 @@ storyModeButton.addEventListener("click", () => {
 	storyModeButton.classList.add("active-button");
 	hideModesMenu();
 	document.getElementById("story-settings-container").classList.remove("hidden");
+	LevelManager.buildStoryLevels(game.language, levelId => {
+		game.storyLevelId = levelId;
+		startGame();
+	});
 });
 
 basicModeButton.addEventListener("click", () => {
