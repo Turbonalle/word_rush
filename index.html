@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles/menu/menu.css">
 		<link rel="stylesheet" href="styles/menu/title.css">
 		<link rel="stylesheet" href="styles/menu/modes.css">
+		<link rel="stylesheet" href="styles/menu/story_levels.css">
 		<link rel="stylesheet" href="styles/menu/options.css">
 		<link rel="stylesheet" href="styles/game/game.css">
 		<link rel="stylesheet" href="styles/main.css">
@@ -25,18 +26,10 @@
 			</div>
 			<div id="modes-container">
 				<div id="mode-button-container">
-					<div id="story-mode-button" class="button mode-button">
-						<p>Story mode</p>
-					</div>
-					<div id="basic-mode-button" class="button mode-button">
-						<p>Basic mode</p>
-					</div>
-					<div id="panic-mode-button" class="button mode-button">
-						<p>Panic mode</p>
-					</div>
-					<div id="test-mode-button" class="button mode-button">
-						<p>Test mode</p>
-					</div>
+					<div id="story-mode-button" class="button mode-button">Story mode</div>
+					<div id="basic-mode-button" class="button mode-button">Basic mode</div>
+					<div id="panic-mode-button" class="button mode-button">Panic mode</div>
+					<div id="test-mode-button" class="button mode-button">Test mode</div>
 				</div>
 				<div id="mode-info-container"></div>
 			</div>
@@ -50,9 +43,42 @@
 						<button id="option-sv" class="option-box">sv</button>
 					</div>
 				</div>
+				<div id="story-levels-container-en" class="story-levels-container">
+					<div class="story-level-container">
+						<div class="level-button">
+							<div class="level-progress-fill"></div>
+							<span class="level-button-number">1</span>
+							<span class="level-button-title">OST</span>
+							<span class="level-button-progress">0 / 5</span>
+						</div>
+						<div class="story-level-stars-container">
+							<svg class="star filled" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+						</div>
+					</div>
+				</div>
+				<div id="story-levels-container-sv" class="story-levels-container hidden">
+					<div class="story-level-container">
+						<div class="level-button">
+							<div class="level-progress-fill"></div>
+							<span class="level-button-number">1</span>
+							<span class="level-button-title">OST</span>
+							<span class="level-button-progress">0 / 5</span>
+						</div>
+						<div class="story-level-stars-container">
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
+						</div>
+					</div>
+				</div>
 				<div class="buttons-container">
 					<button class="back-button button">Back</button>
-					<button class="play-button button">Play</button>
 				</div>
 			</div>
 

@@ -99,6 +99,7 @@
 	border: 2px solid var(--button-border);
 	border-radius: 10px;
 	background: var(--button);
+	cursor: pointer;
 }
 
 .backtomenu-button {
@@ -109,4 +110,5 @@
 	border: 2px solid var(--button-border);
 	border-radius: 10px;
 	background: var(--button);
+	cursor: pointer;
 }

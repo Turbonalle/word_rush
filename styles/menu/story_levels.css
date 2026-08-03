@@ -1,0 +1,69 @@
+#story-levels-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.story-level-container {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: center;
+	width: 400px;
+}
+
+.level-button {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 70%;
+	height: 40px;
+	padding: 10px;
+	border: 2px solid var(--border);
+	border-radius: 10px;
+	color: var(--story-level-button-text);
+}
+
+.level-button:hover {
+	border: 2px solid var(--highlight);
+}
+
+.level-progress-fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 50%;
+	background-color: var(--story-level-button-fill);
+	border-radius: 8px 0 0 8px;
+	z-index: -1;
+}
+
+.story-level-stars-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	box-sizing: border-box;
+	width: 30%;
+	height: 40px;
+	padding: 10px;
+}
+
+.star {
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: var(--border);
+	stroke-width: 1.5;
+}
+
+.star.filled {
+	fill: #FFD54A;
+	stroke: #636363;
+}

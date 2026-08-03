@@ -1,6 +1,7 @@
 const SAVE_KEY = "wordhunt-save";
 
 const defaultSave = {
+	version: 1,
 	settings: {
 		language: "en",
 		music: true,
@@ -11,9 +12,17 @@ const defaultSave = {
 		wordsFound: 0
 	},
 	story: {
-		level1: {
-			completed: false,
-			wordsFound: []
+		en: {
+			1: {
+				completed: false,
+				wordsFound: []
+			},
+		},
+		sv: {
+			1: {
+				completed: false,
+				wordsFound: []
+			}
 		}
 	}
 };

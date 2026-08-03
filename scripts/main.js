@@ -1,3 +1,6 @@
+import { Save } from "./save.js";
+import { audio } from "./audio.js";
+
 const lengthSlider = document.getElementById("length-slider");
 const lengthValue = document.getElementById("length-value");
 const englishButtons = document.querySelectorAll("#option-en");
@@ -20,7 +23,10 @@ export const game = {
 	// Player state
 	currentInput: "",
 	inputFrequency: {},
-	wordsFound: []
+	wordsFound: [],
+
+	// Save data
+	save: {}
 };
 
 export const levels = {
@@ -28,18 +34,41 @@ export const levels = {
 	sv: []
 };
 
+function setupLevels() {
+	levels.en.forEach((level, index) => {
+		const button = document.getElementById(`en-level-${index + 1}`);
+		button.addEventListener("click", () => {
+			game.word = level.word;
+			game.letterFrequency = level.letterFrequency;
+			game.possibleAnswers = level.possibleAnswers;
+		});
+	});
+	levels.sv.forEach((level, index) => {
+		const button = document.getElementById(`sv-level-${index + 1}`);
+		button.addEventListener("click", () => {
+			game.word = level.word;
+			game.letterFrequency = level.letterFrequency;
+			game.possibleAnswers = level.possibleAnswers;
+		});
+	});
+}
+
 async function loadLevels() {
-	const response_en = await fetch("data/levels_en.json");
-	levels.en = await response_en.json();
+	const [responseEn, responseSv] = await Promise.all([
+		fetch("data/levels_en.json"),
+		fetch("data/levels_sv.json")
+	]);
+	levels.en = await responseEn.json();
+	levels.sv = await responseSv.json();
 	console.log(`Loaded ${levels.en.length} levels.`);
-	const response_sv = await fetch("data/levels_sv.json");
-	levels.sv = await response_sv.json();
 	console.log(`Loaded ${levels.sv.length} levels.`);
 }
 
-window.addEventListener("DOMContentLoaded", async () => {
+async function initializeGame() {
+	game.save = Save.loadSave();
 	await loadLevels();
-});
+	// setupLevels();
+}
 
 export function getElement(id) {
 	const completeId = game.mode + id;
@@ -78,5 +107,7 @@ lengthSlider.addEventListener("input", () => {
 	game.wordLength = parseInt(lengthSlider.value);
 });
 
+// audio.play("music");
+window.addEventListener("DOMContentLoaded", initializeGame);
 addEnglishButtonListeners();
 addSwedishButtonListeners();
