@@ -34,6 +34,7 @@ export const game = {
 async function initializeGame() {
 	game.save = Save.loadSave();
 	await LevelManager.load();
+	await LevelManager.loadBasicLevels();
 }
 
 export function getElement(id) {

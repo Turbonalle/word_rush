@@ -1,5 +1,5 @@
 import { game, getElement } from "./main.js";
-import { gameToMode } from "./screen_switch.js";
+import { gameToMode, settingsToGame } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
 import { LevelManager } from "./level_manager.js";
 
@@ -77,19 +77,24 @@ export function startGame() {
 		case "story":
 			level = LevelManager.getStoryLevel(game.language, game.storyLevelId);
 			game.word = level.letters;
+			game.wordLength = level.letters.length;
 			game.possibleAnswers = level.answers;
 			game.letterFrequency = calculateLetterFrequency(level.letters);
+			getElement("-given-letters-container").textContent = level.letters;
+			resetProgressBar();
+			createLetterBoxes(game.wordLength);
+			settingsToGame("story");
 			break;
 		case "basic":
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			game.word = level.letters;
+			game.wordLength = level.letters.length;
 			game.possibleAnswers = level.answers;
 			game.letterFrequency = calculateLetterFrequency(level.letters);
-			const givenLettersContainer = getElement("-given-letters-container");
-			givenLettersContainer.textContent = game.word;
+			getElement("-given-letters-container").textContent = level.letters;
 			resetProgressBar();
 			createLetterBoxes(game.wordLength);
-			showGame();
+			settingsToGame("basic");
 			break;
 		case "panic":
 			break;

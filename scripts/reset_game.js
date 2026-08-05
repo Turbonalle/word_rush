@@ -10,8 +10,7 @@ function resetGameData() {
 }
 
 function resetGivenLettersContainer() {
-	const givenLettersContainer = getElement("-given-letters-container");
-	givenLettersContainer.textContent = "";
+	getElement("-given-letters-container").textContent = "";
 }
 
 function resetCandidateWordContainer() {
@@ -22,8 +21,17 @@ function resetCandidateWordContainer() {
 	}
 }
 
+function resetWordsFoundContainer() {
+	const wordsFoundContainer = getElement("-found-words-container");
+	var children = wordsFoundContainer.children;
+	for (var i = children.length - 1; i >= 0; i--) {
+		children[i].remove();
+	}
+}
+
 export function resetGame() {
 	resetGameData();
 	resetGivenLettersContainer();
 	resetCandidateWordContainer();
+	resetWordsFoundContainer();
 }

@@ -11,11 +11,15 @@ export const LevelManager = {
 		en: [],
 		sv: []
 	},
+	basicLevels: {
+		en: [],
+		sv: []
+	},
 
 	async load() {
 		const [responseEn, responseSv] = await Promise.all([
-			fetch("data/levels_en.json"),
-			fetch("data/levels_sv.json")
+			fetch("data/story_levels_en.json"),
+			fetch("data/story_levels_sv.json")
 		]);
 		const levelsEn = await responseEn.json();
 		const levelsSv = await responseSv.json();
@@ -27,6 +31,23 @@ export const LevelManager = {
 		);
 		console.log(`Loaded ${Object.keys(this.storyLevels.en).length} levels.`);
 		console.log(`Loaded ${Object.keys(this.storyLevels.sv).length} levels.`);
+	},
+
+	async loadBasicLevels() {
+		const [responseEn, responseSv] = await Promise.all([
+			fetch("data/basic_levels_en.json"),
+			fetch("data/basic_levels_sv.json")
+		]);
+		const levelsEn = await responseEn.json();
+		const levelsSv = await responseSv.json();
+		this.basicLevels.en = Object.fromEntries(
+			levelsEn.map(level => [level.id, level])
+		);
+		this.basicLevels.sv = Object.fromEntries(
+			levelsSv.map(level => [level.id, level])
+		);
+		console.log(`Loaded ${Object.keys(this.basicLevels.en).length} levels.`);
+		console.log(`Loaded ${Object.keys(this.basicLevels.sv).length} levels.`);
 	},
 
 	buildStoryLevels(language, onLevelSelected) {
@@ -64,12 +85,10 @@ export const LevelManager = {
 	},
 
 	getRandomLevel(language, length) {
-		const possibleLevels = this.storyLevels[language].filter(
-			level => level.letters.length === length
-		);
-		if (possibleLevels.length === 0) {
-			return null;
-		};
+		const possibleLevels = this.basicLevel[language].filter(level => {
+			level.answers.length === length;
+		});
+		console.log("We have", possibleLevels.length, "levels");
 		const randomIndex = Math.floor(Math.random() * possibleLevels.length);
 		return possibleLevels[randomIndex];
 	},

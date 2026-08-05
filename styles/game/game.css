@@ -10,7 +10,7 @@
 	padding: 30px;
 }
 
-#given-letters-container {
+.given-letters-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;

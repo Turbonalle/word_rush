@@ -8,6 +8,7 @@ export function modeToSettings() {
 export function settingsToGame(mode) {
 	game.state = "game";
 	game.mode = mode;
+	console.log("mode:", mode);
 	document.getElementById("menu-screen").classList.add("hidden");
 	getElement("-settings-container").classList.add("hidden");
 	getElement("-game-screen").classList.remove("hidden");
