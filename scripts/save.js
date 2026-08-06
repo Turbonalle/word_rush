@@ -66,5 +66,13 @@ export const Save = {
 		} else {
 			return 0;
 		}
+	},
+
+	getFoundWords(language, levelId) {
+		if (this.data.story[language][levelId]) {
+			return this.data.story[language][levelId].wordsFound;
+		} else {
+			return [];
+		}
 	}
 };

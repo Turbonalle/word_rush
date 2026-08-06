@@ -71,6 +71,38 @@ function showGame() {
 	gameScreen.classList.remove("hidden");
 }
 
+function addWordsToContainer(words) {
+	const foundWordsContainer = getElement("-found-words-container");
+	for (let i = 0; i < words.length; i++) {
+		const wordTag = document.createElement("div");
+		wordTag.classList.add("word-tag");
+		wordTag.textContent = words[i];
+		foundWordsContainer.appendChild(wordTag);
+	}
+}
+
+function addWordToContainer(word) {
+	// Add word to displaying container	
+	const foundWordsContainer = getElement("-found-words-container");
+	const wordTag = document.createElement("div");
+	wordTag.classList.add("word-tag");
+	wordTag.textContent = word;
+	foundWordsContainer.appendChild(wordTag);
+}
+
+function updateProgress() {
+	// Calculate and set progress bar width
+	const progressBar = getElement("-progress-bar");
+	let progress = 0.0;
+	if (game.wordsFound.length > 0)
+		progress = game.wordsFound.length / game.possibleAnswers.length;
+	progressBar.style.width = `${progress * 100}%`;
+
+	// Set progress text
+	const progressText = getElement("-progress-text");
+	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
+}
+
 export function startGame() {
 	console.log(game);
 	resetGame();
@@ -82,9 +114,11 @@ export function startGame() {
 			game.wordLength = level.letters.length;
 			game.possibleAnswers = level.answers;
 			game.letterFrequency = calculateLetterFrequency(level.letters);
+			game.wordsFound = Save.getFoundWords(game.language, game.storyLevelId);
 			getElement("-given-letters-container").textContent = level.letters;
-			resetProgressBar();
 			createLetterBoxes(game.wordLength);
+			updateProgress();
+			addWordsToContainer(game.wordsFound);
 			settingsToGame("story");
 			break;
 		case "basic":
@@ -105,40 +139,15 @@ export function startGame() {
 			showGame();
 			break;
 		default:
-			// resetContainers();
 			getRandomLevel();
 			resetProgressBar();
 			createLetterBoxes(game.wordLength);
 			showGame();
 			break;
 	}
-	// givenLettersContainer.textContent = game.word;
 
 	console.log("[startGame] Word is: " + game.word);
 	console.log("[startGame] Answers: " + game.possibleAnswers);
-}
-
-function updateProgress() {
-	// Add word to list
-	game.wordsFound.push(game.currentInput);
-
-	// Calculate and set progress bar width
-	const progressBar = getElement("-progress-bar");
-	let progress = 0.0;
-	if (game.wordsFound.length > 0)
-		progress = game.wordsFound.length / game.possibleAnswers.length;
-	progressBar.style.width = `${progress * 100}%`;
-
-	// Set progress text
-	const progressText = getElement("-progress-text");
-	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
-
-	// Add word to displaying container	
-	const foundWordsContainer = getElement("-found-words-container");
-	const wordTag = document.createElement("div");
-	wordTag.classList.add("word-tag");
-	wordTag.textContent = game.currentInput;
-	foundWordsContainer.appendChild(wordTag);
 }
 
 export function submitWord() {
@@ -150,7 +159,9 @@ export function submitWord() {
 	}
 	if (game.possibleAnswers.includes(word)) {
 		console.log("Correct!", word, "exists!");
+		game.wordsFound.push(game.currentInput);
 		updateProgress();
+		addWordToContainer(game.currentInput);
 		Save.addFoundWord(game.language, game.storyLevelId, game.currentInput);
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
