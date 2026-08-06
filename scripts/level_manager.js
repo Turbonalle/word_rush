@@ -80,6 +80,8 @@ export const LevelManager = {
 			} else if (percentage >= 0.25) {
 				this.fillStars(storyLevelStarsContainer, 1);
 			}
+
+			levelProgressFill.style.width = `${percentage * 100}%`;
 			
 			levelButton.addEventListener("click", () => {
 				onLevelSelected(level.id);
