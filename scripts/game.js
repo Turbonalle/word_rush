@@ -1,6 +1,7 @@
-import { game, getElement } from "./main.js";
+import { game } from "./main.js";
 import { gameToMode, settingsToGame } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
+import { getElement } from "./helper_functions.js";
 import { LevelManager } from "./level_manager.js";
 
 export function updateLetterBoxes() {

@@ -39,26 +39,12 @@
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
-						<button id="option-en" class="option-box active">en</button>
-						<button id="option-sv" class="option-box">sv</button>
+						<button id="story-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="story-option-sv" data-language="sv" class="option-sv language-button">sv</button>
 					</div>
 				</div>
 				<div id="story-levels-container" class="story-levels-container">
-					<div class="story-level-container">
-						<div class="level-button">
-							<div class="level-progress-fill"></div>
-							<span class="level-button-number">1</span>
-							<span class="level-button-title">OST</span>
-							<span class="level-button-progress">0 / 5</span>
-						</div>
-						<div class="story-level-stars-container">
-							<svg class="star filled" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
-							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
-							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
-							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
-							<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>
-						</div>
-					</div>
+					<!-- Story levels will be generated here -->
 				</div>
 				<div class="buttons-container">
 					<button class="back-button button">Back</button>
@@ -69,8 +55,8 @@
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
-						<button id="option-en" class="option-box active">en</button>
-						<button id="option-sv" class="option-box">sv</button>
+						<button id="basic-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="basic-option-sv" data-language="sv" class="option-sv language-button">sv</button>
 					</div>
 				</div>
 				<div class="option-row">
@@ -90,8 +76,8 @@
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
-						<button id="option-en" class="option-box active">en</button>
-						<button id="option-sv" class="option-box">sv</button>
+						<button id="panic-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="panic-option-sv" data-language="sv" class="option-sv language-button">sv</button>
 					</div>
 				</div>
 				<div class="option-row">
@@ -165,12 +151,14 @@
 			<button class="backtomenu-button">Back</button>
 		</div>
 	</body>
-	<script type="module" src="scripts/main.js"></script>
+	<script type="module" src="scripts/helper_functions.js"></script>
 	<script type="module" src="scripts/level_manager.js"></script>
+	<script type="module" src="scripts/main.js"></script>
 	<script type="module" src="scripts/screen_switch.js"></script>
 	<script type="module" src="scripts/mode_info.js"></script>
 	<script type="module" src="scripts/reset_game.js"></script>
 	<script type="module" src="scripts/key_handler.js"></script>
 	<script type="module" src="scripts/game.js"></script>
 	<script type="module" src="scripts/menu.js"></script>
+	<script type="module" src="scripts/set_language.js"></script>
 </html>

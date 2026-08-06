@@ -1,4 +1,6 @@
-import { game, getElement, resetActiveButtons } from "./main.js";
+import { game } from "./main.js";
+import { resetActiveButtons } from "./menu.js";
+import { getElement } from "./helper_functions.js";
 
 export function modeToSettings() {
 	document.getElementById("modes-container").classList.add("hidden");

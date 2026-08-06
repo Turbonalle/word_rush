@@ -1,8 +1,4 @@
-function createElementWithClass(type, className) {
-	const element = document.createElement(type);
-	element.classList.add(className);
-	return element;
-}
+import { createElementWithClass } from "./helper_functions.js";
 
 const STAR_SVG = `<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>`;
 
@@ -18,8 +14,8 @@ export const LevelManager = {
 
 	async load() {
 		const [responseEn, responseSv] = await Promise.all([
-			fetch("data/story_levels_en.json"),
-			fetch("data/story_levels_sv.json")
+			fetch("data/story_levels/story_levels_en.json"),
+			fetch("data/story_levels/story_levels_sv.json")
 		]);
 		const levelsEn = await responseEn.json();
 		const levelsSv = await responseSv.json();
@@ -35,8 +31,8 @@ export const LevelManager = {
 
 	async loadBasicLevels() {
 		const [responseEn, responseSv] = await Promise.all([
-			fetch("data/basic_levels_en.json"),
-			fetch("data/basic_levels_sv.json")
+			fetch("data/basic_levels/basic_levels_en.json"),
+			fetch("data/basic_levels/basic_levels_sv.json")
 		]);
 		const levelsEn = await responseEn.json();
 		const levelsSv = await responseSv.json();

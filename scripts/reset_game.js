@@ -1,4 +1,5 @@
-import { game, getElement, } from "./main.js";
+import { game } from "./main.js";
+import { getElement } from "./helper_functions.js";
 
 function resetGameData() {
 	game.word = [];

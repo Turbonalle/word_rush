@@ -1,6 +1,6 @@
 import { game } from "./main.js";
 import { LevelManager } from "./level_manager.js";
-import { settingsToGame } from "./screen_switch.js";
+import { settingsToGame, settingsToMode } from "./screen_switch.js";
 import { startGame } from "./game.js";
 
 const modesContainer = document.getElementById("modes-container");
@@ -8,8 +8,8 @@ const storyModeButton = document.getElementById("story-mode-button");
 const basicModeButton = document.getElementById("basic-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
-const playButtons = document.querySelectorAll(".play-button");
-const backButtons = document.querySelectorAll(".back-button");
+const lengthSlider = document.getElementById("length-slider");
+const lengthValue = document.getElementById("length-value");
 
 function hideModesMenu() {
 	modesContainer.classList.add("hidden");
@@ -19,15 +19,9 @@ function showModesMenu() {
 	modesContainer.classList.remove("hidden");
 }
 
-function resetActiveButtons() {
+export function resetActiveButtons() {
 	document.querySelectorAll(".mode-button").forEach(button => {
 		button.classList.remove("active-button");
-	});
-}
-
-function hideSettingsContainers() {
-	document.querySelectorAll(".settings-container").forEach(container => {
-		container.classList.add("hidden");
 	});
 }
 
@@ -69,17 +63,16 @@ testModeButton.addEventListener("click", () => {
 });
 
 function addBackButtonListeners() {
+	const backButtons = document.querySelectorAll(".back-button");
 	for (let i = 0; i < backButtons.length; i++) {
 		backButtons[i].addEventListener("click", () => {
-			game.mode = "menu";
-			resetActiveButtons();
-			hideSettingsContainers();
-			showModesMenu();
+			settingsToMode();
 		});
 	}
 }
 
 function addPlayButtonListeners() {
+	const playButtons = document.querySelectorAll(".play-button");
 	for (let i = 0; i < playButtons.length; i++) {
 		playButtons[i].addEventListener("click", () => {
 			settingsToGame(game.mode);
@@ -88,5 +81,34 @@ function addPlayButtonListeners() {
 	}
 }
 
+// const englishButtons = document.querySelectorAll("#option-en");
+// function addEnglishButtonListeners() {
+// 	for (let i = 0; i < englishButtons.length; i++) {
+// 		englishButtons[i].addEventListener("click", () => {
+// 			swedishButtons[i].classList.remove("active");
+// 			englishButtons[i].classList.add("active");
+// 			game.language = "en";
+// 		});
+// 	}
+// }
+
+// function addSwedishButtonListeners() {
+// 	const swedishButtons = document.querySelectorAll("#option-sv");
+// 	for (let i = 0; i < swedishButtons.length; i++) {
+// 		swedishButtons[i].addEventListener("click", () => {
+// 			englishButtons[i].classList.remove("active");
+// 			swedishButtons[i].classList.add("active");
+// 			game.language = "sv";
+// 		});
+// 	}
+// }
+
+lengthSlider.addEventListener("input", () => {
+	lengthValue.textContent = lengthSlider.value;
+	game.wordLength = parseInt(lengthSlider.value);
+});
+
 addBackButtonListeners();
 addPlayButtonListeners();
+// addEnglishButtonListeners();
+// addSwedishButtonListeners();
