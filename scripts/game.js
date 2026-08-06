@@ -3,6 +3,7 @@ import { gameToMode, settingsToGame } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
 import { getElement } from "./helper_functions.js";
 import { LevelManager } from "./level_manager.js";
+import { Save } from "./save.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -150,6 +151,7 @@ export function submitWord() {
 	if (game.possibleAnswers.includes(word)) {
 		console.log("Correct!", word, "exists!");
 		updateProgress();
+		Save.addFoundWord(game.language, game.storyLevelId, game.currentInput);
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 	}

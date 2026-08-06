@@ -1,6 +1,6 @@
 const SAVE_KEY = "wordhunt-save";
 
-const defaultSave = {
+const DEFAULT_SAVE = {
 	version: 1,
 	settings: {
 		language: "en",
@@ -12,35 +12,59 @@ const defaultSave = {
 		wordsFound: 0
 	},
 	story: {
-		en: {
-			1: {
-				completed: false,
-				wordsFound: []
-			},
-		},
-		sv: {
-			1: {
-				completed: false,
-				wordsFound: []
-			}
-		}
+		en: {},
+		sv: {}
 	}
-};
+}
+
 
 export const Save = {
+	data: structuredClone(DEFAULT_SAVE),
+	
+	migrateSave() {
+		// Save data version control
+	},
+	
 	loadSave() {
-		const json = localStorage.getItem(SAVE_KEY);
+		const json = localStorage.getItem(this.SAVE_KEY);
 		if (!json) {
-			return structuredClone(defaultSave);
+			this.data = structuredClone(DEFAULT_SAVE);
+			this.saveGame();
+			return;
 		}
-		return JSON.parse(json);
+		this.data = JSON.parse(json);
+		if (this.data.version !== DEFAULT_SAVE.version) {
+			this.migrateSave();
+		}
 	},
 
-	saveGame(saveData) {
-		localStorage.setItem(SAVE_KEY, JSON.stringify(saveData));
+	saveGame() {
+		localStorage.setItem(this.SAVE_KEY, JSON.stringify(this.data));
 	},
 
 	resetSave() {
-		localStorage.removeItem(SAVE_KEY);
+		localStorage.removeItem(this.SAVE_KEY);
+	},
+
+	addFoundWord(language, levelId, word) {
+		if (!this.data.story[language][levelId]) {
+			this.data.story[language][levelId] = {
+				completed: false,
+				wordsFound: []
+			};
+		}
+		const level = this.data.story[language][levelId];
+		if (!level.wordsFound.includes(word)) {
+			level.wordsFound.push(word);
+		}
+		this.saveGame(this.data);
+	},
+
+	getFoundWordsAmount(language, levelId) {
+		if (this.data.story[language][levelId]) {
+			return this.data.story[language][levelId].wordsFound.length;
+		} else {
+			return 0;
+		}
 	}
 };
