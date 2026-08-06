@@ -16,7 +16,6 @@ function updateLanguageButtons() {
 }
 
 function setLanguage(language) {
-	console.log("Setting language");
 	game.language = language;
 	updateLanguageButtons();
 	const storySettingsContainer = document.getElementById("story-settings-container");
