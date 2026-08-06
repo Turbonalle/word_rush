@@ -47,6 +47,12 @@ export const LevelManager = {
 		console.log(`Loaded ${Object.keys(this.basicLevels.sv).length} levels.`);
 	},
 
+	fillStars(container, n) {
+		for (let i = 0; i < n && i < container.children.length; i++) {
+			container.children[i].classList.add("filled");
+		}
+	},
+
 	buildStoryLevels(language, onLevelSelected) {
 		const storyLevelsContainer = document.getElementById("story-levels-container");
 		storyLevelsContainer.replaceChildren();
@@ -59,12 +65,22 @@ export const LevelManager = {
 			const levelButtonProgress = createElementWithClass("span", "level-button-progress");
 			const storyLevelStarsContainer = createElementWithClass("div", "story-level-stars-container");
 			const wordsFoundAmount = Save.getFoundWordsAmount(language, id);
-			for (let i = 0; i < 3; i++) {
-				storyLevelStarsContainer.insertAdjacentHTML("beforeend", STAR_SVG);
-			}
 			levelButtonNumber.textContent = level.id;
 			levelButtonTitle.textContent = level.letters.toUpperCase();
 			levelButtonProgress.textContent = `${wordsFoundAmount} / ${level.answers.length}`;
+
+			for (let i = 0; i < 3; i++) {
+				storyLevelStarsContainer.insertAdjacentHTML("beforeend", STAR_SVG);
+			}
+			const percentage = wordsFoundAmount / level.answers.length;
+			if (percentage >= 1.0) {
+				this.fillStars(storyLevelStarsContainer, 3);
+			} else if (percentage >= 0.5) {
+				this.fillStars(storyLevelStarsContainer, 2);
+			} else if (percentage >= 0.25) {
+				this.fillStars(storyLevelStarsContainer, 1);
+			}
+			
 			levelButton.addEventListener("click", () => {
 				onLevelSelected(level.id);
 			});
