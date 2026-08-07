@@ -11,7 +11,7 @@ export const AudioPlayer = {
 	},
 	
 	loadPlaylist(playlist) {
-		this.playList = playlist;
+		this.playlist = playlist;
 		this.currentIndex = 0;
 		if (playlist.length > 0) {
 			this.audio.src = playlist[0].path;
@@ -21,6 +21,7 @@ export const AudioPlayer = {
 	
 	play() {
 		if (this.playlist.length === 0) {
+			console.log("0 songs.");
 			return;
 		}
 		this.audio.play();
