@@ -1,0 +1,72 @@
+#audio-player {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 280px;
+	display: flex;
+	flex-direction: column;
+	border: 2px solid var(--border);
+	border-radius: 10px;
+	background: var(--background);
+	overflow: hidden;
+}
+
+#audio-player-header {
+	height: 42px;
+	padding: 0 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid var(--border);
+}
+
+#song-title {
+	flex: 1;
+	color: var(--border);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#audio-player-controls {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 8px;
+}
+
+.audio-button {
+	width: 34px;
+	height: 34px;
+	border: none;
+	background: transparent;
+	color: var(--border);
+	cursor: pointer;
+	transition: color .015s;
+}
+
+.audio-button:hover {
+	color: var(--highlight);
+}
+
+#playlist-container {
+	max-height: 200px;
+	overflow-y: auto;
+	border-top: 2px solid var(--border);
+}
+
+.song-row {
+	height: 40px;
+	padding: 0 12px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	transition: background .015s;
+}
+
+.song-row:hover {
+	background: rgba(255, 255, 255, .05);
+}
+
+.song-row.active {
+	color: var(--highlight);
+}

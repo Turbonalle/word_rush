@@ -2,7 +2,7 @@ import { game } from "./main.js";
 import { gameToMode, settingsToGame } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
 import { getElement } from "./helper_functions.js";
-import { LevelManager } from "./level_manager.js";
+import { LevelManager } from "./LevelManager.js";
 import { Save } from "./save.js";
 
 export function updateLetterBoxes() {

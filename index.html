@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="styles/menu/modes.css">
 		<link rel="stylesheet" href="styles/menu/story_levels.css">
 		<link rel="stylesheet" href="styles/menu/options.css">
+		<link rel="stylesheet" href="styles/menu/audio_player.css">
 		<link rel="stylesheet" href="styles/game/game.css">
 		<link rel="stylesheet" href="styles/main.css">
 		<title>WordHunt</title>
@@ -62,9 +63,9 @@
 				<div class="option-row">
 					<div class="option">Letters: </div>
 					<div class="slider-row">
-						<input id="length-slider" type="range" min="3" max="10" value="6">
+						<input id="length-slider" type="range" min="3" max="5" value="4">
 					</div>
-					<div id="length-value">6</div>
+					<div id="length-value">4</div>
 				</div>
 				<div class="buttons-container">
 					<button class="back-button button">Back</button>
@@ -83,9 +84,9 @@
 				<div class="option-row">
 					<div class="option">Letters: </div>
 					<div class="slider-row">
-						<input id="length-slider" type="range" min="3" max="10" value="6">
+						<input id="length-slider" type="range" min="3" max="5" value="4">
 					</div>
-					<div id="length-value">6</div>
+					<div id="length-value">4</div>
 				</div>
 				<div class="buttons-container">
 					<button class="back-button button">Back</button>
@@ -150,9 +151,26 @@
 			<div id="test-found-words-container" class="found-words-container"></div>
 			<button class="backtomenu-button">Back</button>
 		</div>
+
+		<!-- AudioPlayer -->
+		<div id="audio-player">
+			<div id="audio-player-header">
+				<span id="song-title">No music</span>
+			</div>
+			<div id="audio-player-controls">
+				<button id="previous-button" class="audio-button">⏮</button>
+				<button id="play-button" class="audio-button">▶</button>
+				<button id="stop-button" class="audio-button">⏹</button>
+				<button id="next-button" class="audio-button">⏭</button>
+				<button id="toggle-playlist-button" class="audio-button">▼</button>
+			</div>
+			<div id="playlist-container" class="hidden"></div>
+		</div>
 	</body>
 	<script type="module" src="scripts/helper_functions.js"></script>
-	<script type="module" src="scripts/level_manager.js"></script>
+	<script type="module" src="scripts/LevelManager.js"></script>
+	<script type="module" src="scripts/AudioPlayer/AudioPlayer.js"></script>
+	<script type="module" src="scripts/AudioPlayer/audioplayer_buttons.js"></script>
 	<script type="module" src="scripts/main.js"></script>
 	<script type="module" src="scripts/screen_switch.js"></script>
 	<script type="module" src="scripts/mode_info.js"></script>

@@ -1,6 +1,6 @@
 import { game } from "./main.js";
 import { startGame } from "./game.js";
-import { LevelManager } from "./level_manager.js";
+import { LevelManager } from "./LevelManager.js";
 import { getElement } from "./helper_functions.js";
 
 function updateLanguageButtons() {

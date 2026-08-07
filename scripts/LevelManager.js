@@ -9,11 +9,19 @@ export const LevelManager = {
 		sv: []
 	},
 	basicLevels: {
-		en: [],
-		sv: []
+		en: {
+			3: [],
+			4: [],
+			5: []
+		},
+		sv: {
+			3: [],
+			4: [],
+			5: []
+		}
 	},
 
-	async load() {
+	async loadStoryLevels() {
 		const [responseEn, responseSv] = await Promise.all([
 			fetch("data/story_levels/story_levels_en.json"),
 			fetch("data/story_levels/story_levels_sv.json")
@@ -31,20 +39,32 @@ export const LevelManager = {
 	},
 
 	async loadBasicLevels() {
-		const [responseEn, responseSv] = await Promise.all([
-			fetch("data/basic_levels/basic_levels_en.json"),
-			fetch("data/basic_levels/basic_levels_sv.json")
+		const [responseEn3, responseEn4, responseEn5, responseSv3, responseSv4, responseSv5] = await Promise.all([
+			fetch("data/basic_levels/en/basic_levels_3_en.json"),
+			fetch("data/basic_levels/en/basic_levels_4_en.json"),
+			fetch("data/basic_levels/en/basic_levels_5_en.json"),
+			fetch("data/basic_levels/sv/basic_levels_3_sv.json"),
+			fetch("data/basic_levels/sv/basic_levels_4_sv.json"),
+			fetch("data/basic_levels/sv/basic_levels_5_sv.json")
 		]);
-		const levelsEn = await responseEn.json();
-		const levelsSv = await responseSv.json();
-		this.basicLevels.en = Object.fromEntries(
-			levelsEn.map(level => [level.id, level])
-		);
-		this.basicLevels.sv = Object.fromEntries(
-			levelsSv.map(level => [level.id, level])
-		);
-		console.log(`Loaded ${Object.keys(this.basicLevels.en).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.basicLevels.sv).length} levels.`);
+		const levelsEn3 = await responseEn3.json();
+		const levelsEn4 = await responseEn4.json();
+		const levelsEn5 = await responseEn5.json();
+		const levelsSv3 = await responseSv3.json();
+		const levelsSv4 = await responseSv4.json();
+		const levelsSv5 = await responseSv5.json();
+		this.basicLevels.en[3] = Object.fromEntries(levelsEn3.map(level => [level.id, level]));
+		this.basicLevels.en[4] = Object.fromEntries(levelsEn4.map(level => [level.id, level]));
+		this.basicLevels.en[5] = Object.fromEntries(levelsEn5.map(level => [level.id, level]));
+		this.basicLevels.sv[3] = Object.fromEntries(levelsSv3.map(level => [level.id, level]));
+		this.basicLevels.sv[4] = Object.fromEntries(levelsSv4.map(level => [level.id, level]));
+		this.basicLevels.sv[5] = Object.fromEntries(levelsSv5.map(level => [level.id, level]));
+		console.log(`Loaded ${Object.keys(this.basicLevels.en[3]).length} levels.`);
+		console.log(`Loaded ${Object.keys(this.basicLevels.en[4]).length} levels.`);
+		console.log(`Loaded ${Object.keys(this.basicLevels.en[5]).length} levels.`);
+		console.log(`Loaded ${Object.keys(this.basicLevels.sv[3]).length} levels.`);
+		console.log(`Loaded ${Object.keys(this.basicLevels.sv[4]).length} levels.`);
+		console.log(`Loaded ${Object.keys(this.basicLevels.sv[5]).length} levels.`);
 	},
 
 	fillStars(container, n) {
@@ -101,11 +121,13 @@ export const LevelManager = {
 	},
 
 	getRandomLevel(language, length) {
-		const possibleLevels = this.basicLevel[language].filter(level => {
-			level.answers.length === length;
-		});
-		console.log("We have", possibleLevels.length, "levels");
-		const randomIndex = Math.floor(Math.random() * possibleLevels.length);
-		return possibleLevels[randomIndex];
+		const levels = Object.values(this.basicLevels[language][length]);
+		console.log("We have", this.basicLevels[language][length].length, "levels");
+
+		if (levels.length === 0) {
+			return null;
+		}
+		const randomIndex = Math.floor(Math.random() * levels.length);
+		return levels[randomIndex];
 	},
 };

@@ -1,6 +1,7 @@
-import { LevelManager } from "./level_manager.js";
+import { LevelManager } from "./LevelManager.js";
 import { Save } from "./save.js";
-import { audio } from "./audio.js";
+import { AudioPlayer } from "./AudioPlayer/AudioPlayer.js";
+import { menuPlaylist } from "./AudioPlayer/playlists.js";
 
 export const game = {
 	// State
@@ -9,7 +10,7 @@ export const game = {
 	// Settings
 	mode: "",
 	language: "en",
-	wordLength: 6,
+	wordLength: 4,
 	
 	// Current level
 	storyLevelId: 0,
@@ -28,9 +29,10 @@ export const game = {
 
 async function initializeGame() {
 	game.save = Save.loadSave();
-	await LevelManager.load();
+	await LevelManager.loadStoryLevels();
 	await LevelManager.loadBasicLevels();
+	AudioPlayer.init();
+	AudioPlayer.loadPlaylist(menuPlaylist);
 }
 
-// audio.play("music");
 window.addEventListener("DOMContentLoaded", initializeGame);
