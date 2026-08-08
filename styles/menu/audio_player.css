@@ -42,6 +42,7 @@
 	color: var(--border);
 	cursor: pointer;
 	transition: color .015s;
+	font-size: 16px;
 }
 
 .audio-button:hover {

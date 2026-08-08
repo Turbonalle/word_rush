@@ -91,9 +91,44 @@ export const AudioPlayer = {
 	setVolume(volume) {
 		this.audio.volume = volume;
 	},
+
+	togglePlaylist() {
+		const playListcontainer = document.getElementById("playlist-container");
+		const toggleButton = document.getElementById("toggle-playlist-button");
+		playListcontainer.classList.toggle("hidden");
+		toggleButton.textContent = playListcontainer.classList.contains("hidden") ? "▼" : "▲" ;
+		if (playListcontainer.classList.contains("hidden")) {
+			playListcontainer.replaceChildren();
+		} else {
+			this.buildPlaylist();
+		}
+	},
+
+	buildPlaylist() {
+		const container = document.getElementById("playlist-container");
+		container.replaceChildren();
+		AudioPlayer.playlist.forEach((song, index) => {
+			const row = document.createElement("div");
+			row.className = "song-row";
+			row.textContent = song.title;
+			row.addEventListener("click", () => {
+				AudioPlayer.select(index);
+			});
+			container.appendChild(row);
+		});
+		this.updateUI();
+	},
 	
 	updateUI() {
 		document.getElementById("song-title").textContent = this.playlist[this.currentIndex]?.title ?? "";
 		document.getElementById("play-button").textContent = this.isPlaying ? "⏸" : "▶";
+		document.querySelectorAll(".song-row").forEach(row =>
+			row.classList.remove("active")
+		);
+		const playlistContainer = document.getElementById("playlist-container");
+		const currentRow = playlistContainer.children[this.currentIndex]
+		if (currentRow) {
+			currentRow.classList.add("active");
+		}
 	}
 };
