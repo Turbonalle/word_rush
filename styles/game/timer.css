@@ -1,0 +1,18 @@
+#timer-container {
+	font-size: 32px;
+	font-weight: bold;
+	color: var(--title);
+}
+
+#timer {
+	transition: color 0.2s;
+}
+
+.timer-warning {
+	animation: timer-pulse 0.5s infinite alternate;
+}
+
+@keyframes timer-pulse {
+	from { transform: scale(1); }
+	to { transform: scale(1.08); }
+}

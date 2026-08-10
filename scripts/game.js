@@ -4,6 +4,7 @@ import { resetGame } from "./reset_game.js";
 import { getElement } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
 import { Save } from "./save.js";
+import { Timer } from "./Timer.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -62,15 +63,6 @@ function createLetterBoxes(amount) {
 	}
 }
 
-function showGame() {
-	const gameScreens = document.querySelectorAll(".game-screen");
-	for (let i = 0; i < gameScreens.length; i++) {
-		gameScreens[i].classList.add("hidden");
-	}
-	const gameScreen = getElement("-game-screen");
-	gameScreen.classList.remove("hidden");
-}
-
 function addWordsToContainer(words) {
 	const foundWordsContainer = getElement("-found-words-container");
 	for (let i = 0; i < words.length; i++) {
@@ -103,6 +95,15 @@ function updateProgress() {
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 }
 
+function setupLevel(level) {
+	game.word = level.letters;
+	game.wordLength = level.letters.length;
+	game.possibleAnswers = level.answers;
+	game.letterFrequency = calculateLetterFrequency(level.letters);
+	getElement("-given-letters-container").textContent = level.letters;
+	createLetterBoxes(game.wordLength);
+}
+
 export function startGame() {
 	console.log(game);
 	resetGame();
@@ -110,42 +111,32 @@ export function startGame() {
 	switch(game.mode) {
 		case "story":
 			level = LevelManager.getStoryLevel(game.language, game.storyLevelId);
-			game.word = level.letters;
-			game.wordLength = level.letters.length;
-			game.possibleAnswers = level.answers;
-			game.letterFrequency = calculateLetterFrequency(level.letters);
 			game.wordsFound = Save.getFoundWords(game.language, game.storyLevelId);
-			getElement("-given-letters-container").textContent = level.letters;
-			createLetterBoxes(game.wordLength);
+			setupLevel(level);
 			updateProgress();
 			addWordsToContainer(game.wordsFound);
 			settingsToGame("story");
 			break;
 		case "basic":
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
-			game.word = level.letters;
-			game.wordLength = level.letters.length;
-			game.possibleAnswers = level.answers;
-			game.letterFrequency = calculateLetterFrequency(level.letters);
-			getElement("-given-letters-container").textContent = level.letters;
+			setupLevel(level);
 			resetProgressBar();
-			createLetterBoxes(game.wordLength);
 			settingsToGame("basic");
 			break;
 		case "panic":
+			level = LevelManager.getRandomLevel(game.language, game.wordLength);
+			setupLevel(level);
+			resetProgressBar();
+			settingsToGame("panic");
+			Timer.start(60);
 			break;
 		case "test":
 			createLetterBoxes(12);
-			showGame();
+			settingsToGame("test");
 			break;
 		default:
-			getRandomLevel();
-			resetProgressBar();
-			createLetterBoxes(game.wordLength);
-			showGame();
 			break;
 	}
-
 	console.log("[startGame] Word is: " + game.word);
 	console.log("[startGame] Answers: " + game.possibleAnswers);
 }
@@ -163,6 +154,9 @@ export function submitWord() {
 		updateProgress();
 		addWordToContainer(game.currentInput);
 		Save.addFoundWord(game.language, game.storyLevelId, game.currentInput);
+		if (game.mode === "panic") {
+			Timer.add(10);
+		}
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 	}

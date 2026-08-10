@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="styles/menu/options.css">
 		<link rel="stylesheet" href="styles/menu/audio_player.css">
 		<link rel="stylesheet" href="styles/game/game.css">
+		<link rel="stylesheet" href="styles/game/timer.css">
 		<link rel="stylesheet" href="styles/main.css">
 		<title>WordHunt</title>
 	</head>
@@ -139,6 +140,9 @@
 					<div id="panic-progress-bar" class="progress-bar"></div>
 				</div>
 			</div>
+			<div id="panic-timer-container">
+				<span id="timer">0</span>
+			</div>
 			<div id="panic-candidate-word-container" class="candidate-word-container"></div>
 			<button class="submit-button">Submit word</button>
 			<div id="panic-found-words-container" class="found-words-container"></div>
@@ -173,6 +177,7 @@
 	<script type="module" src="scripts/AudioPlayer/AudioPlayer.js"></script>
 	<script type="module" src="scripts/AudioPlayer/audioplayer_buttons.js"></script>
 	<script type="module" src="scripts/main.js"></script>
+	<script type="module" src="scripts/Timer.js"></script>
 	<script type="module" src="scripts/screen_switch.js"></script>
 	<script type="module" src="scripts/mode_info.js"></script>
 	<script type="module" src="scripts/reset_game.js"></script>

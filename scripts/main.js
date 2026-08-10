@@ -24,7 +24,16 @@ export const game = {
 	wordsFound: [],
 
 	// Save data
-	save: {}
+	save: {},
+
+	// Timer
+	timer: {
+		duration: 0,
+		timeRemaining: 0,
+		endTime: null,
+		intervalId: null,
+		running: false
+	}
 };
 
 async function initializeGame() {
