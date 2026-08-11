@@ -7,6 +7,7 @@ export const Timer = {
 		game.timer.duration = seconds;
 		game.timer.timeRemaining = seconds;
 		game.timer.endTime = Date.now() + seconds * 1000;
+		game.timer.running = true;
 		this.updateDisplay();
 		game.timer.intervalId = setInterval(() => {
 			this.update();
@@ -46,6 +47,7 @@ export const Timer = {
 	},
 
 	updateDisplay() {
+		console.log("Updating timer.");
 		const timerElement = getElement(game.mode, "-timer");
 		const seconds = Math.ceil(game.timer.timeRemaining);
 		timerElement.textContent = `${seconds}s`;
