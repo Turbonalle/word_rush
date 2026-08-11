@@ -5,14 +5,6 @@ export const menuPlaylist = [
 	},
 	{
 		title: "Wordhunt Techno",
-		path: "audio/wordhunt_groove.mp3"
-	},
-	{
-		title: "Wordhunt Chiptune",
-		path: "audio/wordhunt_groove.mp3"
-	},
-	{
-		title: "Wordhunt Boss Battle",
-		path: "audio/wordhunt_groove.mp3"
+		path: "audio/wordhunt_techno.mp3"
 	}
 ];

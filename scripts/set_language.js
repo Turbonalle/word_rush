@@ -5,11 +5,11 @@ import { getElement } from "./helper_functions.js";
 
 function updateLanguageButtons() {
 	if (game.language === "en") {
-		getElement("-option-en").classList.add("active");
-		getElement("-option-sv").classList.remove("active");
+		getElement(game.mode, "-option-en").classList.add("active");
+		getElement(game.mode, "-option-sv").classList.remove("active");
 	} else if (game.language === "sv") {
-		getElement("-option-sv").classList.add("active");
-		getElement("-option-en").classList.remove("active");
+		getElement(game.mode, "-option-sv").classList.add("active");
+		getElement(game.mode, "-option-en").classList.remove("active");
 	} else {
 		console.log("updateLanguageButtons(): invalid language...");
 	}

@@ -36,8 +36,8 @@ function resetLetterBoxes() {
 }
 
 function resetProgressBar() {
-	const progressText = getElement("-progress-text");
-	const progressBar = getElement("-progress-bar");
+	const progressText = getElement(game.mode, "-progress-text");
+	const progressBar = getElement(game.mode, "-progress-bar");
 	progressText.textContent = "0 / " + game.possibleAnswers.length;
 	progressBar.style.width = "0%";
 }
@@ -55,7 +55,7 @@ export function calculateLetterFrequency(word) {
 }
 
 function createLetterBoxes(amount) {
-	const container = getElement("-candidate-word-container");
+	const container = getElement(game.mode, "-candidate-word-container");
 	for (let i = 0; i < amount; i++) {
 		const typingLetterBox = document.createElement("div");
 		typingLetterBox.classList.add("typing-letter-box");
@@ -64,7 +64,7 @@ function createLetterBoxes(amount) {
 }
 
 function addWordsToContainer(words) {
-	const foundWordsContainer = getElement("-found-words-container");
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
 	for (let i = 0; i < words.length; i++) {
 		const wordTag = document.createElement("div");
 		wordTag.classList.add("word-tag");
@@ -75,7 +75,7 @@ function addWordsToContainer(words) {
 
 function addWordToContainer(word) {
 	// Add word to displaying container	
-	const foundWordsContainer = getElement("-found-words-container");
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
 	const wordTag = document.createElement("div");
 	wordTag.classList.add("word-tag");
 	wordTag.textContent = word;
@@ -84,14 +84,14 @@ function addWordToContainer(word) {
 
 function updateProgress() {
 	// Calculate and set progress bar width
-	const progressBar = getElement("-progress-bar");
+	const progressBar = getElement(game.mode, "-progress-bar");
 	let progress = 0.0;
 	if (game.wordsFound.length > 0)
 		progress = game.wordsFound.length / game.possibleAnswers.length;
 	progressBar.style.width = `${progress * 100}%`;
 
 	// Set progress text
-	const progressText = getElement("-progress-text");
+	const progressText = getElement(game.mode, "-progress-text");
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 }
 
@@ -100,7 +100,7 @@ function setupLevel(level) {
 	game.wordLength = level.letters.length;
 	game.possibleAnswers = level.answers;
 	game.letterFrequency = calculateLetterFrequency(level.letters);
-	getElement("-given-letters-container").textContent = level.letters;
+	getElement(game.mode, "-given-letters-container").textContent = level.letters;
 	createLetterBoxes(game.wordLength);
 }
 

@@ -11,11 +11,11 @@ function resetGameData() {
 }
 
 function resetGivenLettersContainer() {
-	getElement("-given-letters-container").textContent = "";
+	getElement(game.mode, "-given-letters-container").textContent = "";
 }
 
 function resetCandidateWordContainer() {
-	const candidateWordContainer = getElement("-candidate-word-container");
+	const candidateWordContainer = getElement(game.mode, "-candidate-word-container");
 	var children = candidateWordContainer.children;
 	for (var i = children.length - 1; i >= 0; i--) {
 		children[i].remove();
@@ -23,7 +23,7 @@ function resetCandidateWordContainer() {
 }
 
 function resetWordsFoundContainer() {
-	const wordsFoundContainer = getElement("-found-words-container");
+	const wordsFoundContainer = getElement(game.mode, "-found-words-container");
 	var children = wordsFoundContainer.children;
 	for (var i = children.length - 1; i >= 0; i--) {
 		children[i].remove();
