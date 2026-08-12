@@ -1,5 +1,6 @@
 import { game } from "./main.js";
 import { getElement } from "./helper_functions.js";
+import { Timer } from "./Timer.js";
 
 function resetGameData() {
 	game.word = [];
@@ -32,6 +33,8 @@ function resetWordsFoundContainer() {
 
 export function resetGame() {
 	resetGameData();
+	if (game.mode === "panic")
+		Timer.stop();
 	resetGivenLettersContainer();
 	resetCandidateWordContainer();
 	resetWordsFoundContainer();
