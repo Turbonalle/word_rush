@@ -2,13 +2,12 @@ import { game } from "./main.js";
 import { LevelManager } from "./LevelManager.js";
 import { settingsToGame, settingsToMode } from "./screen_switch.js";
 import { startGame } from "./game.js";
+import { getElement } from "./helper_functions.js";
 
 const storyModeButton = document.getElementById("story-mode-button");
 const basicModeButton = document.getElementById("basic-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
-const lengthSlider = document.getElementById("length-slider");
-const lengthValue = document.getElementById("length-value");
 
 function hideModesMenu() {
 	const modesContainer = document.getElementById("modes-container");
@@ -77,10 +76,16 @@ function addPlayButtonListeners() {
 	}
 }
 
-lengthSlider.addEventListener("input", () => {
-	lengthValue.textContent = lengthSlider.value;
-	game.wordLength = parseInt(lengthSlider.value);
-});
+function setLengthSlider(mode) {
+	const lengthSlider = getElement(mode, "-length-slider");
+	const lengthValue = getElement(mode, "-length-value");
+	lengthSlider.addEventListener("input", () => {
+		lengthValue.textContent = lengthSlider.value;
+		game.wordLength = parseInt(lengthSlider.value);
+	});
+}
 
 addBackButtonListeners();
 addPlayButtonListeners();
+setLengthSlider("basic");
+setLengthSlider("panic");

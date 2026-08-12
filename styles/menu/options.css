@@ -36,7 +36,7 @@
 	color: var(--highlight);
 }
 
-#length-value {
+.length-value {
 	width: 20px;
 	text-align: center;
 	color: var(--highlight);
@@ -48,7 +48,7 @@
 	align-items: center;
 }
 
-#length-slider {
+.length-slider {
 	appearance: none;
 	width: 100%;
 	height: 2px;
@@ -56,7 +56,7 @@
 	outline: none;
 }
 
-#length-slider::-webkit-slider-thumb {
+.length-slider::-webkit-slider-thumb {
 	appearance: none;
 	width: 18px;
 	height: 18px;
@@ -65,7 +65,7 @@
 	cursor: pointer;
 }
 
-#length-slider::-moz-range-thumb {
+.length-slider::-moz-range-thumb {
 	width: 18px;
 	height: 18px;
 	border: none;
