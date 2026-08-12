@@ -35,7 +35,8 @@ export function resetGame() {
 	resetGameData();
 	if (game.mode === "panic")
 		Timer.stop();
-	resetGivenLettersContainer();
+	if (game.mode !== "test")
+		resetGivenLettersContainer();
 	resetCandidateWordContainer();
 	resetWordsFoundContainer();
 }

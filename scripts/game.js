@@ -131,6 +131,7 @@ export function startGame() {
 			Timer.start(60);
 			break;
 		case "test":
+			game.wordLength = 12;
 			createLetterBoxes(12);
 			settingsToGame("test");
 			break;
@@ -174,4 +175,13 @@ document.querySelectorAll(".submit-button").forEach(button => {
 	button.addEventListener("click", () => {
 		submitWord();
 	});
+});
+
+function findPossibleWords(word) {
+	possibleWords = [];
+	
+}
+
+document.getElementById("test-get-answers-button").addEventListener("click", () => {
+	findPossibleWords(game.currentInput);
 });
