@@ -1,0 +1,2334 @@
+[
+    {
+        "id": 1,
+        "letters": "ale",
+        "amount": 5,
+        "answers": [
+            "al",
+            "ale",
+            "el",
+            "la",
+            "le"
+        ]
+    },
+    {
+        "id": 2,
+        "letters": "alg",
+        "amount": 5,
+        "answers": [
+            "al",
+            "alg",
+            "gal",
+            "la",
+            "lag"
+        ]
+    },
+    {
+        "id": 3,
+        "letters": "alm",
+        "amount": 5,
+        "answers": [
+            "al",
+            "alm",
+            "la",
+            "lam",
+            "mal"
+        ]
+    },
+    {
+        "id": 4,
+        "letters": "als",
+        "amount": 6,
+        "answers": [
+            "al",
+            "als",
+            "la",
+            "las",
+            "sa",
+            "sal"
+        ]
+    },
+    {
+        "id": 5,
+        "letters": "alv",
+        "amount": 7,
+        "answers": [
+            "al",
+            "alv",
+            "av",
+            "la",
+            "lav",
+            "va",
+            "val"
+        ]
+    },
+    {
+        "id": 6,
+        "letters": "avi",
+        "amount": 6,
+        "answers": [
+            "av",
+            "avi",
+            "i",
+            "va",
+            "vi",
+            "via"
+        ]
+    },
+    {
+        "id": 7,
+        "letters": "bin",
+        "amount": 5,
+        "answers": [
+            "bi",
+            "bin",
+            "i",
+            "in",
+            "ni"
+        ]
+    },
+    {
+        "id": 8,
+        "letters": "dej",
+        "amount": 5,
+        "answers": [
+            "de",
+            "dej",
+            "dj",
+            "ed",
+            "ej"
+        ]
+    },
+    {
+        "id": 9,
+        "letters": "del",
+        "amount": 7,
+        "answers": [
+            "de",
+            "del",
+            "ed",
+            "el",
+            "eld",
+            "le",
+            "led"
+        ]
+    },
+    {
+        "id": 10,
+        "letters": "den",
+        "amount": 5,
+        "answers": [
+            "de",
+            "den",
+            "ed",
+            "en",
+            "ned"
+        ]
+    },
+    {
+        "id": 11,
+        "letters": "din",
+        "amount": 5,
+        "answers": [
+            "di",
+            "din",
+            "i",
+            "in",
+            "ni"
+        ]
+    },
+    {
+        "id": 12,
+        "letters": "dån",
+        "amount": 6,
+        "answers": [
+            "då",
+            "dån",
+            "nå",
+            "nåd",
+            "å",
+            "ån"
+        ]
+    },
+    {
+        "id": 13,
+        "letters": "död",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "död",
+            "ö",
+            "öd",
+            "ödd"
+        ]
+    },
+    {
+        "id": 14,
+        "letters": "dög",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "dög",
+            "göd",
+            "ö",
+            "öd"
+        ]
+    },
+    {
+        "id": 15,
+        "letters": "dök",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "dök",
+            "kö",
+            "ö",
+            "öd"
+        ]
+    },
+    {
+        "id": 16,
+        "letters": "döm",
+        "amount": 6,
+        "answers": [
+            "dö",
+            "döm",
+            "mö",
+            "ö",
+            "öd",
+            "öm"
+        ]
+    },
+    {
+        "id": 17,
+        "letters": "dör",
+        "amount": 6,
+        "answers": [
+            "dr",
+            "dö",
+            "dör",
+            "röd",
+            "ö",
+            "öd"
+        ]
+    },
+    {
+        "id": 18,
+        "letters": "eds",
+        "amount": 5,
+        "answers": [
+            "de",
+            "ed",
+            "eds",
+            "se",
+            "sed"
+        ]
+    },
+    {
+        "id": 19,
+        "letters": "eld",
+        "amount": 7,
+        "answers": [
+            "de",
+            "del",
+            "ed",
+            "el",
+            "eld",
+            "le",
+            "led"
+        ]
+    },
+    {
+        "id": 20,
+        "letters": "els",
+        "amount": 5,
+        "answers": [
+            "el",
+            "els",
+            "le",
+            "les",
+            "se"
+        ]
+    },
+    {
+        "id": 21,
+        "letters": "ers",
+        "amount": 5,
+        "answers": [
+            "er",
+            "ers",
+            "res",
+            "se",
+            "ser"
+        ]
+    },
+    {
+        "id": 22,
+        "letters": "ert",
+        "amount": 5,
+        "answers": [
+            "er",
+            "ert",
+            "te",
+            "ter",
+            "tre"
+        ]
+    },
+    {
+        "id": 23,
+        "letters": "est",
+        "amount": 5,
+        "answers": [
+            "est",
+            "se",
+            "set",
+            "te",
+            "tes"
+        ]
+    },
+    {
+        "id": 24,
+        "letters": "fån",
+        "amount": 5,
+        "answers": [
+            "få",
+            "fån",
+            "nå",
+            "å",
+            "ån"
+        ]
+    },
+    {
+        "id": 25,
+        "letters": "får",
+        "amount": 5,
+        "answers": [
+            "få",
+            "får",
+            "rå",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 26,
+        "letters": "fås",
+        "amount": 5,
+        "answers": [
+            "få",
+            "fås",
+            "så",
+            "å",
+            "ås"
+        ]
+    },
+    {
+        "id": 27,
+        "letters": "gal",
+        "amount": 5,
+        "answers": [
+            "al",
+            "alg",
+            "gal",
+            "la",
+            "lag"
+        ]
+    },
+    {
+        "id": 28,
+        "letters": "gav",
+        "amount": 5,
+        "answers": [
+            "av",
+            "gav",
+            "va",
+            "vag",
+            "vg"
+        ]
+    },
+    {
+        "id": 29,
+        "letters": "gin",
+        "amount": 5,
+        "answers": [
+            "gin",
+            "i",
+            "in",
+            "ni",
+            "nig"
+        ]
+    },
+    {
+        "id": 30,
+        "letters": "giv",
+        "amount": 5,
+        "answers": [
+            "giv",
+            "i",
+            "vg",
+            "vi",
+            "vig"
+        ]
+    },
+    {
+        "id": 31,
+        "letters": "grå",
+        "amount": 7,
+        "answers": [
+            "grå",
+            "gå",
+            "går",
+            "rå",
+            "råg",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 32,
+        "letters": "går",
+        "amount": 7,
+        "answers": [
+            "grå",
+            "gå",
+            "går",
+            "rå",
+            "råg",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 33,
+        "letters": "gås",
+        "amount": 6,
+        "answers": [
+            "gå",
+            "gås",
+            "så",
+            "såg",
+            "å",
+            "ås"
+        ]
+    },
+    {
+        "id": 34,
+        "letters": "göd",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "dög",
+            "göd",
+            "ö",
+            "öd"
+        ]
+    },
+    {
+        "id": 35,
+        "letters": "göm",
+        "amount": 5,
+        "answers": [
+            "göm",
+            "mö",
+            "mög",
+            "ö",
+            "öm"
+        ]
+    },
+    {
+        "id": 36,
+        "letters": "hån",
+        "amount": 5,
+        "answers": [
+            "hån",
+            "nå",
+            "å",
+            "åh",
+            "ån"
+        ]
+    },
+    {
+        "id": 37,
+        "letters": "hår",
+        "amount": 5,
+        "answers": [
+            "hår",
+            "rå",
+            "å",
+            "åh",
+            "år"
+        ]
+    },
+    {
+        "id": 38,
+        "letters": "hök",
+        "amount": 5,
+        "answers": [
+            "hö",
+            "hök",
+            "kö",
+            "ö",
+            "öh"
+        ]
+    },
+    {
+        "id": 39,
+        "letters": "hös",
+        "amount": 5,
+        "answers": [
+            "hö",
+            "hös",
+            "ö",
+            "öh",
+            "ös"
+        ]
+    },
+    {
+        "id": 40,
+        "letters": "ide",
+        "amount": 5,
+        "answers": [
+            "de",
+            "di",
+            "ed",
+            "i",
+            "ide"
+        ]
+    },
+    {
+        "id": 41,
+        "letters": "isa",
+        "amount": 5,
+        "answers": [
+            "i",
+            "is",
+            "isa",
+            "sa",
+            "sia"
+        ]
+    },
+    {
+        "id": 42,
+        "letters": "jan",
+        "amount": 5,
+        "answers": [
+            "aj",
+            "an",
+            "ja",
+            "jan",
+            "nja"
+        ]
+    },
+    {
+        "id": 43,
+        "letters": "kel",
+        "amount": 6,
+        "answers": [
+            "ek",
+            "el",
+            "kel",
+            "kl",
+            "le",
+            "lek"
+        ]
+    },
+    {
+        "id": 44,
+        "letters": "kil",
+        "amount": 5,
+        "answers": [
+            "i",
+            "kil",
+            "kl",
+            "kli",
+            "lik"
+        ]
+    },
+    {
+        "id": 45,
+        "letters": "kli",
+        "amount": 5,
+        "answers": [
+            "i",
+            "kil",
+            "kl",
+            "kli",
+            "lik"
+        ]
+    },
+    {
+        "id": 46,
+        "letters": "klo",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "klo",
+            "ko",
+            "kol",
+            "lok",
+            "ok"
+        ]
+    },
+    {
+        "id": 47,
+        "letters": "klå",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "klå",
+            "kål",
+            "å",
+            "åk",
+            "ål"
+        ]
+    },
+    {
+        "id": 48,
+        "letters": "koj",
+        "amount": 5,
+        "answers": [
+            "jo",
+            "ko",
+            "koj",
+            "oj",
+            "ok"
+        ]
+    },
+    {
+        "id": 49,
+        "letters": "kol",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "klo",
+            "ko",
+            "kol",
+            "lok",
+            "ok"
+        ]
+    },
+    {
+        "id": 50,
+        "letters": "kor",
+        "amount": 5,
+        "answers": [
+            "ko",
+            "kor",
+            "ok",
+            "ork",
+            "ro"
+        ]
+    },
+    {
+        "id": 51,
+        "letters": "kos",
+        "amount": 6,
+        "answers": [
+            "ko",
+            "kos",
+            "ok",
+            "oks",
+            "os",
+            "sko"
+        ]
+    },
+    {
+        "id": 52,
+        "letters": "kål",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "klå",
+            "kål",
+            "å",
+            "åk",
+            "ål"
+        ]
+    },
+    {
+        "id": 53,
+        "letters": "kår",
+        "amount": 6,
+        "answers": [
+            "kår",
+            "rå",
+            "råk",
+            "å",
+            "åk",
+            "år"
+        ]
+    },
+    {
+        "id": 54,
+        "letters": "kåt",
+        "amount": 6,
+        "answers": [
+            "kåt",
+            "tå",
+            "å",
+            "åk",
+            "åkt",
+            "åt"
+        ]
+    },
+    {
+        "id": 55,
+        "letters": "köl",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "kö",
+            "köl",
+            "lök",
+            "ö",
+            "öl"
+        ]
+    },
+    {
+        "id": 56,
+        "letters": "kös",
+        "amount": 5,
+        "answers": [
+            "kö",
+            "kös",
+            "sök",
+            "ö",
+            "ös"
+        ]
+    },
+    {
+        "id": 57,
+        "letters": "lag",
+        "amount": 5,
+        "answers": [
+            "al",
+            "alg",
+            "gal",
+            "la",
+            "lag"
+        ]
+    },
+    {
+        "id": 58,
+        "letters": "lam",
+        "amount": 5,
+        "answers": [
+            "al",
+            "alm",
+            "la",
+            "lam",
+            "mal"
+        ]
+    },
+    {
+        "id": 59,
+        "letters": "las",
+        "amount": 6,
+        "answers": [
+            "al",
+            "als",
+            "la",
+            "las",
+            "sa",
+            "sal"
+        ]
+    },
+    {
+        "id": 60,
+        "letters": "lat",
+        "amount": 5,
+        "answers": [
+            "al",
+            "la",
+            "lat",
+            "ta",
+            "tal"
+        ]
+    },
+    {
+        "id": 61,
+        "letters": "lav",
+        "amount": 7,
+        "answers": [
+            "al",
+            "alv",
+            "av",
+            "la",
+            "lav",
+            "va",
+            "val"
+        ]
+    },
+    {
+        "id": 62,
+        "letters": "led",
+        "amount": 7,
+        "answers": [
+            "de",
+            "del",
+            "ed",
+            "el",
+            "eld",
+            "le",
+            "led"
+        ]
+    },
+    {
+        "id": 63,
+        "letters": "lek",
+        "amount": 6,
+        "answers": [
+            "ek",
+            "el",
+            "kel",
+            "kl",
+            "le",
+            "lek"
+        ]
+    },
+    {
+        "id": 64,
+        "letters": "les",
+        "amount": 5,
+        "answers": [
+            "el",
+            "els",
+            "le",
+            "les",
+            "se"
+        ]
+    },
+    {
+        "id": 65,
+        "letters": "lik",
+        "amount": 5,
+        "answers": [
+            "i",
+            "kil",
+            "kl",
+            "kli",
+            "lik"
+        ]
+    },
+    {
+        "id": 66,
+        "letters": "lok",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "klo",
+            "ko",
+            "kol",
+            "lok",
+            "ok"
+        ]
+    },
+    {
+        "id": 67,
+        "letters": "lån",
+        "amount": 6,
+        "answers": [
+            "lån",
+            "nå",
+            "nål",
+            "å",
+            "ål",
+            "ån"
+        ]
+    },
+    {
+        "id": 68,
+        "letters": "lår",
+        "amount": 5,
+        "answers": [
+            "lår",
+            "rå",
+            "å",
+            "ål",
+            "år"
+        ]
+    },
+    {
+        "id": 69,
+        "letters": "lås",
+        "amount": 7,
+        "answers": [
+            "lås",
+            "slå",
+            "så",
+            "å",
+            "ål",
+            "åls",
+            "ås"
+        ]
+    },
+    {
+        "id": 70,
+        "letters": "låt",
+        "amount": 6,
+        "answers": [
+            "låt",
+            "tå",
+            "tål",
+            "å",
+            "ål",
+            "åt"
+        ]
+    },
+    {
+        "id": 71,
+        "letters": "löd",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "löd",
+            "ö",
+            "öd",
+            "öl"
+        ]
+    },
+    {
+        "id": 72,
+        "letters": "lök",
+        "amount": 6,
+        "answers": [
+            "kl",
+            "kö",
+            "köl",
+            "lök",
+            "ö",
+            "öl"
+        ]
+    },
+    {
+        "id": 73,
+        "letters": "lös",
+        "amount": 6,
+        "answers": [
+            "lös",
+            "slö",
+            "ö",
+            "öl",
+            "öls",
+            "ös"
+        ]
+    },
+    {
+        "id": 74,
+        "letters": "mal",
+        "amount": 5,
+        "answers": [
+            "al",
+            "alm",
+            "la",
+            "lam",
+            "mal"
+        ]
+    },
+    {
+        "id": 75,
+        "letters": "mor",
+        "amount": 5,
+        "answers": [
+            "mor",
+            "om",
+            "orm",
+            "ro",
+            "rom"
+        ]
+    },
+    {
+        "id": 76,
+        "letters": "mån",
+        "amount": 5,
+        "answers": [
+            "må",
+            "mån",
+            "nå",
+            "å",
+            "ån"
+        ]
+    },
+    {
+        "id": 77,
+        "letters": "mår",
+        "amount": 5,
+        "answers": [
+            "må",
+            "mår",
+            "rå",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 78,
+        "letters": "mås",
+        "amount": 6,
+        "answers": [
+            "må",
+            "mås",
+            "små",
+            "så",
+            "å",
+            "ås"
+        ]
+    },
+    {
+        "id": 79,
+        "letters": "mög",
+        "amount": 5,
+        "answers": [
+            "göm",
+            "mö",
+            "mög",
+            "ö",
+            "öm"
+        ]
+    },
+    {
+        "id": 80,
+        "letters": "mön",
+        "amount": 5,
+        "answers": [
+            "mö",
+            "mön",
+            "ö",
+            "öm",
+            "ön"
+        ]
+    },
+    {
+        "id": 81,
+        "letters": "mös",
+        "amount": 6,
+        "answers": [
+            "mö",
+            "mös",
+            "söm",
+            "ö",
+            "öm",
+            "ös"
+        ]
+    },
+    {
+        "id": 82,
+        "letters": "möt",
+        "amount": 6,
+        "answers": [
+            "mö",
+            "möt",
+            "töm",
+            "ö",
+            "öm",
+            "ömt"
+        ]
+    },
+    {
+        "id": 83,
+        "letters": "nav",
+        "amount": 5,
+        "answers": [
+            "an",
+            "av",
+            "nav",
+            "va",
+            "van"
+        ]
+    },
+    {
+        "id": 84,
+        "letters": "ned",
+        "amount": 5,
+        "answers": [
+            "de",
+            "den",
+            "ed",
+            "en",
+            "ned"
+        ]
+    },
+    {
+        "id": 85,
+        "letters": "nia",
+        "amount": 5,
+        "answers": [
+            "an",
+            "i",
+            "in",
+            "ni",
+            "nia"
+        ]
+    },
+    {
+        "id": 86,
+        "letters": "nig",
+        "amount": 5,
+        "answers": [
+            "gin",
+            "i",
+            "in",
+            "ni",
+            "nig"
+        ]
+    },
+    {
+        "id": 87,
+        "letters": "nja",
+        "amount": 5,
+        "answers": [
+            "aj",
+            "an",
+            "ja",
+            "jan",
+            "nja"
+        ]
+    },
+    {
+        "id": 88,
+        "letters": "nåd",
+        "amount": 6,
+        "answers": [
+            "då",
+            "dån",
+            "nå",
+            "nåd",
+            "å",
+            "ån"
+        ]
+    },
+    {
+        "id": 89,
+        "letters": "nål",
+        "amount": 6,
+        "answers": [
+            "lån",
+            "nå",
+            "nål",
+            "å",
+            "ål",
+            "ån"
+        ]
+    },
+    {
+        "id": 90,
+        "letters": "når",
+        "amount": 7,
+        "answers": [
+            "nå",
+            "når",
+            "rå",
+            "rån",
+            "å",
+            "ån",
+            "år"
+        ]
+    },
+    {
+        "id": 91,
+        "letters": "nås",
+        "amount": 8,
+        "answers": [
+            "nå",
+            "nås",
+            "så",
+            "sån",
+            "å",
+            "ån",
+            "åns",
+            "ås"
+        ]
+    },
+    {
+        "id": 92,
+        "letters": "nåt",
+        "amount": 7,
+        "answers": [
+            "nå",
+            "nåt",
+            "tå",
+            "tån",
+            "å",
+            "ån",
+            "åt"
+        ]
+    },
+    {
+        "id": 93,
+        "letters": "nöd",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "nöd",
+            "ö",
+            "öd",
+            "ön"
+        ]
+    },
+    {
+        "id": 94,
+        "letters": "nös",
+        "amount": 6,
+        "answers": [
+            "nös",
+            "snö",
+            "ö",
+            "ön",
+            "öns",
+            "ös"
+        ]
+    },
+    {
+        "id": 95,
+        "letters": "oja",
+        "amount": 5,
+        "answers": [
+            "aj",
+            "ja",
+            "jo",
+            "oj",
+            "oja"
+        ]
+    },
+    {
+        "id": 96,
+        "letters": "oks",
+        "amount": 6,
+        "answers": [
+            "ko",
+            "kos",
+            "ok",
+            "oks",
+            "os",
+            "sko"
+        ]
+    },
+    {
+        "id": 97,
+        "letters": "ork",
+        "amount": 5,
+        "answers": [
+            "ko",
+            "kor",
+            "ok",
+            "ork",
+            "ro"
+        ]
+    },
+    {
+        "id": 98,
+        "letters": "orm",
+        "amount": 5,
+        "answers": [
+            "mor",
+            "om",
+            "orm",
+            "ro",
+            "rom"
+        ]
+    },
+    {
+        "id": 99,
+        "letters": "oöm",
+        "amount": 5,
+        "answers": [
+            "mö",
+            "om",
+            "oöm",
+            "ö",
+            "öm"
+        ]
+    },
+    {
+        "id": 100,
+        "letters": "pin",
+        "amount": 5,
+        "answers": [
+            "i",
+            "in",
+            "ni",
+            "pi",
+            "pin"
+        ]
+    },
+    {
+        "id": 101,
+        "letters": "pös",
+        "amount": 5,
+        "answers": [
+            "pös",
+            "spö",
+            "söp",
+            "ö",
+            "ös"
+        ]
+    },
+    {
+        "id": 102,
+        "letters": "red",
+        "amount": 5,
+        "answers": [
+            "de",
+            "dr",
+            "ed",
+            "er",
+            "red"
+        ]
+    },
+    {
+        "id": 103,
+        "letters": "res",
+        "amount": 5,
+        "answers": [
+            "er",
+            "ers",
+            "res",
+            "se",
+            "ser"
+        ]
+    },
+    {
+        "id": 104,
+        "letters": "rom",
+        "amount": 5,
+        "answers": [
+            "mor",
+            "om",
+            "orm",
+            "ro",
+            "rom"
+        ]
+    },
+    {
+        "id": 105,
+        "letters": "rys",
+        "amount": 5,
+        "answers": [
+            "rys",
+            "sy",
+            "syr",
+            "yr",
+            "yrs"
+        ]
+    },
+    {
+        "id": 106,
+        "letters": "ryt",
+        "amount": 6,
+        "answers": [
+            "ryt",
+            "ty",
+            "tyr",
+            "yr",
+            "yrt",
+            "yt"
+        ]
+    },
+    {
+        "id": 107,
+        "letters": "råa",
+        "amount": 6,
+        "answers": [
+            "rå",
+            "råa",
+            "å",
+            "åar",
+            "år",
+            "åra"
+        ]
+    },
+    {
+        "id": 108,
+        "letters": "råd",
+        "amount": 6,
+        "answers": [
+            "dr",
+            "då",
+            "rå",
+            "råd",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 109,
+        "letters": "råe",
+        "amount": 5,
+        "answers": [
+            "er",
+            "rå",
+            "råe",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 110,
+        "letters": "råg",
+        "amount": 7,
+        "answers": [
+            "grå",
+            "gå",
+            "går",
+            "rå",
+            "råg",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 111,
+        "letters": "råk",
+        "amount": 6,
+        "answers": [
+            "kår",
+            "rå",
+            "råk",
+            "å",
+            "åk",
+            "år"
+        ]
+    },
+    {
+        "id": 112,
+        "letters": "rån",
+        "amount": 7,
+        "answers": [
+            "nå",
+            "når",
+            "rå",
+            "rån",
+            "å",
+            "ån",
+            "år"
+        ]
+    },
+    {
+        "id": 113,
+        "letters": "rät",
+        "amount": 6,
+        "answers": [
+            "rät",
+            "trä",
+            "tär",
+            "är",
+            "ärt",
+            "ät"
+        ]
+    },
+    {
+        "id": 114,
+        "letters": "röd",
+        "amount": 6,
+        "answers": [
+            "dr",
+            "dö",
+            "dör",
+            "röd",
+            "ö",
+            "öd"
+        ]
+    },
+    {
+        "id": 115,
+        "letters": "sal",
+        "amount": 6,
+        "answers": [
+            "al",
+            "als",
+            "la",
+            "las",
+            "sa",
+            "sal"
+        ]
+    },
+    {
+        "id": 116,
+        "letters": "sav",
+        "amount": 5,
+        "answers": [
+            "av",
+            "sa",
+            "sav",
+            "va",
+            "vas"
+        ]
+    },
+    {
+        "id": 117,
+        "letters": "sed",
+        "amount": 5,
+        "answers": [
+            "de",
+            "ed",
+            "eds",
+            "se",
+            "sed"
+        ]
+    },
+    {
+        "id": 118,
+        "letters": "ser",
+        "amount": 5,
+        "answers": [
+            "er",
+            "ers",
+            "res",
+            "se",
+            "ser"
+        ]
+    },
+    {
+        "id": 119,
+        "letters": "set",
+        "amount": 5,
+        "answers": [
+            "est",
+            "se",
+            "set",
+            "te",
+            "tes"
+        ]
+    },
+    {
+        "id": 120,
+        "letters": "sia",
+        "amount": 5,
+        "answers": [
+            "i",
+            "is",
+            "isa",
+            "sa",
+            "sia"
+        ]
+    },
+    {
+        "id": 121,
+        "letters": "sin",
+        "amount": 5,
+        "answers": [
+            "i",
+            "in",
+            "is",
+            "ni",
+            "sin"
+        ]
+    },
+    {
+        "id": 122,
+        "letters": "sko",
+        "amount": 6,
+        "answers": [
+            "ko",
+            "kos",
+            "ok",
+            "oks",
+            "os",
+            "sko"
+        ]
+    },
+    {
+        "id": 123,
+        "letters": "slå",
+        "amount": 7,
+        "answers": [
+            "lås",
+            "slå",
+            "så",
+            "å",
+            "ål",
+            "åls",
+            "ås"
+        ]
+    },
+    {
+        "id": 124,
+        "letters": "slö",
+        "amount": 6,
+        "answers": [
+            "lös",
+            "slö",
+            "ö",
+            "öl",
+            "öls",
+            "ös"
+        ]
+    },
+    {
+        "id": 125,
+        "letters": "små",
+        "amount": 6,
+        "answers": [
+            "må",
+            "mås",
+            "små",
+            "så",
+            "å",
+            "ås"
+        ]
+    },
+    {
+        "id": 126,
+        "letters": "snö",
+        "amount": 6,
+        "answers": [
+            "nös",
+            "snö",
+            "ö",
+            "ön",
+            "öns",
+            "ös"
+        ]
+    },
+    {
+        "id": 127,
+        "letters": "spå",
+        "amount": 5,
+        "answers": [
+            "på",
+            "spå",
+            "så",
+            "å",
+            "ås"
+        ]
+    },
+    {
+        "id": 128,
+        "letters": "spö",
+        "amount": 5,
+        "answers": [
+            "pös",
+            "spö",
+            "söp",
+            "ö",
+            "ös"
+        ]
+    },
+    {
+        "id": 129,
+        "letters": "stå",
+        "amount": 9,
+        "answers": [
+            "stå",
+            "så",
+            "såt",
+            "tå",
+            "tås",
+            "å",
+            "ås",
+            "åt",
+            "åts"
+        ]
+    },
+    {
+        "id": 130,
+        "letters": "syr",
+        "amount": 5,
+        "answers": [
+            "rys",
+            "sy",
+            "syr",
+            "yr",
+            "yrs"
+        ]
+    },
+    {
+        "id": 131,
+        "letters": "såg",
+        "amount": 6,
+        "answers": [
+            "gå",
+            "gås",
+            "så",
+            "såg",
+            "å",
+            "ås"
+        ]
+    },
+    {
+        "id": 132,
+        "letters": "sån",
+        "amount": 8,
+        "answers": [
+            "nå",
+            "nås",
+            "så",
+            "sån",
+            "å",
+            "ån",
+            "åns",
+            "ås"
+        ]
+    },
+    {
+        "id": 133,
+        "letters": "sår",
+        "amount": 7,
+        "answers": [
+            "rå",
+            "så",
+            "sår",
+            "å",
+            "år",
+            "års",
+            "ås"
+        ]
+    },
+    {
+        "id": 134,
+        "letters": "såt",
+        "amount": 9,
+        "answers": [
+            "stå",
+            "så",
+            "såt",
+            "tå",
+            "tås",
+            "å",
+            "ås",
+            "åt",
+            "åts"
+        ]
+    },
+    {
+        "id": 135,
+        "letters": "sök",
+        "amount": 5,
+        "answers": [
+            "kö",
+            "kös",
+            "sök",
+            "ö",
+            "ös"
+        ]
+    },
+    {
+        "id": 136,
+        "letters": "söm",
+        "amount": 6,
+        "answers": [
+            "mö",
+            "mös",
+            "söm",
+            "ö",
+            "öm",
+            "ös"
+        ]
+    },
+    {
+        "id": 137,
+        "letters": "söp",
+        "amount": 5,
+        "answers": [
+            "pös",
+            "spö",
+            "söp",
+            "ö",
+            "ös"
+        ]
+    },
+    {
+        "id": 138,
+        "letters": "tal",
+        "amount": 5,
+        "answers": [
+            "al",
+            "la",
+            "lat",
+            "ta",
+            "tal"
+        ]
+    },
+    {
+        "id": 139,
+        "letters": "ter",
+        "amount": 5,
+        "answers": [
+            "er",
+            "ert",
+            "te",
+            "ter",
+            "tre"
+        ]
+    },
+    {
+        "id": 140,
+        "letters": "tes",
+        "amount": 5,
+        "answers": [
+            "est",
+            "se",
+            "set",
+            "te",
+            "tes"
+        ]
+    },
+    {
+        "id": 141,
+        "letters": "tre",
+        "amount": 5,
+        "answers": [
+            "er",
+            "ert",
+            "te",
+            "ter",
+            "tre"
+        ]
+    },
+    {
+        "id": 142,
+        "letters": "trå",
+        "amount": 7,
+        "answers": [
+            "rå",
+            "trå",
+            "tå",
+            "tår",
+            "å",
+            "år",
+            "åt"
+        ]
+    },
+    {
+        "id": 143,
+        "letters": "trä",
+        "amount": 6,
+        "answers": [
+            "rät",
+            "trä",
+            "tär",
+            "är",
+            "ärt",
+            "ät"
+        ]
+    },
+    {
+        "id": 144,
+        "letters": "tvi",
+        "amount": 5,
+        "answers": [
+            "i",
+            "tv",
+            "tvi",
+            "vi",
+            "vit"
+        ]
+    },
+    {
+        "id": 145,
+        "letters": "två",
+        "amount": 6,
+        "answers": [
+            "tv",
+            "två",
+            "tå",
+            "våt",
+            "å",
+            "åt"
+        ]
+    },
+    {
+        "id": 146,
+        "letters": "tyr",
+        "amount": 6,
+        "answers": [
+            "ryt",
+            "ty",
+            "tyr",
+            "yr",
+            "yrt",
+            "yt"
+        ]
+    },
+    {
+        "id": 147,
+        "letters": "tåg",
+        "amount": 5,
+        "answers": [
+            "gå",
+            "tå",
+            "tåg",
+            "å",
+            "åt"
+        ]
+    },
+    {
+        "id": 148,
+        "letters": "tål",
+        "amount": 6,
+        "answers": [
+            "låt",
+            "tå",
+            "tål",
+            "å",
+            "ål",
+            "åt"
+        ]
+    },
+    {
+        "id": 149,
+        "letters": "tån",
+        "amount": 7,
+        "answers": [
+            "nå",
+            "nåt",
+            "tå",
+            "tån",
+            "å",
+            "ån",
+            "åt"
+        ]
+    },
+    {
+        "id": 150,
+        "letters": "tår",
+        "amount": 7,
+        "answers": [
+            "rå",
+            "trå",
+            "tå",
+            "tår",
+            "å",
+            "år",
+            "åt"
+        ]
+    },
+    {
+        "id": 151,
+        "letters": "tås",
+        "amount": 9,
+        "answers": [
+            "stå",
+            "så",
+            "såt",
+            "tå",
+            "tås",
+            "å",
+            "ås",
+            "åt",
+            "åts"
+        ]
+    },
+    {
+        "id": 152,
+        "letters": "tär",
+        "amount": 6,
+        "answers": [
+            "rät",
+            "trä",
+            "tär",
+            "är",
+            "ärt",
+            "ät"
+        ]
+    },
+    {
+        "id": 153,
+        "letters": "töm",
+        "amount": 6,
+        "answers": [
+            "mö",
+            "möt",
+            "töm",
+            "ö",
+            "öm",
+            "ömt"
+        ]
+    },
+    {
+        "id": 154,
+        "letters": "vag",
+        "amount": 5,
+        "answers": [
+            "av",
+            "gav",
+            "va",
+            "vag",
+            "vg"
+        ]
+    },
+    {
+        "id": 155,
+        "letters": "val",
+        "amount": 7,
+        "answers": [
+            "al",
+            "alv",
+            "av",
+            "la",
+            "lav",
+            "va",
+            "val"
+        ]
+    },
+    {
+        "id": 156,
+        "letters": "van",
+        "amount": 5,
+        "answers": [
+            "an",
+            "av",
+            "nav",
+            "va",
+            "van"
+        ]
+    },
+    {
+        "id": 157,
+        "letters": "vas",
+        "amount": 5,
+        "answers": [
+            "av",
+            "sa",
+            "sav",
+            "va",
+            "vas"
+        ]
+    },
+    {
+        "id": 158,
+        "letters": "via",
+        "amount": 6,
+        "answers": [
+            "av",
+            "avi",
+            "i",
+            "va",
+            "vi",
+            "via"
+        ]
+    },
+    {
+        "id": 159,
+        "letters": "vig",
+        "amount": 5,
+        "answers": [
+            "giv",
+            "i",
+            "vg",
+            "vi",
+            "vig"
+        ]
+    },
+    {
+        "id": 160,
+        "letters": "vin",
+        "amount": 5,
+        "answers": [
+            "i",
+            "in",
+            "ni",
+            "vi",
+            "vin"
+        ]
+    },
+    {
+        "id": 161,
+        "letters": "vit",
+        "amount": 5,
+        "answers": [
+            "i",
+            "tv",
+            "tvi",
+            "vi",
+            "vit"
+        ]
+    },
+    {
+        "id": 162,
+        "letters": "vrå",
+        "amount": 5,
+        "answers": [
+            "rå",
+            "vrå",
+            "vår",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 163,
+        "letters": "vår",
+        "amount": 5,
+        "answers": [
+            "rå",
+            "vrå",
+            "vår",
+            "å",
+            "år"
+        ]
+    },
+    {
+        "id": 164,
+        "letters": "våt",
+        "amount": 6,
+        "answers": [
+            "tv",
+            "två",
+            "tå",
+            "våt",
+            "å",
+            "åt"
+        ]
+    },
+    {
+        "id": 165,
+        "letters": "yrs",
+        "amount": 5,
+        "answers": [
+            "rys",
+            "sy",
+            "syr",
+            "yr",
+            "yrs"
+        ]
+    },
+    {
+        "id": 166,
+        "letters": "yrt",
+        "amount": 6,
+        "answers": [
+            "ryt",
+            "ty",
+            "tyr",
+            "yr",
+            "yrt",
+            "yt"
+        ]
+    },
+    {
+        "id": 167,
+        "letters": "åar",
+        "amount": 6,
+        "answers": [
+            "rå",
+            "råa",
+            "å",
+            "åar",
+            "år",
+            "åra"
+        ]
+    },
+    {
+        "id": 168,
+        "letters": "åks",
+        "amount": 5,
+        "answers": [
+            "så",
+            "å",
+            "åk",
+            "åks",
+            "ås"
+        ]
+    },
+    {
+        "id": 169,
+        "letters": "åkt",
+        "amount": 6,
+        "answers": [
+            "kåt",
+            "tå",
+            "å",
+            "åk",
+            "åkt",
+            "åt"
+        ]
+    },
+    {
+        "id": 170,
+        "letters": "åla",
+        "amount": 5,
+        "answers": [
+            "al",
+            "la",
+            "å",
+            "ål",
+            "åla"
+        ]
+    },
+    {
+        "id": 171,
+        "letters": "åls",
+        "amount": 7,
+        "answers": [
+            "lås",
+            "slå",
+            "så",
+            "å",
+            "ål",
+            "åls",
+            "ås"
+        ]
+    },
+    {
+        "id": 172,
+        "letters": "ång",
+        "amount": 5,
+        "answers": [
+            "gå",
+            "nå",
+            "å",
+            "ån",
+            "ång"
+        ]
+    },
+    {
+        "id": 173,
+        "letters": "åns",
+        "amount": 8,
+        "answers": [
+            "nå",
+            "nås",
+            "så",
+            "sån",
+            "å",
+            "ån",
+            "åns",
+            "ås"
+        ]
+    },
+    {
+        "id": 174,
+        "letters": "åra",
+        "amount": 6,
+        "answers": [
+            "rå",
+            "råa",
+            "å",
+            "åar",
+            "år",
+            "åra"
+        ]
+    },
+    {
+        "id": 175,
+        "letters": "års",
+        "amount": 7,
+        "answers": [
+            "rå",
+            "så",
+            "sår",
+            "å",
+            "år",
+            "års",
+            "ås"
+        ]
+    },
+    {
+        "id": 176,
+        "letters": "åta",
+        "amount": 5,
+        "answers": [
+            "ta",
+            "tå",
+            "å",
+            "åt",
+            "åta"
+        ]
+    },
+    {
+        "id": 177,
+        "letters": "åts",
+        "amount": 9,
+        "answers": [
+            "stå",
+            "så",
+            "såt",
+            "tå",
+            "tås",
+            "å",
+            "ås",
+            "åt",
+            "åts"
+        ]
+    },
+    {
+        "id": 178,
+        "letters": "ärt",
+        "amount": 6,
+        "answers": [
+            "rät",
+            "trä",
+            "tär",
+            "är",
+            "ärt",
+            "ät"
+        ]
+    },
+    {
+        "id": 179,
+        "letters": "ödd",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "död",
+            "ö",
+            "öd",
+            "ödd"
+        ]
+    },
+    {
+        "id": 180,
+        "letters": "öde",
+        "amount": 6,
+        "answers": [
+            "de",
+            "dö",
+            "ed",
+            "ö",
+            "öd",
+            "öde"
+        ]
+    },
+    {
+        "id": 181,
+        "letters": "öds",
+        "amount": 5,
+        "answers": [
+            "dö",
+            "ö",
+            "öd",
+            "öds",
+            "ös"
+        ]
+    },
+    {
+        "id": 182,
+        "letters": "öls",
+        "amount": 6,
+        "answers": [
+            "lös",
+            "slö",
+            "ö",
+            "öl",
+            "öls",
+            "ös"
+        ]
+    },
+    {
+        "id": 183,
+        "letters": "ömt",
+        "amount": 6,
+        "answers": [
+            "mö",
+            "möt",
+            "töm",
+            "ö",
+            "öm",
+            "ömt"
+        ]
+    },
+    {
+        "id": 184,
+        "letters": "öns",
+        "amount": 6,
+        "answers": [
+            "nös",
+            "snö",
+            "ö",
+            "ön",
+            "öns",
+            "ös"
+        ]
+    }
+]

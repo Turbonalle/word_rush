@@ -1,0 +1,3434 @@
+[
+    {
+        "id": 1,
+        "letters": "utu",
+        "amount": 5,
+        "answers": [
+            "t",
+            "tu",
+            "u",
+            "ut",
+            "utu"
+        ]
+    },
+    {
+        "id": 2,
+        "letters": "inn",
+        "amount": 5,
+        "answers": [
+            "i",
+            "in",
+            "inn",
+            "n",
+            "ni"
+        ]
+    },
+    {
+        "id": 3,
+        "letters": "egg",
+        "amount": 5,
+        "answers": [
+            "e",
+            "eg",
+            "egg",
+            "g",
+            "ge"
+        ]
+    },
+    {
+        "id": 4,
+        "letters": "arr",
+        "amount": 5,
+        "answers": [
+            "a",
+            "ar",
+            "arr",
+            "r",
+            "ra"
+        ]
+    },
+    {
+        "id": 5,
+        "letters": "grr",
+        "amount": 5,
+        "answers": [
+            "g",
+            "gr",
+            "grr",
+            "r",
+            "rg"
+        ]
+    },
+    {
+        "id": 6,
+        "letters": "non",
+        "amount": 5,
+        "answers": [
+            "n",
+            "no",
+            "non",
+            "o",
+            "on"
+        ]
+    },
+    {
+        "id": 7,
+        "letters": "tyt",
+        "amount": 5,
+        "answers": [
+            "y",
+            "yt",
+            "t",
+            "tyt",
+            "tty"
+        ]
+    },
+    {
+        "id": 8,
+        "letters": "err",
+        "amount": 5,
+        "answers": [
+            "e",
+            "er",
+            "err",
+            "r",
+            "re"
+        ]
+    },
+    {
+        "id": 9,
+        "letters": "lwl",
+        "amount": 5,
+        "answers": [
+            "l",
+            "ll",
+            "lwl",
+            "w",
+            "wl"
+        ]
+    },
+    {
+        "id": 10,
+        "letters": "goo",
+        "amount": 5,
+        "answers": [
+            "g",
+            "go",
+            "goo",
+            "o",
+            "og"
+        ]
+    },
+    {
+        "id": 11,
+        "letters": "umu",
+        "amount": 5,
+        "answers": [
+            "m",
+            "mu",
+            "u",
+            "um",
+            "umu"
+        ]
+    },
+    {
+        "id": 12,
+        "letters": "tnt",
+        "amount": 5,
+        "answers": [
+            "n",
+            "nt",
+            "t",
+            "tn",
+            "tnt"
+        ]
+    },
+    {
+        "id": 13,
+        "letters": "ebb",
+        "amount": 5,
+        "answers": [
+            "b",
+            "bb",
+            "be",
+            "e",
+            "ebb"
+        ]
+    },
+    {
+        "id": 14,
+        "letters": "zig",
+        "amount": 5,
+        "answers": [
+            "g",
+            "gi",
+            "i",
+            "z",
+            "zig"
+        ]
+    },
+    {
+        "id": 15,
+        "letters": "gog",
+        "amount": 5,
+        "answers": [
+            "g",
+            "go",
+            "gog",
+            "o",
+            "og"
+        ]
+    },
+    {
+        "id": 16,
+        "letters": "ull",
+        "amount": 5,
+        "answers": [
+            "l",
+            "ll",
+            "lu",
+            "u",
+            "ull"
+        ]
+    },
+    {
+        "id": 17,
+        "letters": "eve",
+        "amount": 5,
+        "answers": [
+            "e",
+            "ee",
+            "eve",
+            "v",
+            "vee"
+        ]
+    },
+    {
+        "id": 18,
+        "letters": "kee",
+        "amount": 5,
+        "answers": [
+            "e",
+            "ee",
+            "eke",
+            "k",
+            "kee"
+        ]
+    },
+    {
+        "id": 19,
+        "letters": "ihi",
+        "amount": 5,
+        "answers": [
+            "h",
+            "hi",
+            "i",
+            "ihi",
+            "ii"
+        ]
+    },
+    {
+        "id": 20,
+        "letters": "bub",
+        "amount": 5,
+        "answers": [
+            "b",
+            "bb",
+            "bu",
+            "bub",
+            "u"
+        ]
+    },
+    {
+        "id": 21,
+        "letters": "aka",
+        "amount": 6,
+        "answers": [
+            "a",
+            "aa",
+            "ak",
+            "aka",
+            "k",
+            "ka"
+        ]
+    },
+    {
+        "id": 22,
+        "letters": "ann",
+        "amount": 6,
+        "answers": [
+            "a",
+            "an",
+            "ann",
+            "n",
+            "na",
+            "nan"
+        ]
+    },
+    {
+        "id": 23,
+        "letters": "ccm",
+        "amount": 6,
+        "answers": [
+            "c",
+            "cc",
+            "ccm",
+            "cm",
+            "m",
+            "mc"
+        ]
+    },
+    {
+        "id": 24,
+        "letters": "zer",
+        "amount": 6,
+        "answers": [
+            "e",
+            "er",
+            "r",
+            "re",
+            "z",
+            "zer"
+        ]
+    },
+    {
+        "id": 25,
+        "letters": "ara",
+        "amount": 6,
+        "answers": [
+            "a",
+            "aa",
+            "ar",
+            "ara",
+            "r",
+            "ra"
+        ]
+    },
+    {
+        "id": 26,
+        "letters": "cee",
+        "amount": 6,
+        "answers": [
+            "c",
+            "ce",
+            "cee",
+            "e",
+            "ec",
+            "ee"
+        ]
+    },
+    {
+        "id": 27,
+        "letters": "unn",
+        "amount": 6,
+        "answers": [
+            "n",
+            "nu",
+            "nun",
+            "u",
+            "un",
+            "unn"
+        ]
+    },
+    {
+        "id": 28,
+        "letters": "tez",
+        "amount": 6,
+        "answers": [
+            "e",
+            "et",
+            "t",
+            "te",
+            "tez",
+            "z"
+        ]
+    },
+    {
+        "id": 29,
+        "letters": "nan",
+        "amount": 6,
+        "answers": [
+            "a",
+            "an",
+            "ann",
+            "n",
+            "na",
+            "nan"
+        ]
+    },
+    {
+        "id": 30,
+        "letters": "guz",
+        "amount": 6,
+        "answers": [
+            "g",
+            "gu",
+            "guz",
+            "u",
+            "ug",
+            "z"
+        ]
+    },
+    {
+        "id": 31,
+        "letters": "xii",
+        "amount": 6,
+        "answers": [
+            "i",
+            "ii",
+            "ix",
+            "x",
+            "xi",
+            "xii"
+        ]
+    },
+    {
+        "id": 32,
+        "letters": "jeu",
+        "amount": 6,
+        "answers": [
+            "e",
+            "eu",
+            "j",
+            "jeu",
+            "ju",
+            "u"
+        ]
+    },
+    {
+        "id": 33,
+        "letters": "kou",
+        "amount": 6,
+        "answers": [
+            "k",
+            "ko",
+            "kou",
+            "o",
+            "ok",
+            "u"
+        ]
+    },
+    {
+        "id": 34,
+        "letters": "dud",
+        "amount": 6,
+        "answers": [
+            "d",
+            "dd",
+            "du",
+            "dud",
+            "u",
+            "ud"
+        ]
+    },
+    {
+        "id": 35,
+        "letters": "aga",
+        "amount": 6,
+        "answers": [
+            "a",
+            "aa",
+            "ag",
+            "aga",
+            "g",
+            "ga"
+        ]
+    },
+    {
+        "id": 36,
+        "letters": "liz",
+        "amount": 6,
+        "answers": [
+            "i",
+            "il",
+            "l",
+            "li",
+            "liz",
+            "z"
+        ]
+    },
+    {
+        "id": 37,
+        "letters": "yez",
+        "amount": 6,
+        "answers": [
+            "e",
+            "ey",
+            "y",
+            "ye",
+            "yez",
+            "z"
+        ]
+    },
+    {
+        "id": 38,
+        "letters": "gtt",
+        "amount": 6,
+        "answers": [
+            "g",
+            "gt",
+            "gtt",
+            "t",
+            "tg",
+            "tgt"
+        ]
+    },
+    {
+        "id": 39,
+        "letters": "mmf",
+        "amount": 6,
+        "answers": [
+            "f",
+            "fm",
+            "m",
+            "mf",
+            "mm",
+            "mmf"
+        ]
+    },
+    {
+        "id": 40,
+        "letters": "ayu",
+        "amount": 6,
+        "answers": [
+            "a",
+            "ay",
+            "ayu",
+            "y",
+            "ya",
+            "u"
+        ]
+    },
+    {
+        "id": 41,
+        "letters": "jay",
+        "amount": 7,
+        "answers": [
+            "a",
+            "ay",
+            "y",
+            "ya",
+            "j",
+            "ja",
+            "jay"
+        ]
+    },
+    {
+        "id": 42,
+        "letters": "max",
+        "amount": 7,
+        "answers": [
+            "a",
+            "am",
+            "ax",
+            "m",
+            "ma",
+            "max",
+            "x"
+        ]
+    },
+    {
+        "id": 43,
+        "letters": "add",
+        "amount": 7,
+        "answers": [
+            "a",
+            "ad",
+            "add",
+            "d",
+            "da",
+            "dad",
+            "dd"
+        ]
+    },
+    {
+        "id": 44,
+        "letters": "baa",
+        "amount": 7,
+        "answers": [
+            "a",
+            "aa",
+            "ab",
+            "aba",
+            "b",
+            "ba",
+            "baa"
+        ]
+    },
+    {
+        "id": 45,
+        "letters": "pox",
+        "amount": 7,
+        "answers": [
+            "o",
+            "op",
+            "ox",
+            "p",
+            "po",
+            "pox",
+            "x"
+        ]
+    },
+    {
+        "id": 46,
+        "letters": "jms",
+        "amount": 7,
+        "answers": [
+            "j",
+            "jms",
+            "js",
+            "m",
+            "ms",
+            "s",
+            "sm"
+        ]
+    },
+    {
+        "id": 47,
+        "letters": "huk",
+        "amount": 7,
+        "answers": [
+            "h",
+            "hu",
+            "huk",
+            "k",
+            "khu",
+            "u",
+            "uh"
+        ]
+    },
+    {
+        "id": 48,
+        "letters": "mum",
+        "amount": 7,
+        "answers": [
+            "m",
+            "mm",
+            "mu",
+            "mum",
+            "u",
+            "um",
+            "umm"
+        ]
+    },
+    {
+        "id": 49,
+        "letters": "voe",
+        "amount": 7,
+        "answers": [
+            "e",
+            "eo",
+            "o",
+            "oe",
+            "v",
+            "vo",
+            "voe"
+        ]
+    },
+    {
+        "id": 50,
+        "letters": "tuy",
+        "amount": 7,
+        "answers": [
+            "y",
+            "yt",
+            "t",
+            "tu",
+            "tuy",
+            "u",
+            "ut"
+        ]
+    },
+    {
+        "id": 51,
+        "letters": "ana",
+        "amount": 7,
+        "answers": [
+            "a",
+            "aa",
+            "an",
+            "ana",
+            "n",
+            "na",
+            "naa"
+        ]
+    },
+    {
+        "id": 52,
+        "letters": "ghi",
+        "amount": 7,
+        "answers": [
+            "g",
+            "ghi",
+            "gi",
+            "h",
+            "hg",
+            "hi",
+            "i"
+        ]
+    },
+    {
+        "id": 53,
+        "letters": "eel",
+        "amount": 7,
+        "answers": [
+            "e",
+            "ee",
+            "eel",
+            "el",
+            "l",
+            "le",
+            "lee"
+        ]
+    },
+    {
+        "id": 54,
+        "letters": "rfz",
+        "amount": 7,
+        "answers": [
+            "f",
+            "fr",
+            "fz",
+            "r",
+            "rf",
+            "rfz",
+            "z"
+        ]
+    },
+    {
+        "id": 55,
+        "letters": "spp",
+        "amount": 7,
+        "answers": [
+            "p",
+            "pp",
+            "pps",
+            "ps",
+            "s",
+            "sp",
+            "spp"
+        ]
+    },
+    {
+        "id": 56,
+        "letters": "sps",
+        "amount": 7,
+        "answers": [
+            "p",
+            "ps",
+            "s",
+            "sp",
+            "sps",
+            "ss",
+            "ssp"
+        ]
+    },
+    {
+        "id": 57,
+        "letters": "sky",
+        "amount": 7,
+        "answers": [
+            "y",
+            "ys",
+            "k",
+            "ky",
+            "s",
+            "sk",
+            "sky"
+        ]
+    },
+    {
+        "id": 58,
+        "letters": "pyr",
+        "amount": 7,
+        "answers": [
+            "y",
+            "yr",
+            "p",
+            "pyr",
+            "pr",
+            "pry",
+            "r"
+        ]
+    },
+    {
+        "id": 59,
+        "letters": "pix",
+        "amount": 7,
+        "answers": [
+            "i",
+            "ix",
+            "p",
+            "pi",
+            "pix",
+            "x",
+            "xi"
+        ]
+    },
+    {
+        "id": 60,
+        "letters": "sis",
+        "amount": 7,
+        "answers": [
+            "i",
+            "is",
+            "s",
+            "si",
+            "sis",
+            "ss",
+            "ssi"
+        ]
+    },
+    {
+        "id": 61,
+        "letters": "poz",
+        "amount": 8,
+        "answers": [
+            "o",
+            "op",
+            "oz",
+            "p",
+            "po",
+            "poz",
+            "z",
+            "zo"
+        ]
+    },
+    {
+        "id": 62,
+        "letters": "bhp",
+        "amount": 8,
+        "answers": [
+            "b",
+            "bhp",
+            "bp",
+            "h",
+            "hb",
+            "hp",
+            "p",
+            "ph"
+        ]
+    },
+    {
+        "id": 63,
+        "letters": "kye",
+        "amount": 8,
+        "answers": [
+            "e",
+            "ey",
+            "y",
+            "ye",
+            "k",
+            "key",
+            "ky",
+            "kye"
+        ]
+    },
+    {
+        "id": 64,
+        "letters": "hid",
+        "amount": 8,
+        "answers": [
+            "d",
+            "di",
+            "h",
+            "hd",
+            "hi",
+            "hid",
+            "i",
+            "id"
+        ]
+    },
+    {
+        "id": 65,
+        "letters": "bpi",
+        "amount": 8,
+        "answers": [
+            "b",
+            "bi",
+            "bp",
+            "bpi",
+            "i",
+            "ib",
+            "p",
+            "pi"
+        ]
+    },
+    {
+        "id": 66,
+        "letters": "dwt",
+        "amount": 8,
+        "answers": [
+            "d",
+            "dt",
+            "dwt",
+            "t",
+            "td",
+            "w",
+            "wd",
+            "wt"
+        ]
+    },
+    {
+        "id": 67,
+        "letters": "auk",
+        "amount": 8,
+        "answers": [
+            "a",
+            "ak",
+            "aku",
+            "auk",
+            "k",
+            "ka",
+            "kua",
+            "u"
+        ]
+    },
+    {
+        "id": 68,
+        "letters": "bch",
+        "amount": 8,
+        "answers": [
+            "b",
+            "bch",
+            "c",
+            "cb",
+            "ch",
+            "h",
+            "hb",
+            "hcb"
+        ]
+    },
+    {
+        "id": 69,
+        "letters": "fry",
+        "amount": 8,
+        "answers": [
+            "f",
+            "fy",
+            "fr",
+            "fry",
+            "y",
+            "yr",
+            "r",
+            "rf"
+        ]
+    },
+    {
+        "id": 70,
+        "letters": "haj",
+        "amount": 8,
+        "answers": [
+            "a",
+            "ah",
+            "h",
+            "ha",
+            "haj",
+            "j",
+            "ja",
+            "jah"
+        ]
+    },
+    {
+        "id": 71,
+        "letters": "fun",
+        "amount": 8,
+        "answers": [
+            "f",
+            "fn",
+            "fu",
+            "fun",
+            "n",
+            "nu",
+            "u",
+            "un"
+        ]
+    },
+    {
+        "id": 72,
+        "letters": "poy",
+        "amount": 8,
+        "answers": [
+            "y",
+            "yo",
+            "o",
+            "oy",
+            "op",
+            "p",
+            "po",
+            "poy"
+        ]
+    },
+    {
+        "id": 73,
+        "letters": "saj",
+        "amount": 8,
+        "answers": [
+            "a",
+            "as",
+            "j",
+            "ja",
+            "js",
+            "s",
+            "sa",
+            "saj"
+        ]
+    },
+    {
+        "id": 74,
+        "letters": "hui",
+        "amount": 8,
+        "answers": [
+            "h",
+            "hi",
+            "hu",
+            "hui",
+            "i",
+            "u",
+            "uh",
+            "ui"
+        ]
+    },
+    {
+        "id": 75,
+        "letters": "upo",
+        "amount": 8,
+        "answers": [
+            "o",
+            "op",
+            "p",
+            "po",
+            "pu",
+            "u",
+            "up",
+            "upo"
+        ]
+    },
+    {
+        "id": 76,
+        "letters": "vod",
+        "amount": 8,
+        "answers": [
+            "d",
+            "do",
+            "o",
+            "od",
+            "v",
+            "vd",
+            "vo",
+            "vod"
+        ]
+    },
+    {
+        "id": 77,
+        "letters": "poi",
+        "amount": 8,
+        "answers": [
+            "i",
+            "io",
+            "o",
+            "op",
+            "p",
+            "pi",
+            "po",
+            "poi"
+        ]
+    },
+    {
+        "id": 78,
+        "letters": "box",
+        "amount": 8,
+        "answers": [
+            "b",
+            "bo",
+            "box",
+            "bx",
+            "o",
+            "ob",
+            "ox",
+            "x"
+        ]
+    },
+    {
+        "id": 79,
+        "letters": "nth",
+        "amount": 8,
+        "answers": [
+            "h",
+            "ht",
+            "n",
+            "nt",
+            "nth",
+            "t",
+            "th",
+            "tn"
+        ]
+    },
+    {
+        "id": 80,
+        "letters": "nou",
+        "amount": 8,
+        "answers": [
+            "n",
+            "no",
+            "nou",
+            "nu",
+            "o",
+            "on",
+            "u",
+            "un"
+        ]
+    },
+    {
+        "id": 81,
+        "letters": "gaz",
+        "amount": 9,
+        "answers": [
+            "a",
+            "ag",
+            "az",
+            "g",
+            "ga",
+            "gaz",
+            "z",
+            "za",
+            "zag"
+        ]
+    },
+    {
+        "id": 82,
+        "letters": "lev",
+        "amount": 9,
+        "answers": [
+            "e",
+            "el",
+            "l",
+            "le",
+            "lev",
+            "lv",
+            "v",
+            "vel",
+            "vl"
+        ]
+    },
+    {
+        "id": 83,
+        "letters": "rio",
+        "amount": 9,
+        "answers": [
+            "i",
+            "io",
+            "ir",
+            "o",
+            "or",
+            "r",
+            "rio",
+            "ro",
+            "roi"
+        ]
+    },
+    {
+        "id": 84,
+        "letters": "nco",
+        "amount": 9,
+        "answers": [
+            "c",
+            "co",
+            "con",
+            "n",
+            "nco",
+            "no",
+            "o",
+            "oc",
+            "on"
+        ]
+    },
+    {
+        "id": 85,
+        "letters": "dau",
+        "amount": 9,
+        "answers": [
+            "a",
+            "ad",
+            "aud",
+            "d",
+            "da",
+            "dau",
+            "du",
+            "u",
+            "ud"
+        ]
+    },
+    {
+        "id": 86,
+        "letters": "hog",
+        "amount": 9,
+        "answers": [
+            "g",
+            "go",
+            "h",
+            "hg",
+            "ho",
+            "hog",
+            "o",
+            "og",
+            "oh"
+        ]
+    },
+    {
+        "id": 87,
+        "letters": "lut",
+        "amount": 9,
+        "answers": [
+            "l",
+            "lt",
+            "lu",
+            "lut",
+            "t",
+            "tu",
+            "u",
+            "ult",
+            "ut"
+        ]
+    },
+    {
+        "id": 88,
+        "letters": "fip",
+        "amount": 9,
+        "answers": [
+            "f",
+            "fi",
+            "fip",
+            "fp",
+            "i",
+            "if",
+            "p",
+            "pf",
+            "pi"
+        ]
+    },
+    {
+        "id": 89,
+        "letters": "fay",
+        "amount": 9,
+        "answers": [
+            "a",
+            "af",
+            "ay",
+            "f",
+            "fa",
+            "fay",
+            "fy",
+            "y",
+            "ya"
+        ]
+    },
+    {
+        "id": 90,
+        "letters": "anc",
+        "amount": 9,
+        "answers": [
+            "a",
+            "ac",
+            "an",
+            "anc",
+            "c",
+            "ca",
+            "can",
+            "n",
+            "na"
+        ]
+    },
+    {
+        "id": 91,
+        "letters": "bcf",
+        "amount": 9,
+        "answers": [
+            "b",
+            "bcf",
+            "bf",
+            "c",
+            "cb",
+            "cf",
+            "f",
+            "fb",
+            "fc"
+        ]
+    },
+    {
+        "id": 92,
+        "letters": "qts",
+        "amount": 9,
+        "answers": [
+            "q",
+            "qs",
+            "qt",
+            "qts",
+            "s",
+            "sq",
+            "st",
+            "t",
+            "ts"
+        ]
+    },
+    {
+        "id": 93,
+        "letters": "jad",
+        "amount": 9,
+        "answers": [
+            "a",
+            "ad",
+            "adj",
+            "d",
+            "da",
+            "dj",
+            "j",
+            "ja",
+            "jad"
+        ]
+    },
+    {
+        "id": 94,
+        "letters": "aeq",
+        "amount": 9,
+        "answers": [
+            "a",
+            "ae",
+            "aeq",
+            "aq",
+            "e",
+            "ea",
+            "eq",
+            "q",
+            "qe"
+        ]
+    },
+    {
+        "id": 95,
+        "letters": "myc",
+        "amount": 9,
+        "answers": [
+            "c",
+            "cy",
+            "cm",
+            "y",
+            "ym",
+            "m",
+            "mc",
+            "my",
+            "myc"
+        ]
+    },
+    {
+        "id": 96,
+        "letters": "pua",
+        "amount": 9,
+        "answers": [
+            "a",
+            "ap",
+            "p",
+            "pa",
+            "pau",
+            "pu",
+            "pua",
+            "u",
+            "up"
+        ]
+    },
+    {
+        "id": 97,
+        "letters": "wei",
+        "amount": 9,
+        "answers": [
+            "e",
+            "ew",
+            "i",
+            "ie",
+            "iw",
+            "w",
+            "we",
+            "wei",
+            "wi"
+        ]
+    },
+    {
+        "id": 98,
+        "letters": "veg",
+        "amount": 9,
+        "answers": [
+            "e",
+            "eg",
+            "evg",
+            "g",
+            "ge",
+            "gv",
+            "v",
+            "veg",
+            "vg"
+        ]
+    },
+    {
+        "id": 99,
+        "letters": "bum",
+        "amount": 9,
+        "answers": [
+            "b",
+            "bm",
+            "bu",
+            "bum",
+            "m",
+            "mb",
+            "mu",
+            "u",
+            "um"
+        ]
+    },
+    {
+        "id": 100,
+        "letters": "vei",
+        "amount": 9,
+        "answers": [
+            "e",
+            "i",
+            "ie",
+            "iv",
+            "ive",
+            "v",
+            "vei",
+            "vi",
+            "vie"
+        ]
+    },
+    {
+        "id": 101,
+        "letters": "bvt",
+        "amount": 10,
+        "answers": [
+            "b",
+            "bt",
+            "bv",
+            "bvt",
+            "t",
+            "tb",
+            "tv",
+            "v",
+            "vb",
+            "vt"
+        ]
+    },
+    {
+        "id": 102,
+        "letters": "sac",
+        "amount": 10,
+        "answers": [
+            "a",
+            "ac",
+            "as",
+            "c",
+            "ca",
+            "cs",
+            "s",
+            "sa",
+            "sac",
+            "sc"
+        ]
+    },
+    {
+        "id": 103,
+        "letters": "cif",
+        "amount": 10,
+        "answers": [
+            "c",
+            "cf",
+            "cfi",
+            "cif",
+            "f",
+            "fc",
+            "fi",
+            "i",
+            "ic",
+            "if"
+        ]
+    },
+    {
+        "id": 104,
+        "letters": "kam",
+        "amount": 10,
+        "answers": [
+            "a",
+            "ak",
+            "am",
+            "k",
+            "ka",
+            "kam",
+            "km",
+            "m",
+            "ma",
+            "mk"
+        ]
+    },
+    {
+        "id": 105,
+        "letters": "wro",
+        "amount": 10,
+        "answers": [
+            "o",
+            "or",
+            "ow",
+            "r",
+            "ro",
+            "row",
+            "w",
+            "wo",
+            "wr",
+            "wro"
+        ]
+    },
+    {
+        "id": 106,
+        "letters": "std",
+        "amount": 10,
+        "answers": [
+            "d",
+            "ds",
+            "dt",
+            "s",
+            "sd",
+            "st",
+            "std",
+            "t",
+            "td",
+            "ts"
+        ]
+    },
+    {
+        "id": 107,
+        "letters": "cul",
+        "amount": 10,
+        "answers": [
+            "c",
+            "cl",
+            "cu",
+            "cul",
+            "l",
+            "lc",
+            "lu",
+            "luc",
+            "u",
+            "uc"
+        ]
+    },
+    {
+        "id": 108,
+        "letters": "por",
+        "amount": 10,
+        "answers": [
+            "o",
+            "op",
+            "or",
+            "p",
+            "po",
+            "por",
+            "pr",
+            "pro",
+            "r",
+            "ro"
+        ]
+    },
+    {
+        "id": 109,
+        "letters": "ule",
+        "amount": 10,
+        "answers": [
+            "e",
+            "el",
+            "eu",
+            "l",
+            "le",
+            "leu",
+            "lu",
+            "lue",
+            "u",
+            "ule"
+        ]
+    },
+    {
+        "id": 110,
+        "letters": "lig",
+        "amount": 10,
+        "answers": [
+            "g",
+            "gi",
+            "gil",
+            "gl",
+            "i",
+            "il",
+            "l",
+            "lg",
+            "li",
+            "lig"
+        ]
+    },
+    {
+        "id": 111,
+        "letters": "wmk",
+        "amount": 10,
+        "answers": [
+            "k",
+            "km",
+            "kw",
+            "m",
+            "mk",
+            "mw",
+            "w",
+            "wk",
+            "wm",
+            "wmk"
+        ]
+    },
+    {
+        "id": 112,
+        "letters": "fop",
+        "amount": 10,
+        "answers": [
+            "f",
+            "fo",
+            "fop",
+            "fp",
+            "o",
+            "of",
+            "op",
+            "p",
+            "pf",
+            "po"
+        ]
+    },
+    {
+        "id": 113,
+        "letters": "yah",
+        "amount": 10,
+        "answers": [
+            "a",
+            "ah",
+            "ay",
+            "h",
+            "ha",
+            "hay",
+            "hy",
+            "y",
+            "ya",
+            "yah"
+        ]
+    },
+    {
+        "id": 114,
+        "letters": "poa",
+        "amount": 10,
+        "answers": [
+            "a",
+            "ao",
+            "ap",
+            "o",
+            "op",
+            "opa",
+            "p",
+            "pa",
+            "po",
+            "poa"
+        ]
+    },
+    {
+        "id": 115,
+        "letters": "hob",
+        "amount": 10,
+        "answers": [
+            "b",
+            "bo",
+            "boh",
+            "h",
+            "hb",
+            "ho",
+            "hob",
+            "o",
+            "ob",
+            "oh"
+        ]
+    },
+    {
+        "id": 116,
+        "letters": "gid",
+        "amount": 10,
+        "answers": [
+            "d",
+            "dg",
+            "di",
+            "dig",
+            "g",
+            "gd",
+            "gi",
+            "gid",
+            "i",
+            "id"
+        ]
+    },
+    {
+        "id": 117,
+        "letters": "sly",
+        "amount": 10,
+        "answers": [
+            "y",
+            "ys",
+            "l",
+            "ly",
+            "lys",
+            "ls",
+            "s",
+            "syl",
+            "sl",
+            "sly"
+        ]
+    },
+    {
+        "id": 118,
+        "letters": "rim",
+        "amount": 10,
+        "answers": [
+            "i",
+            "im",
+            "ir",
+            "m",
+            "mi",
+            "mir",
+            "mr",
+            "r",
+            "rim",
+            "rm"
+        ]
+    },
+    {
+        "id": 119,
+        "letters": "kim",
+        "amount": 10,
+        "answers": [
+            "i",
+            "ik",
+            "im",
+            "k",
+            "ki",
+            "kim",
+            "km",
+            "m",
+            "mi",
+            "mk"
+        ]
+    },
+    {
+        "id": 120,
+        "letters": "cdg",
+        "amount": 10,
+        "answers": [
+            "c",
+            "cd",
+            "cdg",
+            "cg",
+            "d",
+            "dc",
+            "dg",
+            "g",
+            "gcd",
+            "gd"
+        ]
+    },
+    {
+        "id": 121,
+        "letters": "ens",
+        "amount": 11,
+        "answers": [
+            "e",
+            "en",
+            "ens",
+            "es",
+            "n",
+            "ne",
+            "ns",
+            "s",
+            "se",
+            "sen",
+            "sn"
+        ]
+    },
+    {
+        "id": 122,
+        "letters": "tod",
+        "amount": 11,
+        "answers": [
+            "d",
+            "do",
+            "dot",
+            "dt",
+            "o",
+            "od",
+            "ot",
+            "t",
+            "td",
+            "to",
+            "tod"
+        ]
+    },
+    {
+        "id": 123,
+        "letters": "ged",
+        "amount": 11,
+        "answers": [
+            "d",
+            "de",
+            "deg",
+            "dg",
+            "e",
+            "ed",
+            "eg",
+            "g",
+            "gd",
+            "ge",
+            "ged"
+        ]
+    },
+    {
+        "id": 124,
+        "letters": "moa",
+        "amount": 11,
+        "answers": [
+            "a",
+            "am",
+            "ao",
+            "m",
+            "ma",
+            "mao",
+            "mo",
+            "moa",
+            "o",
+            "oam",
+            "om"
+        ]
+    },
+    {
+        "id": 125,
+        "letters": "rom",
+        "amount": 11,
+        "answers": [
+            "m",
+            "mo",
+            "mor",
+            "mr",
+            "o",
+            "om",
+            "or",
+            "r",
+            "rm",
+            "ro",
+            "rom"
+        ]
+    },
+    {
+        "id": 126,
+        "letters": "dop",
+        "amount": 11,
+        "answers": [
+            "d",
+            "do",
+            "dop",
+            "dp",
+            "o",
+            "od",
+            "op",
+            "p",
+            "pd",
+            "po",
+            "pod"
+        ]
+    },
+    {
+        "id": 127,
+        "letters": "ibo",
+        "amount": 11,
+        "answers": [
+            "b",
+            "bi",
+            "bio",
+            "bo",
+            "i",
+            "ib",
+            "ibo",
+            "io",
+            "o",
+            "ob",
+            "obi"
+        ]
+    },
+    {
+        "id": 128,
+        "letters": "frs",
+        "amount": 11,
+        "answers": [
+            "f",
+            "fr",
+            "frs",
+            "fs",
+            "r",
+            "rf",
+            "rfs",
+            "rs",
+            "s",
+            "sf",
+            "sr"
+        ]
+    },
+    {
+        "id": 129,
+        "letters": "ron",
+        "amount": 11,
+        "answers": [
+            "n",
+            "no",
+            "nor",
+            "nr",
+            "o",
+            "on",
+            "or",
+            "r",
+            "rn",
+            "ro",
+            "ron"
+        ]
+    },
+    {
+        "id": 130,
+        "letters": "pcm",
+        "amount": 11,
+        "answers": [
+            "c",
+            "cm",
+            "cp",
+            "cpm",
+            "m",
+            "mc",
+            "mp",
+            "p",
+            "pc",
+            "pcm",
+            "pm"
+        ]
+    },
+    {
+        "id": 131,
+        "letters": "cod",
+        "amount": 11,
+        "answers": [
+            "c",
+            "cd",
+            "co",
+            "cod",
+            "d",
+            "dc",
+            "do",
+            "doc",
+            "o",
+            "oc",
+            "od"
+        ]
+    },
+    {
+        "id": 132,
+        "letters": "pit",
+        "amount": 11,
+        "answers": [
+            "i",
+            "it",
+            "p",
+            "pi",
+            "pit",
+            "pt",
+            "t",
+            "ti",
+            "tip",
+            "tp",
+            "tpi"
+        ]
+    },
+    {
+        "id": 133,
+        "letters": "oms",
+        "amount": 11,
+        "answers": [
+            "m",
+            "mo",
+            "mos",
+            "ms",
+            "o",
+            "om",
+            "oms",
+            "os",
+            "s",
+            "sm",
+            "so"
+        ]
+    },
+    {
+        "id": 134,
+        "letters": "hes",
+        "amount": 11,
+        "answers": [
+            "e",
+            "eh",
+            "es",
+            "h",
+            "he",
+            "hes",
+            "hs",
+            "s",
+            "se",
+            "sh",
+            "she"
+        ]
+    },
+    {
+        "id": 135,
+        "letters": "aln",
+        "amount": 11,
+        "answers": [
+            "a",
+            "al",
+            "aln",
+            "an",
+            "l",
+            "la",
+            "lan",
+            "ln",
+            "n",
+            "na",
+            "nl"
+        ]
+    },
+    {
+        "id": 136,
+        "letters": "osi",
+        "amount": 11,
+        "answers": [
+            "i",
+            "io",
+            "ios",
+            "is",
+            "iso",
+            "o",
+            "os",
+            "osi",
+            "s",
+            "si",
+            "so"
+        ]
+    },
+    {
+        "id": 137,
+        "letters": "use",
+        "amount": 11,
+        "answers": [
+            "e",
+            "es",
+            "esu",
+            "eu",
+            "s",
+            "se",
+            "su",
+            "sue",
+            "u",
+            "us",
+            "use"
+        ]
+    },
+    {
+        "id": 138,
+        "letters": "ern",
+        "amount": 11,
+        "answers": [
+            "e",
+            "en",
+            "er",
+            "ern",
+            "n",
+            "ne",
+            "nr",
+            "r",
+            "re",
+            "ren",
+            "rn"
+        ]
+    },
+    {
+        "id": 139,
+        "letters": "ans",
+        "amount": 11,
+        "answers": [
+            "a",
+            "an",
+            "ans",
+            "as",
+            "n",
+            "na",
+            "ns",
+            "s",
+            "sa",
+            "san",
+            "sn"
+        ]
+    },
+    {
+        "id": 140,
+        "letters": "gup",
+        "amount": 11,
+        "answers": [
+            "g",
+            "gp",
+            "gu",
+            "gup",
+            "p",
+            "pg",
+            "pu",
+            "pug",
+            "u",
+            "ug",
+            "up"
+        ]
+    },
+    {
+        "id": 141,
+        "letters": "her",
+        "amount": 12,
+        "answers": [
+            "e",
+            "eh",
+            "er",
+            "h",
+            "he",
+            "her",
+            "hr",
+            "r",
+            "re",
+            "reh",
+            "rh",
+            "rhe"
+        ]
+    },
+    {
+        "id": 142,
+        "letters": "sic",
+        "amount": 12,
+        "answers": [
+            "c",
+            "cis",
+            "cs",
+            "csi",
+            "i",
+            "ic",
+            "is",
+            "s",
+            "sc",
+            "sci",
+            "si",
+            "sic"
+        ]
+    },
+    {
+        "id": 143,
+        "letters": "ups",
+        "amount": 12,
+        "answers": [
+            "p",
+            "ps",
+            "pu",
+            "pus",
+            "s",
+            "sp",
+            "su",
+            "sup",
+            "u",
+            "up",
+            "ups",
+            "us"
+        ]
+    },
+    {
+        "id": 144,
+        "letters": "cfs",
+        "amount": 12,
+        "answers": [
+            "c",
+            "cf",
+            "cfs",
+            "cs",
+            "f",
+            "fc",
+            "fcs",
+            "fs",
+            "s",
+            "sc",
+            "scf",
+            "sf"
+        ]
+    },
+    {
+        "id": 145,
+        "letters": "doz",
+        "amount": 12,
+        "answers": [
+            "d",
+            "do",
+            "doz",
+            "dz",
+            "dzo",
+            "o",
+            "od",
+            "odz",
+            "oz",
+            "z",
+            "zo",
+            "zod"
+        ]
+    },
+    {
+        "id": 146,
+        "letters": "das",
+        "amount": 12,
+        "answers": [
+            "a",
+            "ad",
+            "ads",
+            "as",
+            "d",
+            "da",
+            "das",
+            "ds",
+            "s",
+            "sa",
+            "sad",
+            "sd"
+        ]
+    },
+    {
+        "id": 147,
+        "letters": "ray",
+        "amount": 12,
+        "answers": [
+            "a",
+            "ay",
+            "ar",
+            "ary",
+            "y",
+            "ya",
+            "yar",
+            "yr",
+            "r",
+            "ra",
+            "ray",
+            "rya"
+        ]
+    },
+    {
+        "id": 148,
+        "letters": "mib",
+        "amount": 12,
+        "answers": [
+            "b",
+            "bi",
+            "bim",
+            "bm",
+            "i",
+            "ib",
+            "ibm",
+            "im",
+            "m",
+            "mb",
+            "mi",
+            "mib"
+        ]
+    },
+    {
+        "id": 149,
+        "letters": "pfc",
+        "amount": 12,
+        "answers": [
+            "c",
+            "cf",
+            "cp",
+            "f",
+            "fc",
+            "fcp",
+            "fp",
+            "p",
+            "pc",
+            "pcf",
+            "pf",
+            "pfc"
+        ]
+    },
+    {
+        "id": 150,
+        "letters": "sel",
+        "amount": 12,
+        "answers": [
+            "e",
+            "el",
+            "els",
+            "es",
+            "l",
+            "le",
+            "les",
+            "ls",
+            "s",
+            "se",
+            "sel",
+            "sl"
+        ]
+    },
+    {
+        "id": 151,
+        "letters": "shu",
+        "amount": 12,
+        "answers": [
+            "h",
+            "hs",
+            "hu",
+            "s",
+            "sh",
+            "shu",
+            "su",
+            "u",
+            "uh",
+            "uhs",
+            "us",
+            "ush"
+        ]
+    },
+    {
+        "id": 152,
+        "letters": "mis",
+        "amount": 12,
+        "answers": [
+            "i",
+            "im",
+            "is",
+            "ism",
+            "m",
+            "mi",
+            "mis",
+            "ms",
+            "s",
+            "si",
+            "sim",
+            "sm"
+        ]
+    },
+    {
+        "id": 153,
+        "letters": "tid",
+        "amount": 12,
+        "answers": [
+            "d",
+            "di",
+            "dit",
+            "dt",
+            "i",
+            "id",
+            "it",
+            "itd",
+            "t",
+            "td",
+            "ti",
+            "tid"
+        ]
+    },
+    {
+        "id": 154,
+        "letters": "gun",
+        "amount": 12,
+        "answers": [
+            "g",
+            "gn",
+            "gnu",
+            "gu",
+            "gun",
+            "n",
+            "ng",
+            "nu",
+            "u",
+            "ug",
+            "un",
+            "ung"
+        ]
+    },
+    {
+        "id": 155,
+        "letters": "etc",
+        "amount": 12,
+        "answers": [
+            "c",
+            "ce",
+            "ct",
+            "cte",
+            "e",
+            "ec",
+            "et",
+            "etc",
+            "t",
+            "tc",
+            "te",
+            "tec"
+        ]
+    },
+    {
+        "id": 156,
+        "letters": "for",
+        "amount": 12,
+        "answers": [
+            "f",
+            "fo",
+            "for",
+            "fr",
+            "fro",
+            "o",
+            "of",
+            "or",
+            "orf",
+            "r",
+            "rf",
+            "ro"
+        ]
+    },
+    {
+        "id": 157,
+        "letters": "boa",
+        "amount": 12,
+        "answers": [
+            "a",
+            "ab",
+            "abo",
+            "ao",
+            "aob",
+            "b",
+            "ba",
+            "bo",
+            "boa",
+            "o",
+            "ob",
+            "oba"
+        ]
+    },
+    {
+        "id": 158,
+        "letters": "saw",
+        "amount": 12,
+        "answers": [
+            "a",
+            "as",
+            "aw",
+            "s",
+            "sa",
+            "saw",
+            "sw",
+            "swa",
+            "w",
+            "wa",
+            "was",
+            "ws"
+        ]
+    },
+    {
+        "id": 159,
+        "letters": "son",
+        "amount": 12,
+        "answers": [
+            "n",
+            "no",
+            "nos",
+            "ns",
+            "o",
+            "on",
+            "ons",
+            "os",
+            "s",
+            "sn",
+            "so",
+            "son"
+        ]
+    },
+    {
+        "id": 160,
+        "letters": "yed",
+        "amount": 12,
+        "answers": [
+            "d",
+            "de",
+            "dey",
+            "dy",
+            "dye",
+            "e",
+            "ed",
+            "ey",
+            "y",
+            "yd",
+            "ye",
+            "yed"
+        ]
+    },
+    {
+        "id": 161,
+        "letters": "oes",
+        "amount": 13,
+        "answers": [
+            "e",
+            "eo",
+            "eos",
+            "es",
+            "o",
+            "oe",
+            "oes",
+            "os",
+            "ose",
+            "s",
+            "se",
+            "so",
+            "soe"
+        ]
+    },
+    {
+        "id": 162,
+        "letters": "lac",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ac",
+            "al",
+            "alc",
+            "c",
+            "ca",
+            "cal",
+            "cl",
+            "l",
+            "la",
+            "lac",
+            "lc",
+            "lca"
+        ]
+    },
+    {
+        "id": 163,
+        "letters": "ihs",
+        "amount": 13,
+        "answers": [
+            "h",
+            "hi",
+            "his",
+            "hs",
+            "hsi",
+            "i",
+            "ihs",
+            "is",
+            "ish",
+            "s",
+            "sh",
+            "shi",
+            "si"
+        ]
+    },
+    {
+        "id": 164,
+        "letters": "esd",
+        "amount": 13,
+        "answers": [
+            "d",
+            "de",
+            "des",
+            "ds",
+            "e",
+            "ed",
+            "eds",
+            "es",
+            "esd",
+            "s",
+            "sd",
+            "se",
+            "sed"
+        ]
+    },
+    {
+        "id": 165,
+        "letters": "alc",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ac",
+            "al",
+            "alc",
+            "c",
+            "ca",
+            "cal",
+            "cl",
+            "l",
+            "la",
+            "lac",
+            "lc",
+            "lca"
+        ]
+    },
+    {
+        "id": 166,
+        "letters": "alp",
+        "amount": 13,
+        "answers": [
+            "a",
+            "al",
+            "alp",
+            "ap",
+            "apl",
+            "l",
+            "la",
+            "lap",
+            "lp",
+            "p",
+            "pa",
+            "pal",
+            "pl"
+        ]
+    },
+    {
+        "id": 167,
+        "letters": "ane",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ae",
+            "an",
+            "ane",
+            "e",
+            "ea",
+            "ean",
+            "en",
+            "n",
+            "na",
+            "nae",
+            "ne",
+            "nea"
+        ]
+    },
+    {
+        "id": 168,
+        "letters": "otc",
+        "amount": 13,
+        "answers": [
+            "c",
+            "co",
+            "cot",
+            "ct",
+            "cto",
+            "o",
+            "oc",
+            "oct",
+            "ot",
+            "otc",
+            "t",
+            "tc",
+            "to"
+        ]
+    },
+    {
+        "id": 169,
+        "letters": "als",
+        "amount": 13,
+        "answers": [
+            "a",
+            "al",
+            "als",
+            "as",
+            "l",
+            "la",
+            "las",
+            "ls",
+            "s",
+            "sa",
+            "sal",
+            "sl",
+            "sla"
+        ]
+    },
+    {
+        "id": 170,
+        "letters": "bar",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ab",
+            "abr",
+            "ar",
+            "arb",
+            "b",
+            "ba",
+            "bar",
+            "br",
+            "bra",
+            "r",
+            "ra",
+            "rab"
+        ]
+    },
+    {
+        "id": 171,
+        "letters": "lca",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ac",
+            "al",
+            "alc",
+            "c",
+            "ca",
+            "cal",
+            "cl",
+            "l",
+            "la",
+            "lac",
+            "lc",
+            "lca"
+        ]
+    },
+    {
+        "id": 172,
+        "letters": "bol",
+        "amount": 13,
+        "answers": [
+            "b",
+            "bl",
+            "blo",
+            "bo",
+            "bol",
+            "l",
+            "lb",
+            "lo",
+            "lob",
+            "o",
+            "ob",
+            "obl",
+            "ol"
+        ]
+    },
+    {
+        "id": 173,
+        "letters": "orc",
+        "amount": 13,
+        "answers": [
+            "c",
+            "co",
+            "cor",
+            "cr",
+            "cro",
+            "o",
+            "oc",
+            "or",
+            "orc",
+            "r",
+            "rc",
+            "ro",
+            "roc"
+        ]
+    },
+    {
+        "id": 174,
+        "letters": "mae",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ae",
+            "am",
+            "ame",
+            "e",
+            "ea",
+            "eam",
+            "em",
+            "m",
+            "ma",
+            "mae",
+            "me",
+            "mea"
+        ]
+    },
+    {
+        "id": 175,
+        "letters": "oda",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ad",
+            "ado",
+            "ao",
+            "d",
+            "da",
+            "dao",
+            "do",
+            "doa",
+            "o",
+            "oad",
+            "od",
+            "oda"
+        ]
+    },
+    {
+        "id": 176,
+        "letters": "sla",
+        "amount": 13,
+        "answers": [
+            "a",
+            "al",
+            "als",
+            "as",
+            "l",
+            "la",
+            "las",
+            "ls",
+            "s",
+            "sa",
+            "sal",
+            "sl",
+            "sla"
+        ]
+    },
+    {
+        "id": 177,
+        "letters": "dao",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ad",
+            "ado",
+            "ao",
+            "d",
+            "da",
+            "dao",
+            "do",
+            "doa",
+            "o",
+            "oad",
+            "od",
+            "oda"
+        ]
+    },
+    {
+        "id": 178,
+        "letters": "oad",
+        "amount": 13,
+        "answers": [
+            "a",
+            "ad",
+            "ado",
+            "ao",
+            "d",
+            "da",
+            "dao",
+            "do",
+            "doa",
+            "o",
+            "oad",
+            "od",
+            "oda"
+        ]
+    },
+    {
+        "id": 179,
+        "letters": "isn",
+        "amount": 13,
+        "answers": [
+            "i",
+            "in",
+            "ins",
+            "is",
+            "isn",
+            "n",
+            "ni",
+            "nis",
+            "ns",
+            "s",
+            "si",
+            "sin",
+            "sn"
+        ]
+    },
+    {
+        "id": 180,
+        "letters": "amt",
+        "amount": 13,
+        "answers": [
+            "a",
+            "am",
+            "amt",
+            "at",
+            "atm",
+            "m",
+            "ma",
+            "mat",
+            "mt",
+            "t",
+            "ta",
+            "tam",
+            "tm"
+        ]
+    },
+    {
+        "id": 181,
+        "letters": "gra",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ag",
+            "agr",
+            "ar",
+            "arg",
+            "g",
+            "ga",
+            "gar",
+            "gr",
+            "gra",
+            "r",
+            "ra",
+            "rag",
+            "rg"
+        ]
+    },
+    {
+        "id": 182,
+        "letters": "sah",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ah",
+            "ahs",
+            "as",
+            "ash",
+            "h",
+            "ha",
+            "has",
+            "hs",
+            "s",
+            "sa",
+            "sah",
+            "sh",
+            "sha"
+        ]
+    },
+    {
+        "id": 183,
+        "letters": "agr",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ag",
+            "agr",
+            "ar",
+            "arg",
+            "g",
+            "ga",
+            "gar",
+            "gr",
+            "gra",
+            "r",
+            "ra",
+            "rag",
+            "rg"
+        ]
+    },
+    {
+        "id": 184,
+        "letters": "ash",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ah",
+            "ahs",
+            "as",
+            "ash",
+            "h",
+            "ha",
+            "has",
+            "hs",
+            "s",
+            "sa",
+            "sah",
+            "sh",
+            "sha"
+        ]
+    },
+    {
+        "id": 185,
+        "letters": "has",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ah",
+            "ahs",
+            "as",
+            "ash",
+            "h",
+            "ha",
+            "has",
+            "hs",
+            "s",
+            "sa",
+            "sah",
+            "sh",
+            "sha"
+        ]
+    },
+    {
+        "id": 186,
+        "letters": "arg",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ag",
+            "agr",
+            "ar",
+            "arg",
+            "g",
+            "ga",
+            "gar",
+            "gr",
+            "gra",
+            "r",
+            "ra",
+            "rag",
+            "rg"
+        ]
+    },
+    {
+        "id": 187,
+        "letters": "aer",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ae",
+            "aer",
+            "ar",
+            "are",
+            "e",
+            "ea",
+            "ear",
+            "er",
+            "era",
+            "r",
+            "ra",
+            "re",
+            "rea"
+        ]
+    },
+    {
+        "id": 188,
+        "letters": "gar",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ag",
+            "agr",
+            "ar",
+            "arg",
+            "g",
+            "ga",
+            "gar",
+            "gr",
+            "gra",
+            "r",
+            "ra",
+            "rag",
+            "rg"
+        ]
+    },
+    {
+        "id": 189,
+        "letters": "tps",
+        "amount": 14,
+        "answers": [
+            "p",
+            "ps",
+            "pst",
+            "pt",
+            "pts",
+            "s",
+            "sp",
+            "spt",
+            "st",
+            "t",
+            "tp",
+            "tps",
+            "ts",
+            "tsp"
+        ]
+    },
+    {
+        "id": 190,
+        "letters": "rea",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ae",
+            "aer",
+            "ar",
+            "are",
+            "e",
+            "ea",
+            "ear",
+            "er",
+            "era",
+            "r",
+            "ra",
+            "re",
+            "rea"
+        ]
+    },
+    {
+        "id": 191,
+        "letters": "its",
+        "amount": 14,
+        "answers": [
+            "i",
+            "is",
+            "ist",
+            "it",
+            "its",
+            "s",
+            "si",
+            "sit",
+            "st",
+            "t",
+            "ti",
+            "tis",
+            "ts",
+            "tsi"
+        ]
+    },
+    {
+        "id": 192,
+        "letters": "sha",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ah",
+            "ahs",
+            "as",
+            "ash",
+            "h",
+            "ha",
+            "has",
+            "hs",
+            "s",
+            "sa",
+            "sah",
+            "sh",
+            "sha"
+        ]
+    },
+    {
+        "id": 193,
+        "letters": "tsi",
+        "amount": 14,
+        "answers": [
+            "i",
+            "is",
+            "ist",
+            "it",
+            "its",
+            "s",
+            "si",
+            "sit",
+            "st",
+            "t",
+            "ti",
+            "tis",
+            "ts",
+            "tsi"
+        ]
+    },
+    {
+        "id": 194,
+        "letters": "era",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ae",
+            "aer",
+            "ar",
+            "are",
+            "e",
+            "ea",
+            "ear",
+            "er",
+            "era",
+            "r",
+            "ra",
+            "re",
+            "rea"
+        ]
+    },
+    {
+        "id": 195,
+        "letters": "rag",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ag",
+            "agr",
+            "ar",
+            "arg",
+            "g",
+            "ga",
+            "gar",
+            "gr",
+            "gra",
+            "r",
+            "ra",
+            "rag",
+            "rg"
+        ]
+    },
+    {
+        "id": 196,
+        "letters": "tis",
+        "amount": 14,
+        "answers": [
+            "i",
+            "is",
+            "ist",
+            "it",
+            "its",
+            "s",
+            "si",
+            "sit",
+            "st",
+            "t",
+            "ti",
+            "tis",
+            "ts",
+            "tsi"
+        ]
+    },
+    {
+        "id": 197,
+        "letters": "ear",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ae",
+            "aer",
+            "ar",
+            "are",
+            "e",
+            "ea",
+            "ear",
+            "er",
+            "era",
+            "r",
+            "ra",
+            "re",
+            "rea"
+        ]
+    },
+    {
+        "id": 198,
+        "letters": "are",
+        "amount": 14,
+        "answers": [
+            "a",
+            "ae",
+            "aer",
+            "ar",
+            "are",
+            "e",
+            "ea",
+            "ear",
+            "er",
+            "era",
+            "r",
+            "ra",
+            "re",
+            "rea"
+        ]
+    },
+    {
+        "id": 199,
+        "letters": "spt",
+        "amount": 14,
+        "answers": [
+            "p",
+            "ps",
+            "pst",
+            "pt",
+            "pts",
+            "s",
+            "sp",
+            "spt",
+            "st",
+            "t",
+            "tp",
+            "tps",
+            "ts",
+            "tsp"
+        ]
+    },
+    {
+        "id": 200,
+        "letters": "sit",
+        "amount": 14,
+        "answers": [
+            "i",
+            "is",
+            "ist",
+            "it",
+            "its",
+            "s",
+            "si",
+            "sit",
+            "st",
+            "t",
+            "ti",
+            "tis",
+            "ts",
+            "tsi"
+        ]
+    },
+    {
+        "id": 201,
+        "letters": "tea",
+        "amount": 15,
+        "answers": [
+            "a",
+            "ae",
+            "aet",
+            "at",
+            "ate",
+            "e",
+            "ea",
+            "eat",
+            "et",
+            "eta",
+            "t",
+            "ta",
+            "tae",
+            "te",
+            "tea"
+        ]
+    },
+    {
+        "id": 202,
+        "letters": "aet",
+        "amount": 15,
+        "answers": [
+            "a",
+            "ae",
+            "aet",
+            "at",
+            "ate",
+            "e",
+            "ea",
+            "eat",
+            "et",
+            "eta",
+            "t",
+            "ta",
+            "tae",
+            "te",
+            "tea"
+        ]
+    },
+    {
+        "id": 203,
+        "letters": "tae",
+        "amount": 15,
+        "answers": [
+            "a",
+            "ae",
+            "aet",
+            "at",
+            "ate",
+            "e",
+            "ea",
+            "eat",
+            "et",
+            "eta",
+            "t",
+            "ta",
+            "tae",
+            "te",
+            "tea"
+        ]
+    },
+    {
+        "id": 204,
+        "letters": "ate",
+        "amount": 15,
+        "answers": [
+            "a",
+            "ae",
+            "aet",
+            "at",
+            "ate",
+            "e",
+            "ea",
+            "eat",
+            "et",
+            "eta",
+            "t",
+            "ta",
+            "tae",
+            "te",
+            "tea"
+        ]
+    },
+    {
+        "id": 205,
+        "letters": "eat",
+        "amount": 15,
+        "answers": [
+            "a",
+            "ae",
+            "aet",
+            "at",
+            "ate",
+            "e",
+            "ea",
+            "eat",
+            "et",
+            "eta",
+            "t",
+            "ta",
+            "tae",
+            "te",
+            "tea"
+        ]
+    },
+    {
+        "id": 206,
+        "letters": "eta",
+        "amount": 15,
+        "answers": [
+            "a",
+            "ae",
+            "aet",
+            "at",
+            "ate",
+            "e",
+            "ea",
+            "eat",
+            "et",
+            "eta",
+            "t",
+            "ta",
+            "tae",
+            "te",
+            "tea"
+        ]
+    }
+]
