@@ -1,4 +1,5 @@
 import { LevelManager } from "./LevelManager.js";
+import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./save.js";
 import { AudioPlayer } from "./AudioPlayer/AudioPlayer.js";
 import { menuPlaylist } from "./AudioPlayer/playlists.js";
@@ -40,6 +41,7 @@ async function initializeGame() {
 	game.save = Save.loadSave();
 	await LevelManager.loadStoryLevels();
 	await LevelManager.loadBasicLevels();
+	await DictionaryManager.loadDictionaries();
 	AudioPlayer.init();
 	AudioPlayer.loadPlaylist(menuPlaylist);
 }

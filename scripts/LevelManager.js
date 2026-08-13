@@ -129,5 +129,5 @@ export const LevelManager = {
 		}
 		const randomIndex = Math.floor(Math.random() * levels.length);
 		return levels[randomIndex];
-	},
+	}
 };

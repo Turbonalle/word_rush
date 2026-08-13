@@ -1,5 +1,6 @@
 import { game } from "./main.js";
-import { submitWord, calculateLetterFrequency, updateLetterBoxes } from "./game.js";
+import { findAndFillWords, submitWord, updateLetterBoxes } from "./game.js";
+import { calculateLetterFrequency } from "./helper_functions.js";
 
 document.addEventListener("keydown", e => {
 	if (game.state !== "game")
@@ -15,7 +16,11 @@ document.addEventListener("keydown", e => {
 	}
 	if (e.key === "Enter") {
 		console.log("Enter");
-		submitWord();
+		if (game.mode === "test") {
+			findAndFillWords();
+		} else {
+			submitWord();
+		}
 		return;
 	}
 	if (!/^[a-zåäö]$/i.test(e.key))

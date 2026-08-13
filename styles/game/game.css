@@ -91,6 +91,11 @@
 	border: 2px solid var(--invalid);
 }
 
+.correct {
+	color: var(--correct);
+	border: 2px solid var(--correct);
+}
+
 .submit-button {
 	width: 200px;
 	height: 60px;

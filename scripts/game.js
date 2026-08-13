@@ -1,8 +1,9 @@
 import { game } from "./main.js";
 import { gameToMode, settingsToGame } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
-import { getElement } from "./helper_functions.js";
+import { getElement, calculateLetterFrequency } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
+import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./save.js";
 import { Timer } from "./Timer.js";
 
@@ -40,18 +41,6 @@ function resetProgressBar() {
 	const progressBar = getElement(game.mode, "-progress-bar");
 	progressText.textContent = "0 / " + game.possibleAnswers.length;
 	progressBar.style.width = "0%";
-}
-
-export function calculateLetterFrequency(word) {
-	const frequency = {};
-	for (const letter of word) {
-		if (frequency[letter]) {
-			frequency[letter]++;
-		} else {
-			frequency[letter] = 1;
-		}
-	}
-	return frequency;
 }
 
 function createLetterBoxes(amount) {
@@ -177,11 +166,17 @@ document.querySelectorAll(".submit-button").forEach(button => {
 	});
 });
 
-function findPossibleWords(word) {
-	possibleWords = [];
-	
+export function findAndFillWords() {
+	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
+	for (let i = 0; i < possibleWords.length; i++) {
+		addWordToContainer(possibleWords[i]);
+	}
+	addWordToContainer(`${possibleWords.length} possible words!`);
+	const container = getElement(game.mode, "-found-words-container");
+	const resultTag = container.lastElementChild;
+	resultTag.classList.add("correct");
 }
 
 document.getElementById("test-get-answers-button").addEventListener("click", () => {
-	findPossibleWords(game.currentInput);
+	findAndFillWords();
 });
