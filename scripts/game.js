@@ -15,7 +15,7 @@ export function updateLetterBoxes() {
 	for (let i = 0; i < game.currentInput.length; i++) {
 		const letter = game.currentInput[i];
 		seen[letter] = (seen[letter] || 0) + 1;
-		if (seen[letter] > (game.letterFrequency[letter] || 0)) {
+		if (game.mode !== "test" && seen[letter] > (game.letterFrequency[letter] || 0)) {
 			boxes[i].classList.add("invalid-character");
 		} else {
 			boxes[i].classList.remove("invalid-character");
