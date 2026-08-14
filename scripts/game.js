@@ -167,6 +167,8 @@ document.querySelectorAll(".submit-button").forEach(button => {
 });
 
 export function findAndFillWords() {
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	foundWordsContainer.replaceChildren();
 	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
 	for (let i = 0; i < possibleWords.length; i++) {
 		addWordToContainer(possibleWords[i]);
