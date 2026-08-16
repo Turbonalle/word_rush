@@ -17,7 +17,6 @@ const DEFAULT_SAVE = {
 	}
 }
 
-
 export const Save = {
 	data: structuredClone(DEFAULT_SAVE),
 	
@@ -43,34 +42,39 @@ export const Save = {
 	},
 
 	resetSave() {
+		console.log("Resetting save.");
 		localStorage.removeItem(this.SAVE_KEY);
+		localStorage.removeItem("undefined");
 	},
 
-	addFoundWord(language, levelId, word) {
-		if (!this.data.story[language][levelId]) {
-			this.data.story[language][levelId] = {
+	addFoundWord(language, chapter, levelId, word) {
+		if (!this.data.story[language][chapter]) {
+			this.data.story[language][chapter] = {};
+		}
+		if (!this.data.story[language][chapter][levelId]) {
+			this.data.story[language][chapter][levelId] = {
 				completed: false,
 				wordsFound: []
 			};
 		}
-		const level = this.data.story[language][levelId];
+		const level = this.data.story[language][chapter][levelId];
 		if (!level.wordsFound.includes(word)) {
 			level.wordsFound.push(word);
 		}
 		this.saveGame(this.data);
 	},
 
-	getFoundWordsAmount(language, levelId) {
-		if (this.data.story[language][levelId]) {
-			return this.data.story[language][levelId].wordsFound.length;
+	getFoundWordsAmount(language, chapter, levelId) {
+		if (this.data.story[language][chapter]?.[levelId]) {
+			return this.data.story[language][chapter][levelId].wordsFound.length;
 		} else {
 			return 0;
 		}
 	},
 
-	getFoundWords(language, levelId) {
-		if (this.data.story[language][levelId]) {
-			return this.data.story[language][levelId].wordsFound;
+	getFoundWords(language, chapter, levelId) {
+		if (this.data.story[language][chapter]?.[levelId]) {
+			return this.data.story[language][chapter][levelId].wordsFound;
 		} else {
 			return [];
 		}

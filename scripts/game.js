@@ -99,7 +99,7 @@ export function startGame() {
 	let level;
 	switch(game.mode) {
 		case "story":
-			level = LevelManager.getStoryLevel(game.language, game.storyLevelId);
+			level = LevelManager.getStoryLevel(game.language, 3, game.storyLevelId);
 			game.wordsFound = Save.getFoundWords(game.language, game.storyLevelId);
 			setupLevel(level);
 			updateProgress();
@@ -143,7 +143,7 @@ export function submitWord() {
 		game.wordsFound.push(game.currentInput);
 		updateProgress();
 		addWordToContainer(game.currentInput);
-		Save.addFoundWord(game.language, game.storyLevelId, game.currentInput);
+		Save.addFoundWord(game.language, game.currentStoryChapter, game.storyLevelId, game.currentInput);
 		if (game.mode === "panic") {
 			Timer.add(10);
 		}

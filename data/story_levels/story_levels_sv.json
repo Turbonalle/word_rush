@@ -1,570 +1,558 @@
-[
-    {
-        "id": 1,
-        "letters": "lam",
-        "amount": 5,
-        "answers": [
-            "al",
-            "alm",
-            "la",
-            "lam",
-            "mal"
+{
+    "3": {
+        "title": "Beginnings",
+        "starUnlockRequirement": 0,
+        "levels": [
+            {
+                "id": 1,
+                "letters": "lam",
+                "answers": [
+                    "al",
+                    "alm",
+                    "la",
+                    "lam",
+                    "mal"
+                ]
+            },
+            {
+                "id": 2,
+                "letters": "vit",
+                "answers": [
+                    "i",
+                    "tv",
+                    "tvi",
+                    "vi",
+                    "vit"
+                ]
+            },
+            {
+                "id": 3,
+                "letters": "rys",
+                "answers": [
+                    "rys",
+                    "sy",
+                    "syr",
+                    "yr",
+                    "yrs"
+                ]
+            },
+            {
+                "id": 4,
+                "letters": "köl",
+                "answers": [
+                    "kö",
+                    "köl",
+                    "lök",
+                    "ö",
+                    "ök",
+                    "öl"
+                ]
+            },
+            {
+                "id": 5,
+                "letters": "två",
+                "answers": [
+                    "tv",
+                    "två",
+                    "tå",
+                    "våt",
+                    "å",
+                    "åt"
+                ]
+            },
+            {
+                "id": 6,
+                "letters": "döm",
+                "answers": [
+                    "dö",
+                    "döm",
+                    "mö",
+                    "ö",
+                    "öd",
+                    "öm"
+                ]
+            },
+            {
+                "id": 7,
+                "letters": "tär",
+                "answers": [
+                    "rät",
+                    "trä",
+                    "tär",
+                    "är",
+                    "ärt",
+                    "ät"
+                ]
+            },
+            {
+                "id": 8,
+                "letters": "del",
+                "answers": [
+                    "de",
+                    "del",
+                    "ed",
+                    "el",
+                    "eld",
+                    "le",
+                    "led"
+                ]
+            },
+            {
+                "id": 9,
+                "letters": "råg",
+                "answers": [
+                    "grå",
+                    "gå",
+                    "går",
+                    "rå",
+                    "råg",
+                    "å",
+                    "år"
+                ]
+            },
+            {
+                "id": 10,
+                "letters": "stå",
+                "answers": [
+                    "stå",
+                    "så",
+                    "såt",
+                    "tå",
+                    "tås",
+                    "å",
+                    "ås",
+                    "åt",
+                    "åts"
+                ]
+            }
         ]
     },
-    {
-        "id": 2,
-        "letters": "vit",
-        "amount": 5,
-        "answers": [
-            "i",
-            "tv",
-            "tvi",
-            "vi",
-            "vit"
+    "4": {
+        "title": "The Journey",
+        "starUnlockRequirement": 10,
+        "levels": [
+            {
+                "id": 11,
+                "letters": "bank",
+                "answers": [
+                    "an",
+                    "ank",
+                    "bak",
+                    "bank",
+                    "kan"
+                ]
+            },
+            {
+                "id": 12,
+                "letters": "psyk",
+                "answers": [
+                    "psyk",
+                    "pys",
+                    "sky",
+                    "spy",
+                    "sy"
+                ]
+            },
+            {
+                "id": 13,
+                "letters": "ihåg",
+                "answers": [
+                    "gå",
+                    "håg",
+                    "i",
+                    "ihåg",
+                    "å",
+                    "åh"
+                ]
+            },
+            {
+                "id": 14,
+                "letters": "muta",
+                "answers": [
+                    "mat",
+                    "muta",
+                    "ta",
+                    "tam",
+                    "tum",
+                    "ut"
+                ]
+            },
+            {
+                "id": 15,
+                "letters": "dryp",
+                "answers": [
+                    "dr",
+                    "dryp",
+                    "dy",
+                    "dyr",
+                    "pryd",
+                    "pyr",
+                    "yr"
+                ]
+            },
+            {
+                "id": 16,
+                "letters": "stöt",
+                "answers": [
+                    "stöt",
+                    "söt",
+                    "sött",
+                    "ö",
+                    "ös",
+                    "öst",
+                    "ött",
+                    "ötts"
+                ]
+            },
+            {
+                "id": 17,
+                "letters": "orms",
+                "answers": [
+                    "mor",
+                    "mors",
+                    "mos",
+                    "om",
+                    "orm",
+                    "orms",
+                    "os",
+                    "ro",
+                    "rom",
+                    "roms",
+                    "ros",
+                    "som"
+                ]
+            },
+            {
+                "id": 18,
+                "letters": "yrat",
+                "answers": [
+                    "art",
+                    "ryt",
+                    "ryta",
+                    "ta",
+                    "tar",
+                    "ty",
+                    "tyr",
+                    "yr",
+                    "yra",
+                    "yrat",
+                    "yrt",
+                    "yt",
+                    "yta"
+                ]
+            },
+            {
+                "id": 19,
+                "letters": "snok",
+                "answers": [
+                    "ko",
+                    "kon",
+                    "kons",
+                    "kos",
+                    "nos",
+                    "ok",
+                    "oks",
+                    "os",
+                    "sko",
+                    "skon",
+                    "sno",
+                    "snok",
+                    "son"
+                ]
+            },
+            {
+                "id": 20,
+                "letters": "lösa",
+                "answers": [
+                    "al",
+                    "als",
+                    "la",
+                    "las",
+                    "lös",
+                    "lösa",
+                    "sa",
+                    "sal",
+                    "slö",
+                    "slöa",
+                    "söla",
+                    "ö",
+                    "öl",
+                    "öls",
+                    "ös",
+                    "ösa"
+                ]
+            }
         ]
     },
-    {
-        "id": 3,
-        "letters": "rys",
-        "amount": 5,
-        "answers": [
-            "rys",
-            "sy",
-            "syr",
-            "yr",
-            "yrs"
-        ]
-    },
-    {
-        "id": 4,
-        "letters": "köl",
-        "amount": 6,
-        "answers": [
-            "kö",
-            "köl",
-            "lök",
-            "ö",
-			"ök",
-            "öl"
-        ]
-    },
-    {
-        "id": 5,
-        "letters": "två",
-        "amount": 6,
-        "answers": [
-            "tv",
-            "två",
-            "tå",
-            "våt",
-            "å",
-            "åt"
-        ]
-    },
-    {
-        "id": 6,
-        "letters": "döm",
-        "amount": 6,
-        "answers": [
-            "dö",
-            "döm",
-            "mö",
-            "ö",
-            "öd",
-            "öm"
-        ]
-    },
-    {
-        "id": 7,
-        "letters": "tär",
-        "amount": 6,
-        "answers": [
-            "rät",
-            "trä",
-            "tär",
-            "är",
-            "ärt",
-            "ät"
-        ]
-    },
-    {
-        "id": 8,
-        "letters": "del",
-        "amount": 7,
-        "answers": [
-            "de",
-            "del",
-            "ed",
-            "el",
-            "eld",
-            "le",
-            "led"
-        ]
-    },
-    {
-        "id": 9,
-        "letters": "råg",
-        "amount": 7,
-        "answers": [
-            "grå",
-            "gå",
-            "går",
-            "rå",
-            "råg",
-            "å",
-            "år"
-        ]
-    },
-    {
-        "id": 10,
-        "letters": "stå",
-        "amount": 9,
-        "answers": [
-            "stå",
-            "så",
-            "såt",
-            "tå",
-            "tås",
-            "å",
-            "ås",
-            "åt",
-            "åts"
-        ]
-    },
-    {
-        "id": 11,
-        "letters": "bank",
-        "amount": 5,
-        "answers": [
-            "an",
-            "ank",
-            "bak",
-            "bank",
-            "kan"
-        ]
-    },
-    {
-        "id": 12,
-        "letters": "psyk",
-        "amount": 5,
-        "answers": [
-            "psyk",
-            "pys",
-            "sky",
-            "spy",
-            "sy"
-        ]
-    },
-    {
-        "id": 13,
-        "letters": "ihåg",
-        "amount": 6,
-        "answers": [
-            "gå",
-            "håg",
-            "i",
-            "ihåg",
-            "å",
-            "åh"
-        ]
-    },
-    {
-        "id": 14,
-        "letters": "muta",
-        "amount": 6,
-        "answers": [
-            "mat",
-            "muta",
-            "ta",
-            "tam",
-            "tum",
-            "ut"
-        ]
-    },
-    {
-        "id": 15,
-        "letters": "dryp",
-        "amount": 7,
-        "answers": [
-            "dr",
-            "dryp",
-            "dy",
-            "dyr",
-            "pryd",
-            "pyr",
-            "yr"
-        ]
-    },
-    {
-        "id": 16,
-        "letters": "stöt",
-        "amount": 8,
-        "answers": [
-            "stöt",
-            "söt",
-            "sött",
-            "ö",
-            "ös",
-            "öst",
-            "ött",
-            "ötts"
-        ]
-    },
-    {
-        "id": 17,
-        "letters": "orms",
-        "amount": 12,
-        "answers": [
-            "mor",
-            "mors",
-            "mos",
-            "om",
-            "orm",
-            "orms",
-            "os",
-            "ro",
-            "rom",
-            "roms",
-            "ros",
-            "som"
-        ]
-    },
-    {
-        "id": 18,
-        "letters": "yrat",
-        "amount": 13,
-        "answers": [
-            "art",
-            "ryt",
-            "ryta",
-            "ta",
-            "tar",
-            "ty",
-            "tyr",
-            "yr",
-            "yra",
-            "yrat",
-            "yrt",
-            "yt",
-            "yta"
-        ]
-    },
-    {
-        "id": 19,
-        "letters": "snok",
-        "amount": 13,
-        "answers": [
-            "ko",
-            "kon",
-            "kons",
-            "kos",
-            "nos",
-            "ok",
-            "oks",
-            "os",
-            "sko",
-            "skon",
-            "sno",
-            "snok",
-            "son"
-        ]
-    },
-    {
-        "id": 20,
-        "letters": "lösa",
-        "amount": 16,
-        "answers": [
-            "al",
-            "als",
-            "la",
-            "las",
-            "lös",
-            "lösa",
-            "sa",
-            "sal",
-            "slö",
-            "slöa",
-            "söla",
-            "ö",
-            "öl",
-            "öls",
-            "ös",
-            "ösa"
-        ]
-    },
-        {
-        "id": 21,
-        "letters": "taget",
-        "amount": 12,
-        "answers": [
-            "att",
-            "ett",
-            "etta",
-            "gate",
-            "ge",
-            "get",
-            "gett",
-            "ta",
-            "tag",
-            "taget",
-            "te",
-            "teg"
-        ]
-    },
-        {
-        "id": 22,
-        "letters": "bågna",
-        "amount": 14,
-        "answers": [
-            "agn",
-            "an",
-            "angå",
-            "bag",
-            "bang",
-            "båg",
-            "bågna",
-            "bång",
-            "gå",
-            "nå",
-            "å",
-            "ån",
-            "ång",
-            "ånga"
-        ]
-    },
-    {
-        "id": 23,
-        "letters": "okörd",
-        "amount": 19,
-        "answers": [
-            "dö",
-            "dök",
-            "dör",
-            "ko",
-            "kod",
-            "kor",
-            "kö",
-            "kör",
-            "körd",
-            "odör",
-            "ok",
-            "okörd",
-            "ord",
-            "ork",
-            "ro",
-            "röd",
-            "rök",
-            "ö",
-            "öd"
-        ]
-    },
-    {
-        "id": 24,
-        "letters": "avses",
-        "amount": 16,
-        "answers": [
-            "av",
-            "ave",
-            "aves",
-            "avse",
-            "avses",
-            "ess",
-            "sa",
-            "sav",
-            "savs",
-            "se",
-            "ses",
-            "va",
-            "vas",
-            "vass",
-            "vasse",
-            "ve"
-        ]
-    },
-    {
-        "id": 25,
-        "letters": "biten",
-        "amount": 17,
-        "answers": [
-            "be",
-            "ben",
-            "bet",
-            "bi",
-            "bient",
-            "biet",
-            "bin",
-            "bit",
-            "biten",
-            "bitne",
-            "en",
-            "i",
-            "in",
-            "inte",
-            "ni",
-            "nit",
-            "te"
-        ]
-    },
-    {
-        "id": 26,
-        "letters": "odjur",
-        "amount": 18,
-        "answers": [
-            "dj",
-            "djur",
-            "dr",
-            "du",
-            "duo",
-            "duor",
-            "dur",
-            "jo",
-            "jod",
-            "jord",
-            "jour",
-            "ju",
-            "judo",
-            "odjur",
-            "oj",
-            "ord",
-            "ro",
-            "ur"
-        ]
-    },
-    {
-        "id": 27,
-        "letters": "valda",
-        "amount": 20,
-        "answers": [
-            "adla",
-            "al",
-            "alv",
-            "av",
-            "avd",
-            "avla",
-            "avlad",
-            "dal",
-            "dala",
-            "dvala",
-            "la",
-            "lada",
-            "lav",
-            "lava",
-            "va",
-            "vad",
-            "vada",
-            "val",
-            "vald",
-            "valda"
-        ]
-    },
-    {
-        "id": 28,
-        "letters": "firas",
-        "amount": 25,
-        "answers": [
-            "air",
-            "airs",
-            "far",
-            "fars",
-            "fas",
-            "fira",
-            "firas",
-            "fis",
-            "fisar",
-            "fras",
-            "fri",
-            "fria",
-            "frias",
-            "fris",
-            "i",
-            "is",
-            "isa",
-            "isar",
-            "rafs",
-            "ras",
-            "ris",
-            "sa",
-            "safir",
-            "sia",
-            "siar"
-        ]
-    },
-    {
-        "id": 29,
-        "letters": "spöka",
-        "amount": 31,
-        "answers": [
-            "ask",
-            "asp",
-            "kap",
-            "kaps",
-            "kö",
-            "köa",
-            "köas",
-            "köp",
-            "köpa",
-            "köpas",
-            "köps",
-            "kös",
-            "pös",
-            "pösa",
-            "sa",
-            "sak",
-            "ska",
-            "spa",
-            "spak",
-            "spö",
-            "spöa",
-            "spök",
-            "spöka",
-            "sök",
-            "söka",
-            "söp",
-            "ö",
-            "öka",
-            "ökas",
-            "ös",
-            "ösa"
-        ]
-    },
-    {
-        "id": 30,
-        "letters": "prosa",
-        "amount": 33,
-        "answers": [
-            "apor",
-            "apors",
-            "asp",
-            "oas",
-            "os",
-            "osa",
-            "osar",
-            "par",
-            "pars",
-            "por",
-            "pors",
-            "prao",
-            "prosa",
-            "rap",
-            "raps",
-            "ras",
-            "rasp",
-            "ro",
-            "roa",
-            "roas",
-            "rop",
-            "ropa",
-            "ropas",
-            "rops",
-            "ros",
-            "rosa",
-            "sa",
-            "sop",
-            "sopa",
-            "sopar",
-            "spa",
-            "spar",
-            "spor"
+    "5": {
+        "title": "Brain Gymnastics",
+        "starUnlockRequirement": 20,
+        "levels": [
+            {
+                "id": 21,
+                "letters": "taget",
+                "answers": [
+                    "att",
+                    "ett",
+                    "etta",
+                    "gate",
+                    "ge",
+                    "get",
+                    "gett",
+                    "ta",
+                    "tag",
+                    "taget",
+                    "te",
+                    "teg"
+                ]
+            },
+                {
+                "id": 22,
+                "letters": "bågna",
+                "answers": [
+                    "agn",
+                    "an",
+                    "angå",
+                    "bag",
+                    "bang",
+                    "båg",
+                    "bågna",
+                    "bång",
+                    "gå",
+                    "nå",
+                    "å",
+                    "ån",
+                    "ång",
+                    "ånga"
+                ]
+            },
+            {
+                "id": 23,
+                "letters": "okörd",
+                "answers": [
+                    "dö",
+                    "dök",
+                    "dör",
+                    "ko",
+                    "kod",
+                    "kor",
+                    "kö",
+                    "kör",
+                    "körd",
+                    "odör",
+                    "ok",
+                    "okörd",
+                    "ord",
+                    "ork",
+                    "ro",
+                    "röd",
+                    "rök",
+                    "ö",
+                    "öd"
+                ]
+            },
+            {
+                "id": 24,
+                "letters": "avses",
+                "answers": [
+                    "av",
+                    "ave",
+                    "aves",
+                    "avse",
+                    "avses",
+                    "ess",
+                    "sa",
+                    "sav",
+                    "savs",
+                    "se",
+                    "ses",
+                    "va",
+                    "vas",
+                    "vass",
+                    "vasse",
+                    "ve"
+                ]
+            },
+            {
+                "id": 25,
+                "letters": "biten",
+                "answers": [
+                    "be",
+                    "ben",
+                    "bet",
+                    "bi",
+                    "bient",
+                    "biet",
+                    "bin",
+                    "bit",
+                    "biten",
+                    "bitne",
+                    "en",
+                    "i",
+                    "in",
+                    "inte",
+                    "ni",
+                    "nit",
+                    "te"
+                ]
+            },
+            {
+                "id": 26,
+                "letters": "odjur",
+                "answers": [
+                    "dj",
+                    "djur",
+                    "dr",
+                    "du",
+                    "duo",
+                    "duor",
+                    "dur",
+                    "jo",
+                    "jod",
+                    "jord",
+                    "jour",
+                    "ju",
+                    "judo",
+                    "odjur",
+                    "oj",
+                    "ord",
+                    "ro",
+                    "ur"
+                ]
+            },
+            {
+                "id": 27,
+                "letters": "valda",
+                "answers": [
+                    "adla",
+                    "al",
+                    "alv",
+                    "av",
+                    "avd",
+                    "avla",
+                    "avlad",
+                    "dal",
+                    "dala",
+                    "dvala",
+                    "la",
+                    "lada",
+                    "lav",
+                    "lava",
+                    "va",
+                    "vad",
+                    "vada",
+                    "val",
+                    "vald",
+                    "valda"
+                ]
+            },
+            {
+                "id": 28,
+                "letters": "firas",
+                "answers": [
+                    "air",
+                    "airs",
+                    "far",
+                    "fars",
+                    "fas",
+                    "fira",
+                    "firas",
+                    "fis",
+                    "fisar",
+                    "fras",
+                    "fri",
+                    "fria",
+                    "frias",
+                    "fris",
+                    "i",
+                    "is",
+                    "isa",
+                    "isar",
+                    "rafs",
+                    "ras",
+                    "ris",
+                    "sa",
+                    "safir",
+                    "sia",
+                    "siar"
+                ]
+            },
+            {
+                "id": 29,
+                "letters": "spöka",
+                "answers": [
+                    "ask",
+                    "asp",
+                    "kap",
+                    "kaps",
+                    "kö",
+                    "köa",
+                    "köas",
+                    "köp",
+                    "köpa",
+                    "köpas",
+                    "köps",
+                    "kös",
+                    "pös",
+                    "pösa",
+                    "sa",
+                    "sak",
+                    "ska",
+                    "spa",
+                    "spak",
+                    "spö",
+                    "spöa",
+                    "spök",
+                    "spöka",
+                    "sök",
+                    "söka",
+                    "söp",
+                    "ö",
+                    "öka",
+                    "ökas",
+                    "ös",
+                    "ösa"
+                ]
+            },
+            {
+                "id": 30,
+                "letters": "prosa",
+                "answers": [
+                    "apor",
+                    "apors",
+                    "asp",
+                    "oas",
+                    "os",
+                    "osa",
+                    "osar",
+                    "par",
+                    "pars",
+                    "por",
+                    "pors",
+                    "prao",
+                    "prosa",
+                    "rap",
+                    "raps",
+                    "ras",
+                    "rasp",
+                    "ro",
+                    "roa",
+                    "roas",
+                    "rop",
+                    "ropa",
+                    "ropas",
+                    "rops",
+                    "ros",
+                    "rosa",
+                    "sa",
+                    "sop",
+                    "sopa",
+                    "sopar",
+                    "spa",
+                    "spar",
+                    "spor"
+                ]
+            }
         ]
     }
-]
+}

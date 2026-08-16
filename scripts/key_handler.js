@@ -1,8 +1,13 @@
+import { Save } from "./save.js";
 import { game } from "./main.js";
 import { findAndFillWords, submitWord, updateLetterBoxes } from "./game.js";
 import { calculateLetterFrequency } from "./helper_functions.js";
 
 document.addEventListener("keydown", e => {
+	if (e.key === ".") {
+		console.log("Pressed '.'");
+		Save.resetSave();
+	}
 	if (game.state !== "game")
 		return;
 	if (e.key === "Backspace") {

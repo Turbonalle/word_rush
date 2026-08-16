@@ -5,21 +5,14 @@ const STAR_SVG = `<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6
 
 export const LevelManager = {
 	storyLevels: {
-		en: [],
-		sv: []
+		en: {},
+		sv: {}
 	},
 	basicLevels: {
-		en: {
-			3: [],
-			4: [],
-			5: []
-		},
-		sv: {
-			3: [],
-			4: [],
-			5: []
-		}
+		en: {},
+		sv: {}
 	},
+	currentStoryChapter: 3,
 
 	async loadStoryLevels() {
 		const [responseEn, responseSv] = await Promise.all([
@@ -28,14 +21,8 @@ export const LevelManager = {
 		]);
 		const levelsEn = await responseEn.json();
 		const levelsSv = await responseSv.json();
-		this.storyLevels.en = Object.fromEntries(
-			levelsEn.map(level => [level.id, level])
-		);
-		this.storyLevels.sv = Object.fromEntries(
-			levelsSv.map(level => [level.id, level])
-		);
-		console.log(`Loaded ${Object.keys(this.storyLevels.en).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.storyLevels.sv).length} levels.`);
+		this.storyLevels.en = levelsEn;
+		this.storyLevels.sv = levelsSv;
 	},
 
 	async loadBasicLevels() {
@@ -59,12 +46,6 @@ export const LevelManager = {
 		this.basicLevels.sv[3] = Object.fromEntries(levelsSv3.map(level => [level.id, level]));
 		this.basicLevels.sv[4] = Object.fromEntries(levelsSv4.map(level => [level.id, level]));
 		this.basicLevels.sv[5] = Object.fromEntries(levelsSv5.map(level => [level.id, level]));
-		console.log(`Loaded ${Object.keys(this.basicLevels.en[3]).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.basicLevels.en[4]).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.basicLevels.en[5]).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.basicLevels.sv[3]).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.basicLevels.sv[4]).length} levels.`);
-		console.log(`Loaded ${Object.keys(this.basicLevels.sv[5]).length} levels.`);
 	},
 
 	fillStars(container, n) {
@@ -73,10 +54,11 @@ export const LevelManager = {
 		}
 	},
 
-	buildStoryLevels(language, onLevelSelected) {
+	buildChapter(language, chapter, onLevelSelected) {
+		console.log("Building chapter:", language, chapter);
 		const storyLevelsContainer = document.getElementById("story-levels-container");
 		storyLevelsContainer.replaceChildren();
-		Object.entries(this.storyLevels[language]).forEach(([id, level]) => {
+		this.storyLevels[language][chapter].levels.forEach(level => {
 			const storyLevelContainer = createElementWithClass("div", "story-level-container");
 			const levelButton = createElementWithClass("div", "level-button");
 			const levelProgressFill = createElementWithClass("div", "level-progress-fill");
@@ -84,10 +66,11 @@ export const LevelManager = {
 			const levelButtonTitle = createElementWithClass("span", "level-button-title");
 			const levelButtonProgress = createElementWithClass("span", "level-button-progress");
 			const storyLevelStarsContainer = createElementWithClass("div", "story-level-stars-container");
-			const wordsFoundAmount = Save.getFoundWordsAmount(language, id);
+			const wordsFoundAmount = Save.getFoundWordsAmount(language, chapter, level.id);
 			levelButtonNumber.textContent = level.id;
 			levelButtonTitle.textContent = level.letters.toUpperCase();
 			levelButtonProgress.textContent = `${wordsFoundAmount} / ${level.answers.length}`;
+			console.log("id:", level.id, "progress:", wordsFoundAmount, "/", level.answers.length);
 
 			for (let i = 0; i < 3; i++) {
 				storyLevelStarsContainer.insertAdjacentHTML("beforeend", STAR_SVG);
@@ -116,8 +99,11 @@ export const LevelManager = {
 		});
 	},
 
-	getStoryLevel(language, id) {
-		return this.storyLevels[language]?.[id] ?? null;
+	getStoryLevel(language, chapter, id) {
+		console.log("Getting:", language, id);
+		return this.storyLevels[language][chapter].levels.find(
+			level => level.id === id
+		) ?? null;
 	},
 
 	getRandomLevel(language, length) {

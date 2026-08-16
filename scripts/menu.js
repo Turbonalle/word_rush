@@ -27,7 +27,7 @@ storyModeButton.addEventListener("click", () => {
 	storyModeButton.classList.add("active-button");
 	hideModesMenu();
 	document.getElementById("story-settings-container").classList.remove("hidden");
-	LevelManager.buildStoryLevels(game.language, levelId => {
+	LevelManager.buildChapter(game.language, 3, levelId => {
 		game.storyLevelId = levelId;
 		startGame();
 	});
