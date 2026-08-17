@@ -14,7 +14,7 @@ export const game = {
 	wordLength: 4,
 	
 	// Current level
-	currentStoryChapter: 3,
+	currentStoryChapter: 1,
 	storyLevelId: 0,
 	word: "",
 	letterFrequency: {},

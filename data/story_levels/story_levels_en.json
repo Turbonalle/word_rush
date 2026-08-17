@@ -1,5 +1,5 @@
 {
-    "3": {
+    "1": {
         "title": "Beginnings",
         "starUnlockRequirement": 0,
         "levels": [
@@ -168,7 +168,7 @@
 			}
 		]
     },
-    "4": {
+    "2": {
         "title": "The Journey",
         "starUnlockRequirement": 10,
         "levels": [
@@ -462,7 +462,7 @@
 			}
 		]
     },
-    "5": {
+    "3": {
         "title": "Brain Gymnastics",
         "starUnlockRequirement": 20,
         "levels": [

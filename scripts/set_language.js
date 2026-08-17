@@ -20,7 +20,7 @@ function setLanguage(language) {
 	updateLanguageButtons();
 	const storySettingsContainer = document.getElementById("story-settings-container");
 	if (!storySettingsContainer.classList.contains("hidden")) {
-		LevelManager.buildChapter(game.language, 3, levelId => {
+		LevelManager.buildChapter(game.language, game.currentStoryChapter, levelId => {
 			game.storyLevelId = levelId;
 			startGame();
 		});
