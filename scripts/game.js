@@ -99,7 +99,7 @@ export function startGame() {
 	let level;
 	switch(game.mode) {
 		case "story":
-			level = LevelManager.getStoryLevel(game.language, 3, game.storyLevelId);
+			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
 			game.wordsFound = Save.getFoundWords(game.language, game.storyLevelId);
 			setupLevel(level);
 			updateProgress();
