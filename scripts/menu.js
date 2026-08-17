@@ -90,20 +90,42 @@ addPlayButtonListeners();
 setLengthSlider("basic");
 setLengthSlider("panic");
 
-function resetActiveChapterButtons() {
-	document.querySelectorAll(".chapter-button").forEach(button => {
+function setActiveChapterButton(chapterId) {
+	// Get buttons and index
+	const chapterButtons = document.querySelectorAll(".chapter-button");
+	const buttonIndex = chapterId - 1;
+
+	// Check index validity
+	if (buttonIndex < 0) {
+		console.log("Error: chapter button index is a negative number.");
+		return;
+	}
+	if (buttonIndex >= chapterButtons.length) {
+		console.log("Error: chapter button index is too big.");
+		return;
+	}
+
+	// Remove active class from every chapter button
+	chapterButtons.forEach(button => {
 		button.classList.remove("active");
+	})
+
+	// Use index to add class to chapter button
+	chapterButtons[buttonIndex].classList.add("active");
+}
+
+export function setChapter(chapterId) {
+	game.currentStoryChapter = chapterId;
+	setActiveChapterButton(chapterId);
+	LevelManager.buildChapter(game.language, chapterId, levelId => {
+		game.storyLevelId = levelId;
+		startGame();
 	});
 }
 
 document.querySelectorAll(".chapter-button").forEach(button => {
 	button.addEventListener("click", event => {
-		resetActiveChapterButtons();
-		event.currentTarget.classList.add("active");
 		const chapterId = Number(event.currentTarget.dataset.chapter);
-		LevelManager.buildChapter(game.language, chapterId, levelId => {
-			game.storyLevelId = levelId;
-			startGame();
-		});
+		setChapter(chapterId);
 	});
 });

@@ -1,5 +1,6 @@
 import { game } from "./main.js";
 import { startGame } from "./game.js";
+import { setChapter } from "./menu.js";
 import { LevelManager } from "./LevelManager.js";
 import { getElement } from "./helper_functions.js";
 
@@ -29,6 +30,7 @@ function setLanguage(language) {
 
 document.querySelectorAll(".language-button").forEach(button => {
 	button.addEventListener("click", () => {
+		setChapter(1);
 		setLanguage(button.dataset.language);
 	})
 });
