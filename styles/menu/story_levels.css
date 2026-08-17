@@ -1,3 +1,17 @@
+#story-chapter-header {
+	display: flex;
+	flex-direction: row;
+	gap: 50px;
+}
+
+#story-chapter-title {
+	font-weight: bold;
+}
+
+#story-chapter-requirement {
+	font-weight: bold;
+}
+
 #story-levels-container {
 	display: flex;
 	flex-direction: column;
