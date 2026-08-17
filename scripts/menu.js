@@ -90,24 +90,20 @@ addPlayButtonListeners();
 setLengthSlider("basic");
 setLengthSlider("panic");
 
-document.getElementById("story-option-chapter-1").addEventListener("click", () => {
-	console.log("Clicked chapter 1");
-	LevelManager.buildChapter(game.language, 1, levelId => {
-		game.storyLevelId = levelId;
-		startGame();
+function resetActiveChapterButtons() {
+	document.querySelectorAll(".chapter-button").forEach(button => {
+		button.classList.remove("active");
 	});
-});
-document.getElementById("story-option-chapter-2").addEventListener("click", () => {
-	console.log("Clicked chapter 2");
-	LevelManager.buildChapter(game.language, 2, levelId => {
-		game.storyLevelId = levelId;
-		startGame();
-	});
-});
-document.getElementById("story-option-chapter-3").addEventListener("click", () => {
-	console.log("Clicked chapter 3");
-	LevelManager.buildChapter(game.language, 3, levelId => {
-		game.storyLevelId = levelId;
-		startGame();
+}
+
+document.querySelectorAll(".chapter-button").forEach(button => {
+	button.addEventListener("click", event => {
+		resetActiveChapterButtons();
+		event.currentTarget.classList.add("active");
+		const chapterId = Number(event.currentTarget.dataset.chapter);
+		LevelManager.buildChapter(game.language, chapterId, levelId => {
+			game.storyLevelId = levelId;
+			startGame();
+		});
 	});
 });
