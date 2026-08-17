@@ -98,7 +98,6 @@ export const LevelManager = {
 		const chapter = this.storyLevels[language][chapterId];
 		let chapterStarsAcquired = 0;
 		for (let i = 0; i < chapter.levels.length; i++) {
-			console.log("Checking level:", chapter.levels[i].id);
 			const wordsFound = Save.getFoundWordsAmount(language, chapterId, chapter.levels[i].id);
 			const wordsAmount = chapter.levels[i].answers.length;
 			const percentage = wordsFound / wordsAmount;
@@ -110,7 +109,6 @@ export const LevelManager = {
 			} else if (percentage >= 0.25) {
 				levelStarsAcquired = 1;
 			}
-			console.log("words found:", wordsFound);
 			chapterStarsAcquired += levelStarsAcquired;
 		}
 		return chapterStarsAcquired;
