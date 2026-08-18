@@ -1,6 +1,6 @@
 import { game } from "./main.js";
 import { LevelManager } from "./LevelManager.js";
-import { settingsToGame, settingsToMode } from "./screen_switch.js";
+import { modeToSettings, settingsToGame, settingsToMode } from "./screen_switch.js";
 import { startGame } from "./game.js";
 import { getElement } from "./helper_functions.js";
 
@@ -9,24 +9,9 @@ const basicModeButton = document.getElementById("basic-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
 
-function hideModesMenu() {
-	const modesContainer = document.getElementById("modes-container");
-	modesContainer.classList.add("hidden");
-}
-
-export function resetActiveButtons() {
-	document.querySelectorAll(".mode-button").forEach(button => {
-		button.classList.remove("active-button");
-	});
-}
-
 storyModeButton.addEventListener("click", () => {
 	game.mode = "story";
-	console.log("Clicked story button");
-	resetActiveButtons();
-	storyModeButton.classList.add("active-button");
-	hideModesMenu();
-	document.getElementById("story-settings-container").classList.remove("hidden");
+	modeToSettings();
 	LevelManager.buildChapter(game.language, game.currentStoryChapter, levelId => {
 		game.storyLevelId = levelId;
 		startGame();
@@ -35,26 +20,17 @@ storyModeButton.addEventListener("click", () => {
 
 basicModeButton.addEventListener("click", () => {
 	game.mode = "basic";
-	resetActiveButtons();
-	basicModeButton.classList.add("active-button");
-	hideModesMenu();
-	document.getElementById("basic-settings-container").classList.remove("hidden");
+	modeToSettings();
 });
 
 panicModeButton.addEventListener("click", () => {
 	game.mode = "panic";
-	resetActiveButtons();
-	panicModeButton.classList.add("active-button");
-	hideModesMenu();
-	document.getElementById("panic-settings-container").classList.remove("hidden");
+	modeToSettings();
 });
 
 testModeButton.addEventListener("click", () => {
 	game.mode = "test";
-	resetActiveButtons();
-	testModeButton.classList.add("active-button");
-	hideModesMenu();
-	document.getElementById("test-settings-container").classList.remove("hidden");
+	modeToSettings();
 });
 
 function addBackButtonListeners() {

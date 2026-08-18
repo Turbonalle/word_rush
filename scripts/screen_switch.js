@@ -1,5 +1,4 @@
 import { game } from "./main.js";
-import { resetActiveButtons } from "./menu.js";
 import { getElement } from "./helper_functions.js";
 
 export function modeToSettings() {
@@ -14,14 +13,12 @@ export function settingsToGame(mode) {
 	document.getElementById("menu-screen").classList.add("hidden");
 	getElement(game.mode, "-settings-container").classList.add("hidden");
 	getElement(game.mode, "-game-screen").classList.remove("hidden");
-	resetActiveButtons();
 }
 
 export function settingsToMode() {
 	getElement(game.mode, "-settings-container").classList.add("hidden");
 	document.getElementById("modes-container").classList.remove("hidden");
 	game.mode = "";
-	resetActiveButtons();
 }
 
 export function gameToMode() {
