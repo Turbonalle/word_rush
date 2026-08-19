@@ -9,8 +9,27 @@ const basicModeButton = document.getElementById("basic-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
 
+export function updateSettingsUI() {
+	document.querySelectorAll(".language-button").forEach(button => {
+		if (game.language === button.dataset.language) {
+			button.classList.add("active");
+		} else {
+			button.classList.remove("active");
+		}
+	});
+
+	document.querySelectorAll(".length-slider").forEach(slider => {
+		slider.value = game.wordLength;
+	});
+
+	document.querySelectorAll(".length-value").forEach(text => {
+		text.textContent = game.wordLength;
+	});
+}
+
 storyModeButton.addEventListener("click", () => {
 	game.mode = "story";
+	updateSettingsUI();
 	modeToSettings();
 	LevelManager.buildChapter(game.language, game.currentStoryChapter, levelId => {
 		game.storyLevelId = levelId;
@@ -20,16 +39,19 @@ storyModeButton.addEventListener("click", () => {
 
 basicModeButton.addEventListener("click", () => {
 	game.mode = "basic";
+	updateSettingsUI();
 	modeToSettings();
 });
 
 panicModeButton.addEventListener("click", () => {
 	game.mode = "panic";
+	updateSettingsUI();
 	modeToSettings();
 });
 
 testModeButton.addEventListener("click", () => {
 	game.mode = "test";
+	updateSettingsUI();
 	modeToSettings();
 });
 
@@ -58,6 +80,7 @@ function setLengthSlider(mode) {
 	lengthSlider.addEventListener("input", () => {
 		lengthValue.textContent = lengthSlider.value;
 		game.wordLength = parseInt(lengthSlider.value);
+		updateSettingsUI();
 	});
 }
 
