@@ -18,6 +18,11 @@ export function updateSettingsUI() {
 		}
 	});
 
+	// Don't update sliders if we're in test mode. Test mode has automatically a big word length, which would make sliders out of bounds.
+	if (game.mode === "test") {
+		return;
+	}
+
 	document.querySelectorAll(".length-slider").forEach(slider => {
 		slider.value = game.wordLength;
 	});
