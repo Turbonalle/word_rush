@@ -100,7 +100,7 @@ export function startGame() {
 	switch(game.mode) {
 		case "story":
 			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
-			game.wordsFound = Save.getFoundWords(game.language, game.storyLevelId);
+			game.wordsFound = Save.getFoundWords(game.language, game.currentStoryChapter, game.storyLevelId);
 			setupLevel(level);
 			updateProgress();
 			addWordsToContainer(game.wordsFound);
