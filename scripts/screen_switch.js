@@ -28,3 +28,10 @@ export function gameToMode() {
 	game.state = "menu";
 	game.mode = "";
 }
+
+export function gameToSettings() {
+	getElement(game.mode, "-game-screen").classList.add("hidden");
+	document.getElementById("menu-screen").classList.remove("hidden");
+	getElement(game.mode, "-settings-container").classList.remove("hidden");
+	game.state = "menu";
+}

@@ -1,5 +1,5 @@
 import { game } from "./main.js";
-import { gameToMode, settingsToGame } from "./screen_switch.js";
+import { gameToMode, gameToSettings, settingsToGame } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
 import { getElement, calculateLetterFrequency } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
@@ -71,7 +71,7 @@ function addWordToContainer(word) {
 	foundWordsContainer.appendChild(wordTag);
 }
 
-function updateProgress() {
+function updateProgressUI() {
 	// Calculate and set progress bar width
 	const progressBar = getElement(game.mode, "-progress-bar");
 	let progress = 0.0;
@@ -102,7 +102,7 @@ export function startGame() {
 			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
 			game.wordsFound = Save.getFoundWords(game.language, game.currentStoryChapter, game.storyLevelId);
 			setupLevel(level);
-			updateProgress();
+			updateProgressUI();
 			addWordsToContainer(game.wordsFound);
 			settingsToGame("story");
 			break;
@@ -141,7 +141,7 @@ export function submitWord() {
 	if (game.possibleAnswers.includes(word)) {
 		console.log("Correct!", word, "exists!");
 		game.wordsFound.push(game.currentInput);
-		updateProgress();
+		updateProgressUI();
 		addWordToContainer(game.currentInput);
 		Save.addFoundWord(game.language, game.currentStoryChapter, game.storyLevelId, game.currentInput);
 		if (game.mode === "panic") {
@@ -151,12 +151,23 @@ export function submitWord() {
 		console.log("Wrong!", word, "doesn't exist...");
 	}
 	resetLetterBoxes();
+	if (game.wordsFound.length === game.possibleAnswers.length) {
+		// TODO: Handle winning logic and visuals
+		console.log("Congratulations! You found every word!");
+	}
 }
 
-document.querySelectorAll(".backtomenu-button").forEach(button => {
+document.querySelectorAll(".to-mode-button").forEach(button => {
 	button.addEventListener("click", () => {
 		resetGame();
 		gameToMode();
+	});
+});
+
+document.querySelectorAll(".to-settings-button").forEach(button => {
+	button.addEventListener("click", () => {
+		resetGame();
+		gameToSettings();
 	});
 });
 

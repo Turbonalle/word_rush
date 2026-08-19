@@ -106,3 +106,20 @@
 	background: var(--button);
 	cursor: pointer;
 }
+
+.game-button {
+	width: 200px;
+	height: 60px;
+	font-size: 24px;
+	color: var(--button-text);
+	border: 2px solid var(--button-border);
+	border-radius: 10px;
+	background: var(--button);
+	cursor: pointer;
+}
+
+.game-button:hover {
+	color: var(--highlight);
+	border: 2px solid var(--highlight);
+	background: var(--bg);
+}
