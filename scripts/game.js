@@ -208,7 +208,13 @@ document.querySelectorAll(".show-words-button").forEach(button => {
 	button.addEventListener("click", () => {
 		findAndFillRestWords();
 	})
-})
+});
+
+document.querySelectorAll(".new-game-button").forEach(button => {
+	button.addEventListener("click", () => {
+		startGame();
+	})
+});
 
 document.getElementById("test-get-answers-button").addEventListener("click", () => {
 	findAndFillWords();
