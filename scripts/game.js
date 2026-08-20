@@ -17,13 +17,13 @@ export function updateLetterBoxes() {
 		const letter = game.currentInput[i];
 		seen[letter] = (seen[letter] || 0) + 1;
 		if (game.mode !== "test" && seen[letter] > (game.letterFrequency[letter] || 0)) {
-			boxes[i].classList.add("invalid-character");
+			boxes[i].classList.add("color-error");
 		} else {
-			boxes[i].classList.remove("invalid-character");
+			boxes[i].classList.remove("color-error");
 		}
 	}
 	if (game.currentInput.length < boxes.length) {
-		boxes[game.currentInput.length].classList.remove("invalid-character");
+		boxes[game.currentInput.length].classList.remove("color-error");
 	}
 }
 
@@ -32,7 +32,7 @@ function resetLetterBoxes() {
 	game.inputFrequency = {};
 	document.querySelectorAll(".typing-letter-box").forEach(box => {
 		box.textContent = "";
-		box.classList.remove("invalid-character");
+		box.classList.remove("color-error");
 	});
 }
 
@@ -157,6 +157,39 @@ export function submitWord() {
 	}
 }
 
+export function findAndFillWords() {
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	foundWordsContainer.replaceChildren();
+	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
+	for (let i = 0; i < possibleWords.length; i++) {
+		addWordToContainer(possibleWords[i]);
+	}
+	addWordToContainer(`${possibleWords.length} possible words!`);
+	const container = getElement(game.mode, "-found-words-container");
+	const resultTag = container.lastElementChild;
+	resultTag.classList.add("color-correct");
+}
+
+function findAndFillRestWords() {
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	game.possibleAnswers.forEach(word => {
+		console.log("Checking word:", word);
+		if (!game.wordsFound.includes(word)) {
+			const wordTag = document.createElement("div");
+			wordTag.classList.add("word-tag");
+			wordTag.classList.add("color-error");
+			wordTag.textContent = word;
+			foundWordsContainer.appendChild(wordTag);
+		}
+	});
+}
+
+document.querySelectorAll(".submit-button").forEach(button => {
+	button.addEventListener("click", () => {
+		submitWord();
+	});
+});
+
 document.querySelectorAll(".to-mode-button").forEach(button => {
 	button.addEventListener("click", () => {
 		resetGame();
@@ -171,24 +204,11 @@ document.querySelectorAll(".to-settings-button").forEach(button => {
 	});
 });
 
-document.querySelectorAll(".submit-button").forEach(button => {
+document.querySelectorAll(".show-words-button").forEach(button => {
 	button.addEventListener("click", () => {
-		submitWord();
-	});
-});
-
-export function findAndFillWords() {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
-	foundWordsContainer.replaceChildren();
-	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
-	for (let i = 0; i < possibleWords.length; i++) {
-		addWordToContainer(possibleWords[i]);
-	}
-	addWordToContainer(`${possibleWords.length} possible words!`);
-	const container = getElement(game.mode, "-found-words-container");
-	const resultTag = container.lastElementChild;
-	resultTag.classList.add("correct");
-}
+		findAndFillRestWords();
+	})
+})
 
 document.getElementById("test-get-answers-button").addEventListener("click", () => {
 	findAndFillWords();

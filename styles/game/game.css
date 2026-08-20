@@ -86,12 +86,12 @@
 	border-radius: 10px;
 }
 
-.invalid-character {
-	color: var(--invalid);
-	border: 2px solid var(--invalid);
+.color-error {
+	color: var(--highlight);
+	border: 2px solid var(--highlight);
 }
 
-.correct {
+.color-correct {
 	color: var(--correct);
 	border: 2px solid var(--correct);
 }
