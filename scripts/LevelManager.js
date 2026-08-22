@@ -1,8 +1,3 @@
-import { Save } from "./save.js";
-import { createElementWithClass } from "./helper_functions.js";
-
-const STAR_SVG = `<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>`;
-
 export const LevelManager = {
 	storyLevels: {
 		en: {},
@@ -11,11 +6,6 @@ export const LevelManager = {
 	basicLevels: {
 		en: {},
 		sv: {}
-	},
-	starRequirements: {
-		"1": 0.25,
-		"2": 0.5,
-		"3": 1.0
 	},
 
 	async loadStoryLevels() {
@@ -73,6 +63,19 @@ export const LevelManager = {
 		return this.storyLevels[language][chapterId].levels.find(
 			level => level.id === levelId
 		) ?? null;
+	},
+
+	getNextStoryLevel(language, chapterId, levelId) {
+		// Check for next level in current chapter
+		const nextLevelId = levelId + 1;
+		let nextLevel = this.getStoryLevel(language, chapterId, nextLevelId);
+		if (nextLevel !== null) {
+			return nextLevel;
+		}
+		// Check for next level in next chapter
+		const nextChapterId = chapterId + 1;
+		nextLevel = this.getStoryLevel(language, nextChapterId, nextLevelId);
+		return nextLevel;
 	},
 
 	getRandomLevel(language, length) {

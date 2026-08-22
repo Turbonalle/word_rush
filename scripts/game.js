@@ -226,3 +226,14 @@ document.querySelectorAll(".new-game-button").forEach(button => {
 document.getElementById("test-get-answers-button").addEventListener("click", () => {
 	findAndFillWords();
 });
+
+document.getElementById("next-level-button").addEventListener("click", () => {
+	const nextLevel = LevelManager.getNextStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
+	console.log("nextLevel:", nextLevel);
+	if (!nextLevel) {
+		return;
+	}
+	// if (!UnlockManager.isChapterUnlocked(nextLevel.chapterId)) {
+	// 	return;
+	// }
+});
