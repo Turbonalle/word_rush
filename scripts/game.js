@@ -5,6 +5,7 @@ import { getElement, calculateLetterFrequency } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
 import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./save.js";
+import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { Timer } from "./Timer.js";
 
 export function updateLetterBoxes() {
@@ -201,6 +202,12 @@ document.querySelectorAll(".to-settings-button").forEach(button => {
 	button.addEventListener("click", () => {
 		resetGame();
 		gameToSettings();
+		if (game.mode === "story") {
+			StoryUIBuilder.buildChapter(game.language, game.currentStoryChapter, levelId => {
+				game.storyLevelId = levelId;
+				startGame();
+			});
+		}
 	});
 });
 

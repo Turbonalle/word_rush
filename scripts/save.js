@@ -80,9 +80,5 @@ export const Save = {
 		} else {
 			return [];
 		}
-	},
-
-	updateLevelStars(language, chapterId, levelId) {
-		// Store the updated star amount for the level, or just update total stars
 	}
 };
