@@ -12,6 +12,11 @@ export const LevelManager = {
 		en: {},
 		sv: {}
 	},
+	starRequirements: {
+		"1": 0.25,
+		"2": 0.5,
+		"3": 1.0
+	},
 
 	async loadStoryLevels() {
 		const [responseEn, responseSv] = await Promise.all([
@@ -47,98 +52,26 @@ export const LevelManager = {
 		this.basicLevels.sv[5] = Object.fromEntries(levelsSv5.map(level => [level.id, level]));
 	},
 
-	fillStars(container, n) {
-		for (let i = 0; i < n && i < container.children.length; i++) {
-			container.children[i].classList.add("filled");
-		}
+	getChapter(language, chapterId) {
+		return this.storyLevels[language][chapterId];
 	},
 
-	buildLevel(level, language, chapter, onLevelSelected) {
-		const storyLevelsContainer = document.getElementById("story-levels-container");
-		const storyLevelContainer = createElementWithClass("div", "story-level-container");
-		const levelButton = createElementWithClass("div", "level-button");
-		const levelProgressFill = createElementWithClass("div", "level-progress-fill");
-		const levelButtonNumber = createElementWithClass("span", "level-button-number");
-		const levelButtonTitle = createElementWithClass("span", "level-button-title");
-		const levelButtonProgress = createElementWithClass("span", "level-button-progress");
-		const storyLevelStarsContainer = createElementWithClass("div", "story-level-stars-container");
-		const wordsFoundAmount = Save.getFoundWordsAmount(language, chapter, level.id);
-		levelButtonNumber.textContent = level.id;
-		levelButtonTitle.textContent = level.letters.toUpperCase();
-		levelButtonProgress.textContent = `${wordsFoundAmount} / ${level.answers.length}`;
-		console.log("id:", level.id, "progress:", wordsFoundAmount, "/", level.answers.length);
-
-		for (let i = 0; i < 3; i++) {
-			storyLevelStarsContainer.insertAdjacentHTML("beforeend", STAR_SVG);
-		}
-		const percentage = wordsFoundAmount / level.answers.length;
-		if (percentage >= 1.0) {
-			this.fillStars(storyLevelStarsContainer, 3);
-		} else if (percentage >= 0.5) {
-			this.fillStars(storyLevelStarsContainer, 2);
-		} else if (percentage >= 0.25) {
-			this.fillStars(storyLevelStarsContainer, 1);
-		}
-
-		levelProgressFill.style.width = `${percentage * 100}%`;
-		
-		levelButton.addEventListener("click", () => {
-			onLevelSelected(level.id);
-		});
-		levelButton.append(levelProgressFill);
-		levelButton.append(levelButtonNumber);
-		levelButton.append(levelButtonTitle);
-		levelButton.append(levelButtonProgress);
-		storyLevelContainer.append(levelButton);
-		storyLevelContainer.append(storyLevelStarsContainer);
-		storyLevelsContainer.append(storyLevelContainer);
+	getChapterLevels(language, chapterId) {
+		return this.storyLevels[language][chapterId].levels;
 	},
 
-	getChapterStarsAcquired(language, chapterId) {
-		const chapter = this.storyLevels[language][chapterId];
-		let chapterStarsAcquired = 0;
-		for (let i = 0; i < chapter.levels.length; i++) {
-			const wordsFound = Save.getFoundWordsAmount(language, chapterId, chapter.levels[i].id);
-			const wordsAmount = chapter.levels[i].answers.length;
-			const percentage = wordsFound / wordsAmount;
-			let levelStarsAcquired = 0;
-			if (percentage === 1) {
-				levelStarsAcquired = 3;
-			} else if (percentage >= 0.5) {
-				levelStarsAcquired = 2;
-			} else if (percentage >= 0.25) {
-				levelStarsAcquired = 1;
-			}
-			chapterStarsAcquired += levelStarsAcquired;
-		}
-		return chapterStarsAcquired;
+	getChapterTitle(language, chapterId) {
+		return this.storyLevels[language][chapterId].title;
 	},
 
-	buildChapter(language, chapterId, onLevelSelected) {
-		console.log("Building chapter:", language, chapterId);
-
-		// Set chapter title
-		const chapterTitle = document.getElementById("story-chapter-title");
-		chapterTitle.textContent = this.storyLevels[language][chapterId].title;
-
-		// Set chapter requirements
-		const chapterRequirementText = document.getElementById("story-chapter-requirement");
-		const chapterStarsAcquired = this.getChapterStarsAcquired(language, chapterId);
-		const chapterRequirement = this.storyLevels[language][chapterId].starUnlockRequirement;
-		chapterRequirementText.textContent = `${chapterStarsAcquired} / ${chapterRequirement} stars`;
-
-		// Set chapter levels
-		const storyLevelsContainer = document.getElementById("story-levels-container");
-		storyLevelsContainer.replaceChildren();
-		this.storyLevels[language][chapterId].levels.forEach(level => {
-			this.buildLevel(level, language, chapterId, onLevelSelected);
-		});
+	getChapterRequirement(language, chapterId) {
+		return this.storyLevels[language][chapterId].starUnlockRequirement;
 	},
 
-	getStoryLevel(language, chapterId, id) {
-		console.log("Getting:", language, id);
+	getStoryLevel(language, chapterId, levelId) {
+		console.log("Getting:", language, levelId);
 		return this.storyLevels[language][chapterId].levels.find(
-			level => level.id === id
+			level => level.id === levelId
 		) ?? null;
 	},
 
@@ -151,5 +84,16 @@ export const LevelManager = {
 		}
 		const randomIndex = Math.floor(Math.random() * levels.length);
 		return levels[randomIndex];
+	},
+
+	getPossibleWords(language, chapterId, levelId) {
+		const level = this.storyLevels[language][chapterId].levels.find(
+			level => level.id === levelId
+		) ?? null;
+		if (level === null) {
+			console.log("Level is null");
+			return null;
+		}
+		return level.answers;
 	}
 };

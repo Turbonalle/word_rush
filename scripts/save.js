@@ -1,4 +1,4 @@
-const SAVE_KEY = "wordhunt-save";
+const SAVE_KEY = "wordrush-save";
 
 const DEFAULT_SAVE = {
 	version: 1,
@@ -9,7 +9,8 @@ const DEFAULT_SAVE = {
 	},
 	stats: {
 		gamesPlayed: 0,
-		wordsFound: 0
+		wordsFound: 0,
+		starsCollected: 0
 	},
 	story: {
 		en: {},
@@ -53,8 +54,9 @@ export const Save = {
 		}
 		if (!this.data.story[language][chapter][levelId]) {
 			this.data.story[language][chapter][levelId] = {
-				completed: false,
-				wordsFound: []
+				wordsFound: [],
+				percentage: 0.0,
+				stars: 0
 			};
 		}
 		const level = this.data.story[language][chapter][levelId];
@@ -78,5 +80,9 @@ export const Save = {
 		} else {
 			return [];
 		}
+	},
+
+	updateLevelStars(language, chapterId, levelId) {
+		// Store the updated star amount for the level, or just update total stars
 	}
 };

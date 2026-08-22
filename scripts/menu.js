@@ -1,5 +1,5 @@
 import { game } from "./main.js";
-import { LevelManager } from "./LevelManager.js";
+import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { modeToSettings, settingsToGame, settingsToMode } from "./screen_switch.js";
 import { startGame } from "./game.js";
 import { getElement } from "./helper_functions.js";
@@ -36,7 +36,7 @@ storyModeButton.addEventListener("click", () => {
 	game.mode = "story";
 	updateSettingsUI();
 	modeToSettings();
-	LevelManager.buildChapter(game.language, game.currentStoryChapter, levelId => {
+	StoryUIBuilder.buildChapter(game.language, game.currentStoryChapter, levelId => {
 		game.storyLevelId = levelId;
 		startGame();
 	});
@@ -121,7 +121,7 @@ function setActiveChapterButton(chapterId) {
 export function setChapter(chapterId) {
 	game.currentStoryChapter = chapterId;
 	setActiveChapterButton(chapterId);
-	LevelManager.buildChapter(game.language, chapterId, levelId => {
+	StoryUIBuilder.buildChapter(game.language, chapterId, levelId => {
 		game.storyLevelId = levelId;
 		startGame();
 	});
