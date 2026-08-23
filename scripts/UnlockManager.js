@@ -28,13 +28,18 @@ export const UnlockManager = {
 
 	isChapterUnlocked(language, chapterId) {
 		const chapter = this.chapters[language][chapterId];
-		if (!chapter)
+		if (!chapter) {
+			console.log("Chapter:", language, chapterId, "does not exist.");
 			return false;
+		}
 		const totalStars = ProgressManager.getTotalStarsAcquired(language);
 		console.log("stars:", totalStars);
 		console.log("requirement:", chapter.requirement);
-		if (totalStars >= chapter.requirement)
+		if (totalStars >= chapter.requirement) {
+			console.log("Chapter:", language, chapterId, "is unlocked.");
 			return true;
+		}
+		console.log("Chapter:", language, chapterId, "is locked.");
 		return false;
 	}
 };

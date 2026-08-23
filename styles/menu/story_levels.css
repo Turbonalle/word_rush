@@ -1,3 +1,23 @@
+/* #story-options {
+	display: flex;
+	flex-direction: row;
+} */
+
+#story-chapter-container {
+	width: 400px;
+	height: 420px;
+}
+
+#story-locked-chapter-container {
+	width: 400px;
+	height: 420px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	background: var(--border);
+}
+
 #story-chapter-header {
 	display: flex;
 	flex-direction: row;
@@ -35,7 +55,7 @@
 	align-items: center;
 	justify-content: space-between;
 	box-sizing: border-box;
-	width: 70%;
+	width: 320px;
 	height: 40px;
 	padding: 10px;
 	border: 2px solid var(--border);
@@ -64,7 +84,7 @@
 	align-items: center;
 	justify-content: start;
 	box-sizing: border-box;
-	width: 30%;
+	width: 80px;
 	height: 40px;
 	padding: 10px;
 }

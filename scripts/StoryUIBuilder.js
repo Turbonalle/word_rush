@@ -1,6 +1,7 @@
 import { Save } from "./save.js";
 import { LevelManager } from "./LevelManager.js";
 import { ProgressManager } from "./ProgressManager.js";
+import { UnlockManager } from "./UnlockManager.js";
 import { createElementWithClass } from "./helper_functions.js";
 
 const STAR_SVG = `<svg class="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3 6.1 20.5l1.2-6.5-4.8-4.6 6.6-.9L12 2.5z"/></svg>`;
@@ -50,17 +51,18 @@ export const StoryUIBuilder = {
 		storyLevelsContainer.append(storyLevelContainer);
 	},
 
-	buildChapter(language, chapterId, onLevelSelected) {
-		console.log("Building chapter:", language, chapterId);
+	buildUnlockedChapter(language, chapterId, onLevelSelected) {
+		console.log("Building unlocked chapter:", language, chapterId);
 
 		// Set chapter title
 		const chapterTitle = document.getElementById("story-chapter-title");
 		chapterTitle.textContent = LevelManager.getChapterTitle(language, chapterId);
 
+		
 		// Set chapter requirements
+		const chapterRequirement = LevelManager.getChapterRequirement(language, chapterId);
 		const chapterRequirementText = document.getElementById("story-chapter-requirement");
 		const chapterStarsAcquired = ProgressManager.getChapterStarsAcquired(language, chapterId);
-		const chapterRequirement = LevelManager.getChapterRequirement(language, chapterId);
 		chapterRequirementText.textContent = `${chapterStarsAcquired} / ${chapterRequirement} stars`;
 
 		// Set chapter levels
@@ -70,5 +72,27 @@ export const StoryUIBuilder = {
 		levels.forEach(level => {
 			this.buildLevel(level, language, chapterId, onLevelSelected);
 		});
+	},
+
+	buildLockedChapter(language, chapterId) {
+		console.log("Building locked chapter:", language, chapterId);
+		const totalStars = ProgressManager.getTotalStarsAcquired(language);
+		const chapterRequirement = UnlockManager.getChapterRequirement(language, chapterId);
+		const lockedChapterInfo = document.getElementById("locked-chapter-info");
+		lockedChapterInfo.textContent = `${totalStars} / ${chapterRequirement} stars`;
+	},
+
+	buildChapter(language, chapterId, onLevelSelected) {
+		console.log("Building chapter:", language, chapterId);
+		// Check if chapter is unlocked
+		if (UnlockManager.isChapterUnlocked(language, chapterId)) {
+			this.buildUnlockedChapter(language, chapterId, onLevelSelected);
+			document.getElementById("story-chapter-container").classList.remove("hidden");
+			document.getElementById("story-locked-chapter-container").classList.add("hidden");
+		} else {
+			this.buildLockedChapter(language, chapterId);
+			document.getElementById("story-chapter-container").classList.add("hidden");
+			document.getElementById("story-locked-chapter-container").classList.remove("hidden");
+		}
 	}
 };
