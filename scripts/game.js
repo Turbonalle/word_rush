@@ -7,6 +7,7 @@ import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./save.js";
 import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { Timer } from "./Timer.js";
+import { UnlockManager } from "./UnlockManager.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -228,12 +229,19 @@ document.getElementById("test-get-answers-button").addEventListener("click", () 
 });
 
 document.getElementById("next-level-button").addEventListener("click", () => {
-	const nextLevel = LevelManager.getNextStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
-	console.log("nextLevel:", nextLevel);
-	if (!nextLevel) {
+	// Get next level
+	const next = LevelManager.getNextStoryLevelInfo(game.language, game.currentStoryChapter, game.storyLevelId);
+
+	// Return if we can't play next level
+	if (!next) {
 		return;
 	}
-	// if (!UnlockManager.isChapterUnlocked(nextLevel.chapterId)) {
-	// 	return;
-	// }
+	if (!UnlockManager.isChapterUnlocked(game.language, next.chapterId)) {
+		return;
+	}
+
+	// Prepare game data and start next level
+	game.currentStoryChapter = next.chapterId;
+	game.storyLevelId = next.id;
+	startGame();
 });

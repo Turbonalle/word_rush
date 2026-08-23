@@ -42,6 +42,10 @@ export const LevelManager = {
 		this.basicLevels.sv[5] = Object.fromEntries(levelsSv5.map(level => [level.id, level]));
 	},
 
+	getChapters(language) {
+		return this.storyLevels[language];
+	},
+
 	getChapter(language, chapterId) {
 		return this.storyLevels[language][chapterId];
 	},
@@ -76,6 +80,27 @@ export const LevelManager = {
 		const nextChapterId = chapterId + 1;
 		nextLevel = this.getStoryLevel(language, nextChapterId, nextLevelId);
 		return nextLevel;
+	},
+
+	getNextStoryLevelInfo(language, chapterId, levelId) {
+		// Check for next level in current chapter
+		const nextLevelId = levelId + 1;
+		let nextLevel = this.getStoryLevel(language, chapterId, nextLevelId);
+		if (nextLevel !== null) {
+			return {
+				chapterId: chapterId,
+				id: nextLevelId,
+				level: nextLevel
+			};
+		}
+		// Check for next level in next chapter
+		const nextChapterId = chapterId + 1;
+		nextLevel = this.getStoryLevel(language, nextChapterId, nextLevelId);
+		return {
+			chapterId: nextChapterId,
+			id: nextLevelId,
+			level: nextLevel
+		};
 	},
 
 	getRandomLevel(language, length) {

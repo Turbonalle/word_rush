@@ -47,5 +47,14 @@ export const ProgressManager = {
 			chapterStarsAcquired += levelStarsAcquired;
 		}
 		return chapterStarsAcquired;
+	},
+
+	getTotalStarsAcquired(language) {
+		const chapters = LevelManager.getChapters(language);
+		let totalStarsAcquired = 0;
+		for (const chapterId of Object.keys(chapters)) {
+			totalStarsAcquired += this.getChapterStarsAcquired(language, chapterId);
+		}
+		return totalStarsAcquired;
 	}
 };
