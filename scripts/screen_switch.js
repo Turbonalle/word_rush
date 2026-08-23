@@ -2,8 +2,8 @@ import { game } from "./main.js";
 import { getElement } from "./helper_functions.js";
 
 export function modeToSettings() {
-	document.getElementById("title-container").classList.add("hidden");
-	document.getElementById("modes-container").classList.add("hidden");
+	document.getElementById("title-screen").classList.add("hidden");
+	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
 }
 
@@ -18,15 +18,13 @@ export function settingsToGame(mode) {
 
 export function settingsToMode() {
 	getElement(game.mode, "-settings-container").classList.add("hidden");
-	document.getElementById("title-container").classList.remove("hidden");
-	document.getElementById("modes-container").classList.remove("hidden");
+	document.getElementById("title-screen").classList.remove("hidden");
 	game.mode = "";
 }
 
 export function gameToMode() {
 	getElement(game.mode, "-game-screen").classList.add("hidden");
-	document.getElementById("menu-screen").classList.remove("hidden");
-	document.getElementById("modes-container").classList.remove("hidden");
+	document.getElementById("title-screen").classList.remove("hidden");
 	game.state = "menu";
 	game.mode = "";
 }

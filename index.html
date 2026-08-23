@@ -15,7 +15,7 @@
 		<title>WordRush</title>
 	</head>
 	<body>
-		<div id="menu-screen">
+		<div id="title-screen">
 			<div id="title-container">
 				<div class="title-cell" id="t1"><span>W</span></div>
 				<div class="title-cell" id="t2"><span>O</span></div>
@@ -35,28 +35,30 @@
 				</div>
 				<div id="mode-info-container"></div>
 			</div>
+		</div>
 
-			<!---------------------- SETTINGS CONTAINERS ---------------------->
+		<!---------------------- SETTINGS CONTAINERS ---------------------->
+
+		<div id="menu-screen">
 
 			<!-- Story Settings -->
 			<div id="story-settings-container" class="settings-container hidden">
-				<!-- <div id="story-options"> -->
-					<div class="option-row">
-						<div class="option">Language: </div>
-						<div class="option-container">
-							<button id="story-option-en" data-language="en" class="option-en language-button active">en</button>
-							<button id="story-option-sv" data-language="sv" class="option-sv language-button">sv</button>
-						</div>
+				<div class="mode-title">Story mode</div>
+				<div class="option-row">
+					<div class="option">Language: </div>
+					<div class="option-container">
+						<button id="story-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="story-option-sv" data-language="sv" class="option-sv language-button">sv</button>
 					</div>
-					<div class="option-row">
-						<div class="option">Chapter: </div>
-						<div class="option-container">
-							<button class="chapter-button active" data-chapter="1">1</button>
-							<button class="chapter-button" data-chapter="2">2</button>
-							<button class="chapter-button" data-chapter="3">3</button>
-						</div>
+				</div>
+				<div class="option-row">
+					<div class="option">Chapter: </div>
+					<div class="option-container">
+						<button class="chapter-button active" data-chapter="1">1</button>
+						<button class="chapter-button" data-chapter="2">2</button>
+						<button class="chapter-button" data-chapter="3">3</button>
 					</div>
-				<!-- </div> -->
+				</div>
 				<div id="story-chapter-container">
 					<div id="story-chapter-header">
 						<span id="story-chapter-title"></span>
@@ -76,6 +78,7 @@
 
 			<!-- Basic Settings -->
 			<div id="basic-settings-container" class="settings-container hidden">
+				<div class="mode-title">Basic mode</div>
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
@@ -98,6 +101,7 @@
 
 			<!-- Panic Settings -->
 			<div id="panic-settings-container" class="settings-container hidden">
+				<div class="mode-title">Panic mode</div>
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
@@ -120,6 +124,7 @@
 
 			<!-- Test Settings -->
 			<div id="test-settings-container" class="settings-container hidden">
+				<div class="mode-title">Test mode</div>
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
