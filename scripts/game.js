@@ -86,6 +86,10 @@ function updateProgressUI() {
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 }
 
+function setLives(n) {
+	document.getElementById("hard-lives-container").textContent = `${n}`;
+}
+
 function setupLevel(level) {
 	game.word = level.letters;
 	game.wordLength = level.letters.length;
@@ -100,6 +104,8 @@ export function startGame() {
 	resetGame();
 	let level;
 	switch(game.mode) {
+		case "daily":
+			break;
 		case "story":
 			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
 			game.wordsFound = Save.getFoundWords(game.language, game.currentStoryChapter, game.storyLevelId);
@@ -113,6 +119,14 @@ export function startGame() {
 			setupLevel(level);
 			resetProgressBar();
 			settingsToGame("zen");
+			break;
+		case "hard":
+			level = LevelManager.getRandomLevel(game.language, game.wordLength);
+			setupLevel(level);
+			resetProgressBar();
+			settingsToGame("hard");
+			game.lives = 3;
+			setLives(game.lives);
 			break;
 		case "panic":
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
@@ -151,6 +165,13 @@ export function submitWord() {
 		}
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
+		if (game.mode === "hard") {
+			game.lives -= 1;
+			setLives(game.lives);
+			if (game.lives <= 0) {
+				console.log("You lost!");
+			}
+		}
 	}
 	resetLetterBoxes();
 	if (game.wordsFound.length === game.possibleAnswers.length) {

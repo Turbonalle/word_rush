@@ -4,8 +4,10 @@ import { modeToSettings, settingsToGame, settingsToMode } from "./screen_switch.
 import { startGame } from "./game.js";
 import { getElement } from "./helper_functions.js";
 
+const dailyModeButton = document.getElementById("daily-mode-button");
 const storyModeButton = document.getElementById("story-mode-button");
 const zenModeButton = document.getElementById("zen-mode-button");
+const hardModeButton = document.getElementById("hard-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
 
@@ -32,6 +34,12 @@ export function updateSettingsUI() {
 	});
 }
 
+dailyModeButton.addEventListener("click", () => {
+	game.mode = "daily";
+	updateSettingsUI();
+	modeToSettings();
+});
+
 storyModeButton.addEventListener("click", () => {
 	game.mode = "story";
 	updateSettingsUI();
@@ -44,6 +52,12 @@ storyModeButton.addEventListener("click", () => {
 
 zenModeButton.addEventListener("click", () => {
 	game.mode = "zen";
+	updateSettingsUI();
+	modeToSettings();
+});
+
+hardModeButton.addEventListener("click", () => {
+	game.mode = "hard";
 	updateSettingsUI();
 	modeToSettings();
 });
