@@ -62,7 +62,7 @@ export const StoryUIBuilder = {
 		// Set chapter requirements
 		const chapterRequirement = LevelManager.getChapterRequirement(language, chapterId);
 		const chapterRequirementText = document.getElementById("story-chapter-requirement");
-		const chapterStarsAcquired = ProgressManager.getChapterStarsAcquired(language, chapterId);
+		const chapterStarsAcquired = ProgressManager.getTotalStarsAcquired(language);
 		chapterRequirementText.textContent = `${chapterStarsAcquired} / ${chapterRequirement} stars`;
 
 		// Set chapter levels

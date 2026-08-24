@@ -7,10 +7,18 @@
 	width: 400px;
 	height: 420px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 10px;
+	box-sizing: border-box;
+	border: 2px solid var(--border);
 	border-radius: 10px;
-	background: var(--border);
+}
+
+#locked-chapter-text {
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 #story-chapter-header {
