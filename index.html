@@ -28,8 +28,10 @@
 			</div>
 			<div id="modes-container">
 				<div id="mode-button-container">
+					<div id="daily-mode-button" class="button mode-button">Daily mode</div>
 					<div id="story-mode-button" class="button mode-button">Story mode</div>
-					<div id="basic-mode-button" class="button mode-button">Basic mode</div>
+					<div id="zen-mode-button" class="button mode-button">Zen mode</div>
+					<div id="hard-mode-button" class="button mode-button">Hard mode</div>
 					<div id="panic-mode-button" class="button mode-button">Panic mode</div>
 					<div id="test-mode-button" class="button mode-button">Test mode</div>
 				</div>
@@ -40,6 +42,29 @@
 		<!---------------------- SETTINGS CONTAINERS ---------------------->
 
 		<div id="menu-screen">
+
+			<!-- Daily Settings -->
+			<div id="daily-settings-container" class="settings-container hidden">
+				<div class="mode-title">Daily mode</div>
+				<div class="option-row">
+					<div class="option">Language: </div>
+					<div class="option-container">
+						<button id="daily-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="daily-option-sv" data-language="sv" class="option-sv language-button">sv</button>
+					</div>
+				</div>
+				<div class="option-row">
+					<div class="option">Letters: </div>
+					<div class="slider-row">
+						<input id="daily-length-slider" class="length-slider" type="range" min="3" max="5" value="4">
+					</div>
+					<div id="daily-length-value" class="length-value">4</div>
+				</div>
+				<div class="buttons-container">
+					<button class="back-button button">Back</button>
+					<button class="play-button button">Play</button>
+				</div>
+			</div>
 
 			<!-- Story Settings -->
 			<div id="story-settings-container" class="settings-container hidden">
@@ -77,22 +102,45 @@
 				</div>
 			</div>
 
-			<!-- Basic Settings -->
-			<div id="basic-settings-container" class="settings-container hidden">
-				<div class="mode-title">Basic mode</div>
+			<!-- Zen Settings -->
+			<div id="zen-settings-container" class="settings-container hidden">
+				<div class="mode-title">Zen mode</div>
 				<div class="option-row">
 					<div class="option">Language: </div>
 					<div class="option-container">
-						<button id="basic-option-en" data-language="en" class="option-en language-button active">en</button>
-						<button id="basic-option-sv" data-language="sv" class="option-sv language-button">sv</button>
+						<button id="zen-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="zen-option-sv" data-language="sv" class="option-sv language-button">sv</button>
 					</div>
 				</div>
 				<div class="option-row">
 					<div class="option">Letters: </div>
 					<div class="slider-row">
-						<input id="basic-length-slider" class="length-slider" type="range" min="3" max="5" value="4">
+						<input id="zen-length-slider" class="length-slider" type="range" min="3" max="5" value="4">
 					</div>
-					<div id="basic-length-value" class="length-value">4</div>
+					<div id="zen-length-value" class="length-value">4</div>
+				</div>
+				<div class="buttons-container">
+					<button class="back-button button">Back</button>
+					<button class="play-button button">Play</button>
+				</div>
+			</div>
+
+			<!-- Hard Settings -->
+			<div id="hard-settings-container" class="settings-container hidden">
+				<div class="mode-title">Hard mode</div>
+				<div class="option-row">
+					<div class="option">Language: </div>
+					<div class="option-container">
+						<button id="hard-option-en" data-language="en" class="option-en language-button active">en</button>
+						<button id="hard-option-sv" data-language="sv" class="option-sv language-button">sv</button>
+					</div>
+				</div>
+				<div class="option-row">
+					<div class="option">Letters: </div>
+					<div class="slider-row">
+						<input id="hard-length-slider" class="length-slider" type="range" min="3" max="5" value="4">
+					</div>
+					<div id="hard-length-value" class="length-value">4</div>
 				</div>
 				<div class="buttons-container">
 					<button class="back-button button">Back</button>
@@ -142,6 +190,26 @@
 
 		<!-------------------------- GAME SCREENS -------------------------->
 
+		<!-- Daily Game Screen -->
+		<div id="daily-game-screen" class="game-screen hidden">
+			<div id="daily-given-letters-container" class="given-letters-container"></div>
+			<div id="progress-container">
+				<span id="daily-progress-text" class="progress-text">0 / 0</span>
+				<div id="progress-bar-container">
+					<div id="daily-progress-bar" class="progress-bar"></div>
+				</div>
+			</div>
+			<div id="daily-candidate-word-container" class="candidate-word-container"></div>
+			<button class="submit-button">Submit word</button>
+			<div id="daily-found-words-container" class="found-words-container"></div>
+			<div id="daily-bottom-container" class="bottom-container">
+				<button class="to-mode-button game-button">Mode menu</button>
+				<button class="to-settings-button game-button">Settings</button>
+				<button class="show-words-button game-button">Give up</button>
+				<button class="new-game-button game-button">New word</button>
+			</div>
+		</div>
+
 		<!-- Story Game Screen -->
 		<div id="story-game-screen" class="game-screen hidden">
 			<div id="story-given-letters-container" class="given-letters-container"></div>
@@ -161,19 +229,39 @@
 			</div>
 		</div>
 
-		<!-- Basic Game Screen -->
-		<div id="basic-game-screen" class="game-screen hidden">
-			<div id="basic-given-letters-container" class="given-letters-container"></div>
+		<!-- Zen Game Screen -->
+		<div id="zen-game-screen" class="game-screen hidden">
+			<div id="zen-given-letters-container" class="given-letters-container"></div>
 			<div id="progress-container">
-				<span id="basic-progress-text" class="progress-text">0 / 0</span>
+				<span id="zen-progress-text" class="progress-text">0 / 0</span>
 				<div id="progress-bar-container">
-					<div id="basic-progress-bar" class="progress-bar"></div>
+					<div id="zen-progress-bar" class="progress-bar"></div>
 				</div>
 			</div>
-			<div id="basic-candidate-word-container" class="candidate-word-container"></div>
+			<div id="zen-candidate-word-container" class="candidate-word-container"></div>
 			<button class="submit-button">Submit word</button>
-			<div id="basic-found-words-container" class="found-words-container"></div>
-			<div id="basic-bottom-container" class="bottom-container">
+			<div id="zen-found-words-container" class="found-words-container"></div>
+			<div id="zen-bottom-container" class="bottom-container">
+				<button class="to-mode-button game-button">Mode menu</button>
+				<button class="to-settings-button game-button">Settings</button>
+				<button class="show-words-button game-button">Give up</button>
+				<button class="new-game-button game-button">New word</button>
+			</div>
+		</div>
+
+		<!-- Hard Game Screen -->
+		<div id="hard-game-screen" class="game-screen hidden">
+			<div id="hard-given-letters-container" class="given-letters-container"></div>
+			<div id="progress-container">
+				<span id="hard-progress-text" class="progress-text">0 / 0</span>
+				<div id="progress-bar-container">
+					<div id="hard-progress-bar" class="progress-bar"></div>
+				</div>
+			</div>
+			<div id="hard-candidate-word-container" class="candidate-word-container"></div>
+			<button class="submit-button">Submit word</button>
+			<div id="hard-found-words-container" class="found-words-container"></div>
+			<div id="hard-bottom-container" class="bottom-container">
 				<button class="to-mode-button game-button">Mode menu</button>
 				<button class="to-settings-button game-button">Settings</button>
 				<button class="show-words-button game-button">Give up</button>
@@ -196,7 +284,7 @@
 			<div id="panic-candidate-word-container" class="candidate-word-container"></div>
 			<button class="submit-button">Submit word</button>
 			<div id="panic-found-words-container" class="found-words-container"></div>
-			<div id="basic-bottom-container" class="bottom-container">
+			<div id="panic-bottom-container" class="bottom-container">
 				<button class="to-mode-button game-button">Mode menu</button>
 				<button class="to-settings-button game-button">Settings</button>
 				<button class="show-words-button game-button">Give up</button>
@@ -209,7 +297,7 @@
 			<div id="test-candidate-word-container" class="candidate-word-container"></div>
 			<button id="test-get-answers-button">Find words</button>
 			<div id="test-found-words-container" class="found-words-container"></div>
-			<div id="basic-bottom-container" class="bottom-container">
+			<div id="test-bottom-container" class="bottom-container">
 				<button class="to-mode-button game-button">Mode menu</button>
 				<button class="to-settings-button game-button">Settings</button>
 			</div>

@@ -4,7 +4,7 @@ export const UnlockManager = {
 	achievements: {
 		fullStarStoryLevel: false,
 		unlockChapter2: false,
-		finishedBasicLevel: false,
+		finishedzenLevel: false,
 		finishedPanicLevel: false,
 		found100Words: false,
 		collected100Stars: false

@@ -108,11 +108,11 @@ export function startGame() {
 			addWordsToContainer(game.wordsFound);
 			settingsToGame("story");
 			break;
-		case "basic":
+		case "zen":
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
 			resetProgressBar();
-			settingsToGame("basic");
+			settingsToGame("zen");
 			break;
 		case "panic":
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);

@@ -5,7 +5,7 @@ import { startGame } from "./game.js";
 import { getElement } from "./helper_functions.js";
 
 const storyModeButton = document.getElementById("story-mode-button");
-const basicModeButton = document.getElementById("basic-mode-button");
+const zenModeButton = document.getElementById("zen-mode-button");
 const panicModeButton = document.getElementById("panic-mode-button");
 const testModeButton = document.getElementById("test-mode-button");
 
@@ -42,8 +42,8 @@ storyModeButton.addEventListener("click", () => {
 	});
 });
 
-basicModeButton.addEventListener("click", () => {
-	game.mode = "basic";
+zenModeButton.addEventListener("click", () => {
+	game.mode = "zen";
 	updateSettingsUI();
 	modeToSettings();
 });
@@ -91,7 +91,7 @@ function setLengthSlider(mode) {
 
 addBackButtonListeners();
 addPlayButtonListeners();
-setLengthSlider("basic");
+setLengthSlider("zen");
 setLengthSlider("panic");
 
 function setActiveChapterButton(chapterId) {
