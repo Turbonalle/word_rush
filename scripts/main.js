@@ -41,6 +41,7 @@ export const game = {
 
 async function initializeGame() {
 	game.save = Save.loadSave();
+	await LevelManager.loadDailyLevels();
 	await LevelManager.loadStoryLevels();
 	await LevelManager.loadBasicLevels();
 	await DictionaryManager.loadDictionaries();

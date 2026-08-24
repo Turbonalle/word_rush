@@ -1,4 +1,8 @@
 export const LevelManager = {
+	dailyLevels: {
+		en: {},
+		sv: {}
+	},
 	storyLevels: {
 		en: {},
 		sv: {}
@@ -6,6 +10,17 @@ export const LevelManager = {
 	basicLevels: {
 		en: {},
 		sv: {}
+	},
+
+	async loadDailyLevels() {
+		const [responseEn, responseSv] = await Promise.all([
+			fetch("data/daily_levels/daily_levels_en.json"),
+			fetch("data/daily_levels/daily_levels_sv.json")
+		]);
+		const levelsEn = await responseEn.json();
+		const levelsSv = await responseSv.json();
+		this.dailyLevels.en = levelsEn;
+		this.dailyLevels.sv = levelsSv;
 	},
 
 	async loadStoryLevels() {
@@ -40,6 +55,23 @@ export const LevelManager = {
 		this.basicLevels.sv[3] = Object.fromEntries(levelsSv3.map(level => [level.id, level]));
 		this.basicLevels.sv[4] = Object.fromEntries(levelsSv4.map(level => [level.id, level]));
 		this.basicLevels.sv[5] = Object.fromEntries(levelsSv5.map(level => [level.id, level]));
+	},
+
+	getDailyLevel(language) {
+		const levels = this.dailyLevels[language];
+		if (!levels || levels.length === 0) {
+			console.log("Error: no daily levels.");
+			return null;
+		}
+		const startDate = new Date(2026, 0, 1);
+		const today = new Date();
+		startDate.setHours(0, 0, 0, 0);
+		today.setHours(0, 0, 0, 0);
+		const millisecondsPerDay = 1000 * 60 * 60 * 24;
+		const daysElapsed = Math.floor((today - startDate) / millisecondsPerDay);
+		const index = daysElapsed % levels.length;
+		console.log(levels[index]);
+		return levels[index];
 	},
 
 	getChapters(language) {

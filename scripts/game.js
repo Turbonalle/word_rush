@@ -105,6 +105,11 @@ export function startGame() {
 	let level;
 	switch(game.mode) {
 		case "daily":
+			level = LevelManager.getDailyLevel(game.language);
+			setupLevel(level);
+			resetProgressBar();
+			game.wordLength = 5;
+			settingsToGame("daily");
 			break;
 		case "story":
 			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
