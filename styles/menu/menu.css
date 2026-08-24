@@ -23,6 +23,7 @@
 	text-align: center;
 	font-size: 42px;
 	padding: 10px;
+	box-sizing: border-box;
 	color: vaR(--title-border);
 	background: var(--bg);
 	border: 2px solid var(--title-border);
