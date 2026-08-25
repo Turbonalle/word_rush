@@ -102,6 +102,7 @@ function setupLevel(level) {
 export function startGame() {
 	console.log(game);
 	resetGame();
+	game.storedWordLength = game.wordLength;
 	let level;
 	switch(game.mode) {
 		case "daily":

@@ -12,6 +12,7 @@ export const game = {
 	mode: "",
 	language: "en",
 	wordLength: 4,
+	storedWordLength: 4,
 	
 	// Current level
 	currentStoryChapter: 1,

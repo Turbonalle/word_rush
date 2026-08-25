@@ -51,24 +51,28 @@ storyModeButton.addEventListener("click", () => {
 });
 
 zenModeButton.addEventListener("click", () => {
+	game.wordLength = game.storedWordLength;
 	game.mode = "zen";
 	updateSettingsUI();
 	modeToSettings();
 });
 
 hardModeButton.addEventListener("click", () => {
+	game.wordLength = game.storedWordLength;
 	game.mode = "hard";
 	updateSettingsUI();
 	modeToSettings();
 });
 
 panicModeButton.addEventListener("click", () => {
+	game.wordLength = game.storedWordLength;
 	game.mode = "panic";
 	updateSettingsUI();
 	modeToSettings();
 });
 
 testModeButton.addEventListener("click", () => {
+	game.wordLength = game.storedWordLength;
 	game.mode = "test";
 	updateSettingsUI();
 	modeToSettings();
