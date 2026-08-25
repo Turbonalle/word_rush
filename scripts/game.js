@@ -141,8 +141,8 @@ export function startGame() {
 			Timer.start(60);
 			break;
 		case "test":
-			game.wordLength = 12;
-			createLetterBoxes(12);
+			game.wordLength = 18;
+			createLetterBoxes(game.wordLength);
 			settingsToGame("test");
 			break;
 		default:
