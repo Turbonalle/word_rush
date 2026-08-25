@@ -23,6 +23,7 @@ export function settingsToMode() {
 }
 
 export function gameToMode() {
+	game.wordLength = game.storedWordLength;
 	getElement(game.mode, "-game-screen").classList.add("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.state = "menu";
@@ -30,6 +31,7 @@ export function gameToMode() {
 }
 
 export function gameToSettings() {
+	game.wordLength = game.storedWordLength;
 	getElement(game.mode, "-game-screen").classList.add("hidden");
 	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
