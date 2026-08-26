@@ -301,8 +301,55 @@
 		<!-------------------------- PROGRESS MENU ------------------------->
 
 		<div id="progress-screen" class="progress-screen hidden">
-			<div id="progress-title">Progress</div>
-			<button id="progress-to-mode-button">Back</button>
+			<div id="progress-title-and-container">
+				<div id="progress-title" class="mode-title">Progress</div>
+				<div id="progress-container">
+					<div id="progress-stats">
+						<div class="progress-header">Stats</div>
+						<div class="stat-container">
+							<span>Games played: </span>
+							<span id="stat-gamesplayed">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Daily words finished: </span>
+							<span id="stat-dailywordsfinished">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Zen words finished: </span>
+							<span id="stat-zenwordsfinished">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Hard word finished: </span>
+							<span id="stat-hardwordsfinished">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Panic word finished: </span>
+							<span id="stat-panicwordsfinished">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Games finished: </span>
+							<span id="stat-gamesfinished">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Finish ratio: </span>
+							<span id="stat-finishratio">1</span>
+						</div>
+						<div class="stat-container">
+							<span>Times given up: </span>
+							<span id="stat-timesgivenup">1</span>
+						</div>
+					</div>
+					<div id="progress-unlockables">
+						<div class="progress-header">Unlockables</div>
+						<div class="unlockable-container">
+							<div class="unlock-title">Daily beginner</div>
+							<div class="unlock-requirement">Finish a game in daily mode.</div>
+							<div class="unlock-reward">The most basic song ever made!</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button id="progress-to-mode-button" class="button">Back</button>
 		</div>
 
 		<!-------------------------- AUDIO PLAYER -------------------------->

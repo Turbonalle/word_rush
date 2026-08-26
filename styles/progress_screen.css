@@ -1,9 +1,68 @@
+/*---- Base design -----------------------------------------------------------*/
+
 #progress-screen {
 	height: 100vh;
 	width: 100vw;
-	background: tomato;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#progress-title-and-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #progress-title {
-	font-size: 100px;
+	margin-bottom: 5vh;
+}
+
+#progress-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 10vw;
+	font-size: 0.9rem;
+}
+
+#progress-unlockables {
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: flex-start;
+}
+
+.progress-header {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 2vh;
+}
+
+
+/*---- Stat design -----------------------------------------------------------*/
+
+
+
+
+
+/*---- Unlockable design -----------------------------------------------------*/
+
+.unlockable-container {
+	padding: 10px;
+	box-sizing: border-box;
+	border: 2px solid var(--border);
+	border-radius: 10px;
+	color: var(--border);
+}
+
+.unlock-title {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--title);
 }
