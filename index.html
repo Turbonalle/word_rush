@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="styles/game/game.css">
 		<link rel="stylesheet" href="styles/game/timer.css">
 		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/progress_screen.css">
 		<title>WordRush</title>
 	</head>
 	<body>
@@ -34,6 +35,7 @@
 					<div id="hard-mode-button" class="button mode-button">Hard mode</div>
 					<div id="panic-mode-button" class="button mode-button">Panic mode</div>
 					<div id="test-mode-button" class="button mode-button">Test mode</div>
+					<div id="mode-to-progress-button" class="button">Progress</div>
 				</div>
 				<div id="mode-info-container"></div>
 			</div>
@@ -41,7 +43,7 @@
 
 		<!---------------------- SETTINGS CONTAINERS ---------------------->
 
-		<div id="menu-screen">
+		<div id="menu-screen" class="hidden">
 
 			<!-- Daily Settings -->
 			<div id="daily-settings-container" class="settings-container hidden">
@@ -296,6 +298,13 @@
 			</div>
 		</div>
 
+		<!-------------------------- PROGRESS MENU ------------------------->
+
+		<div id="progress-screen" class="progress-screen hidden">
+			<div id="progress-title">Progress</div>
+			<button id="progress-to-mode-button">Back</button>
+		</div>
+
 		<!-------------------------- AUDIO PLAYER -------------------------->
 
 		<div id="audio-player">
@@ -325,6 +334,7 @@
 	<script type="module" src="scripts/mode_info.js"></script>
 	<script type="module" src="scripts/reset_game.js"></script>
 	<script type="module" src="scripts/key_handler.js"></script>
+	<script type="module" src="scripts/progress_screen.js"></script>
 	<script type="module" src="scripts/game.js"></script>
 	<script type="module" src="scripts/ProgressManager.js"></script>
 	<script type="module" src="scripts/menu.js"></script>

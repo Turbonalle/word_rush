@@ -10,7 +10,6 @@ export function modeToSettings() {
 export function settingsToGame(mode) {
 	game.state = "game";
 	game.mode = mode;
-	console.log("mode:", mode);
 	document.getElementById("menu-screen").classList.add("hidden");
 	getElement(game.mode, "-settings-container").classList.add("hidden");
 	getElement(game.mode, "-game-screen").classList.remove("hidden");
@@ -18,6 +17,7 @@ export function settingsToGame(mode) {
 
 export function settingsToMode() {
 	getElement(game.mode, "-settings-container").classList.add("hidden");
+	document.getElementById("menu-screen").classList.add("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.mode = "";
 }
@@ -36,4 +36,14 @@ export function gameToSettings() {
 	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
 	game.state = "menu";
+}
+
+export function modeToProgress() {
+	document.getElementById("title-screen").classList.add("hidden");
+	document.getElementById("progress-screen").classList.remove("hidden");
+}
+
+export function progressToMode() {
+	document.getElementById("title-screen").classList.remove("hidden");
+	document.getElementById("progress-screen").classList.add("hidden");
 }
