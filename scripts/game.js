@@ -101,11 +101,13 @@ function setupLevel(level) {
 
 export function startGame() {
 	console.log(game);
+	Save.increaseGamesPlayed();
 	resetGame();
 	game.storedWordLength = game.wordLength;
 	let level;
 	switch(game.mode) {
 		case "daily":
+			Save.increaseDailyGamesPlayed();
 			level = LevelManager.getDailyLevel(game.language);
 			setupLevel(level);
 			resetProgressBar();
@@ -113,6 +115,7 @@ export function startGame() {
 			settingsToGame("daily");
 			break;
 		case "story":
+			Save.increaseStoryGamesPlayed();
 			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
 			game.wordsFound = Save.getFoundWords(game.language, game.currentStoryChapter, game.storyLevelId);
 			setupLevel(level);
@@ -121,12 +124,14 @@ export function startGame() {
 			settingsToGame("story");
 			break;
 		case "zen":
+			Save.increaseZenGamesPlayed();
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
 			resetProgressBar();
 			settingsToGame("zen");
 			break;
 		case "hard":
+			Save.increaseHardGamesPlayed();
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
 			resetProgressBar();
@@ -135,6 +140,7 @@ export function startGame() {
 			setLives(game.lives);
 			break;
 		case "panic":
+			Save.increasePanicGamesPlayed();
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
 			resetProgressBar();
@@ -149,6 +155,7 @@ export function startGame() {
 		default:
 			break;
 	}
+	Save.increaseTotalWordsToFind(level.answers.length);
 	console.log("[startGame] Word is: " + game.word);
 	console.log("[startGame] Answers: " + game.possibleAnswers);
 }
@@ -165,10 +172,16 @@ export function submitWord() {
 		game.wordsFound.push(game.currentInput);
 		updateProgressUI();
 		addWordToContainer(game.currentInput);
-		Save.addFoundWord(game.language, game.currentStoryChapter, game.storyLevelId, game.currentInput);
+		if (game.mode === "daily") {
+			Save.addFoundDailyWord(game.language, game.currentInput);
+		}
+		if (game.mode === "story") {
+			Save.addFoundStoryWord(game.language, game.currentStoryChapter, game.storyLevelId, game.currentInput);
+		}
 		if (game.mode === "panic") {
 			Timer.add(10);
 		}
+		Save.increaseWordsFound();
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 		if (game.mode === "hard") {
@@ -182,6 +195,23 @@ export function submitWord() {
 	resetLetterBoxes();
 	if (game.wordsFound.length === game.possibleAnswers.length) {
 		// TODO: Handle winning logic and visuals
+		Save.increaseGamesFinished();
+		switch(game.mode) {
+			case "daily":
+				Save.increaseDailyGamesFinished();
+				break;
+			case "story":
+				break;
+			case "zen":
+				Save.increaseZenGamesFinished();
+				break;
+			case "hard":
+				Save.increaseHardGamesFinished();
+				break;
+			case "panic":
+				Save.increasePanicGamesFinished();
+				break;
+		}
 		console.log("Congratulations! You found every word!");
 	}
 }
@@ -241,6 +271,8 @@ document.querySelectorAll(".to-settings-button").forEach(button => {
 
 document.querySelectorAll(".show-words-button").forEach(button => {
 	button.addEventListener("click", () => {
+		console.log("TEST!!!");
+		Save.increaseTimesGivenUp();
 		findAndFillRestWords();
 	})
 });

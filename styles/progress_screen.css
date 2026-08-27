@@ -47,9 +47,18 @@
 
 /*---- Stat design -----------------------------------------------------------*/
 
+.progress-stat-header {
+	margin-top: 1vh;
+}
 
+.stat-container{
+	color: var(--border);
+}
 
-
+.stat-value {
+	font-weight: bold;
+	color: var(--title);
+}
 
 /*---- Unlockable design -----------------------------------------------------*/
 

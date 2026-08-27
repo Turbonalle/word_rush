@@ -41,6 +41,7 @@ export function gameToSettings() {
 export function modeToProgress() {
 	document.getElementById("title-screen").classList.add("hidden");
 	document.getElementById("progress-screen").classList.remove("hidden");
+	
 }
 
 export function progressToMode() {

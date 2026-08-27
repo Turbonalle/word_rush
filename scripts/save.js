@@ -10,10 +10,11 @@ const DEFAULT_SAVE = {
 	stats: {
 		// Overall
 		gamesPlayed: 0,
+		gamesFinished: 0,
 		wordsFound: 0,
+		totalWordsToFind: 0,
 		starsCollected: 0,
 		timesGivenUp: 0,
-		averageWordPercentage: 0.0,
 		// Modes
 		dailyGamesStarted: 0,
 		zenGamesStarted: 0,
@@ -37,7 +38,9 @@ const DEFAULT_SAVE = {
 
 export const Save = {
 	data: structuredClone(DEFAULT_SAVE),
-	
+
+	// ---- Save handling ------------------------------------------------------
+
 	migrateSave() {
 		// Save data version control
 	},
@@ -65,7 +68,14 @@ export const Save = {
 		localStorage.removeItem("undefined");
 	},
 
-	addFoundWord(language, chapter, levelId, word) {
+
+	// ---- Level updates ------------------------------------------------------
+
+	addFoundDailyWord(language, word) {
+		console.log("Found daily word:", language, word);
+	},
+
+	addFoundStoryWord(language, chapter, levelId, word) {
 		if (!this.data.story[language][chapter]) {
 			this.data.story[language][chapter] = {};
 		}
@@ -83,6 +93,9 @@ export const Save = {
 		this.saveGame(this.data);
 	},
 
+
+	// ---- Getters ------------------------------------------------------------
+
 	getFoundWordsAmount(language, chapter, levelId) {
 		if (this.data.story[language][chapter]?.[levelId]) {
 			return this.data.story[language][chapter][levelId].wordsFound.length;
@@ -97,5 +110,110 @@ export const Save = {
 		} else {
 			return [];
 		}
-	}
+	},
+
+
+	// ---- Stat updates -------------------------------------------------------
+
+	increaseGamesPlayed() {
+		this.data.stats.gamesPlayed += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseGamesFinished() {
+		this.data.stats.gamesFinished += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseWordsFound() {
+		this.data.stats.wordsFound += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseTotalWordsToFind(amount) {
+		this.data.stats.totalWordsToFind += amount;
+		this.saveGame(this.data);
+	},
+
+	increaseDailyGamesPlayed() {
+		this.data.stats.dailyGamesStarted += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseStoryGamesPlayed() {
+		this.data.stats.storyGamesStarted += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseZenGamesPlayed() {
+		this.data.stats.zenGamesStarted += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseHardGamesPlayed() {
+		this.data.stats.hardGamesStarted += 1;
+		this.saveGame(this.data);
+	},
+
+	increasePanicGamesPlayed() {
+		this.data.stats.panicGamesStarted += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseDailyGamesFinished() {
+		this.data.stats.dailyGamesFinished += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseStoryGamesFinished() {
+		this.data.stats.storyGamesFinished += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseZenGamesFinished() {
+		this.data.stats.zenGamesFinished += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseHardGamesFinished() {
+		this.data.stats.hardGamesFinished += 1;
+		this.saveGame(this.data);
+	},
+
+	increasePanicGamesFinished() {
+		this.data.stats.panicGamesFinished += 1;
+		this.saveGame(this.data);
+	},
+
+	increaseTimesGivenUp() {
+		console.log("TEST!!!");
+		this.data.stats.timesGivenUp += 1;
+		this.saveGame(this.data);
+	},
+
+
+	// ---- Stat getters -------------------------------------------------------
+
+	getGamesPlayed() { return this.data.stats.gamesPlayed; },
+	getGamesFinished() { return this.data.stats.gamesFinished; },
+	getTimesGivenUp() { return this.data.stats.timesGivenUp; },
+	getWordsFound() { return this.data.stats.wordsFound; },
+	getDailyGamesPlayed() { return this.data.stats.dailyGamesStarted; },
+	getStoryGamesPlayed() { return this.data.stats.storyGamesStarted; },
+	getZenGamesPlayed() { return this.data.stats.zenGamesStarted; },
+	getHardGamesPlayed() { return this.data.stats.hardGamesStarted; },
+	getPanicGamesPlayed() { return this.data.stats.panicGamesStarted; },
+	getDailyGamesFinished() { return this.data.stats.dailyGamesFinished; },
+	getStoryGamesFinished() { return this.data.stats.storyGamesFinished; },
+	getZenGamesFinished() { return this.data.stats.zenGamesFinished; },
+	getHardGamesFinished() { return this.data.stats.hardGamesFinished; },
+	getPanicGamesFinished() { return this.data.stats.panicGamesFinished; },
+
+	getAvgWordRatio() {
+		let ratio = 0.0;
+		if (this.data.stats.totalWordsToFind !== 0)
+			ratio = (this.data.stats.wordsFound * 100) / this.data.stats.totalWordsToFind;
+		const fixedRatio = ratio.toFixed(1);
+		return fixedRatio;
+	},
 };
