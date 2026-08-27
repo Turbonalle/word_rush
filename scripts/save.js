@@ -8,9 +8,26 @@ const DEFAULT_SAVE = {
 		sound: true
 	},
 	stats: {
+		// Overall
 		gamesPlayed: 0,
 		wordsFound: 0,
-		starsCollected: 0
+		starsCollected: 0,
+		timesGivenUp: 0,
+		averageWordPercentage: 0.0,
+		// Modes
+		dailyGamesStarted: 0,
+		zenGamesStarted: 0,
+		hardGamesStarted: 0,
+		panicGamesStarted: 0,
+		dailyGamesFinished: 0,
+		zenGamesFinished: 0,
+		hardGamesFinished: 0,
+		panicGamesFinished: 0,
+	},
+	daily: {
+		date: "",
+		wordsFound: [],
+		givenUp: false,
 	},
 	story: {
 		en: {},
