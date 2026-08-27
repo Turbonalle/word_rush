@@ -22,7 +22,7 @@
 	margin-bottom: 5vh;
 }
 
-#progress-container {
+#progress-info-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
