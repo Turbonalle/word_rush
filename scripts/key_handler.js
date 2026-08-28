@@ -32,7 +32,7 @@ document.addEventListener("keydown", e => {
 		return;
 	if (game.currentInput.length >= game.wordLength)
 		return;
-	game.currentInput += e.key;
+	game.currentInput += e.key.toLowerCase();
 	game.inputFrequency = calculateLetterFrequency(game.currentInput);
 	updateLetterBoxes();
 });
