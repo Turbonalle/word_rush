@@ -1,12 +1,16 @@
 import { Save } from "./save.js";
+import { ProgressManager } from "./ProgressManager.js";
 import { modeToProgress, progressToMode } from "./screen_switch.js";
 
 function updateProgressScreen() {
 	// Games
 	document.getElementById("stat-gamesplayed").textContent = Save.getGamesPlayed();
 	document.getElementById("stat-gamesfinished").textContent = Save.getGamesFinished();
+	document.getElementById("stat-finishratio").textContent = `${Save.getFinishRatio()}%`;
 	document.getElementById("stat-timesgivenup").textContent = Save.getTimesGivenUp();
 	// Words and stars
+	document.getElementById("stat-starscollected-en").textContent = ProgressManager.getTotalStarsAcquired("en");
+	document.getElementById("stat-starscollected-sv").textContent = ProgressManager.getTotalStarsAcquired("sv");
 	document.getElementById("stat-wordsfound").textContent = Save.getWordsFound();
 	document.getElementById("stat-avgwordratio").textContent = `${Save.getAvgWordRatio()}%`;
 	// Modes

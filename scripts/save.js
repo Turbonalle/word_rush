@@ -11,10 +11,12 @@ const DEFAULT_SAVE = {
 		// Overall
 		gamesPlayed: 0,
 		gamesFinished: 0,
+		finishRatio: 0.0,
+		timesGivenUp: 0,
+		// Stars and words
 		wordsFound: 0,
 		totalWordsToFind: 0,
 		starsCollected: 0,
-		timesGivenUp: 0,
 		// Modes
 		dailyGamesStarted: 0,
 		zenGamesStarted: 0,
@@ -186,7 +188,6 @@ export const Save = {
 	},
 
 	increaseTimesGivenUp() {
-		console.log("TEST!!!");
 		this.data.stats.timesGivenUp += 1;
 		this.saveGame(this.data);
 	},
@@ -208,7 +209,13 @@ export const Save = {
 	getZenGamesFinished() { return this.data.stats.zenGamesFinished; },
 	getHardGamesFinished() { return this.data.stats.hardGamesFinished; },
 	getPanicGamesFinished() { return this.data.stats.panicGamesFinished; },
-
+	getFinishRatio() {
+		let ratio = 0.0;
+		if (this.data.stats.gamesPlayed !== 0)
+			ratio = (this.data.stats.gamesFinished * 100) / this.data.stats.gamesPlayed;
+		const fixedRatio = ratio.toFixed(1);
+		return fixedRatio;
+	},
 	getAvgWordRatio() {
 		let ratio = 0.0;
 		if (this.data.stats.totalWordsToFind !== 0)
