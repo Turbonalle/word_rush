@@ -19,6 +19,7 @@
 	font-size: 40px;
 	font-weight: bold;
 	color: var(--title);
+	background: var(--bg);
 }
 
 .title-cell span {

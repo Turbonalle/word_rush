@@ -1,0 +1,51 @@
+#menu-background {
+	position: fixed;
+	inset: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: -3;
+}
+
+#dots {
+	position: fixed;
+	inset: 0;
+	background: var(--bg-dotted);
+	background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);
+	background-size: 50px 50px;
+}
+
+#moving-mask {
+	width: 100%;
+	position: fixed;
+	inset: 0;
+	animation: drift 25s linear infinite;
+}
+
+.wall {
+	position: absolute;
+	top: -10vh;
+	bottom: 10vh;
+	height: 120vh;
+	width: 100vw;
+	background: var(--sliding-wall);
+	background: var(--bg);
+	transform: rotate(5deg);
+	border: 4px solid var(--border);
+}
+
+.wall.left {
+	right: 70%;
+}
+
+.wall.right {
+	left: 70%;
+}
+
+@keyframes drift {
+	from {
+		transform: translateX(70%);
+	}
+	to {
+		transform: translateX(-70%);
+	}
+}

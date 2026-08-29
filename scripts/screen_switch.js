@@ -3,6 +3,7 @@ import { getElement } from "./helper_functions.js";
 import { getRandomWinningTitle } from "./winning_title.js";
 
 export function modeToSettings() {
+	document.getElementById("menu-background").classList.add("hidden");
 	document.getElementById("title-screen").classList.add("hidden");
 	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
@@ -19,6 +20,7 @@ export function settingsToGame(mode) {
 export function settingsToMode() {
 	getElement(game.mode, "-settings-container").classList.add("hidden");
 	document.getElementById("menu-screen").classList.add("hidden");
+	document.getElementById("menu-background").classList.remove("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.mode = "";
 }
@@ -26,10 +28,11 @@ export function settingsToMode() {
 export function gameToMode() {
 	game.wordLength = game.storedWordLength;
 	getElement(game.mode, "-game-screen").classList.add("hidden");
+	document.getElementById("winning-screen").classList.add("hidden");
+	document.getElementById("menu-background").classList.remove("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.state = "menu";
 	game.mode = "";
-	document.getElementById("winning-screen").classList.add("hidden");
 }
 
 export function gameToSettings() {

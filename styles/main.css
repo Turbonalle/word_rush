@@ -1,9 +1,12 @@
 :root {
 	--bg: #ececec;
-	--title-border: #222222;
+	--bg-dotted: #202020;
+	--bg-dots: rgba(74, 74, 74, 0.25);
+	--sliding-wall: #e9e9e9;
+	--title-border: #9b9b9b;
 	--border: #a1a1a1;
 	--title: #4b4b4b;
-	--highlight: rgb(183, 60, 38);
+	--highlight: #b73c26;
 	--button: #dddddd;
 	--button-border: #7d7d7d;
 	--button-text: #5c5c5c;
