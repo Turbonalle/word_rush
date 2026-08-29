@@ -151,6 +151,7 @@ export function startGame() {
 				Save.increaseDailyGamesPlayed();
 				Save.startNewDaily(game.language, getTodayString());
 			}
+			game.givenUp = Save.isDailyGivenUp(game.language);
 			level = LevelManager.getDailyLevel(game.language);
 			setupLevel(level);
 			copyDailyWordsToGameData();
@@ -210,6 +211,8 @@ export function startGame() {
 }
 
 export function submitWord() {
+	if (game.givenUp)
+		return;
 	const word = game.currentInput;
 	if (game.wordsFound.includes(word)) {
 		console.log("You already have that word...");
@@ -320,6 +323,7 @@ document.querySelectorAll(".to-settings-button").forEach(button => {
 
 document.querySelectorAll(".show-words-button").forEach(button => {
 	button.addEventListener("click", () => {
+		game.givenUp = true;
 		if (game.mode === "daily") {
 			Save.giveUpDaily(game.language);
 		}

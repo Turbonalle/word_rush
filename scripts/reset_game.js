@@ -9,6 +9,7 @@ function resetGameData() {
 	game.currentInput = "";
 	game.inputFrequency = {};
 	game.wordsFound = [];
+	game.givenUp = false;
 }
 
 function resetGivenLettersContainer() {

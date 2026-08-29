@@ -26,6 +26,7 @@ export const game = {
 	inputFrequency: {},
 	wordsFound: [],
 	lives: 0,
+	givenUp: false,
 
 	// Save data
 	save: {},

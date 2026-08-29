@@ -135,6 +135,10 @@ export const Save = {
 		return this.data.daily[language].date;
 	},
 
+	isDailyGivenUp(language) {
+		return this.data.daily[language].givenUp;
+	},
+
 
 	// ---- Stat updates -------------------------------------------------------
 
