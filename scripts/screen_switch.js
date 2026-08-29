@@ -1,5 +1,6 @@
 import { game } from "./main.js";
 import { getElement } from "./helper_functions.js";
+import { getRandomWinningTitle } from "./winning_title.js";
 
 export function modeToSettings() {
 	document.getElementById("title-screen").classList.add("hidden");
@@ -28,6 +29,7 @@ export function gameToMode() {
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.state = "menu";
 	game.mode = "";
+	document.getElementById("winning-screen").classList.add("hidden");
 }
 
 export function gameToSettings() {
@@ -36,6 +38,7 @@ export function gameToSettings() {
 	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
 	game.state = "menu";
+	document.getElementById("winning-screen").classList.add("hidden");
 }
 
 export function modeToProgress() {
@@ -47,4 +50,13 @@ export function modeToProgress() {
 export function progressToMode() {
 	document.getElementById("title-screen").classList.remove("hidden");
 	document.getElementById("progress-screen").classList.add("hidden");
+}
+
+export function showWinningScreen() {
+	document.getElementById("winning-title").textContent = getRandomWinningTitle();
+	document.getElementById("winning-screen").classList.remove("hidden");
+}
+
+export function hideWinningScreen() {
+	document.getElementById("winning-screen").classList.add("hidden");
 }

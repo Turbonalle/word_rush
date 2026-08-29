@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="styles/game/timer.css">
 		<link rel="stylesheet" href="styles/main.css">
 		<link rel="stylesheet" href="styles/progress_screen.css">
+		<link rel="stylesheet" href="styles/winning_screen.css">
 		<title>WordRush</title>
 	</head>
 	<body>
@@ -41,7 +42,7 @@
 			</div>
 		</div>
 
-		<!---------------------- SETTINGS CONTAINERS ---------------------->
+		<!------------------------ SETTINGS CONTAINERS ------------------------>
 
 		<div id="menu-screen" class="hidden">
 
@@ -183,7 +184,7 @@
 			</div>
 		</div>
 
-		<!-------------------------- GAME SCREENS -------------------------->
+		<!--------------------------- GAME SCREENS ---------------------------->
 
 		<!-- Daily Game Screen -->
 		<div id="daily-game-screen" class="game-screen hidden">
@@ -298,7 +299,18 @@
 			</div>
 		</div>
 
-		<!-------------------------- PROGRESS MENU ------------------------->
+		<!--------------------------- WINNING SCREEN -------------------------->
+
+		<div id="winning-screen" class="hidden">
+			<div id="winning-container">
+				<div id="winning-title">Great job!</div>
+				<button class="to-mode-button game-button">Mode</button>
+				<button class="to-settings-button game-button">Settings</button>
+				<button class="new-game-button game-button">New word</button>
+			</div>
+		</div>
+
+		<!--------------------------- PROGRESS MENU --------------------------->
 
 		<div id="progress-screen" class="progress-screen hidden">
 			<div id="progress-title-and-container">
@@ -404,6 +416,7 @@
 		</div>
 	</body>
 	<script type="module" src="scripts/helper_functions.js"></script>
+	<script type="module" src="scripts/winning_title.js"></script>
 	<script type="module" src="scripts/save.js"></script>
 	<script type="module" src="scripts/AudioPlayer/playlists.js"></script>
 	<script type="module" src="scripts/AudioPlayer/AudioPlayer.js"></script>

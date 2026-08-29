@@ -1,5 +1,5 @@
 import { game } from "./main.js";
-import { gameToMode, gameToSettings, settingsToGame } from "./screen_switch.js";
+import { gameToMode, gameToSettings, hideWinningScreen, settingsToGame, showWinningScreen } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
 import { getElement, calculateLetterFrequency } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
@@ -295,6 +295,7 @@ export function submitWord() {
 				break;
 		}
 		console.log("Congratulations! You found every word!");
+		showWinningScreen();
 	}
 }
 
@@ -337,6 +338,7 @@ document.querySelectorAll(".show-words-button").forEach(button => {
 
 document.querySelectorAll(".new-game-button").forEach(button => {
 	button.addEventListener("click", () => {
+		hideWinningScreen();
 		startGame();
 	})
 });
@@ -346,6 +348,7 @@ document.getElementById("test-get-answers-button").addEventListener("click", () 
 });
 
 document.getElementById("next-level-button").addEventListener("click", () => {
+	hideWinningScreen();
 	// Get next level
 	const next = LevelManager.getNextStoryLevelInfo(game.language, game.currentStoryChapter, game.storyLevelId);
 
