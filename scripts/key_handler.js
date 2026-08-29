@@ -5,7 +5,6 @@ import { calculateLetterFrequency } from "./helper_functions.js";
 
 document.addEventListener("keydown", e => {
 	if (e.key === ".") {
-		console.log("Pressed '.'");
 		Save.resetSave();
 	}
 	if (game.state !== "game")
@@ -20,7 +19,6 @@ document.addEventListener("keydown", e => {
 		return;
 	}
 	if (e.key === "Enter") {
-		console.log("Enter");
 		if (game.mode === "test") {
 			findAndFillWords();
 		} else {

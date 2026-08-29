@@ -70,7 +70,6 @@ export const LevelManager = {
 		const millisecondsPerDay = 1000 * 60 * 60 * 24;
 		const daysElapsed = Math.floor((today - startDate) / millisecondsPerDay);
 		const index = daysElapsed % levels.length;
-		console.log(levels[index]);
 		return levels[index];
 	},
 
@@ -95,7 +94,6 @@ export const LevelManager = {
 	},
 
 	getStoryLevel(language, chapterId, levelId) {
-		console.log("Getting:", language, levelId);
 		return this.storyLevels[language][chapterId].levels.find(
 			level => level.id === levelId
 		) ?? null;
@@ -137,7 +135,6 @@ export const LevelManager = {
 
 	getRandomLevel(language, length) {
 		const levels = Object.values(this.basicLevels[language][length]);
-		console.log("We have", this.basicLevels[language][length].length, "levels");
 
 		if (levels.length === 0) {
 			return null;

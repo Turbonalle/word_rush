@@ -84,13 +84,9 @@ function getTodayString() {
 function isNewDaily() {
 	const today = getTodayString();
 	const daily = Save.getDailyDate(game.language);
-	console.log("today:", today);
-	console.log("daily:", daily);
 	if (today === daily) {
-		console.log("today === daily");
 		return false;
 	}
-	console.log("today !== daily");
 	return true;
 }
 
@@ -129,7 +125,6 @@ export function findAndFillWords() {
 function findAndFillRestWords() {
 	const foundWordsContainer = getElement(game.mode, "-found-words-container");
 	game.possibleAnswers.forEach(word => {
-		console.log("Checking word:", word);
 		if (!game.wordsFound.includes(word)) {
 			const wordTag = document.createElement("div");
 			wordTag.classList.add("word-tag");
@@ -167,7 +162,6 @@ function setupLevel(level) {
 }
 
 export function startGame() {
-	console.log(game);
 	resetGame();
 	game.storedWordLength = game.wordLength;
 	let level;
@@ -294,7 +288,6 @@ export function submitWord() {
 				Save.increasePanicGamesFinished();
 				break;
 		}
-		console.log("Congratulations! You found every word!");
 		showWinningScreen();
 	}
 }

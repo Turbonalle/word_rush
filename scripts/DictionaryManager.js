@@ -11,7 +11,6 @@ export const DictionaryManager = {
 		]);
 		this.dictionaryEn = await responseEn.json();
 		this.dictionarySv = await responseSv.json();
-		console.log("Dictionaries loaded.");
 	},
 
 	findPossibleWords(word, language) {

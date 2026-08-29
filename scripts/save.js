@@ -72,7 +72,6 @@ export const Save = {
 	},
 
 	resetSave() {
-		console.log("Resetting save.");
 		localStorage.removeItem(this.SAVE_KEY);
 		localStorage.removeItem("undefined");
 		// this.saveGame(this.data);
