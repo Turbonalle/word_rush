@@ -54,6 +54,46 @@ function createLetterBoxes(amount) {
 	}
 }
 
+function addFoundDailyWordsToContainer() {
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	const words = Save.getDailyWordsFound(game.language);
+	for (let i = 0; i < words.length; i++) {
+		const wordTag = document.createElement("div");
+		wordTag.classList.add("word-tag");
+		wordTag.textContent = words[i];
+		foundWordsContainer.appendChild(wordTag);
+	}
+}
+
+function copyDailyWordsToGameData() {
+	const words = Save.getDailyWordsFound(game.language);
+	game.wordsFound = [];
+	for (let i = 0; i < words.length; i++) {
+		game.wordsFound.push(words[i]);
+	}
+}
+
+function getTodayString() {
+	const today = new Date();
+	const year = today.getFullYear();
+	const month = String(today.getMonth() + 1).padStart(2, "0");
+	const day = String(today.getDate()).padStart(2, "0");
+	return `${year}-${month}-${day}`;
+}
+
+function isNewDaily() {
+	const today = getTodayString();
+	const daily = Save.getDailyDate(game.language);
+	console.log("today:", today);
+	console.log("daily:", daily);
+	if (today === daily) {
+		console.log("today === daily");
+		return false;
+	}
+	console.log("today !== daily");
+	return true;
+}
+
 function addWordsToContainer(words) {
 	const foundWordsContainer = getElement(game.mode, "-found-words-container");
 	for (let i = 0; i < words.length; i++) {
@@ -101,20 +141,26 @@ function setupLevel(level) {
 
 export function startGame() {
 	console.log(game);
-	Save.increaseGamesPlayed();
 	resetGame();
 	game.storedWordLength = game.wordLength;
 	let level;
 	switch(game.mode) {
 		case "daily":
-			Save.increaseDailyGamesPlayed();
+			if (isNewDaily()) {
+				Save.increaseGamesPlayed();
+				Save.increaseDailyGamesPlayed();
+				Save.startNewDaily(game.language, getTodayString());
+			}
 			level = LevelManager.getDailyLevel(game.language);
 			setupLevel(level);
-			resetProgressBar();
+			copyDailyWordsToGameData();
+			addFoundDailyWordsToContainer();
 			game.wordLength = 5;
+			updateProgressUI();
 			settingsToGame("daily");
 			break;
 		case "story":
+			Save.increaseGamesPlayed();
 			Save.increaseStoryGamesPlayed();
 			level = LevelManager.getStoryLevel(game.language, game.currentStoryChapter, game.storyLevelId);
 			game.wordsFound = Save.getFoundWords(game.language, game.currentStoryChapter, game.storyLevelId);
@@ -124,6 +170,7 @@ export function startGame() {
 			settingsToGame("story");
 			break;
 		case "zen":
+			Save.increaseGamesPlayed();
 			Save.increaseZenGamesPlayed();
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
@@ -131,6 +178,7 @@ export function startGame() {
 			settingsToGame("zen");
 			break;
 		case "hard":
+			Save.increaseGamesPlayed();
 			Save.increaseHardGamesPlayed();
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
@@ -140,6 +188,7 @@ export function startGame() {
 			setLives(game.lives);
 			break;
 		case "panic":
+			Save.increaseGamesPlayed();
 			Save.increasePanicGamesPlayed();
 			level = LevelManager.getRandomLevel(game.language, game.wordLength);
 			setupLevel(level);
@@ -271,7 +320,9 @@ document.querySelectorAll(".to-settings-button").forEach(button => {
 
 document.querySelectorAll(".show-words-button").forEach(button => {
 	button.addEventListener("click", () => {
-		console.log("TEST!!!");
+		if (game.mode === "daily") {
+			Save.giveUpDaily(game.language);
+		}
 		Save.increaseTimesGivenUp();
 		findAndFillRestWords();
 	})

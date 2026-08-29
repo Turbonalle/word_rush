@@ -54,17 +54,3 @@ export const Timer = {
 		timerElement.classList.toggle("timer-warning", seconds <= 10);
 	}
 };
-
-
-
-// Timer.js:53 Uncaught TypeError: Cannot set properties of null (setting 'textContent')
-//     at Object.updateDisplay (Timer.js:53:28)
-//     at Object.update (Timer.js:22:8)
-//     at Timer.js:13:9
-// updateDisplay	@	Timer.js:53
-// update	@	Timer.js:22
-// (anonymous)	@	Timer.js:13
-// setInterval		
-// start	@	Timer.js:12
-// startGame	@	game.js:131
-// (anonymous)	@	menu.js:74

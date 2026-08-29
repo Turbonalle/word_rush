@@ -28,9 +28,16 @@ const DEFAULT_SAVE = {
 		panicGamesFinished: 0,
 	},
 	daily: {
-		date: "",
-		wordsFound: [],
-		givenUp: false,
+		en: {
+			date: "",
+			wordsFound: [],
+			givenUp: false,
+		},
+		sv: {
+			date: "",
+			wordsFound: [],
+			givenUp: false,
+		}
 	},
 	story: {
 		en: {},
@@ -68,13 +75,19 @@ export const Save = {
 		console.log("Resetting save.");
 		localStorage.removeItem(this.SAVE_KEY);
 		localStorage.removeItem("undefined");
+		// this.saveGame(this.data);
 	},
 
 
 	// ---- Level updates ------------------------------------------------------
 
 	addFoundDailyWord(language, word) {
-		console.log("Found daily word:", language, word);
+		if (!this.data.daily[language]) {
+			console.log("Unknown language:", language);
+			return;
+		}
+		this.data.daily[language].wordsFound.push(word);
+		this.saveGame(this.data);
 	},
 
 	addFoundStoryWord(language, chapter, levelId, word) {
@@ -112,6 +125,14 @@ export const Save = {
 		} else {
 			return [];
 		}
+	},
+
+	getDailyWordsFound(language) {
+		return this.data.daily[language].wordsFound;
+	},
+
+	getDailyDate(language) {
+		return this.data.daily[language].date;
 	},
 
 
@@ -167,11 +188,6 @@ export const Save = {
 		this.saveGame(this.data);
 	},
 
-	increaseStoryGamesFinished() {
-		this.data.stats.storyGamesFinished += 1;
-		this.saveGame(this.data);
-	},
-
 	increaseZenGamesFinished() {
 		this.data.stats.zenGamesFinished += 1;
 		this.saveGame(this.data);
@@ -189,6 +205,20 @@ export const Save = {
 
 	increaseTimesGivenUp() {
 		this.data.stats.timesGivenUp += 1;
+		this.saveGame(this.data);
+	},
+
+	startNewDaily(language, date) {
+		this.data.daily[language] = {
+			date: date,
+			wordsFound: [],
+			givenUp: false
+		};
+		this.saveGame(this.data);
+	},
+
+	giveUpDaily(language) {
+		this.data.daily[language].givenUp = true;
 		this.saveGame(this.data);
 	},
 
