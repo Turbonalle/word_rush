@@ -113,6 +113,33 @@ function addWordToContainer(word) {
 	foundWordsContainer.appendChild(wordTag);
 }
 
+export function findAndFillWords() {
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	foundWordsContainer.replaceChildren();
+	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
+	for (let i = 0; i < possibleWords.length; i++) {
+		addWordToContainer(possibleWords[i]);
+	}
+	addWordToContainer(`${possibleWords.length} possible words!`);
+	const container = getElement(game.mode, "-found-words-container");
+	const resultTag = container.lastElementChild;
+	resultTag.classList.add("color-correct");
+}
+
+function findAndFillRestWords() {
+	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	game.possibleAnswers.forEach(word => {
+		console.log("Checking word:", word);
+		if (!game.wordsFound.includes(word)) {
+			const wordTag = document.createElement("div");
+			wordTag.classList.add("word-tag");
+			wordTag.classList.add("color-error");
+			wordTag.textContent = word;
+			foundWordsContainer.appendChild(wordTag);
+		}
+	});
+}
+
 function updateProgressUI() {
 	// Calculate and set progress bar width
 	const progressBar = getElement(game.mode, "-progress-bar");
@@ -151,12 +178,15 @@ export function startGame() {
 				Save.increaseDailyGamesPlayed();
 				Save.startNewDaily(game.language, getTodayString());
 			}
-			game.givenUp = Save.isDailyGivenUp(game.language);
 			level = LevelManager.getDailyLevel(game.language);
 			setupLevel(level);
 			copyDailyWordsToGameData();
 			addFoundDailyWordsToContainer();
 			game.wordLength = 5;
+			game.givenUp = Save.isDailyGivenUp(game.language);
+			if (game.givenUp) {
+				findAndFillRestWords();
+			}
 			updateProgressUI();
 			settingsToGame("daily");
 			break;
@@ -266,33 +296,6 @@ export function submitWord() {
 		}
 		console.log("Congratulations! You found every word!");
 	}
-}
-
-export function findAndFillWords() {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
-	foundWordsContainer.replaceChildren();
-	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
-	for (let i = 0; i < possibleWords.length; i++) {
-		addWordToContainer(possibleWords[i]);
-	}
-	addWordToContainer(`${possibleWords.length} possible words!`);
-	const container = getElement(game.mode, "-found-words-container");
-	const resultTag = container.lastElementChild;
-	resultTag.classList.add("color-correct");
-}
-
-function findAndFillRestWords() {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
-	game.possibleAnswers.forEach(word => {
-		console.log("Checking word:", word);
-		if (!game.wordsFound.includes(word)) {
-			const wordTag = document.createElement("div");
-			wordTag.classList.add("word-tag");
-			wordTag.classList.add("color-error");
-			wordTag.textContent = word;
-			foundWordsContainer.appendChild(wordTag);
-		}
-	});
 }
 
 document.querySelectorAll(".submit-button").forEach(button => {
