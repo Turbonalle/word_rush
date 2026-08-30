@@ -56,5 +56,19 @@ export const ProgressManager = {
 			totalStarsAcquired += this.getChapterStarsAcquired(language, chapterId);
 		}
 		return totalStarsAcquired;
+	},
+
+	getMostStarsPerLanguage() {
+		const starsEn = this.getTotalStarsAcquired("en");
+		const starsSv = this.getTotalStarsAcquired("sv");
+		return starsEn > starsSv ? starsEn : starsSv;
+	},
+
+	getWordsFound() {
+		return Save.getWordsFound();
+	},
+
+	isAchievementUnlocked(id) {
+		return Save.getAchievement(id);
 	}
 };

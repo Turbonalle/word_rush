@@ -42,6 +42,13 @@ const DEFAULT_SAVE = {
 	story: {
 		en: {},
 		sv: {}
+	},
+	achievements: {
+		finishedDailyLevel: false,
+		finishedZenLevel: false,
+		finishedHardLevel: false,
+		finishedPanicLevel: false,
+		finishedWordLength8: false
 	}
 }
 
@@ -136,6 +143,10 @@ export const Save = {
 
 	isDailyGivenUp(language) {
 		return this.data.daily[language].givenUp;
+	},
+
+	isAchievementUnlocked(id) {
+		return this.achievements[id];
 	},
 
 
