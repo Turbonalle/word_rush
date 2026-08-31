@@ -271,7 +271,10 @@ export function submitWord() {
 	}
 	resetLetterBoxes();
 	if (game.wordsFound.length === game.possibleAnswers.length) {
-		// TODO: Handle winning logic and visuals
+		// TODO: Handle winning visuals
+		if (game.wordLength === 8) {
+			ProgressManager.completeAchievement("finishedWordLength8");
+		}
 		Save.increaseGamesFinished();
 		switch(game.mode) {
 			case "daily":
