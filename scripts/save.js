@@ -145,7 +145,7 @@ export const Save = {
 		return this.data.daily[language].givenUp;
 	},
 
-	isAchievementUnlocked(id) {
+	getAchievement(id) {
 		return this.achievements[id];
 	},
 
@@ -237,10 +237,12 @@ export const Save = {
 	},
 
 	setAchievement(id, state) {
-		if (!this.data.achievements[id]) {
+		if (!(id in this.data.achievements)) {
 			console.log("Error: Achievement:", id, "doesn't exist.");
 			return;
 		}
+		console.log("Setting achievement:", id, "to", state);
+		console.log("Achievements:", this.data.achievements);
 		this.data.achievements[id] = state;
 	},
 

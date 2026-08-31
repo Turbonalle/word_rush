@@ -49,7 +49,6 @@ async function initializeGame() {
 	await DictionaryManager.loadDictionaries();
 	AudioPlayer.init();
 	AudioPlayer.loadPlaylist(menuPlaylist);
-	
 }
 
 window.addEventListener("DOMContentLoaded", initializeGame);

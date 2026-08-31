@@ -8,6 +8,7 @@ import { Save } from "./save.js";
 import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { Timer } from "./Timer.js";
 import { UnlockManager } from "./UnlockManager.js";
+import { ProgressManager } from "./ProgressManager.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -275,17 +276,21 @@ export function submitWord() {
 		switch(game.mode) {
 			case "daily":
 				Save.increaseDailyGamesFinished();
+				ProgressManager.completeAchievement("finishedDailyLevel");
 				break;
 			case "story":
 				break;
 			case "zen":
 				Save.increaseZenGamesFinished();
+				ProgressManager.completeAchievement("finishedZenLevel");
 				break;
 			case "hard":
 				Save.increaseHardGamesFinished();
+				ProgressManager.completeAchievement("finishedHardLevel");
 				break;
 			case "panic":
 				Save.increasePanicGamesFinished();
+				ProgressManager.completeAchievement("finishedPanicLevel");
 				break;
 		}
 		showWinningScreen();
