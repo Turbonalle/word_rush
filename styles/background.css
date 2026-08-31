@@ -9,16 +9,18 @@
 #dots {
 	position: fixed;
 	inset: 0;
+	height: calc(100vh + 50px);
 	background: var(--bg-dotted);
 	background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);
 	background-size: 50px 50px;
+	animation: pulse-and-drift 5s linear infinite;
 }
 
 #moving-mask {
 	width: 100%;
 	position: fixed;
 	inset: 0;
-	animation: drift 25s linear infinite;
+	animation: drift 30s linear infinite;
 }
 
 .wall {
@@ -42,10 +44,31 @@
 }
 
 @keyframes drift {
-	from {
-		transform: translateX(70%);
+	from { transform: translateX(70%); }
+	to { transform: translateX(-70%); }
+}
+
+@keyframes pulse-and-drift {
+	00% {
+		background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);
+		transform: translateY(0px);
 	}
-	to {
-		transform: translateX(-70%);
+	14% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	17% {background-image: radial-gradient(circle, var(--bg-dots) 12px, transparent 2px);}
+	20% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	34% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	37% {background-image: radial-gradient(circle, var(--bg-dots) 12px, transparent 2px);}
+	40% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	54% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	57% {background-image: radial-gradient(circle, var(--bg-dots) 12px, transparent 2px);}
+	60% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	74% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	77% {background-image: radial-gradient(circle, var(--bg-dots) 12px, transparent 2px);}
+	80% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	94% {background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);}
+	97% {background-image: radial-gradient(circle, var(--bg-dots) 12px, transparent 2px);}
+	100% {
+		background-image: radial-gradient(circle, var(--bg-dots) 10px, transparent 2px);
+		transform: translateY(-50px);
 	}
 }
