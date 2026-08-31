@@ -236,6 +236,14 @@ export const Save = {
 		this.saveGame(this.data);
 	},
 
+	setAchievement(id, state) {
+		if (!this.data.achievements[id]) {
+			console.log("Error: Achievement:", id, "doesn't exist.");
+			return;
+		}
+		this.data.achievements[id] = state;
+	},
+
 
 	// ---- Stat getters -------------------------------------------------------
 
