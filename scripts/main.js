@@ -42,13 +42,14 @@ export const game = {
 };
 
 async function initializeGame() {
-	game.save = Save.loadSave();
+	Save.loadSave();
 	await LevelManager.loadDailyLevels();
 	await LevelManager.loadStoryLevels();
 	await LevelManager.loadBasicLevels();
 	await DictionaryManager.loadDictionaries();
 	AudioPlayer.init();
 	AudioPlayer.loadPlaylist(menuPlaylist);
+	console.log("Save:", Save.data);
 }
 
 window.addEventListener("DOMContentLoaded", initializeGame);

@@ -244,6 +244,7 @@ export const Save = {
 		console.log("Setting achievement:", id, "to", state);
 		console.log("Achievements:", this.data.achievements);
 		this.data.achievements[id] = state;
+		this.saveGame(this.data);
 	},
 
 

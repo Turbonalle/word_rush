@@ -24,22 +24,14 @@ function updateProgressScreen() {
 	document.getElementById("stat-panicwordsfinished").textContent = Save.getPanicGamesFinished();
 
 	//Unlockables
-	const dailyBeginner = document.getElementById("unlockable-daily-beginner");
-
-	console.log(Save.data.achievements);
-	
-	if (ProgressManager.isAchievementUnlocked("finishedDailyLevel")) {
-		console.log("Daily beginner unlocked.");
-		dailyBeginner.classList.add("unlocked");
-	} else {
-		console.log("Daily beginner locked.");
-		dailyBeginner.classList.remove("unlocked");
-	}
+	document.getElementById("finishedDailyLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedDailyLevel"));
+	document.getElementById("finishedZenLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedZenLevel"));
 }
 
 document.getElementById("mode-to-progress-button").addEventListener("click", () => {
 	modeToProgress();
 	updateProgressScreen();
+	console.log("Save:", Save.data);
 });
 
 document.getElementById("progress-to-mode-button").addEventListener("click", () => {
