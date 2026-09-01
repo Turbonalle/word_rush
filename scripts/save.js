@@ -146,7 +146,7 @@ export const Save = {
 	},
 
 	getAchievement(id) {
-		return this.achievements[id];
+		return this.data.achievements[id];
 	},
 
 

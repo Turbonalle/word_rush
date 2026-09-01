@@ -22,6 +22,19 @@ function updateProgressScreen() {
 	document.getElementById("stat-zenwordsfinished").textContent = Save.getZenGamesFinished();
 	document.getElementById("stat-hardwordsfinished").textContent = Save.getHardGamesFinished();
 	document.getElementById("stat-panicwordsfinished").textContent = Save.getPanicGamesFinished();
+
+	//Unlockables
+	const dailyBeginner = document.getElementById("unlockable-daily-beginner");
+
+	console.log(Save.data.achievements);
+	
+	if (ProgressManager.isAchievementUnlocked("finishedDailyLevel")) {
+		console.log("Daily beginner unlocked.");
+		dailyBeginner.classList.add("unlocked");
+	} else {
+		console.log("Daily beginner locked.");
+		dailyBeginner.classList.remove("unlocked");
+	}
 }
 
 document.getElementById("mode-to-progress-button").addEventListener("click", () => {
