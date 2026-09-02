@@ -36,6 +36,7 @@
 	flex-direction: column;
 	justify-content:flex-start;
 	align-items: flex-start;
+	gap: 1vh;
 }
 
 .progress-header {
@@ -63,19 +64,44 @@
 /*---- Unlockable design -----------------------------------------------------*/
 
 .unlockable-container {
+	width: 300px;
 	padding: 10px;
 	box-sizing: border-box;
-	border: 2px solid var(--border);
+	border: 2px solid var(--locked-border);
 	border-radius: 10px;
 	color: var(--border);
+	background: var(--locked-bg);
 }
 
 .unlocked {
-	background: var(--correct);
+	background: var(--unlocked-bg);
+	border: 2px solid var(--unlocked-border);
 }
 
 .unlock-title {
 	font-weight: bold;
 	text-transform: uppercase;
-	color: var(--title);
+	color: var(--locked-title);
+}
+
+.unlock-reward-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+
+.unlock-reward {
+	color: var(--locked-requirement);
+}
+
+.song-svg {
+	height: 20px;
+	width: 20px;
+	color: var(--song-svg);
+	background: var(--svg-song-bg);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

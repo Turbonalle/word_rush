@@ -15,6 +15,22 @@
 	--correct: green;
 	--invalid: red;
 	--song-title: blue;
+
+	/* Unlockables */
+	--unlocked-bg: #89d582;
+	--unlocked-border: #67b65f;
+	--unlocked-title: #4b4b4b;
+	--unlocked-requirement: #a1a1a1;
+	--unlocked-reward: #a1a1a1;
+
+	--locked-bg: #ececec;
+	--locked-border: #a1a1a1;
+	--locked-title: #4b4b4b;
+	--locked-requirement: #a1a1a1;
+	--locked-reward: #a1a1a1;
+	
+	--svg-song: #b3b3b3;
+	--svg-song-bg: #555555;
 }
 
 body {
