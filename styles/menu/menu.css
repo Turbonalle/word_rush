@@ -33,9 +33,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 200px;
-	height: 60px;
-	font-size: 20px;
+	width: 20vmin;
+	height: 6vh;
+	font-size: 2vmin;
 	color: var(--border);
 	border: 2px solid var(--border);
 	border-radius: 10px;
