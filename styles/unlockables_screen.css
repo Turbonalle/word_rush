@@ -1,6 +1,6 @@
 /*---- Base design -----------------------------------------------------------*/
 
-#progress-screen {
+#unlockables-screen {
 	height: 100vh;
 	width: 100vw;
 	padding-top: 5vh;
@@ -10,58 +10,34 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	gap: 1vh;
 }
 
-#progress-title-and-container {
+#unlockables-title-and-container {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+	gap: 5vh;
 }
 
-#progress-title {
-	margin-bottom: 5vh;
-}
-
-#progress-info-container {
+#unlockables-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: flex-start;
-	gap: 10vw;
-	font-size: 0.9rem;
+	gap: 5vh;
 }
 
-#progress-unlockables {
+.unlockables-category-container {
 	display: flex;
 	flex-direction: column;
-	justify-content:flex-start;
+	justify-content: flex-start;
 	align-items: flex-start;
 	gap: 1vh;
 }
 
-.progress-header {
-	font-size: 1.5rem;
-	font-weight: bold;
-	margin-bottom: 2vh;
-}
-
-
-/*---- Stat design -----------------------------------------------------------*/
-
-.progress-stat-header {
-	margin-top: 1vh;
-}
-
-.stat-container{
-	color: var(--border);
-}
-
-.stat-value {
-	font-weight: bold;
-	color: var(--title);
-}
-
-/*---- Unlockable design -----------------------------------------------------*/
+/*---- Locked unlockable design ----------------------------------------------*/
 
 .unlockable-container {
 	width: 300px;
@@ -99,6 +75,18 @@
 	justify-content: center;
 }
 
+.mode-svg {
+	height: 20px;
+	width: 20px;
+	color: var(--locked-mode-svg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/*---- Unlocked unlockable design --------------------------------------------*/
+
 .unlocked {
 	background: var(--unlocked-bg);
 	border: 2px solid var(--unlocked-border);
@@ -118,4 +106,8 @@
 
 .unlocked .unlock-reward-container .song-svg {
 	color: var(--unlocked-song-svg);
+}
+
+.unlocked .unlock-reward-container .mode-svg {
+	color: var(--unlocked-mode-svg);
 }

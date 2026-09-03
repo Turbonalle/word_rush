@@ -44,15 +44,24 @@ export function gameToSettings() {
 	document.getElementById("winning-screen").classList.add("hidden");
 }
 
-export function modeToProgress() {
+export function modeToStats() {
 	document.getElementById("title-screen").classList.add("hidden");
-	document.getElementById("progress-screen").classList.remove("hidden");
-	
+	document.getElementById("stats-screen").classList.remove("hidden");
 }
 
-export function progressToMode() {
+export function statsToMode() {
 	document.getElementById("title-screen").classList.remove("hidden");
-	document.getElementById("progress-screen").classList.add("hidden");
+	document.getElementById("stats-screen").classList.add("hidden");
+}
+
+export function modeToUnlockables() {
+	document.getElementById("title-screen").classList.add("hidden");
+	document.getElementById("unlockables-screen").classList.remove("hidden");
+}
+
+export function unlockablesToMode() {
+	document.getElementById("title-screen").classList.remove("hidden");
+	document.getElementById("unlockables-screen").classList.add("hidden");
 }
 
 export function showWinningScreen() {

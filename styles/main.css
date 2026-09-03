@@ -23,6 +23,7 @@
 	--unlocked-requirement: #d8f3d6;
 	--unlocked-reward: #d8f3d6;
 	--unlocked-song-svg: #37922f;
+	--unlocked-mode-svg: #37922f;
 
 	--locked-bg: #ececec;
 	--locked-border: #a1a1a1;
@@ -30,6 +31,7 @@
 	--locked-requirement: #a1a1a1;
 	--locked-reward: var(--title);
 	--locked-song-svg: #b3b3b3;
+	--locked-mode-svg: #b3b3b3;
 
 	/* --locked-bg: #383838;
 	--locked-border: #808080;
