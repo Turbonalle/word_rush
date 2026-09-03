@@ -73,11 +73,6 @@
 	background: var(--locked-bg);
 }
 
-.unlocked {
-	background: var(--unlocked-bg);
-	border: 2px solid var(--unlocked-border);
-}
-
 .unlock-title {
 	font-weight: bold;
 	text-transform: uppercase;
@@ -92,16 +87,35 @@
 }
 
 .unlock-reward {
-	color: var(--locked-requirement);
+	color: var(--locked-reward);
 }
 
 .song-svg {
 	height: 20px;
 	width: 20px;
-	color: var(--song-svg);
-	background: var(--svg-song-bg);
-	border-radius: 10px;
+	color: var(--locked-song-svg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.unlocked {
+	background: var(--unlocked-bg);
+	border: 2px solid var(--unlocked-border);
+}
+
+.unlocked .unlock-title {
+	color: var(--unlocked-title);
+}
+
+.unlocked .unlock-requirement {
+	color: var(--unlocked-requirement);
+}
+
+.unlocked .unlock-reward-container .unlock-reward {
+	color: var(--unlocked-reward);
+}
+
+.unlocked .unlock-reward-container .song-svg {
+	color: var(--unlocked-song-svg);
 }
