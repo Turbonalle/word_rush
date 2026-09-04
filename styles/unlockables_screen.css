@@ -37,6 +37,12 @@
 	gap: 1vh;
 }
 
+.unlockables-category-header {
+	font-size: 2.5vh;
+	font-weight: bold;
+	color: var(--border);
+}
+
 /*---- Locked unlockable design ----------------------------------------------*/
 
 .unlockable-container {
