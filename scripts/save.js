@@ -48,7 +48,9 @@ const DEFAULT_SAVE = {
 		finishedZenLevel: false,
 		finishedHardLevel: false,
 		finishedPanicLevel: false,
-		finishedWordLength8: false
+		finishedWordLength10: false,
+		finishWordLength10: false,
+		finishStoryMode: false
 	}
 }
 
@@ -81,7 +83,6 @@ export const Save = {
 	resetSave() {
 		localStorage.removeItem(this.SAVE_KEY);
 		localStorage.removeItem("undefined");
-		// this.saveGame(this.data);
 	},
 
 
@@ -241,8 +242,6 @@ export const Save = {
 			console.log("Error: Achievement:", id, "doesn't exist.");
 			return;
 		}
-		console.log("Setting achievement:", id, "to", state);
-		console.log("Achievements:", this.data.achievements);
 		this.data.achievements[id] = state;
 		this.saveGame(this.data);
 	},
@@ -277,5 +276,5 @@ export const Save = {
 			ratio = (this.data.stats.wordsFound * 100) / this.data.stats.totalWordsToFind;
 		const fixedRatio = ratio.toFixed(1);
 		return fixedRatio;
-	},
+	}
 };

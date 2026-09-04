@@ -118,5 +118,18 @@ export const UnlockManager = {
 			return ProgressManager.isAchievementUnlocked(id);
 		}
 		return false;
+	},
+
+	isModeUnlocked(mode) {
+		if (!this.modes[mode]) {
+			console.log("Mode", mode, "does not exist.");
+			return false;
+		}
+		const requirement = this.modes[mode].requirement;
+		if (requirement.type === "stars") {
+			const starsCollected = ProgressManager.getMostStarsPerLanguage();
+			return starsCollected >= requirement.amount;
+		}
+		return false;
 	}
 };
