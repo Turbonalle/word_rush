@@ -67,8 +67,17 @@ export function unlockablesToMode() {
 export function showWinningScreen() {
 	document.getElementById("winning-title").textContent = getRandomWinningTitle();
 	document.getElementById("winning-screen").classList.remove("hidden");
+	if (game.mode === "story") {
+		document.getElementById("winning-container").querySelector(".to-settings-button").textContent = "Back to chapter";
+		document.getElementById("winning-container").querySelector(".next-level-button").classList.remove("hidden");
+	} else {
+		document.getElementById("winning-container").querySelector(".to-settings-button").textContent = "Settings";
+		document.getElementById("winning-container").querySelector(".new-game-button").classList.remove("hidden");
+	}
 }
 
 export function hideWinningScreen() {
 	document.getElementById("winning-screen").classList.add("hidden");
+	document.getElementById("winning-container").querySelector(".new-game-button").classList.add("hidden");
+	document.getElementById("winning-container").querySelector(".next-level-button").classList.add("hidden");
 }

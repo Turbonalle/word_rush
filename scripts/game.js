@@ -341,28 +341,30 @@ document.querySelectorAll(".new-game-button").forEach(button => {
 	button.addEventListener("click", () => {
 		hideWinningScreen();
 		startGame();
-	})
+	});
 });
 
 document.getElementById("test-get-answers-button").addEventListener("click", () => {
 	findAndFillWords();
 });
 
-document.getElementById("next-level-button").addEventListener("click", () => {
-	hideWinningScreen();
-	// Get next level
-	const next = LevelManager.getNextStoryLevelInfo(game.language, game.currentStoryChapter, game.storyLevelId);
+document.querySelectorAll(".next-level-button").forEach(button => {
+	button.addEventListener("click", () => {
+		hideWinningScreen();
+		// Get next level
+		const next = LevelManager.getNextStoryLevelInfo(game.language, game.currentStoryChapter, game.storyLevelId);
 
-	// Return if we can't play next level
-	if (!next) {
-		return;
-	}
-	if (!UnlockManager.isChapterUnlocked(game.language, next.chapterId)) {
-		return;
-	}
+		// Return if we can't play next level
+		if (!next) {
+			return;
+		}
+		if (!UnlockManager.isChapterUnlocked(game.language, next.chapterId)) {
+			return;
+		}
 
-	// Prepare game data and start next level
-	game.currentStoryChapter = next.chapterId;
-	game.storyLevelId = next.id;
-	startGame();
+		// Prepare game data and start next level
+		game.currentStoryChapter = next.chapterId;
+		game.storyLevelId = next.id;
+		startGame();
+	});
 });
