@@ -7,6 +7,7 @@ export function modeToSettings() {
 	document.getElementById("title-screen").classList.add("hidden");
 	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
+	document.querySelector(".play-button").classList.toggle("hidden", game.mode === "story");
 }
 
 export function settingsToGame(mode) {
@@ -40,6 +41,7 @@ export function gameToSettings() {
 	getElement(game.mode, "-game-screen").classList.add("hidden");
 	document.getElementById("menu-screen").classList.remove("hidden");
 	getElement(game.mode, "-settings-container").classList.remove("hidden");
+	document.querySelector(".play-button").classList.toggle("hidden", game.mode === "story");
 	game.state = "menu";
 	document.getElementById("winning-screen").classList.add("hidden");
 }
