@@ -23,11 +23,22 @@
 	margin-bottom: 5vh;
 }
 
+#stats-container {
+	padding: 4vh 8vh;
+	background: var(--bg);
+	border: 2px solid var(--border);
+	border-radius: 10px;
+}
+
 
 /*---- Stat design -----------------------------------------------------------*/
 
 .stat-category-header {
 	margin-top: 1vh;
+}
+
+.stat-category-header-first {
+	margin: 0;
 }
 
 .stat-container{
