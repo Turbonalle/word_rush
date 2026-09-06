@@ -12,13 +12,18 @@
 }
 
 .mode-title {
-	width: 400px;
+	width: 40vh;
 	text-align: center;
-	font-size: 42px;
-	padding: 10px;
+	font-size: 4vh;
+	padding: 1.5vh;
 	box-sizing: border-box;
 	color: vaR(--title-border);
 	background: var(--bg);
 	border: 2px solid var(--title-border);
 	border-radius: 10px;
+	margin-bottom: 4vh;
+}
+
+#story-settings-container .mode-title {
+	margin-bottom: 1vh;
 }

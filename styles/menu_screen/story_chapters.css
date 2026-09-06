@@ -1,0 +1,18 @@
+.chapter-button {
+	height: 6vh;
+	width: 6vh;
+	padding: 1vh;
+	font-size: 2vh;
+	border: 2px solid var(--border);
+	border-radius: 10px;
+	color: var(--border);
+}
+
+.chapter-button:hover {
+	border: 2px solid var(--highlight);
+}
+
+.chapter-button.active {
+	border: 2px solid var(--highlight);
+	color: var(--highlight);
+}
