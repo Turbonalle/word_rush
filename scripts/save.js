@@ -49,8 +49,7 @@ const DEFAULT_SAVE = {
 		finishedHardLevel: false,
 		finishedPanicLevel: false,
 		finishedWordLength10: false,
-		finishWordLength10: false,
-		finishStoryMode: false
+		finishedStoryMode: false
 	}
 }
 

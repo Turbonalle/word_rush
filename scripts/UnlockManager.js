@@ -60,18 +60,30 @@ export const UnlockManager = {
 				type: "words",
 				amount: 100
 			}
+		},
+		song9: {
+			requirement: {
+				type: "achievement",
+				id: "finishedStoryMode"
+			}
 		}
 	},
 	chapters: {
 		en: {
 			"1": { requirement: 0, },
 			"2": { requirement: 10, },
-			"3": { requirement: 20, }
+			"3": { requirement: 30, },
+			"4": { requirement: 50, },
+			"5": { requirement: 75, },
+			"6": { requirement: 100, }
 		},
 		sv: {
 			"1": { requirement: 0, },
 			"2": { requirement: 10, },
-			"3": { requirement: 20, }
+			"3": { requirement: 30, },
+			"4": { requirement: 50, },
+			"5": { requirement: 75, },
+			"6": { requirement: 100, }
 		}
 	},
 
@@ -97,6 +109,7 @@ export const UnlockManager = {
 	},
 
 	isSongUnlocked(id) {
+		console.log("Checking if song:", id, "is unlocked.");
 		const song = this.songs[id];
 		if (!song) {
 			console.log("Song:", id, "does not exist.");

@@ -5,7 +5,7 @@ export const menuPlaylist = [
 		path: "audio/wordrush_menu.mp3"
 	},
 	{
-		id: "song2",
+		id: "song9",
 		title: "Winning Theme",
 		path: "audio/wordrush_winning_theme.mp3"
 	}

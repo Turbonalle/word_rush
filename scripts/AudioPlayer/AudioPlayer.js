@@ -1,3 +1,5 @@
+import { UnlockManager } from "../UnlockManager.js";
+
 export const AudioPlayer = {
 	audio: new Audio(),
 	playlist: [],
@@ -22,6 +24,12 @@ export const AudioPlayer = {
 	play() {
 		if (this.playlist.length === 0) {
 			console.log("0 songs.");
+			return;
+		}
+		const song = this.playlist[this.currentIndex];
+		if (!UnlockManager.isSongUnlocked(song.id)) {
+			console.log("Song is locked:", song.id);
+			// this.next();
 			return;
 		}
 		this.audio.play();
@@ -81,6 +89,11 @@ export const AudioPlayer = {
 	select(index) {
 		if (index < 0 || index >= this.playlist.length)
 			return;
+		const song = this.playlist[index];
+		if (!UnlockManager.isSongUnlocked(song.id)) {
+			console.log("Song is locked:", song.id);
+			return;
+		}
 		this.currentIndex = index;
 		this.audio.src = this.playlist[index].path;
 		if (this.isPlaying)
@@ -108,13 +121,15 @@ export const AudioPlayer = {
 		const container = document.getElementById("playlist-container");
 		container.replaceChildren();
 		AudioPlayer.playlist.forEach((song, index) => {
-			const row = document.createElement("div");
-			row.className = "song-row";
-			row.textContent = song.title;
-			row.addEventListener("click", () => {
-				AudioPlayer.select(index);
-			});
-			container.appendChild(row);
+			if (UnlockManager.isSongUnlocked(song.id)) {
+				const row = document.createElement("div");
+				row.className = "song-row";
+				row.textContent = song.title;
+				row.addEventListener("click", () => {
+					AudioPlayer.select(index);
+				});
+				container.appendChild(row);
+			}
 		});
 		this.updateUI();
 	},
