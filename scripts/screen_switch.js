@@ -1,6 +1,13 @@
 import { game } from "./main.js";
 import { getElement } from "./helper_functions.js";
 import { getRandomWinningTitle } from "./winning_title.js";
+import { UnlockManager } from "./UnlockManager.js";
+
+export function handleLockedModes() {
+	document.getElementById("zen-mode-button").classList.toggle("hidden", !UnlockManager.isModeUnlocked("zen"));
+	document.getElementById("hard-mode-button").classList.toggle("hidden", !UnlockManager.isModeUnlocked("hard"));
+	document.getElementById("panic-mode-button").classList.toggle("hidden", !UnlockManager.isModeUnlocked("panic"));
+}
 
 export function modeToSettings() {
 	document.getElementById("menu-background").classList.add("hidden");
@@ -24,6 +31,7 @@ export function settingsToMode() {
 	document.getElementById("menu-background").classList.remove("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.mode = "";
+	handleLockedModes();
 }
 
 export function gameToMode() {
@@ -34,6 +42,7 @@ export function gameToMode() {
 	document.getElementById("title-screen").classList.remove("hidden");
 	game.state = "menu";
 	game.mode = "";
+	handleLockedModes();
 }
 
 export function gameToSettings() {
@@ -54,6 +63,7 @@ export function modeToStats() {
 export function statsToMode() {
 	document.getElementById("title-screen").classList.remove("hidden");
 	document.getElementById("stats-screen").classList.add("hidden");
+	handleLockedModes();
 }
 
 export function modeToUnlockables() {
@@ -64,6 +74,7 @@ export function modeToUnlockables() {
 export function unlockablesToMode() {
 	document.getElementById("title-screen").classList.remove("hidden");
 	document.getElementById("unlockables-screen").classList.add("hidden");
+	handleLockedModes();
 }
 
 export function showWinningScreen() {

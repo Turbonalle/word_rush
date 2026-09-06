@@ -3,6 +3,7 @@ import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./save.js";
 import { AudioPlayer } from "./AudioPlayer/AudioPlayer.js";
 import { menuPlaylist } from "./AudioPlayer/playlists.js";
+import { handleLockedModes } from "./screen_switch.js";
 
 export const game = {
 	// State
@@ -49,6 +50,7 @@ async function initializeGame() {
 	await DictionaryManager.loadDictionaries();
 	AudioPlayer.init();
 	AudioPlayer.loadPlaylist(menuPlaylist);
+	handleLockedModes();
 	console.log("Save:", Save.data);
 }
 

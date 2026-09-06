@@ -1,4 +1,17 @@
 #title-screen {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	box-sizing: border-box;
+	padding-top: 10vh;
+	padding-bottom: 5vh;
+	flex-direction: column;
+	gap: 6vh;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#title-and-modes-container {
 	display: flex;
 	flex-direction: column;
 	gap: 6vh;
@@ -12,7 +25,6 @@
 	gap: 10px;
 	justify-content: center;
 	align-items: center;
-	margin-top: 10vh;
 }
 
 .title-cell {
