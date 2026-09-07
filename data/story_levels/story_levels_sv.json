@@ -286,7 +286,7 @@
     },
     "3": {
         "title": "Brain Gymnastics",
-        "starUnlockRequirement": 20,
+        "starUnlockRequirement": 30,
         "levels": [
             {
                 "id": 21,

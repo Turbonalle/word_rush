@@ -11,13 +11,13 @@ export const UnlockManager = {
 		hard: {
 			requirement: {
 				type: "stars",
-				amount: 20
+				amount: 30
 			}
 		},
 		panic: {
 			requirement: {
 				type: "stars",
-				amount: 30
+				amount: 50
 			}
 		},
 	},
@@ -89,6 +89,14 @@ export const UnlockManager = {
 
 	getChapterRequirement(language, chapterId) {
 		return this.chapters[language][chapterId].requirement;
+	},
+
+	getModeUnlockRequirement(mode) {
+		if (!this,modes[mode]) {
+			console.log("Mode:", mode, "doesn't exist");
+			return 0;
+		}
+		return this.modes[mode].amount;
 	},
 
 	isChapterUnlocked(language, chapterId) {
