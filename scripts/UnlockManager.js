@@ -52,13 +52,13 @@ export const UnlockManager = {
 		song6: {
 			requirement: {
 				type: "achievement",
-				id: "finishedWordLength8"
+				id: "finishedWordLength10"
 			}
 		},
 		song8: {
 			requirement: {
 				type: "words",
-				amount: 100
+				amount: 1000
 			}
 		},
 		song9: {
@@ -86,17 +86,59 @@ export const UnlockManager = {
 			"6": { requirement: 100, }
 		}
 	},
+	achievements: {
+		finishedDailyLevel: {
+			title: "ADVENTURER",
+			message: "Collect 10 stars."
+		},
+		finishedDailyLevel: {
+			title: "JOURNEYMAN",
+			message: "Collect 30 stars."
+		},
+		finishedDailyLevel: {
+			title: "SEASONED VETERAN",
+			message: "Collect 50 stars."
+		},
+		finishedDailyLevel: {
+			title: "DAILY BEGINNER",
+			message: "Finish a game in Daily mode."
+		},
+		finishedZenLevel: {
+			title: "ZEN APPRENTICE",
+			message: "Finish a game in Zen mode."
+		},
+		finishedHardLevel: {
+			title: "HARDCORE",
+			message: "Finish a game in Hard mode."
+		},
+		finishedPanicLevel: {
+			title: "KEEPING IT TOGETHER",
+			message: "Finish a game in Panic mode."
+		},
+		finishedDailyLevel: {
+			title: "DEVOTED",
+			message: "Find a total of 1000 words."
+		},
+		finishedDailyLevel: {
+			title: "IMPOSSIBLE",
+			message: "Finish a level with 10 letters."
+		},
+		finishedDailyLevel: {
+			title: "THE LEGEND",
+			message: "Finish Story mode."
+		}
+	},
 
 	getChapterRequirement(language, chapterId) {
 		return this.chapters[language][chapterId].requirement;
 	},
 
 	getModeUnlockRequirement(mode) {
-		if (!this,modes[mode]) {
+		if (!this.modes[mode]) {
 			console.log("Mode:", mode, "doesn't exist");
 			return 0;
 		}
-		return this.modes[mode].amount;
+		return this.modes[mode].requirement.amount;
 	},
 
 	isChapterUnlocked(language, chapterId) {
@@ -136,7 +178,7 @@ export const UnlockManager = {
 			return totalWords >= requirement.amount;
 		}
 		if (requirement.type === "achievement") {
-			return ProgressManager.isAchievementUnlocked(id);
+			return ProgressManager.isAchievementUnlocked(requirement.id);
 		}
 		return false;
 	},

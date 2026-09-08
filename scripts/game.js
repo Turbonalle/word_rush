@@ -9,6 +9,7 @@ import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { Timer } from "./Timer.js";
 import { UnlockManager } from "./UnlockManager.js";
 import { ProgressManager } from "./ProgressManager.js";
+import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -274,6 +275,7 @@ export function submitWord() {
 		// TODO: Handle winning visuals
 		if (game.wordLength === 8) {
 			ProgressManager.completeAchievement("finishedWordLength8");
+			UnlockNotificationManager.show()
 		}
 		Save.increaseGamesFinished();
 		switch(game.mode) {

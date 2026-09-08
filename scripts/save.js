@@ -1,5 +1,3 @@
-const SAVE_KEY = "wordrush-save";
-
 const DEFAULT_SAVE = {
 	version: 1,
 	settings: {
@@ -54,6 +52,7 @@ const DEFAULT_SAVE = {
 }
 
 export const Save = {
+	SAVE_KEY: "wordrush-save",
 	data: structuredClone(DEFAULT_SAVE),
 
 	// ---- Save handling ------------------------------------------------------

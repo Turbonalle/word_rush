@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles/general/main.css">
 		<link rel="stylesheet" href="styles/general/buttons.css">
 		<link rel="stylesheet" href="styles/general/audio_player.css">
+		<link rel="stylesheet" href="styles/general/unlock_notifications.css">
 		<link rel="stylesheet" href="styles/title_screen/title_screen.css">
 		<link rel="stylesheet" href="styles/title_screen/modes.css">
 		<link rel="stylesheet" href="styles/title_screen/background.css">
@@ -490,7 +491,7 @@
 			<button id="unlockables-to-mode-button" class="button">Back</button>
 		</div>
 
-		<!-------------------------- AUDIO PLAYER -------------------------->
+		<!--------------------------- AUDIO PLAYER ---------------------------->
 
 		<div id="audio-player">
 			<div id="playlist-container" class="hidden"></div>
@@ -505,6 +506,11 @@
 				<button id="toggle-playlist-button" class="audio-button">▼</button>
 			</div>
 		</div>
+
+		<!------------------------ UNLOCK NOTIFICATION ------------------------>
+
+		<div id="unlock-notification"></div>
+
 	</body>
 
 
@@ -518,6 +524,7 @@
 	<script type="module" src="scripts/LevelManager.js"></script>
 	<script type="module" src="scripts/save.js"></script>
 	<script type="module" src="scripts/AudioPlayer/playlists.js"></script>
+	<script type="module" src="scripts/UnlockNotificationManager.js"></script>
 	<!-- Level 1 dependables -->
 	<script type="module" src="scripts/DictionaryManager.js"></script>
 	<script type="module" src="scripts/ProgressManager.js"></script>
