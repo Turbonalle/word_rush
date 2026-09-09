@@ -163,6 +163,13 @@ function setupLevel(level) {
 	createLetterBoxes(game.wordLength);
 }
 
+function completeAchievement(id) {
+	if (ProgressManager.completeAchievement(id)) {
+		const unlock = UnlockManager.getAchievementNotification(id);
+		UnlockNotificationManager.show(unlock.title, unlock.message);
+	}
+}
+
 export function startGame() {
 	resetGame();
 	game.storedWordLength = game.wordLength;
@@ -274,28 +281,27 @@ export function submitWord() {
 	if (game.wordsFound.length === game.possibleAnswers.length) {
 		// TODO: Handle winning visuals
 		if (game.wordLength === 8) {
-			ProgressManager.completeAchievement("finishedWordLength8");
-			UnlockNotificationManager.show()
+			completeAchievement("finishedWordLength8");
 		}
 		Save.increaseGamesFinished();
 		switch(game.mode) {
 			case "daily":
 				Save.increaseDailyGamesFinished();
-				ProgressManager.completeAchievement("finishedDailyLevel");
+				completeAchievement("finishedDailyLevel");
 				break;
 			case "story":
 				break;
 			case "zen":
 				Save.increaseZenGamesFinished();
-				ProgressManager.completeAchievement("finishedZenLevel");
+				completeAchievement("finishedZenLevel");
 				break;
 			case "hard":
 				Save.increaseHardGamesFinished();
-				ProgressManager.completeAchievement("finishedHardLevel");
+				completeAchievement("finishedHardLevel");
 				break;
 			case "panic":
 				Save.increasePanicGamesFinished();
-				ProgressManager.completeAchievement("finishedPanicLevel");
+				completeAchievement("finishedPanicLevel");
 				break;
 		}
 		showWinningScreen();

@@ -73,6 +73,10 @@ export const ProgressManager = {
 	},
 
 	completeAchievement(id) {
+		if (this.isAchievementUnlocked(id)) {
+			return false;
+		}
 		Save.setAchievement(id, true);
+		return true;
 	}
 };

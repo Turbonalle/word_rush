@@ -141,6 +141,14 @@ export const UnlockManager = {
 		return this.modes[mode].requirement.amount;
 	},
 
+	getAchievementNotification(id) {
+		if (!this.achievements[id]) {
+			console.log("Achievement id:", id, "doesn't exist.");
+			return null;
+		}
+		return this.achievements[id];
+	},
+
 	isChapterUnlocked(language, chapterId) {
 		const chapter = this.chapters[language][chapterId];
 		if (!chapter) {
