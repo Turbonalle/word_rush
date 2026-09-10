@@ -1,4 +1,4 @@
-import { Save } from "./save.js";
+import { Save } from "./Save.js";
 import { ProgressManager } from "./ProgressManager.js";
 import { modeToStats, statsToMode } from "./screen_switch.js";
 

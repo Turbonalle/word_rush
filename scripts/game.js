@@ -4,7 +4,7 @@ import { resetGame } from "./reset_game.js";
 import { getElement, calculateLetterFrequency } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
 import { DictionaryManager } from "./DictionaryManager.js";
-import { Save } from "./save.js";
+import { Save } from "./Save.js";
 import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { Timer } from "./Timer.js";
 import { UnlockManager } from "./UnlockManager.js";

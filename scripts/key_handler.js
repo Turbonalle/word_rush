@@ -1,4 +1,4 @@
-import { Save } from "./save.js";
+import { Save } from "./Save.js";
 import { game } from "./main.js";
 import { findAndFillWords, submitWord, updateLetterBoxes } from "./game.js";
 import { calculateLetterFrequency } from "./helper_functions.js";

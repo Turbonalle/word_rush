@@ -1,4 +1,4 @@
-import { Save } from "./save.js";
+import { Save } from "./Save.js";
 import { LevelManager } from "./LevelManager.js";
 import { ProgressManager } from "./ProgressManager.js";
 import { UnlockManager } from "./UnlockManager.js";

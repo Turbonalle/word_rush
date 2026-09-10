@@ -1,5 +1,5 @@
 import { LevelManager } from "./LevelManager.js";
-import { Save } from "./save.js";
+import { Save } from "./Save.js";
 
 export const ProgressManager = {
 	starRequirement: {
