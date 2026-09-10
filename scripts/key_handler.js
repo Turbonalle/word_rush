@@ -2,10 +2,14 @@ import { Save } from "./save.js";
 import { game } from "./main.js";
 import { findAndFillWords, submitWord, updateLetterBoxes } from "./game.js";
 import { calculateLetterFrequency } from "./helper_functions.js";
+import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 
 document.addEventListener("keydown", e => {
 	if (e.key === ".") {
 		Save.resetSave();
+	}
+	if (e.key === "-") {
+		UnlockNotificationManager.show("TEST", "This is just a test text.");
 	}
 	if (game.state !== "game")
 		return;

@@ -87,15 +87,15 @@ export const UnlockManager = {
 		}
 	},
 	achievements: {
-		finishedDailyLevel: {
+		collect10Stars: {
 			title: "ADVENTURER",
 			message: "Collect 10 stars."
 		},
-		finishedDailyLevel: {
+		collect30Stars: {
 			title: "JOURNEYMAN",
 			message: "Collect 30 stars."
 		},
-		finishedDailyLevel: {
+		collect50Stars: {
 			title: "SEASONED VETERAN",
 			message: "Collect 50 stars."
 		},
@@ -115,15 +115,15 @@ export const UnlockManager = {
 			title: "KEEPING IT TOGETHER",
 			message: "Finish a game in Panic mode."
 		},
-		finishedDailyLevel: {
+		found1000Words: {
 			title: "DEVOTED",
 			message: "Find a total of 1000 words."
 		},
-		finishedDailyLevel: {
+		finishedWordLength10: {
 			title: "IMPOSSIBLE",
 			message: "Finish a level with 10 letters."
 		},
-		finishedDailyLevel: {
+		finishedStoryMode: {
 			title: "THE LEGEND",
 			message: "Finish Story mode."
 		}

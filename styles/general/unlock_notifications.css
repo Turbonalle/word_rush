@@ -14,8 +14,9 @@
 .unlock-notification {
 	min-width: 280px;
 	padding: 1.5vh 2.5vh;
-	background: rgba(17, 17, 17, 0.95);
-	border: 2px solid white;
+	color: var(--bg);
+	background: var(--unlocked-bg);
+	border: 2px solid var(--border);
 	border-radius: 10px;
 	text-align: center;
 	transform: translateY(150%);
@@ -35,12 +36,14 @@
 	opacity: 0;
 }
 
-.unlock-title {
+.unlock-notification-title {
 	font-size: 2vh;
 	font-weight: bold;
+	color: var(--unlocked-title);
 }
 
-.unlock-message {
+.unlock-notification-message {
 	margin-top: 5px;
 	font-size: 1.5vh;
+	color: var(--unlocked-requirement);
 }

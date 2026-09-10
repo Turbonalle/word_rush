@@ -7,10 +7,10 @@ export const UnlockNotificationManager = {
 
 	show(title, message) {
 		const notification = document.createElement("div");
-		notification.className = "unlock-notification";
+		notification.classList.add("unlock-notification");
 		notification.innerHTML = `
-			<div class="unlock-title">${title}</div>
-			<div class="unlock-message">${message}</div>
+			<div class="unlock-notification-title">${title}</div>
+			<div class="unlock-notification-message">${message}</div>
 		`;
 		this.container.appendChild(notification);
 		requestAnimationFrame(() => {
