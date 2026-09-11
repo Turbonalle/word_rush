@@ -52,7 +52,7 @@
 	gap: 10px;
 }
 
-.typing-letter-box {
+/* .typing-letter-box {
 	width: 60px;
 	height: 60px;
 	color: var(--title);
@@ -61,7 +61,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+} */
 
 .found-words-container {
 	width: min(80%, 600px);
@@ -136,8 +136,40 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	/* transition:
+		border-color 250ms ease,
+		box-shadow 250ms ease; */
 }
 
 .typing-letter-box.error-border {
-	border: 2px solid var(--invalid);
+	border-color: var(--invalid);
+	box-shadow:
+		0 0 10px var(--invalid),
+		0 0 20px color-mix(in srgb, var(--invalid) 60%, transparent);
+	animation: error-pulse 300ms ease-out;
+}
+
+.typing-letter-box.error-shake {
+	background: var(--invalid);
+	animation: error-shake 300ms ease-out;
+}
+
+@keyframes error-pulse {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.06); }
+	100% { transform: scale(1); }
+}
+
+@keyframes error-shake {
+	0% { transform: translateX(-3px) translateY(-1px); }
+	10% { transform: translateX(2px) translateY(3px); }
+	20% { transform: translateX(-1px) translateY(-2px); }
+	30% { transform: translateX(3px) translateY(1px); }
+	40% { transform: translateX(0px) translateY(-3px); }
+	50% { transform: translateX(-4px) translateY(1px); }
+	60% { transform: translateX(2px) translateY(-2px); }
+	70% { transform: translateX(-3px) translateY(4px); }
+	80% { transform: translateX(3px) translateY(-1px); }
+	90% { transform: translateX(-2px) translateY(1px); }
+	100% { transform: translateX(1px) translateY(-1px); }
 }

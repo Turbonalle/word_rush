@@ -1,6 +1,7 @@
 import { Save } from "./Save.js";
 import { game } from "./main.js";
-import { findAndFillWords, submitWord, updateLetterBoxes } from "./game.js";
+import { findAndFillWords, submitWord } from "./game.js";
+import { updateLetterBoxes } from "./letter_boxes.js"; 
 import { calculateLetterFrequency } from "./helper_functions.js";
 import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 

@@ -2,6 +2,7 @@ import { game } from "./main.js";
 import { gameToMode, gameToSettings, hideWinningScreen, settingsToGame, showWinningScreen } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
 import { getElementByMode, calculateLetterFrequency } from "./helper_functions.js";
+import { resetLetterBoxes, createLetterBoxes } from "./letter_boxes.js"; 
 import { LevelManager } from "./LevelManager.js";
 import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./Save.js";
@@ -12,49 +13,11 @@ import { ProgressManager } from "./ProgressManager.js";
 import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 import { VisualEffectManager } from "./VisualEffectManager.js";
 
-export function updateLetterBoxes() {
-	const boxes = document.querySelectorAll(".typing-letter-box");
-	for (let i = 0; i < boxes.length; i++) {
-		boxes[i].textContent = game.currentInput[i]?.toUpperCase() ?? "";
-	}
-	const seen = {};
-	for (let i = 0; i < game.currentInput.length; i++) {
-		const letter = game.currentInput[i];
-		seen[letter] = (seen[letter] || 0) + 1;
-		if (game.mode !== "test" && seen[letter] > (game.letterFrequency[letter] || 0)) {
-			boxes[i].classList.add("color-error");
-		} else {
-			boxes[i].classList.remove("color-error");
-		}
-	}
-	if (game.currentInput.length < boxes.length) {
-		boxes[game.currentInput.length].classList.remove("color-error");
-	}
-}
-
-function resetLetterBoxes() {
-	game.currentInput = "";
-	game.inputFrequency = {};
-	document.querySelectorAll(".typing-letter-box").forEach(box => {
-		box.textContent = "";
-		box.classList.remove("color-error");
-	});
-}
-
 function resetProgressBar() {
 	const progressText = getElementByMode(game.mode, "-progress-text");
 	const progressBar = getElementByMode(game.mode, "-progress-bar");
 	progressText.textContent = "0 / " + game.possibleAnswers.length;
 	progressBar.style.width = "0%";
-}
-
-function createLetterBoxes(amount) {
-	const container = getElementByMode(game.mode, "-candidate-word-container");
-	for (let i = 0; i < amount; i++) {
-		const typingLetterBox = document.createElement("div");
-		typingLetterBox.classList.add("typing-letter-box");
-		container.append(typingLetterBox);
-	}
 }
 
 function addFoundDailyWordsToContainer() {
@@ -268,6 +231,7 @@ export function submitWord() {
 			Timer.add(10);
 		}
 		Save.increaseWordsFound();
+		resetLetterBoxes();
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 		if (game.mode === "hard") {
@@ -279,7 +243,7 @@ export function submitWord() {
 		}
 		VisualEffectManager.wordNotFound();
 	}
-	resetLetterBoxes();
+	// resetLetterBoxes();
 	if (game.wordsFound.length === game.possibleAnswers.length) {
 		// TODO: Handle winning visuals
 		if (game.wordLength === 8) {
