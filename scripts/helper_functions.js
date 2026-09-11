@@ -1,4 +1,4 @@
-export function getElement(mode, id) {
+export function getElementByMode(mode, id) {
 	const completeId = mode + id;
 	const element = document.getElementById(completeId);
 	return element;

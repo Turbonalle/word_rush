@@ -1,5 +1,5 @@
 import { game } from "./main.js";
-import { getElement } from "./helper_functions.js";
+import { getElementByMode } from "./helper_functions.js";
 import { Timer } from "./Timer.js";
 
 function resetGameData() {
@@ -13,11 +13,11 @@ function resetGameData() {
 }
 
 function resetGivenLettersContainer() {
-	getElement(game.mode, "-given-letters-container").textContent = "";
+	getElementByMode(game.mode, "-given-letters-container").textContent = "";
 }
 
 function resetCandidateWordContainer() {
-	const candidateWordContainer = getElement(game.mode, "-candidate-word-container");
+	const candidateWordContainer = getElementByMode(game.mode, "-candidate-word-container");
 	var children = candidateWordContainer.children;
 	for (var i = children.length - 1; i >= 0; i--) {
 		children[i].remove();
@@ -25,7 +25,7 @@ function resetCandidateWordContainer() {
 }
 
 function resetWordsFoundContainer() {
-	const wordsFoundContainer = getElement(game.mode, "-found-words-container");
+	const wordsFoundContainer = getElementByMode(game.mode, "-found-words-container");
 	var children = wordsFoundContainer.children;
 	for (var i = children.length - 1; i >= 0; i--) {
 		children[i].remove();

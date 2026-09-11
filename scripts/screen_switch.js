@@ -1,5 +1,5 @@
 import { game } from "./main.js";
-import { getElement } from "./helper_functions.js";
+import { getElementByMode } from "./helper_functions.js";
 import { getRandomWinningTitle } from "./winning_title.js";
 import { UnlockManager } from "./UnlockManager.js";
 
@@ -13,7 +13,7 @@ export function modeToSettings() {
 	document.getElementById("menu-background").classList.add("hidden");
 	document.getElementById("title-screen").classList.add("hidden");
 	document.getElementById("menu-screen").classList.remove("hidden");
-	getElement(game.mode, "-settings-container").classList.remove("hidden");
+	getElementByMode(game.mode, "-settings-container").classList.remove("hidden");
 	document.querySelector(".play-button").classList.toggle("hidden", game.mode === "story");
 }
 
@@ -21,12 +21,12 @@ export function settingsToGame(mode) {
 	game.state = "game";
 	game.mode = mode;
 	document.getElementById("menu-screen").classList.add("hidden");
-	getElement(game.mode, "-settings-container").classList.add("hidden");
-	getElement(game.mode, "-game-screen").classList.remove("hidden");
+	getElementByMode(game.mode, "-settings-container").classList.add("hidden");
+	getElementByMode(game.mode, "-game-screen").classList.remove("hidden");
 }
 
 export function settingsToMode() {
-	getElement(game.mode, "-settings-container").classList.add("hidden");
+	getElementByMode(game.mode, "-settings-container").classList.add("hidden");
 	document.getElementById("menu-screen").classList.add("hidden");
 	document.getElementById("menu-background").classList.remove("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
@@ -36,7 +36,7 @@ export function settingsToMode() {
 
 export function gameToMode() {
 	game.wordLength = game.storedWordLength;
-	getElement(game.mode, "-game-screen").classList.add("hidden");
+	getElementByMode(game.mode, "-game-screen").classList.add("hidden");
 	document.getElementById("winning-screen").classList.add("hidden");
 	document.getElementById("menu-background").classList.remove("hidden");
 	document.getElementById("title-screen").classList.remove("hidden");
@@ -47,9 +47,9 @@ export function gameToMode() {
 
 export function gameToSettings() {
 	game.wordLength = game.storedWordLength;
-	getElement(game.mode, "-game-screen").classList.add("hidden");
+	getElementByMode(game.mode, "-game-screen").classList.add("hidden");
 	document.getElementById("menu-screen").classList.remove("hidden");
-	getElement(game.mode, "-settings-container").classList.remove("hidden");
+	getElementByMode(game.mode, "-settings-container").classList.remove("hidden");
 	document.querySelector(".play-button").classList.toggle("hidden", game.mode === "story");
 	game.state = "menu";
 	document.getElementById("winning-screen").classList.add("hidden");

@@ -1,7 +1,7 @@
 import { game } from "./main.js";
 import { gameToMode, gameToSettings, hideWinningScreen, settingsToGame, showWinningScreen } from "./screen_switch.js";
 import { resetGame } from "./reset_game.js";
-import { getElement, calculateLetterFrequency } from "./helper_functions.js";
+import { getElementByMode, calculateLetterFrequency } from "./helper_functions.js";
 import { LevelManager } from "./LevelManager.js";
 import { DictionaryManager } from "./DictionaryManager.js";
 import { Save } from "./Save.js";
@@ -10,6 +10,7 @@ import { Timer } from "./Timer.js";
 import { UnlockManager } from "./UnlockManager.js";
 import { ProgressManager } from "./ProgressManager.js";
 import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
+import { VisualEffectManager } from "./VisualEffectManager.js";
 
 export function updateLetterBoxes() {
 	const boxes = document.querySelectorAll(".typing-letter-box");
@@ -41,14 +42,14 @@ function resetLetterBoxes() {
 }
 
 function resetProgressBar() {
-	const progressText = getElement(game.mode, "-progress-text");
-	const progressBar = getElement(game.mode, "-progress-bar");
+	const progressText = getElementByMode(game.mode, "-progress-text");
+	const progressBar = getElementByMode(game.mode, "-progress-bar");
 	progressText.textContent = "0 / " + game.possibleAnswers.length;
 	progressBar.style.width = "0%";
 }
 
 function createLetterBoxes(amount) {
-	const container = getElement(game.mode, "-candidate-word-container");
+	const container = getElementByMode(game.mode, "-candidate-word-container");
 	for (let i = 0; i < amount; i++) {
 		const typingLetterBox = document.createElement("div");
 		typingLetterBox.classList.add("typing-letter-box");
@@ -57,7 +58,7 @@ function createLetterBoxes(amount) {
 }
 
 function addFoundDailyWordsToContainer() {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	const foundWordsContainer = getElementByMode(game.mode, "-found-words-container");
 	const words = Save.getDailyWordsFound(game.language);
 	for (let i = 0; i < words.length; i++) {
 		const wordTag = document.createElement("div");
@@ -93,7 +94,7 @@ function isNewDaily() {
 }
 
 function addWordsToContainer(words) {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	const foundWordsContainer = getElementByMode(game.mode, "-found-words-container");
 	for (let i = 0; i < words.length; i++) {
 		const wordTag = document.createElement("div");
 		wordTag.classList.add("word-tag");
@@ -104,7 +105,7 @@ function addWordsToContainer(words) {
 
 function addWordToContainer(word) {
 	// Add word to displaying container	
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	const foundWordsContainer = getElementByMode(game.mode, "-found-words-container");
 	const wordTag = document.createElement("div");
 	wordTag.classList.add("word-tag");
 	wordTag.textContent = word;
@@ -112,20 +113,20 @@ function addWordToContainer(word) {
 }
 
 export function findAndFillWords() {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	const foundWordsContainer = getElementByMode(game.mode, "-found-words-container");
 	foundWordsContainer.replaceChildren();
 	const possibleWords = DictionaryManager.findPossibleWords(game.currentInput, game.language);
 	for (let i = 0; i < possibleWords.length; i++) {
 		addWordToContainer(possibleWords[i]);
 	}
 	addWordToContainer(`${possibleWords.length} possible words!`);
-	const container = getElement(game.mode, "-found-words-container");
+	const container = getElementByMode(game.mode, "-found-words-container");
 	const resultTag = container.lastElementChild;
 	resultTag.classList.add("color-correct");
 }
 
 function findAndFillRestWords() {
-	const foundWordsContainer = getElement(game.mode, "-found-words-container");
+	const foundWordsContainer = getElementByMode(game.mode, "-found-words-container");
 	game.possibleAnswers.forEach(word => {
 		if (!game.wordsFound.includes(word)) {
 			const wordTag = document.createElement("div");
@@ -139,14 +140,14 @@ function findAndFillRestWords() {
 
 function updateProgressUI() {
 	// Calculate and set progress bar width
-	const progressBar = getElement(game.mode, "-progress-bar");
+	const progressBar = getElementByMode(game.mode, "-progress-bar");
 	let progress = 0.0;
 	if (game.wordsFound.length > 0)
 		progress = game.wordsFound.length / game.possibleAnswers.length;
 	progressBar.style.width = `${progress * 100}%`;
 
 	// Set progress text
-	const progressText = getElement(game.mode, "-progress-text");
+	const progressText = getElementByMode(game.mode, "-progress-text");
 	progressText.textContent = game.wordsFound.length + " / " + game.possibleAnswers.length;
 }
 
@@ -159,7 +160,7 @@ function setupLevel(level) {
 	game.wordLength = level.letters.length;
 	game.possibleAnswers = level.answers;
 	game.letterFrequency = calculateLetterFrequency(level.letters);
-	getElement(game.mode, "-given-letters-container").textContent = level.letters;
+	getElementByMode(game.mode, "-given-letters-container").textContent = level.letters;
 	createLetterBoxes(game.wordLength);
 }
 
@@ -276,6 +277,7 @@ export function submitWord() {
 				console.log("You lost!");
 			}
 		}
+		VisualEffectManager.wordNotFound();
 	}
 	resetLetterBoxes();
 	if (game.wordsFound.length === game.possibleAnswers.length) {

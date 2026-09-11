@@ -1,5 +1,5 @@
 import { game } from "./main.js";
-import { getElement } from "./helper_functions.js";
+import { getElementByMode } from "./helper_functions.js";
 
 export const Timer = {
 	start(seconds) {
@@ -48,7 +48,7 @@ export const Timer = {
 
 	updateDisplay() {
 		console.log("Updating timer.");
-		const timerElement = getElement(game.mode, "-timer");
+		const timerElement = getElementByMode(game.mode, "-timer");
 		const seconds = Math.ceil(game.timer.timeRemaining);
 		timerElement.textContent = `${seconds}s`;
 		timerElement.classList.toggle("timer-warning", seconds <= 10);

@@ -123,3 +123,21 @@
 	border: 2px solid var(--highlight);
 	background: var(--bg);
 }
+
+
+/* ---- Visual effects ------------------------------------------------------ */
+
+.typing-letter-box {
+	width: 60px;
+	height: 60px;
+	color: var(--title);
+	border: 2px solid var(--border);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.typing-letter-box.error-border {
+	border: 2px solid var(--invalid);
+}

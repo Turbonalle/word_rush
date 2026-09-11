@@ -2,7 +2,7 @@ import { game } from "./main.js";
 import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { modeToSettings, settingsToGame, settingsToMode } from "./screen_switch.js";
 import { startGame } from "./game.js";
-import { getElement } from "./helper_functions.js";
+import { getElementByMode } from "./helper_functions.js";
 
 const dailyModeButton = document.getElementById("daily-mode-button");
 const storyModeButton = document.getElementById("story-mode-button");
@@ -94,8 +94,8 @@ function addPlayButtonListeners() {
 }
 
 function setLengthSlider(mode) {
-	const lengthSlider = getElement(mode, "-length-slider");
-	const lengthValue = getElement(mode, "-length-value");
+	const lengthSlider = getElementByMode(mode, "-length-slider");
+	const lengthValue = getElementByMode(mode, "-length-value");
 	lengthSlider.addEventListener("input", () => {
 		lengthValue.textContent = lengthSlider.value;
 		game.wordLength = parseInt(lengthSlider.value);
