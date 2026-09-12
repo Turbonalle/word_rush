@@ -214,6 +214,7 @@ export function submitWord() {
 	if (game.wordsFound.includes(word)) {
 		console.log("You already have that word...");
 		VisualEffectManager.wordAlreadyFound(word);
+		resetLetterBoxes();
 		return;
 	}
 	if (game.possibleAnswers.includes(word)) {

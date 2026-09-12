@@ -25,7 +25,6 @@ export const VisualEffectManager = {
 		});
 		setTimeout(() => {
 			wordTag.classList.remove("error-shake");
-			resetLetterBoxes();
 		}, 1000);
 	},
 	newWordFound(word) {
