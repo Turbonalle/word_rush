@@ -34,7 +34,6 @@ export const VisualEffectManager = {
 		});
 		setTimeout(() => {
 			wordTag.classList.remove("correct-effect");
-			resetLetterBoxes();
 		}, 1000);
 	}
 }

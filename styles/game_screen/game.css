@@ -131,7 +131,7 @@
 	color: var(--correct);
 	background: var(--correct-bg);
 	border-color: var(--correct-border);
-	animation: pulse 300ms ease-out;
+	animation: pulse 1000ms ease-out;
 }
 
 .error-border {
@@ -151,7 +151,8 @@
 
 @keyframes pulse {
 	0% { transform: scale(1); }
-	50% { transform: scale(1.06); }
+	20% { transform: scale(1.1); }
+	80% { transform: scale(1.1); }
 	100% { transform: scale(1); }
 }
 

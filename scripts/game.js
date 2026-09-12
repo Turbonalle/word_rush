@@ -232,6 +232,7 @@ export function submitWord() {
 		}
 		Save.increaseWordsFound();
 		VisualEffectManager.newWordFound(word);
+		resetLetterBoxes();
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 		if (game.mode === "hard") {
