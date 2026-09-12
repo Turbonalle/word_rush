@@ -14,5 +14,27 @@ export const VisualEffectManager = {
 				resetLetterBoxes();
 			}, 1000);
 		}
+	},
+	wordAlreadyFound(word) {
+		const container = getElementByMode(game.mode, "-found-words-container");
+		const wordTag = Array.from(container.children).find(wordTag => wordTag.textContent === word);
+		requestAnimationFrame(() => {
+			wordTag.classList.add("error-shake");
+		});
+		setTimeout(() => {
+			wordTag.classList.remove("error-shake");
+			resetLetterBoxes();
+		}, 1000);
+	},
+	newWordFound(word) {
+		const container = getElementByMode(game.mode, "-found-words-container");
+		const wordTag = Array.from(container.children).find(wordTag => wordTag.textContent === word);
+		requestAnimationFrame(() => {
+			wordTag.classList.add("correct-effect");
+		});
+		setTimeout(() => {
+			wordTag.classList.remove("correct-effect");
+			resetLetterBoxes();
+		}, 1000);
 	}
 }

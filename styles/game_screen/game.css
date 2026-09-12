@@ -52,7 +52,7 @@
 	gap: 10px;
 }
 
-/* .typing-letter-box {
+.typing-letter-box {
 	width: 60px;
 	height: 60px;
 	color: var(--title);
@@ -61,7 +61,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-} */
+}
 
 .found-words-container {
 	width: min(80%, 600px);
@@ -127,34 +127,29 @@
 
 /* ---- Visual effects ------------------------------------------------------ */
 
-.typing-letter-box {
-	width: 60px;
-	height: 60px;
-	color: var(--title);
-	border: 2px solid var(--border);
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	/* transition:
-		border-color 250ms ease,
-		box-shadow 250ms ease; */
+.correct-effect {
+	color: var(--correct);
+	background: var(--correct-bg);
+	border-color: var(--correct-border);
+	animation: pulse 300ms ease-out;
 }
 
-.typing-letter-box.error-border {
+.error-border {
 	border-color: var(--invalid);
 	box-shadow:
 		0 0 10px var(--invalid),
 		0 0 20px color-mix(in srgb, var(--invalid) 60%, transparent);
-	animation: error-pulse 300ms ease-out;
+	animation: pulse 300ms ease-out;
 }
 
-.typing-letter-box.error-shake {
-	background: var(--invalid);
+.error-shake {
+	color: var(--invalid);
+	background: var(--invalid-bg);
+	border-color: var(--invalid-border);
 	animation: error-shake 300ms ease-out;
 }
 
-@keyframes error-pulse {
+@keyframes pulse {
 	0% { transform: scale(1); }
 	50% { transform: scale(1.06); }
 	100% { transform: scale(1); }

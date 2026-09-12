@@ -213,25 +213,25 @@ export function submitWord() {
 	const word = game.currentInput;
 	if (game.wordsFound.includes(word)) {
 		console.log("You already have that word...");
-		resetLetterBoxes();
+		VisualEffectManager.wordAlreadyFound(word);
 		return;
 	}
 	if (game.possibleAnswers.includes(word)) {
 		console.log("Correct!", word, "exists!");
-		game.wordsFound.push(game.currentInput);
+		game.wordsFound.push(word);
 		updateProgressUI();
-		addWordToContainer(game.currentInput);
+		addWordToContainer(word);
 		if (game.mode === "daily") {
-			Save.addFoundDailyWord(game.language, game.currentInput);
+			Save.addFoundDailyWord(game.language, word);
 		}
 		if (game.mode === "story") {
-			Save.addFoundStoryWord(game.language, game.currentStoryChapter, game.storyLevelId, game.currentInput);
+			Save.addFoundStoryWord(game.language, game.currentStoryChapter, game.storyLevelId, word);
 		}
 		if (game.mode === "panic") {
 			Timer.add(10);
 		}
 		Save.increaseWordsFound();
-		resetLetterBoxes();
+		VisualEffectManager.newWordFound(word);
 	} else {
 		console.log("Wrong!", word, "doesn't exist...");
 		if (game.mode === "hard") {
@@ -243,7 +243,6 @@ export function submitWord() {
 		}
 		VisualEffectManager.wordNotFound();
 	}
-	// resetLetterBoxes();
 	if (game.wordsFound.length === game.possibleAnswers.length) {
 		// TODO: Handle winning visuals
 		if (game.wordLength === 8) {
