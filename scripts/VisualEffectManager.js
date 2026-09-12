@@ -4,6 +4,7 @@ import { getElementByMode } from "./helper_functions.js";
 
 export const VisualEffectManager = {
 	wordNotFound() {
+		game.typingLock = true;
 		const container = getElementByMode(game.mode, "-candidate-word-container");
 		for (const letterBox of container.children) {
 			requestAnimationFrame(() => {
@@ -12,6 +13,7 @@ export const VisualEffectManager = {
 			setTimeout(() => {
 				letterBox.classList.remove("error-shake");
 				resetLetterBoxes();
+				game.typingLock = false;
 			}, 1000);
 		}
 	},

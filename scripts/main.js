@@ -29,6 +29,7 @@ export const game = {
 	wordsFound: [],
 	lives: 0,
 	givenUp: false,
+	typingLock: false,
 
 	// Save data
 	save: {},
