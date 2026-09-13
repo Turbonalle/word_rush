@@ -6,7 +6,7 @@ import { calculateLetterFrequency } from "./helper_functions.js";
 import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 
 document.addEventListener("keydown", e => {
-	if (game.typingLock === true) {
+	if (game.typingLock === true || game.givenUp === true) {
 		return;
 	}
 	if (e.key === ".") {

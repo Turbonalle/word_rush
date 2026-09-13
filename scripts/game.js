@@ -303,6 +303,9 @@ document.querySelectorAll(".to-settings-button").forEach(button => {
 
 document.querySelectorAll(".show-words-button").forEach(button => {
 	button.addEventListener("click", () => {
+		if (game.givenUp === true) {
+			return;
+		}
 		game.givenUp = true;
 		if (game.mode === "daily") {
 			Save.giveUpDaily(game.language);
