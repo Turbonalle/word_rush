@@ -14,6 +14,7 @@ function updateUnlockablesScreen() {
 	document.getElementById("finishedHardLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedHardLevel"));
 	document.getElementById("finishedPanicLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedPanicLevel"));
 	// Other
+	document.getElementById("find100Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 100);
 	document.getElementById("find1000Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 1000);
 	document.getElementById("finishWordLength10").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedWordLength10"));
 	document.getElementById("finishStoryMode").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedStoryMode"));

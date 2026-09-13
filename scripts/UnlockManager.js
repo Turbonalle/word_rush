@@ -99,6 +99,10 @@ export const UnlockManager = {
 			title: "SEASONED VETERAN",
 			message: "Collect 50 stars."
 		},
+		finishedStoryMode: {
+			title: "THE LEGEND",
+			message: "Finish Story mode."
+		},
 		finishedDailyLevel: {
 			title: "DAILY BEGINNER",
 			message: "Finish a game in Daily mode."
@@ -126,10 +130,6 @@ export const UnlockManager = {
 		finishedWordLength10: {
 			title: "IMPOSSIBLE",
 			message: "Finish a level with 10 letters."
-		},
-		finishedStoryMode: {
-			title: "THE LEGEND",
-			message: "Finish Story mode."
 		}
 	},
 
