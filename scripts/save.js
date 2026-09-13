@@ -47,7 +47,12 @@ const DEFAULT_SAVE = {
 		finishedHardLevel: false,
 		finishedPanicLevel: false,
 		finishedWordLength10: false,
-		finishedStoryMode: false
+		finishedStoryMode: false,
+		found100Words: false,
+		found1000Words: false,
+		collect10Stars: false,
+		collect30Stars: false,
+		collect50Stars: false
 	}
 }
 

@@ -115,6 +115,10 @@ export const UnlockManager = {
 			title: "KEEPING IT TOGETHER",
 			message: "Finish a game in Panic mode."
 		},
+		found100Words: {
+			title: "GETTING WARM",
+			message: "Find a total of 100 words."
+		},
 		found1000Words: {
 			title: "DEVOTED",
 			message: "Find a total of 1000 words."

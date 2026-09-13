@@ -134,6 +134,26 @@ function completeAchievement(id) {
 	}
 }
 
+function completeWordAchievement() {
+	const totalWordsFound = ProgressManager.getWordsFound();
+	if (totalWordsFound >= 1000) {
+		completeAchievement("found1000Words");
+	} else if (totalWordsFound >= 100) {
+		completeAchievement("found100Words");
+	}
+}
+
+function completeStarAchievement() {
+	const totalStarsFound = ProgressManager.getMostStarsPerLanguage();
+	if (totalStarsFound >= 50) {
+		completeAchievement("collect50Stars");
+	} else if (totalStarsFound >= 30) {
+		completeAchievement("collect30Stars");
+	} else if (totalStarsFound >= 10) {
+		completeAchievement("collect10Stars");
+	}
+}
+
 export function startGame() {
 	resetGame();
 	game.storedWordLength = game.wordLength;
@@ -246,7 +266,6 @@ export function submitWord() {
 		VisualEffectManager.wordNotFound();
 	}
 	if (game.wordsFound.length === game.possibleAnswers.length) {
-		// TODO: Handle winning visuals
 		if (game.wordLength === 8) {
 			completeAchievement("finishedWordLength8");
 		}
@@ -273,6 +292,8 @@ export function submitWord() {
 		}
 		showWinningScreen();
 	}
+	completeWordAchievement();
+	completeStarAchievement();
 }
 
 document.querySelectorAll(".submit-button").forEach(button => {
