@@ -18,6 +18,7 @@ function updateUnlockablesScreen() {
 	document.getElementById("find1000Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 1000);
 	document.getElementById("finishWordLength10").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedWordLength10"));
 	document.getElementById("finishStoryMode").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedStoryMode"));
+	document.getElementById("finishBossBattle").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedBossBattle"));
 
 	// Add SVG to unlockable containers
 	document.querySelectorAll(".song-svg").forEach(element => {

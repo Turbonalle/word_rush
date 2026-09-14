@@ -131,7 +131,7 @@ export const UnlockManager = {
 			title: "IMPOSSIBLE",
 			message: "Finish a level with 10 letters."
 		},
-		beatBossBattle: {
+		finishedBossBattle: {
 			title: "COMPLETIONIST",
 			message: "Beat the secret ultimate boss battle."
 		}

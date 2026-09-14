@@ -53,7 +53,7 @@ const DEFAULT_SAVE = {
 		collect10Stars: false,
 		collect30Stars: false,
 		collect50Stars: false,
-		beatBossBattle: false
+		finishedBossBattle: false
 	}
 }
 
