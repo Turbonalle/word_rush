@@ -52,7 +52,8 @@ const DEFAULT_SAVE = {
 		found1000Words: false,
 		collect10Stars: false,
 		collect30Stars: false,
-		collect50Stars: false
+		collect50Stars: false,
+		beatBossBattle: false
 	}
 }
 
