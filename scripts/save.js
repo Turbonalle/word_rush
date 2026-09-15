@@ -42,18 +42,48 @@ const DEFAULT_SAVE = {
 		sv: {}
 	},
 	achievements: {
+		collect10Stars: false,
+		collect30Stars: false,
+		collect50Stars: false,
+		finishedStoryMode: false,
 		finishedDailyLevel: false,
 		finishedZenLevel: false,
 		finishedHardLevel: false,
 		finishedPanicLevel: false,
-		finishedWordLength10: false,
-		finishedStoryMode: false,
 		found100Words: false,
 		found1000Words: false,
-		collect10Stars: false,
-		collect30Stars: false,
-		collect50Stars: false,
+		finishedWordLength10: false,
 		finishedBossBattle: false
+	},
+	seen: {
+		zenButton: false,
+		hardButton: false,
+		panicButton: false,
+		unlockables: {
+			collect10Stars: false,
+			collect30Stars: false,
+			collect50Stars: false,
+			finishedStoryMode: false,
+			finishedDailyLevel: false,
+			finishedZenLevel: false,
+			finishedHardLevel: false,
+			finishedPanicLevel: false,
+			found100Words: false,
+			found1000Words: false,
+			finishedWordLength10: false,
+			finishedBossBattle: false
+		},
+		songs: {
+			song1: false,
+			song2: false,
+			song3: false,
+			song4: false,
+			song5: false,
+			song6: false,
+			song7: false,
+			song8: false,
+			song9: false
+		}
 	}
 }
 
@@ -152,6 +182,30 @@ export const Save = {
 
 	getAchievement(id) {
 		return this.data.achievements[id];
+	},
+
+	isSeen(type, id) {
+		if (type === "mode") {
+			if (!this.seen[id]) {
+				console.log("The mode:", id, "does not exist.");
+				return null;
+			}
+			return this.seen[id];
+		} else if (type === "song") {
+			if (!this.seen.songs[id]) {
+				console.log("The song:", id, "does not exist.");
+				return null;
+			}
+			return this.seen.songs[id];
+		} else if (type === "unlockable") {
+			if (!this.seen.unlockables[id]) {
+				console.log("The unlockable:", id, "does not exist.");
+				return null;
+			}
+			return this.seen.unlockables[id];
+		}
+		console.log("The type:", type, "does not exist.");
+		return null;
 	},
 
 
