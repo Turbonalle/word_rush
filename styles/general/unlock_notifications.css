@@ -16,7 +16,7 @@
 	padding: 1.5vh 2.5vh;
 	color: var(--bg);
 	background: var(--unlocked-bg);
-	border: 2px solid var(--border);
+	border: 2px solid var(--unlocked-border);
 	border-radius: 10px;
 	text-align: center;
 	transform: translateY(150%);
