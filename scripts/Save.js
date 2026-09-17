@@ -59,6 +59,7 @@ const DEFAULT_SAVE = {
 		zenButton: false,
 		hardButton: false,
 		panicButton: false,
+		testButton: false,
 		unlockables: {
 			collect10Stars: false,
 			collect30Stars: false,
@@ -184,6 +185,9 @@ export const Save = {
 		return this.data.achievements[id];
 	},
 
+
+	// ---- Seen handling ------------------------------------------------------
+
 	isSeen(type, id) {
 		if (type === "mode") {
 			if (!this.seen[id]) {
@@ -206,6 +210,34 @@ export const Save = {
 		}
 		console.log("The type:", type, "does not exist.");
 		return null;
+	},
+
+	setSeenMode(id, state) {
+		this.seen[id] = state;
+	},
+
+	setSeenUnlockable(id, state) {
+		this.seen.unlockables[id] = state;
+	},
+
+	setSeenSong(id, state) {
+		this.seen.songs[id] = state;
+	},
+
+	hasUnseenUnlockable() {
+		for (const unlockable in this.seen.unlockables) {
+			if (unlockable === true)
+				return true;
+		}
+		return false;
+	},
+
+	hasUnseenSong() {
+		for (const song in this.seen.songs) {
+			if (song === true)
+				return true;
+		}
+		return false;
 	},
 
 

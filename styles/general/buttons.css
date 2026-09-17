@@ -23,7 +23,7 @@
 	border: 2px solid var(--border);
 }
 
-.button.unseen::after {
+.unseen::after {
 	content: "";
 	position: absolute;
 	width: 1.8vmin;

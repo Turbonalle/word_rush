@@ -5,20 +5,20 @@ import { SONG_SVG, MODE_SVG } from "./svg.js";
 
 function updateUnlockablesScreen() {
 	// Story progress
-	document.getElementById("collect10stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("zen"));
-	document.getElementById("collect20stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("hard"));
-	document.getElementById("collect30stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("panic"));
+	document.getElementById("collect10Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("zen"));
+	document.getElementById("collect20Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("hard"));
+	document.getElementById("collect30Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("panic"));
 	// Modes
 	document.getElementById("finishedDailyLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedDailyLevel"));
 	document.getElementById("finishedZenLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedZenLevel"));
 	document.getElementById("finishedHardLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedHardLevel"));
 	document.getElementById("finishedPanicLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedPanicLevel"));
 	// Other
-	document.getElementById("find100Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 100);
-	document.getElementById("find1000Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 1000);
-	document.getElementById("finishWordLength10").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedWordLength10"));
-	document.getElementById("finishStoryMode").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedStoryMode"));
-	document.getElementById("finishBossBattle").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedBossBattle"));
+	document.getElementById("found100Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 100);
+	document.getElementById("found1000Words").classList.toggle("unlocked", ProgressManager.getWordsFound() >= 1000);
+	document.getElementById("finishedWordLength10").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedWordLength10"));
+	document.getElementById("finishedStoryMode").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedStoryMode"));
+	document.getElementById("finishedBossBattle").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedBossBattle"));
 
 	// Add SVG to unlockable containers
 	document.querySelectorAll(".song-svg").forEach(element => {

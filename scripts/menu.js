@@ -3,6 +3,7 @@ import { StoryUIBuilder } from "./StoryUIBuilder.js";
 import { modeToSettings, settingsToGame, settingsToMode } from "./screen_switch.js";
 import { startGame } from "./game.js";
 import { getElementByMode } from "./helper_functions.js";
+import { Save } from "./Save.js";
 
 const dailyModeButton = document.getElementById("daily-mode-button");
 const storyModeButton = document.getElementById("story-mode-button");
@@ -54,24 +55,28 @@ zenModeButton.addEventListener("click", () => {
 	game.mode = "zen";
 	updateSettingsUI();
 	modeToSettings();
+	Save.setSeenMode("zenButton", true);
 });
 
 hardModeButton.addEventListener("click", () => {
 	game.mode = "hard";
 	updateSettingsUI();
 	modeToSettings();
+	Save.setSeenMode("hardButton", true);
 });
 
 panicModeButton.addEventListener("click", () => {
 	game.mode = "panic";
 	updateSettingsUI();
 	modeToSettings();
+	Save.setSeenMode("panicButton", true);
 });
 
 testModeButton.addEventListener("click", () => {
 	game.mode = "test";
 	updateSettingsUI();
 	modeToSettings();
+	Save.setSeenMode("testButton", true);
 });
 
 function addBackButtonListeners() {

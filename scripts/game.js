@@ -12,6 +12,7 @@ import { UnlockManager } from "./UnlockManager.js";
 import { ProgressManager } from "./ProgressManager.js";
 import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 import { VisualEffectManager } from "./VisualEffectManager.js";
+import { CueManager } from "./CueManager.js";
 
 function resetProgressBar() {
 	const progressText = getElementByMode(game.mode, "-progress-text");
@@ -131,6 +132,7 @@ function completeAchievement(id) {
 	if (ProgressManager.completeAchievement(id)) {
 		const unlock = UnlockManager.getAchievementNotification(id);
 		UnlockNotificationManager.show(unlock.title, unlock.message);
+		CueManager.activate(id);
 	}
 }
 
