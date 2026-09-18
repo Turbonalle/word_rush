@@ -46,6 +46,7 @@
 /*---- Locked unlockable design ----------------------------------------------*/
 
 .unlockable-container {
+	position: relative;
 	width: 300px;
 	padding: 10px;
 	box-sizing: border-box;
@@ -116,4 +117,17 @@
 
 .unlocked .unlock-reward-container .mode-svg {
 	color: var(--unlocked-mode-svg);
+}
+
+
+
+.unlockable-container.unseen::after {
+	content: "";
+	position: absolute;
+	width: 1.8vmin;
+	height: 1.8vmin;
+	top: -0.9vmin;
+	right: -0.9vmin;
+	background: var(--highlight);
+	border-radius: 50%;
 }

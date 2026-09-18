@@ -56,34 +56,34 @@ const DEFAULT_SAVE = {
 		finishedBossBattle: false
 	},
 	seen: {
-		zenButton: false,
-		hardButton: false,
-		panicButton: false,
-		testButton: false,
+		zenButton: true,
+		hardButton: true,
+		panicButton: true,
+		testButton: true,
 		unlockables: {
-			collect10Stars: false,
-			collect30Stars: false,
-			collect50Stars: false,
-			finishedStoryMode: false,
-			finishedDailyLevel: false,
-			finishedZenLevel: false,
-			finishedHardLevel: false,
-			finishedPanicLevel: false,
-			found100Words: false,
-			found1000Words: false,
-			finishedWordLength10: false,
-			finishedBossBattle: false
+			collect10Stars: true,
+			collect30Stars: true,
+			collect50Stars: true,
+			finishedStoryMode: true,
+			finishedDailyLevel: true,
+			finishedZenLevel: true,
+			finishedHardLevel: true,
+			finishedPanicLevel: true,
+			found100Words: true,
+			found1000Words: true,
+			finishedWordLength10: true,
+			finishedBossBattle: true
 		},
 		songs: {
-			song1: false,
-			song2: false,
-			song3: false,
-			song4: false,
-			song5: false,
-			song6: false,
-			song7: false,
-			song8: false,
-			song9: false
+			song1: true,
+			song2: true,
+			song3: true,
+			song4: true,
+			song5: true,
+			song6: true,
+			song7: true,
+			song8: true,
+			song9: true
 		}
 	}
 }
@@ -190,42 +190,42 @@ export const Save = {
 
 	isSeen(type, id) {
 		if (type === "mode") {
-			if (!this.seen[id]) {
+			if (!this.data.seen[id]) {
 				console.log("The mode:", id, "does not exist.");
 				return null;
 			}
-			return this.seen[id];
+			return this.data.seen[id];
 		} else if (type === "song") {
-			if (!this.seen.songs[id]) {
+			if (!this.data.seen.songs[id]) {
 				console.log("The song:", id, "does not exist.");
 				return null;
 			}
-			return this.seen.songs[id];
+			return this.data.seen.songs[id];
 		} else if (type === "unlockable") {
-			if (!this.seen.unlockables[id]) {
+			if (!this.data.seen.unlockables[id]) {
 				console.log("The unlockable:", id, "does not exist.");
 				return null;
 			}
-			return this.seen.unlockables[id];
+			return this.data.seen.unlockables[id];
 		}
 		console.log("The type:", type, "does not exist.");
 		return null;
 	},
 
 	setSeenMode(id, state) {
-		this.seen[id] = state;
+		this.data.seen[id] = state;
 	},
 
 	setSeenUnlockable(id, state) {
-		this.seen.unlockables[id] = state;
+		this.data.seen.unlockables[id] = state;
 	},
 
 	setSeenSong(id, state) {
-		this.seen.songs[id] = state;
+		this.data.seen.songs[id] = state;
 	},
 
 	hasUnseenUnlockable() {
-		for (const unlockable in this.seen.unlockables) {
+		for (const unlockable in this.data.seen.unlockables) {
 			if (unlockable === true)
 				return true;
 		}
@@ -233,7 +233,7 @@ export const Save = {
 	},
 
 	hasUnseenSong() {
-		for (const song in this.seen.songs) {
+		for (const song in this.data.seen.songs) {
 			if (song === true)
 				return true;
 		}

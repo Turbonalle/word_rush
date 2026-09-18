@@ -6,8 +6,8 @@ import { SONG_SVG, MODE_SVG } from "./svg.js";
 function updateUnlockablesScreen() {
 	// Story progress
 	document.getElementById("collect10Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("zen"));
-	document.getElementById("collect20Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("hard"));
-	document.getElementById("collect30Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("panic"));
+	document.getElementById("collect30Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("hard"));
+	document.getElementById("collect50Stars").classList.toggle("unlocked", UnlockManager.isModeUnlocked("panic"));
 	// Modes
 	document.getElementById("finishedDailyLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedDailyLevel"));
 	document.getElementById("finishedZenLevel").classList.toggle("unlocked", ProgressManager.isAchievementUnlocked("finishedZenLevel"));
