@@ -35,17 +35,16 @@ export const CueManager = {
 		Save.saveGame();
 	},
 
-	activate(id) {
-		console.log("activating cue for:", id);
+	setSeenUnlockable(id, state) {
 		switch(id) {
 			case "collect10Stars":
-				Save.setSeenMode("zenButton", false);
+				Save.setSeenMode("zenButton", state);
 				break;
 			case "collect30Stars":
-				Save.setSeenMode("hardButton", false);
+				Save.setSeenMode("hardButton", state);
 				break;
 			case "collect50Stars":
-				Save.setSeenMode("panicButton", false);
+				Save.setSeenMode("panicButton", state);
 				break;
 			case "finishedStoryMode":
 				// Add cue to Boss Battle mode
@@ -74,8 +73,38 @@ export const CueManager = {
 			case "finishedBossBattle":
 				// Add cue to audioplayer and correct song
 				break;
+			default:
+				console.log("id:", id, "not found.");
 		}
-		Save.setSeenUnlockable(id, false);
+		Save.setSeenUnlockable(id, state);
 		this.update();
+	},
+	
+	setSeenMode(mode, state) {
+		switch (mode) {
+			case "zen":
+				Save.setSeenMode("zenButton", state);
+				break;
+			case "hard":
+				Save.setSeenMode("hardButton", state);
+				break;
+			case "panic":
+				Save.setSeenMode("panicButton", state);
+				break;
+			case "test":
+				Save.setSeenMode("testButton", state);
+				break;
+		}
+		this.update();
+	},
+
+	activate(id) {
+		console.log("activating cue for:", id);
+		this.setSeenUnlockable(id, false);
+	},
+
+	deactivate(id) {
+		console.log("deactivating cue for:", id);
+		this.setSeenUnlockable(id, true);
 	}
 };
