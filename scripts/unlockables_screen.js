@@ -1,5 +1,6 @@
 import { ProgressManager } from "./ProgressManager.js";
 import { UnlockManager } from "./UnlockManager.js";
+import { CueManager } from "./CueManager.js";
 import { modeToUnlockables, unlockablesToMode } from "./screen_switch.js";
 import { SONG_SVG, MODE_SVG } from "./svg.js";
 
@@ -37,4 +38,11 @@ document.getElementById("mode-to-unlockables-button").addEventListener("click", 
 
 document.getElementById("unlockables-to-mode-button").addEventListener("click", () => {
 	unlockablesToMode();
+});
+
+document.querySelectorAll(".unlockable-container").forEach(unlockable => {
+	unlockable.addEventListener("mouseenter", (event) => {
+		const id = event.currentTarget.id;
+		CueManager.deactivate(id);
+	});
 });
