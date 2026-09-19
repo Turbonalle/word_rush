@@ -116,7 +116,14 @@ function updateProgressUI() {
 }
 
 function setLives(n) {
-	document.getElementById("hard-lives-container").textContent = `${n}`;
+	const lives = document.getElementById("hard-lives-container").children;
+	for (let i = 0; i < 3; i++) {
+		if (i < n) {
+			lives[i].classList.remove("empty");
+		} else {
+			lives[i].classList.add("empty");
+		}
+	}
 }
 
 function setupLevel(level) {
