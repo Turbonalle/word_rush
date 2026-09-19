@@ -226,16 +226,18 @@ export const Save = {
 
 	hasUnseenUnlockable() {
 		for (const unlockable in this.data.seen.unlockables) {
-			if (unlockable === true)
+			if (this.data.seen.unlockables[unlockable] === false) {
 				return true;
+			}
 		}
 		return false;
 	},
 
 	hasUnseenSong() {
 		for (const song in this.data.seen.songs) {
-			if (song === true)
+			if (this.data.seen.songs[song] === false) {
 				return true;
+			}
 		}
 		return false;
 	},
