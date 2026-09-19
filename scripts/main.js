@@ -5,6 +5,7 @@ import { AudioPlayer } from "./AudioPlayer/AudioPlayer.js";
 import { menuPlaylist } from "./AudioPlayer/playlists.js";
 import { handleLockedModes } from "./screen_switch.js";
 import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
+import { CueManager } from "./CueManager.js";
 
 export const game = {
 	// State
@@ -54,6 +55,7 @@ async function initializeGame() {
 	AudioPlayer.loadPlaylist(menuPlaylist);
 	handleLockedModes();
 	UnlockNotificationManager.init();
+	CueManager.update();
 	console.log("Save:", Save.data);
 }
 

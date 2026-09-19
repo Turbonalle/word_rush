@@ -32,6 +32,7 @@ export const CueManager = {
 		// document.getElementById("song7").classList.toggle("unseen", Save.data.seen.songs.song7 === false);
 		// document.getElementById("song8").classList.toggle("unseen", Save.data.seen.songs.song8 === false);
 		// document.getElementById("song9").classList.toggle("unseen", Save.data.seen.songs.song9 === false);
+		Save.saveGame();
 	},
 
 	activate(id) {
