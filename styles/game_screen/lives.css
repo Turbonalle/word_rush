@@ -3,15 +3,12 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	/* padding: 1vh;
-	box-sizing: content-box; */
 	gap: 1vh;
-	/* background-color: var(--title); */
 }
 
 .life-box {
 	height: 3vh;
-	width: 4vh;
+	width: 6vh;
 	background-color: var(--correct-bg);
 	border: 2px solid var(--correct-border);
 	border-radius: min(8px, 1.5vh);

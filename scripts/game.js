@@ -269,7 +269,7 @@ export function submitWord() {
 			game.lives -= 1;
 			setLives(game.lives);
 			if (game.lives <= 0) {
-				console.log("You lost!");
+				game.gameOver = true;
 			}
 		}
 		VisualEffectManager.wordNotFound();

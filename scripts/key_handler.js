@@ -7,7 +7,7 @@ import { UnlockNotificationManager } from "./UnlockNotificationManager.js";
 import { CueManager } from "./CueManager.js";
 
 document.addEventListener("keydown", e => {
-	if (game.typingLock === true || game.givenUp === true) {
+	if (game.typingLock === true || game.givenUp === true || game.gameOver === true) {
 		return;
 	}
 

@@ -29,6 +29,7 @@ export const game = {
 	inputFrequency: {},
 	wordsFound: [],
 	lives: 0,
+	gameOver: false,
 	givenUp: false,
 	typingLock: false,
 
