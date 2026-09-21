@@ -71,7 +71,7 @@
 
 #panic-timer-container.critical #panic-timer-ring {
 	--timer-ring-color: #ef2c2c;
-	animation: timer-ring-critical-pulse 0.6s infinite alternate;
+	animation: timer-ring-critical-pulse 0.5s infinite alternate;
 }
 
 @keyframes timer-ring-critical-pulse {
