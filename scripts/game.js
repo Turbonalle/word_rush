@@ -116,7 +116,8 @@ function updateProgressUI() {
 }
 
 function setLives(n) {
-	const lives = document.getElementById("hard-lives-container").children;
+	document.getElementById("hard-lives-count").textContent = `${n} / 3`;
+	const lives = document.getElementById("hard-life-boxes").children;
 	for (let i = 0; i < 3; i++) {
 		if (i < n) {
 			lives[i].classList.remove("empty");

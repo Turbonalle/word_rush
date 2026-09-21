@@ -1,20 +1,52 @@
 #hard-lives-container {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5vh;
+}
+
+#hard-lives-label {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0.12em;
+	color: var(--border);
+}
+
+#hard-lives-count {
+	font-size: 13px;
+	letter-spacing: normal;
+	font-variant-numeric: tabular-nums;
+	opacity: 0.7;
+}
+
+#hard-life-boxes {
+	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 1vh;
+	gap: 8px;
 }
 
 .life-box {
-	height: 3vh;
-	width: 6vh;
+	height: 4vh;
+	width: 4vh;
 	background-color: var(--correct-bg);
 	border: 2px solid var(--correct-border);
-	border-radius: min(8px, 1.5vh);
+	border-radius: min(8px, 2.5vh);
+	box-shadow: 0 0 5px rgba(85, 214, 138, 0.15);
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		box-shadow 0.2s ease,
+		transform 0.2s ease;
 }
 
 .life-box.empty {
 	background-color: var(--bg);
-	border: 2px solid var(--invalid-border);
+	border-color: var(--invalid-border);
+	box-shadow: none;
 }
