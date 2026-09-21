@@ -6,7 +6,7 @@ export const Timer = {
 		seconds: null,
 		progress: null
 	},
-	circumference: 2 * Math.PI * 70,
+	circumference: 2 * Math.PI * 80,
 
 	init() {
 		this.timerElements.container = document.getElementById("panic-timer-container");
@@ -84,9 +84,9 @@ export const Timer = {
 		progress.style.strokeDashoffset = offset;
 
 		container.classList.remove("warning", "critical");
-		if (remaining <= 5) {
+		if (remaining <= 10) {
 			container.classList.add("critical");
-		} else if (remaining <= 10) {
+		} else if (remaining <= 20) {
 			container.classList.add("warning");
 		}
 	}

@@ -1,10 +1,12 @@
 #panic-timer-container {
-	--timer-color: var(--border);
+	--timer-ring-color: var(--border);
 	position: relative;
-	width: 180px;
-	height: 180px;
-	margin: 20px auto;
-	color: var(--timer-color);
+	width: 15vh;
+	height: 15vh;
+	min-width: 15vh;
+	min-height: 15vh;
+	margin: 0px;
+	color: var(--border);
 }
 
 #panic-timer-ring {
@@ -17,7 +19,7 @@
 
 .timer-ring-background, .timer-ring-progress {
 	fill: none;
-	stroke-width: 8;
+	stroke-width: 10px;
 }
 
 .timer-ring-background {
@@ -25,10 +27,10 @@
 }
 
 .timer-ring-progress {
-	stroke: var(--timer-color);
+	stroke: var(--timer-ring-color);
 	stroke-linecap: round;
-	/* Circumference of a circle with radius 70: 2*70*PI = 439.82 */
-	stroke-dasharray: 439.82;
+	/* Circumference of a circle with radius 80: 2*80*PI = 502.65 */
+	stroke-dasharray: 502.65;
 	stroke-dashoffset: 0;
 	transition:
 		stroke-dashoffset 0.2s linear,
@@ -45,18 +47,18 @@
 	pointer-events: none;
 }
 
-#panic-timer {
-	font-size: 48px;
+#panic-timer-seconds {
+	font-size: 5vh;
 	font-weight: 800;
 	line-height: 1;
 	font-variant-numeric: tabular-nums;
 }
 
 #panic-timer-unit {
-	margin-top: 8px;
-	font-size: 12px;
+	margin-top: 0.4vh;
+	font-size: 1.2vh;
 	font-weight: bold;
-	letter-spacing: 0.12em;
+	letter-spacing: 0.1em;
 	opacity: 0.65;
 }
 
@@ -64,15 +66,15 @@
 /* ---- Effects for time running low ---------------------------------------- */
 
 #panic-timer-container.warning {
-	--timer-color: #ffc247;
+	--timer-ring-color: #f6b228;
 }
 
-#panic-timer-container.critical {
-	--timer-color: #ff4545;
-	animation: timer-critical-pulse 0.6s infinite alternate;
+#panic-timer-container.critical #panic-timer-ring {
+	--timer-ring-color: #ef2c2c;
+	animation: timer-ring-critical-pulse 0.6s infinite alternate;
 }
 
-@keyframes timer-critical-pulse {
-	from { filter: drop-shadow(0 0 2px rgba(255, 69, 69, 0.15)); };
-	to { filter: drop-shadow(0 0 2px rgba(255, 69, 69, 0.45)); };
+@keyframes timer-ring-critical-pulse {
+	from { filter: drop-shadow(0 0 3px rgba(255, 69, 69, 0.85)); };
+	to { filter: drop-shadow(0 0 6px rgba(255, 69, 69, 0.95)); };
 }
