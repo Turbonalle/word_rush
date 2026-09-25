@@ -51,14 +51,20 @@ export const UnlockManager = {
 		},
 		song6: {
 			requirement: {
-				type: "achievement",
-				id: "finishedWordLength10"
+				type: "words",
+				amount: 100
+			}
+		},
+		song7: {
+			requirement: {
+				type: "words",
+				amount: 1000
 			}
 		},
 		song8: {
 			requirement: {
-				type: "words",
-				amount: 1000
+				type: "achievement",
+				id: "finishedWordLength10"
 			}
 		},
 		song9: {

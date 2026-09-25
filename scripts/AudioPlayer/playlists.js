@@ -17,18 +17,18 @@ export const menuPlaylist = [
 	// {
 	// 	id: "song4",
 	// 	title: "Tension Overload",
-	// 	path: "audio/calm_vibes.mp3"
+	// 	path: "audio/tension_overload.mp3"
 	// },
 	{
 		id: "song5",
 		title: "Rush Panic",
 		path: "audio/rush_panic.mp3"
 	},
-	// {
-	// 	id: "song6",
-	// 	title: "Chiptune",
-	// 	path: "audio/chiptune.mp3"
-	// },
+	{
+		id: "song6",
+		title: "Techno Tech",
+		path: "audio/techno_tech.mp3"
+	},
 	// {
 	// 	id: "song7",
 	// 	title: "Word Rush Epicness",
