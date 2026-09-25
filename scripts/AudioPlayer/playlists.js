@@ -14,6 +14,31 @@ export const menuPlaylist = [
 		title: "Calm Vibes",
 		path: "audio/calm_vibes.mp3"
 	},
+	// {
+	// 	id: "song4",
+	// 	title: "Tension Overload",
+	// 	path: "audio/calm_vibes.mp3"
+	// },
+	{
+		id: "song5",
+		title: "Rush Panic",
+		path: "audio/rush_panic.mp3"
+	},
+	// {
+	// 	id: "song6",
+	// 	title: "Chiptune",
+	// 	path: "audio/chiptune.mp3"
+	// },
+	// {
+	// 	id: "song7",
+	// 	title: "Word Rush Epicness",
+	// 	path: "audio/word_rush_epicness.mp3"
+	// },
+	// {
+	// 	id: "song8",
+	// 	title: "Boss Battle",
+	// 	path: "audio/boss_battle.mp3"
+	// },
 	{
 		id: "song9",
 		title: "Winning Theme",
