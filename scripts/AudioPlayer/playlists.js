@@ -1,8 +1,13 @@
 export const menuPlaylist = [
 	{
 		id: "song1",
-		title: "Wordrush Menu",
-		path: "audio/wordrush_menu.mp3"
+		title: "Funky Menu Solo",
+		path: "audio/funky_menu_solo.mp3"
+	},
+	{
+		id: "song2",
+		title: "Increasing Funk",
+		path: "audio/increasing_funk.mp3"
 	},
 	{
 		id: "song9",

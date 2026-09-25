@@ -29,7 +29,7 @@ export const AudioPlayer = {
 		const song = this.playlist[this.currentIndex];
 		if (!UnlockManager.isSongUnlocked(song.id)) {
 			console.log("Song is locked:", song.id);
-			// this.next();
+			this.next();
 			return;
 		}
 		this.audio.play();
@@ -68,6 +68,12 @@ export const AudioPlayer = {
 		this.currentIndex++;
 		if (this.currentIndex >= this.playlist.length)
 			this.currentIndex = 0;
+		const song = this.playlist[this.currentIndex];
+		if (!UnlockManager.isSongUnlocked(song.id)) {
+			console.log("Song is locked:", song.id);
+			this.next();
+			return;
+		}
 		this.audio.src = this.playlist[this.currentIndex].path;
 		if (this.isPlaying)
 			this.audio.play();
@@ -80,6 +86,12 @@ export const AudioPlayer = {
 		this.currentIndex--;
 		if (this.currentIndex < 0)
 			this.currentIndex = this.playlist.length - 1;
+		const song = this.playlist[this.currentIndex];
+		if (!UnlockManager.isSongUnlocked(song.id)) {
+			console.log("Song is locked:", song.id);
+			this.previous();
+			return;
+		}
 		this.audio.src = this.playlist[this.currentIndex].path;
 		if (this.isPlaying)
 			this.audio.play();
